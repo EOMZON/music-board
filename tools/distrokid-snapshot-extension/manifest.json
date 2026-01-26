@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "DistroKid Snapshot Saver",
+  "version": "0.1.0",
+  "description": "One-click download of DistroKid My Music + album detail HTML snapshots (for offline parsing).",
+  "permissions": ["downloads", "storage", "tabs"],
+  "host_permissions": ["https://distrokid.com/*", "https://*.distrokid.com/*"],
+  "background": { "service_worker": "service_worker.js" },
+  "action": { "default_title": "DistroKid Snapshot Saver" },
+  "content_scripts": [
+    {
+      "matches": ["https://distrokid.com/mymusic*", "https://*.distrokid.com/mymusic*"],
+      "js": ["content_mymusic.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://distrokid.com/dashboard/album*", "https://*.distrokid.com/dashboard/album*"],
+      "js": ["content_album.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
