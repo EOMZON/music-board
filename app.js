@@ -669,7 +669,9 @@ function rerender() {
   });
 
   document.getElementById("content").addEventListener("click", (e) => {
-    if (e.target.closest(".icon")) return;
+    // Only prevent tile clicks when the icon is an actual link.
+    // Static icons are just indicators; clicking them should still open the tile.
+    if (e.target.closest("a.icon")) return;
 
     const more = e.target.closest("[data-more]");
     if (more) {
