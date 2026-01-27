@@ -171,10 +171,18 @@ function connect() {
     port = null;
     exporting = false;
     exportMode = "";
+    const root = qs(`#${DK_WIDGET_ID}`);
+    if (root) setButtonsDisabled(root, false);
   });
   port.onMessage.addListener((msg) => {
     if (!msg || typeof msg !== "object") return;
-    if (msg.type === "DK_ERROR") setStatus(`Error: ${msg.message || ""}`);
+    if (msg.type === "DK_ERROR") {
+      setStatus(`Error: ${msg.message || ""}`);
+      exporting = false;
+      exportMode = "";
+      const root = qs(`#${DK_WIDGET_ID}`);
+      if (root) setButtonsDisabled(root, false);
+    }
     if (msg.type === "DK_LOG") setStatus(msg.message || "");
     if (msg.type === "DK_STARTED") setStatus(`Started. total=${msg.total}`);
     if (msg.type === "DK_PROGRESS") {
@@ -191,12 +199,16 @@ function connect() {
       setStatus(`Finished${suffix}. done=${msg.done} failed=${msg.failed}`);
       exporting = false;
       exportMode = "";
+      const root = qs(`#${DK_WIDGET_ID}`);
+      if (root) setButtonsDisabled(root, false);
     }
     if (msg.type === "DK_DOWNLOADED") {
       setStatus(`Downloaded: ${msg.filename || ""}`);
       if (exportMode === "mymusic") {
         exporting = false;
         exportMode = "";
+        const root = qs(`#${DK_WIDGET_ID}`);
+        if (root) setButtonsDisabled(root, false);
       }
     }
     if (msg.type === "DK_CANCELLED") setStatus("Cancelling…");
@@ -313,7 +325,7 @@ function bindUi(root) {
 
       const p = connect();
       const opts = { folder: safeFolder(folder.value), delayMs: 650, timeoutMs: 60000 };
-      p.postMessage({ type: "DK_EXPORT_ALBUMS", albums, options: opts });
+      p.postMessage({ type: "DK_EXPORT_ALBUMS", mode: "download-url", albums, options: opts });
       setStatus(`Queued ${albums.length} albums…`);
     })().catch((err) => {
       setStatus(`Error: ${err?.message || String(err)}`);

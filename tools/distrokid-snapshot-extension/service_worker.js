@@ -4,6 +4,8 @@ const DEFAULT_OPTIONS = Object.freeze({
   timeoutMs: 60000
 });
 
+const pendingDownloadWaiters = new Map();
+
 function nowStamp() {
   const d = new Date();
   const pad = (n) => String(n).padStart(2, "0");
@@ -55,6 +57,64 @@ async function downloadHtml(html, filename) {
   const url = `data:text/html;charset=utf-8,${encodeURIComponent(html)}`;
   return await chromeCall(chrome.downloads.download, { url, filename, saveAs: false });
 }
+
+async function downloadUrlToFile(url, filename) {
+  return await chromeCall(chrome.downloads.download, {
+    url,
+    filename,
+    saveAs: false,
+    conflictAction: "uniquify"
+  });
+}
+
+async function waitForDownload(downloadId, timeoutMs) {
+  const existing = pendingDownloadWaiters.get(downloadId);
+  if (existing) return existing.promise;
+
+  const initial = await chromeCall(chrome.downloads.search, { id: downloadId }).catch(() => []);
+  const item = Array.isArray(initial) ? initial[0] : null;
+  if (item?.state === "complete") return;
+  if (item?.state === "interrupted") {
+    const reason = item?.error ? ` (${item.error})` : "";
+    throw new Error(`Download interrupted${reason}`);
+  }
+
+  let resolve = null;
+  let reject = null;
+
+  const promise = new Promise((res, rej) => {
+    resolve = res;
+    reject = rej;
+  });
+
+  const timer = setTimeout(() => {
+    pendingDownloadWaiters.delete(downloadId);
+    reject(new Error(`Timeout waiting for download ${downloadId}`));
+  }, Math.max(5000, timeoutMs || DEFAULT_OPTIONS.timeoutMs));
+
+  pendingDownloadWaiters.set(downloadId, { promise, resolve, reject, timer });
+  return promise;
+}
+
+chrome.downloads.onChanged.addListener((delta) => {
+  const waiter = pendingDownloadWaiters.get(delta.id);
+  if (!waiter) return;
+
+  const state = delta.state?.current;
+  if (state === "complete") {
+    clearTimeout(waiter.timer);
+    pendingDownloadWaiters.delete(delta.id);
+    waiter.resolve();
+    return;
+  }
+
+  if (state === "interrupted") {
+    const reason = delta.error?.current ? ` (${delta.error.current})` : "";
+    clearTimeout(waiter.timer);
+    pendingDownloadWaiters.delete(delta.id);
+    waiter.reject(new Error(`Download interrupted${reason}`));
+  }
+});
 
 async function waitForTabComplete(tabId, timeoutMs) {
   const initial = await chromeCall(chrome.tabs.get, tabId).catch(() => null);
@@ -174,6 +234,7 @@ chrome.runtime.onConnect.addListener((port) => {
         cancelled = false;
 
         const options = mergeOptions(msg.options);
+        const mode = msg.mode === "tab-capture" ? "tab-capture" : "download-url";
         const albums = Array.isArray(msg.albums) ? msg.albums : [];
         const queue = albums
           .map((a) => ({
@@ -185,7 +246,7 @@ chrome.runtime.onConnect.addListener((port) => {
           .filter((a) => a.url && a.albumuuid);
 
         const total = queue.length;
-        post(port, { type: "DK_STARTED", total, options });
+        post(port, { type: "DK_STARTED", total, options, mode });
 
         let done = 0;
         let failed = 0;
@@ -193,23 +254,39 @@ chrome.runtime.onConnect.addListener((port) => {
         for (const task of queue) {
           if (cancelled) break;
           const idx = done + failed + 1;
-          post(port, { type: "DK_PROGRESS", phase: "open", idx, total, task });
 
           try {
-            const res = await captureAlbumHtml({ url: task.url, timeoutMs: options.timeoutMs, delayMs: options.delayMs });
-            const meta = res.meta || {};
-            const filename = buildFilename({
-              kind: "distrokid_album",
-              albumuuid: meta.albumuuid || task.albumuuid,
-              title: meta.title || task.title,
-              artist: meta.artist || task.artist,
-              folder: options.folder,
-              ext: "html"
-            });
-            post(port, { type: "DK_PROGRESS", phase: "download", idx, total, task: { ...task, meta }, filename });
-            await downloadHtml(res.html, filename);
-            done += 1;
-            post(port, { type: "DK_PROGRESS", phase: "done", idx, total, task: { ...task, meta }, filename, done, failed });
+            if (mode === "tab-capture") {
+              post(port, { type: "DK_PROGRESS", phase: "open", idx, total, task });
+              const res = await captureAlbumHtml({ url: task.url, timeoutMs: options.timeoutMs, delayMs: options.delayMs });
+              const meta = res.meta || {};
+              const filename = buildFilename({
+                kind: "distrokid_album",
+                albumuuid: meta.albumuuid || task.albumuuid,
+                title: meta.title || task.title,
+                artist: meta.artist || task.artist,
+                folder: options.folder,
+                ext: "html"
+              });
+              post(port, { type: "DK_PROGRESS", phase: "download", idx, total, task: { ...task, meta }, filename });
+              await downloadHtml(res.html, filename);
+              done += 1;
+              post(port, { type: "DK_PROGRESS", phase: "done", idx, total, task: { ...task, meta }, filename, done, failed });
+            } else {
+              const filename = buildFilename({
+                kind: "distrokid_album",
+                albumuuid: task.albumuuid,
+                title: task.title,
+                artist: task.artist,
+                folder: options.folder,
+                ext: "html"
+              });
+              post(port, { type: "DK_PROGRESS", phase: "download_url", idx, total, task, filename });
+              const downloadId = await downloadUrlToFile(task.url, filename);
+              await waitForDownload(downloadId, options.timeoutMs);
+              done += 1;
+              post(port, { type: "DK_PROGRESS", phase: "done", idx, total, task, filename, done, failed });
+            }
           } catch (err) {
             failed += 1;
             post(port, { type: "DK_PROGRESS", phase: "error", idx, total, task, error: err?.message || String(err), done, failed });

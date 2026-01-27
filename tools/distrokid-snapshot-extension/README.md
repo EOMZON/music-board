@@ -21,7 +21,7 @@
 3. 右下角会出现 `DK Snapshot` 按钮（也可以直接点击浏览器工具栏里的扩展图标来打开/关闭面板）
 4. 点击后：
    - `Download this page (My Music)`：下载当前页面 HTML
-   - `Download all albums`：自动打开每张专辑详情页并下载 HTML（无需你逐个另存为）
+   - `Download all albums`：按 URL 逐个下载每张专辑详情页 HTML（更稳定，不会卡在“open …”）
 
 默认下载到 Chrome 的下载目录下的子目录：`distrokid-snapshots/`。
 
@@ -35,6 +35,11 @@
 - My Music 页面还没加载完（扩展会自动滚动尝试加载更多，但你也可以手动滚动到底再点一次）
 - 你先点了 `Download this page (My Music)`，然后没等它完成（面板状态会显示进度）
 - Chrome 下载设置/安全策略拦截（看下载栏/下载内容页面是否提示“阻止了多个下载”）
+
+如果你看到 `Finished. done=0 failed=N`：
+
+- 打开 `chrome://downloads/` 看每个文件的失败原因（常见是被拦截/中断）
+- 打开 `chrome://extensions/` → 本扩展 → `Service worker` → Inspect，查看控制台报错
 
 ## 导入到 music-board
 

@@ -451,6 +451,28 @@
         justify-content: flex-end;
         flex-wrap: wrap;
         flex: 0 0 auto;
+        min-width: 0;
+        max-width: 100%;
+      }
+      /* Top dock can get long; keep it tidy + scrollable */
+      #profile-icons{
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+        max-width: min(520px, 46vw);
+        padding: 2px 2px 4px;
+        scrollbar-width: none;
+        mask-image: linear-gradient(to right, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%);
+      }
+      #profile-icons::-webkit-scrollbar{ display:none; }
+      @media (max-width: 760px){
+        #profile-icons{
+          flex-basis: 100%;
+          max-width: 100%;
+          justify-content: flex-start;
+          mask-image: linear-gradient(to right, transparent 0, #000 14px, #000 calc(100% - 14px), transparent 100%);
+        }
       }
       .icon{
         width: 32px; height: 32px;
@@ -465,6 +487,7 @@
         color: var(--muted);
         box-shadow: var(--shadow);
         transition: transform 120ms ease, border-color 120ms ease, background 120ms ease, color 120ms ease;
+        flex: 0 0 auto;
       }
       .icon:hover{
         transform: translateY(-1px);
@@ -473,10 +496,16 @@
         color: var(--ink);
       }
       .icon:active{ transform: translateY(0); }
+      .icon:focus-visible{
+        outline: 2px solid var(--ink);
+        outline-offset: 3px;
+      }
       .icon.static{
         cursor: default;
-        opacity: 0.95;
+        opacity: 0.72;
+        box-shadow: none;
       }
+      .icon.static.more{ opacity: 0.88; }
       .icon[aria-current="true"]{
         background: var(--ink);
         border-color: var(--ink);
@@ -513,6 +542,45 @@
       .track .tmeta .title{ font-weight: 600; }
       .track .tmeta .sub{ margin-top: 4px; }
       .track .title{ font-family: inherit; }
+
+      /* Prevent long platform rows from breaking layout */
+      .tile-body .dock,
+      .track .dock,
+      .player-right .dock,
+      .hero-actions .dock{
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+        mask-image: linear-gradient(to right, transparent 0, #000 14px, #000 calc(100% - 14px), transparent 100%);
+      }
+      .tile-body .dock::-webkit-scrollbar,
+      .track .dock::-webkit-scrollbar,
+      .player-right .dock::-webkit-scrollbar,
+      .hero-actions .dock::-webkit-scrollbar{ display:none; }
+      .tile-body .dock{ max-width: 280px; }
+      .track .dock{ max-width: 240px; }
+      @media (max-width: 520px){
+        .tile-body{
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .tile-body .dock{
+          max-width: 100%;
+          justify-content: flex-start;
+        }
+        .track{
+          flex-wrap: wrap;
+        }
+        .track .tmeta{ min-width: 0; }
+        .track .dock{
+          max-width: 100%;
+          justify-content: flex-start;
+          mask-image: none;
+        }
+      }
 
       .btn{
         border: 1px solid var(--hairline);
