@@ -2,6 +2,7 @@ const CATALOG_URL = "./catalog.json";
 let ICONS_CLICKABLE = false;
 let ACTIVE_PLATFORM = "";
 let EMBED_FALLBACK = true;
+let SHOW_EMPTY_LINKS = false;
 let collectionLimit = 48;
 let trackLimit = 200;
 
@@ -81,9 +82,16 @@ function uniqByPlatform(links) {
 }
 
 function renderPlatformIcons(links, limit = 8) {
-  const uniqLinks = uniqByPlatform(links);
-  const shown = uniqLinks.slice(0, limit);
-  const hidden = uniqLinks.slice(limit);
+  const uniqLinksAll = uniqByPlatform(links);
+  const renderable = SHOW_EMPTY_LINKS
+    ? uniqLinksAll
+    : uniqLinksAll.filter((l) => ((l?.url ?? "").toString().trim() !== ""));
+  const hiddenNonRenderable = SHOW_EMPTY_LINKS
+    ? []
+    : uniqLinksAll.filter((l) => ((l?.url ?? "").toString().trim() === ""));
+
+  const shown = renderable.slice(0, limit);
+  const hidden = renderable.slice(limit).concat(hiddenNonRenderable);
   const icons = shown.map(platformIcon).join("");
   if (hidden.length === 0) return icons;
   const moreTitle = hidden.map(l => platformLabel(l?.platform)).filter(Boolean).join(" · ");
@@ -640,6 +648,7 @@ async function main() {
   const profile = catalog?.profile || {};
   ICONS_CLICKABLE = profile?.settings?.iconLinks === true;
   EMBED_FALLBACK = profile?.settings?.embedFallback !== false;
+  SHOW_EMPTY_LINKS = profile?.settings?.showEmptyLinks === true;
   const notes = Array.isArray(catalog?.notes) ? catalog.notes : [];
 
   const profileNameEl = document.getElementById("profile-name");
