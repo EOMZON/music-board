@@ -86,18 +86,15 @@ function renderPlatformIcons(links, limit = 8) {
   const renderable = SHOW_EMPTY_LINKS
     ? uniqLinksAll
     : uniqLinksAll.filter((l) => ((l?.url ?? "").toString().trim() !== ""));
-  const hiddenNonRenderable = SHOW_EMPTY_LINKS
-    ? []
-    : uniqLinksAll.filter((l) => ((l?.url ?? "").toString().trim() === ""));
 
   const shown = renderable.slice(0, limit);
-  const hidden = renderable.slice(limit).concat(hiddenNonRenderable);
+  const hidden = renderable.slice(limit);
   const icons = shown.map(platformIcon).join("");
   if (hidden.length === 0) return icons;
   const moreTitle = hidden.map(l => platformLabel(l?.platform)).filter(Boolean).join(" · ");
   return icons + `
-    <span class="icon static more" title="${escapeHtml(moreTitle || `+${hidden.length}`)}" aria-label="${escapeHtml(`还有 ${hidden.length} 个平台`)}" role="img">
-      <span>${escapeHtml(`+${hidden.length}`)}</span>
+    <span class="icon static more" title="${escapeHtml(moreTitle || `${hidden.length} more`)}" aria-label="${escapeHtml(`还有 ${hidden.length} 个平台`)}" role="img">
+      <span>…</span>
     </span>
   `;
 }
