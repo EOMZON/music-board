@@ -37,6 +37,20 @@ node scripts/music-board/import-netease-album-html.mjs 春节/发布情况/网�
 
 输出的 `out.json` 里会包含可直接拷进 `catalog.json` 的 `items`（含歌曲 id、专辑 id、以及外链播放器 URL）。
 
+也可以直接把 HTML 合并写回 `catalog.json`：
+
+```bash
+node scripts/music-board/import-netease-album-html-to-catalog.mjs 春节/发布情况/网易云.html catalog.json
+```
+
+## 从链接列表生成 items（网易云 / YouTube）
+
+复制粘贴 URL 列表到文本文件（每行 1 个 URL），即可生成可粘贴进 `catalog.json` 的 `items`：
+
+```bash
+cat links.txt | node scripts/music-board/urls-to-items.mjs > items.json
+```
+
 ## 从 DistroKid “另存为 HTML”导入（可选）
 
 你可以用离线解析的方式，把 DistroKid 的发行信息（平台分发 + UPC/ISRC）合并进 `catalog.json`：
@@ -47,6 +61,28 @@ node scripts/music-board/import-distrokid-mymusic-html.mjs "/Users/zon/Desktop/M
 
 # 2) 再导入单个专辑详情页（补全 releaseDate/UPC/ISRC，并按 UPC > releaseDate+title 合并）
 node scripts/music-board/import-distrokid-album-html.mjs "/Users/zon/Desktop/MINE/10_music/album/DONE/已发布的网页/20250125拉丁.html" catalog.json
+```
+
+## 给 DistroKid 曲目补上网易云链接（可选）
+
+前提：同一个 `catalog.json` 里同时存在 “DistroKid 导入的专辑/曲目” 和 “网易云同步/导入的专辑/曲目”。
+
+```bash
+# 默认 dry run；确认无误后加 --apply 写入
+node scripts/music-board/attach-netease-to-distrokid.mjs catalog.json --apply
+```
+
+## 把本地歌词/风格标签合并进站点（可选）
+
+从你的工作目录（例如 `/Users/zon/Desktop/MINE/10_music/album`）里扫描：
+
+- `*_歌词.txt` / `*.lrc`
+- `*_metadata.json`（如有 `inspiration/duration/version/createdAt/lyrics` 会一并写入）
+- `tracklist.json`（如有 `mood` 会写入 `mood`，并聚合为专辑 `styleTags`）
+
+```bash
+# 默认 dry run；确认无误后加 --apply 写入
+node scripts/music-board/import-local-album-metadata.mjs "/Users/zon/Desktop/MINE/10_music/album" catalog.json --apply
 ```
 
 ## 维护数据（catalog.json）

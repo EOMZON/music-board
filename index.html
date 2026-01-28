@@ -244,6 +244,12 @@
         cursor: pointer;
         user-select:none;
       }
+      /* Tag chips (e.g. distrokid/album titles) should keep original casing + better CJK rendering */
+      .chip[data-kind="tag"]{
+        font-family: inherit;
+        letter-spacing: .02em;
+        text-transform: none;
+      }
       .chip[aria-pressed="true"]{
         background: var(--ink);
         border-color: var(--ink);
@@ -592,11 +598,60 @@
         letter-spacing: .06em;
         text-transform: uppercase;
         cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
       }
       .btn.primary{
         background: var(--ink);
         border-color: var(--ink);
         color: var(--bg);
+      }
+
+      .badges{
+        display:flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .badge{
+        border: 1px solid var(--hairline);
+        background: color-mix(in srgb, var(--paper) 92%, transparent);
+        color: var(--muted);
+        border-radius: 999px;
+        padding: 6px 10px;
+        font-size: 12px;
+        line-height: 1.2;
+        font-family: inherit;
+        letter-spacing: .02em;
+        white-space: nowrap;
+      }
+      .detail{
+        padding: 16px;
+      }
+      .detail-card{
+        border: 1px solid var(--hairline);
+        border-radius: var(--radius);
+        background: color-mix(in srgb, var(--paper) 94%, transparent);
+        padding: 16px;
+      }
+      .kv{
+        display:grid;
+        grid-template-columns: max-content 1fr;
+        gap: 6px 12px;
+        font: 12px/1.7 var(--mono);
+        color: var(--muted);
+        margin-top: 12px;
+      }
+      .lyrics{
+        margin-top: 14px;
+        padding: 12px 12px;
+        border-radius: var(--radius);
+        border: 1px solid var(--hairline);
+        background: color-mix(in srgb, var(--paper2) 92%, transparent);
+        white-space: pre-wrap;
+        font: 14px/1.85 var(--serif);
       }
 
       .muted{

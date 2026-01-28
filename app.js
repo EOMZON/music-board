@@ -51,6 +51,19 @@ function platformLabel(platform) {
   return map[platform] || platform || "Link";
 }
 
+function tagLabel(tag) {
+  const raw = (tag ?? "").toString().trim();
+  const key = normalizeText(raw);
+  const map = {
+    distrokid: "DistroKid",
+    netease: "网易云",
+    youtube: "YouTube",
+    youtubemusic: "YouTube Music",
+    apple: "Apple Music"
+  };
+  return map[key] || raw;
+}
+
 function platformKey(platform) {
   return normalizeText(platform).replace(/\s+/g, "");
 }
@@ -91,6 +104,7 @@ function parseHash() {
   if (parts[0] === "notes") return { route: "notes" };
   if (parts[0] === "p" && parts[1]) return { route: "platform", id: decodeURIComponent(parts[1]) };
   if (parts[0] === "c" && parts[1]) return { route: "collection", id: parts[1] };
+  if (parts[0] === "t" && parts[1]) return { route: "track", id: parts[1] };
   return { route: "home" };
 }
 
@@ -192,7 +206,8 @@ function collectionFromItem(item) {
     cover: item.cover || "",
     trackCount: Number.isFinite(item.trackCount) ? item.trackCount : undefined,
     links: Array.isArray(item.links) ? item.links : [],
-    tags: Array.isArray(item.tags) ? item.tags : []
+    tags: Array.isArray(item.tags) ? item.tags : [],
+    styleTags: Array.isArray(item.styleTags) ? item.styleTags : []
   };
 }
 
@@ -207,7 +222,14 @@ function trackFromItem(item) {
     collectionId: item.collectionId || "",
     links: Array.isArray(item.links) ? item.links : [],
     embeds: Array.isArray(item.embeds) ? item.embeds : [],
-    tags: Array.isArray(item.tags) ? item.tags : []
+    tags: Array.isArray(item.tags) ? item.tags : [],
+    lyrics: item.lyrics || "",
+    mood: item.mood || "",
+    styleTags: Array.isArray(item.styleTags) ? item.styleTags : [],
+    inspiration: item.inspiration && typeof item.inspiration === "object" ? item.inspiration : null,
+    duration: item.duration || "",
+    version: item.version || "",
+    createdAt: item.createdAt || ""
   };
 }
 
@@ -260,7 +282,7 @@ function chipDefs(collections) {
   const tags = uniq(collections.flatMap(c => (c.tags || [])).filter(Boolean))
     .filter(t => t.length <= 18)
     .slice(0, 10)
-    .map(t => ({ key: `tag:${t}`, label: t }));
+    .map(t => ({ key: `tag:${t}`, label: tagLabel(t) }));
   return base.concat(tags);
 }
 
@@ -271,6 +293,7 @@ function setNav(route) {
     tracks: "nav-tracks",
     notes: "nav-notes",
     collection: "nav-collections",
+    track: "nav-tracks",
     platform: "nav-collections"
   };
   const currentId = map[route] || "nav-home";
@@ -282,7 +305,7 @@ function setNav(route) {
 function renderChips(defs, activeKey) {
   const chips = document.getElementById("chips");
   chips.innerHTML = defs.map(d => `
-    <button class="chip" type="button" data-key="${escapeHtml(d.key)}" aria-pressed="${d.key === activeKey ? "true" : "false"}">${escapeHtml(d.label)}</button>
+    <button class="chip" type="button" data-key="${escapeHtml(d.key)}"${d.key.startsWith("tag:") ? ' data-kind="tag"' : ""} aria-pressed="${d.key === activeKey ? "true" : "false"}">${escapeHtml(d.label)}</button>
   `).join("");
 }
 
@@ -374,6 +397,7 @@ function matchQueryCollection(c, q) {
   if (!q) return true;
   const hay = [
     c.title, c.artist, c.releaseDate,
+    Array.isArray(c.styleTags) ? c.styleTags.join(" ") : "",
     (c.tags || []).join(" "),
     (c.links || []).map(l => `${platformLabel(l.platform)} ${l.url}`).join(" ")
   ].join(" ");
@@ -384,6 +408,9 @@ function matchQueryTrack(t, q) {
   if (!q) return true;
   const hay = [
     t.title, t.artist, t.releaseDate,
+    t.mood || "",
+    Array.isArray(t.styleTags) ? t.styleTags.join(" ") : "",
+    t.inspiration && typeof t.inspiration === "object" ? Object.values(t.inspiration).join(" ") : "",
     (t.tags || []).join(" "),
     (t.links || []).map(l => `${platformLabel(l.platform)} ${l.url}`).join(" ")
   ].join(" ");
@@ -449,6 +476,7 @@ function renderCollectionDetail(collection, tracks, q) {
         </div>
         <div class="dock">${icons}</div>
         <button class="btn primary" type="button" data-play="${escapeHtml(t.id)}">Play</button>
+        <button class="btn" type="button" data-open-track="${escapeHtml(t.id)}">Info</button>
       </li>
     `;
   }).join("");
@@ -480,6 +508,7 @@ function renderTracksFlat(tracks, collectionsById, q) {
         </div>
         <div class="dock">${icons}</div>
         <button class="btn primary" type="button" data-play="${escapeHtml(t.id)}">Play</button>
+        <button class="btn" type="button" data-open-track="${escapeHtml(t.id)}">Info</button>
       </li>
     `;
   }).join("");
@@ -523,6 +552,60 @@ function renderNotes(notes, q) {
     <div style="padding: 16px;">
       ${cards || `<div class="empty">还没有 Notes。你可以在 <code>catalog.json</code> 里新增 <code>notes[]</code>。</div>`}
       ${filteredAll.length > trackLimit ? `<div class="grid-more"><button class="btn" type="button" data-more="tracks">Show more (${filteredAll.length - trackLimit})</button></div>` : ""}
+    </div>
+  `;
+}
+
+function renderBadges(tags, limit = 14) {
+  const list = (Array.isArray(tags) ? tags : []).filter(Boolean);
+  const shown = list.slice(0, limit);
+  const hidden = list.slice(limit);
+  const badges = shown.map(t => `<span class="badge">${escapeHtml(tagLabel(t))}</span>`).join("");
+  if (hidden.length === 0) return badges;
+  return badges + `<span class="badge">+${hidden.length}</span>`;
+}
+
+function renderKv(entries) {
+  const rows = (Array.isArray(entries) ? entries : [])
+    .map(([k, v]) => [String(k || "").trim(), v == null ? "" : String(v).trim()])
+    .filter(([k, v]) => k && v);
+  if (rows.length === 0) return "";
+  return `<div class="kv">${rows.map(([k, v]) => `<div>${escapeHtml(k)}</div><div>${escapeHtml(v)}</div>`).join("")}</div>`;
+}
+
+function renderTrackDetail(track, collection) {
+  const lyrics = (track?.lyrics ?? "").toString().trim();
+  const mood = (track?.mood ?? "").toString().trim();
+  const styleTags = Array.isArray(track?.styleTags) ? track.styleTags.filter(Boolean) : [];
+  const tags = Array.isArray(track?.tags) ? track.tags.filter(Boolean) : [];
+  const inspiration = track?.inspiration && typeof track.inspiration === "object" ? track.inspiration : null;
+
+  const kv = [];
+  if (collection?.title) kv.push(["Album", collection.title]);
+  if (track?.duration) kv.push(["Duration", track.duration]);
+  if (track?.version) kv.push(["Version", track.version]);
+  if (track?.createdAt) kv.push(["Created", track.createdAt]);
+  if (mood) kv.push(["Mood", mood]);
+  if (inspiration) {
+    for (const [k, v] of Object.entries(inspiration)) {
+      const key = (k ?? "").toString().trim();
+      const val = (v ?? "").toString().trim();
+      if (key && val) kv.push([`Inspiration · ${key}`, val]);
+    }
+  }
+
+  const badgeBlocks = [
+    styleTags.length ? `<div class="badges" style="margin-top:10px;">${renderBadges(styleTags, 18)}</div>` : "",
+    tags.length ? `<div class="badges" style="margin-top:10px;">${renderBadges(tags, 18)}</div>` : ""
+  ].filter(Boolean).join("");
+
+  return `
+    <div class="detail">
+      <div class="detail-card">
+        ${badgeBlocks || ""}
+        ${renderKv(kv) || ""}
+        ${lyrics ? `<div class="lyrics">${escapeHtml(lyrics)}</div>` : `<div class="empty" style="border-top:0;margin-top:12px;">暂无歌词。</div>`}
+      </div>
     </div>
   `;
 }
@@ -606,9 +689,13 @@ function rerender() {
         return;
       }
       const list = tracksByCollectionId.get(c.id) || [];
-      const actions = `
-        <div class="dock">${renderPlatformIcons(c.links || [], 12)}</div>
-      `;
+      const tags = Array.isArray(c.tags) ? c.tags.filter(Boolean) : [];
+      const styleTags = Array.isArray(c.styleTags) ? c.styleTags.filter(Boolean) : [];
+      const actions = [
+        `<div class="dock">${renderPlatformIcons(c.links || [], 12)}</div>`,
+        styleTags.length ? `<div class="badges" style="margin-top:10px;">${renderBadges(styleTags, 18)}</div>` : "",
+        tags.length ? `<div class="badges" style="margin-top:10px;">${renderBadges(tags, 18)}</div>` : ""
+      ].filter(Boolean).join("");
       setHero({
         coverItem: c,
         title: c.title || "(未命名合集)",
@@ -616,6 +703,25 @@ function rerender() {
         actionsHtml: actions
       });
       content.innerHTML = renderCollectionDetail(c, list, q);
+      return;
+    }
+
+    if (route === "track") {
+      const t = tracksById.get(id);
+      if (!t) {
+        setHero({ coverItem: null, title: "Not found", sub: "这个曲目不存在。", actionsHtml: "" });
+        content.innerHTML = `<div class="empty"><a href="#/tracks">返回 Tracks</a></div>`;
+        return;
+      }
+      const col = collectionsById.get(t.collectionId || "");
+      const sub = [t.artist || "", col?.title ? `in ${col.title}` : "", t.releaseDate || ""].filter(Boolean).join(" · ");
+      const actions = [
+        `<div class="dock">${renderPlatformIcons(t.links || [], 12)}</div>`,
+        `<button class="btn primary" type="button" data-play="${escapeHtml(t.id)}">Play</button>`,
+        col?.id ? `<button class="btn" type="button" data-open="${escapeHtml(col.id)}">Album</button>` : ""
+      ].filter(Boolean).join("");
+      setHero({ coverItem: t, title: t.title || "(未命名)", sub, actionsHtml: actions });
+      content.innerHTML = renderTrackDetail(t, col);
       return;
     }
 
@@ -686,6 +792,13 @@ function rerender() {
     if (open) {
       const id = open.getAttribute("data-open");
       if (id) location.hash = `#/c/${encodeURIComponent(id)}`;
+      return;
+    }
+
+    const openTrack = e.target.closest("[data-open-track]");
+    if (openTrack) {
+      const id = openTrack.getAttribute("data-open-track");
+      if (id) location.hash = `#/t/${encodeURIComponent(id)}`;
       return;
     }
 

@@ -19,6 +19,18 @@ function parseId(urlString, key) {
   }
 }
 
+function tryParseUrl(urlString) {
+  const raw = (urlString ?? "").toString().trim();
+  if (!raw) return null;
+  try {
+    return new URL(raw);
+  } catch {}
+  try {
+    return new URL(raw.replace("#/", ""));
+  } catch {}
+  return null;
+}
+
 function inferNetease(url) {
   const isNetease = /music\.163\.com/.test(url);
   if (!isNetease) return null;
@@ -84,6 +96,85 @@ function inferNetease(url) {
   };
 }
 
+function isLikelyYoutubeId(id) {
+  const raw = (id ?? "").toString().trim();
+  return /^[a-zA-Z0-9_-]{6,}$/.test(raw);
+}
+
+function inferYoutube(urlString) {
+  const url = tryParseUrl(urlString);
+  if (!url) return null;
+  const host = url.hostname.replace(/^www\./i, "").toLowerCase();
+  const isYoutube = host === "youtube.com" || host === "youtu.be" || host === "music.youtube.com";
+  if (!isYoutube) return null;
+
+  const label = host === "music.youtube.com" ? "YouTube Music" : "YouTube";
+
+  const listId = url.searchParams.get("list");
+
+  let videoId = "";
+  if (host === "youtu.be") {
+    videoId = url.pathname.replace(/^\/+/, "").split("/")[0] || "";
+  } else if (url.pathname === "/watch") {
+    videoId = url.searchParams.get("v") || "";
+  } else if (url.pathname.startsWith("/shorts/")) {
+    videoId = url.pathname.split("/")[2] || "";
+  } else if (url.pathname.startsWith("/embed/")) {
+    videoId = url.pathname.split("/")[2] || "";
+  }
+
+  if (videoId && isLikelyYoutubeId(videoId)) {
+    return {
+      id: `youtube-video-${videoId}`,
+      type: "song",
+      title: "",
+      artist: "",
+      releaseDate: "",
+      tags: ["youtube"],
+      links: [{ platform: "youtube", label, url: urlString }],
+      embeds: [
+        {
+          platform: "youtube",
+          label: "YouTube embed",
+          url: `https://www.youtube.com/embed/${videoId}`,
+          height: 220
+        }
+      ]
+    };
+  }
+
+  if (listId && isLikelyYoutubeId(listId)) {
+    return {
+      id: `youtube-playlist-${listId}`,
+      type: "playlist",
+      title: "",
+      artist: "",
+      releaseDate: "",
+      tags: ["youtube", "playlist"],
+      links: [{ platform: "youtube", label: `${label} · Playlist`, url: urlString }],
+      embeds: [
+        {
+          platform: "youtube",
+          label: "YouTube playlist embed",
+          url: `https://www.youtube.com/embed/videoseries?list=${listId}`,
+          height: 360
+        }
+      ]
+    };
+  }
+
+  return {
+    id: `youtube-link-${Math.random().toString(36).slice(2, 8)}`,
+    type: "other",
+    title: "",
+    artist: "",
+    releaseDate: "",
+    tags: ["youtube"],
+    links: [{ platform: "youtube", label, url: urlString }],
+    embeds: []
+  };
+}
+
 async function readStdin() {
   return await new Promise((resolve) => {
     let data = "";
@@ -108,7 +199,7 @@ async function main() {
 
   const items = [];
   for (const u of urls) {
-    const item = inferNetease(u) || {
+    const item = inferNetease(u) || inferYoutube(u) || {
       id: `link-${Math.random().toString(36).slice(2, 8)}`,
       type: "other",
       title: "",
@@ -128,4 +219,3 @@ main().catch((err) => {
   console.error(err);
   process.exit(1);
 });
-
