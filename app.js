@@ -578,8 +578,34 @@ function renderKv(entries) {
   return `<div class="kv">${rows.map(([k, v]) => `<div>${escapeHtml(k)}</div><div>${escapeHtml(v)}</div>`).join("")}</div>`;
 }
 
+function normalizeLyricsForDisplay(raw, titleHint = "") {
+  let t = (raw ?? "").toString();
+  if (!t) return "";
+  t = t.replaceAll("\r\n", "\n").replaceAll("\r", "\n");
+
+  // Normalize common "markdown saved from HTML" patterns.
+  t = t.replace(/<br\s*\/?>\s*\n/gi, "\n");
+  t = t.replace(/<br\s*\/?>/gi, "\n");
+
+  const lines = t.split("\n");
+  const firstNonEmpty = lines.findIndex((l) => l.trim() !== "");
+  if (firstNonEmpty >= 0) {
+    const m = lines[firstNonEmpty].match(/^#{1,6}\s+(.+)$/);
+    if (m) {
+      const head = (m[1] ?? "").toString().trim();
+      if (!titleHint || normalizeText(head) === normalizeText(titleHint)) {
+        lines.splice(firstNonEmpty, 1);
+        while (lines[firstNonEmpty] != null && lines[firstNonEmpty].trim() === "") lines.splice(firstNonEmpty, 1);
+        t = lines.join("\n");
+      }
+    }
+  }
+
+  return t.replace(/\n{3,}/g, "\n\n").trim();
+}
+
 function renderTrackDetail(track, collection) {
-  const lyrics = (track?.lyrics ?? "").toString().trim();
+  const lyrics = normalizeLyricsForDisplay(track?.lyrics ?? "", track?.title || "");
   const mood = (track?.mood ?? "").toString().trim();
   const styleTags = Array.isArray(track?.styleTags) ? track.styleTags.filter(Boolean) : [];
   const tags = Array.isArray(track?.tags) ? track.tags.filter(Boolean) : [];
