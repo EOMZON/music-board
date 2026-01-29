@@ -8,23 +8,25 @@
  * Matches by normalized song title (conservative, offline, no network).
  *
  * Usage:
- *   node scripts/music-board/import-local-album-metadata.mjs <albumRoot> <catalog.json> [--apply] [--overwrite]
+ *   node scripts/music-board/import-local-album-metadata.mjs <albumRoot> <catalog.json> [--apply] [--overwrite] [--git-history]
  *
  * Default is DRY RUN (no writes). Add --apply to write catalog.json.
  */
 
 import fs from "node:fs/promises";
 import path from "node:path";
+import { spawn } from "node:child_process";
 
 function usage(exitCode = 1) {
   console.error(
     [
       "Usage:",
-      "  node scripts/music-board/import-local-album-metadata.mjs <albumRoot> <catalog.json> [--apply] [--overwrite]",
+      "  node scripts/music-board/import-local-album-metadata.mjs <albumRoot> <catalog.json> [--apply] [--overwrite] [--git-history]",
       "",
       "Options:",
       "  --apply        Write changes (default: dry run)",
-      "  --overwrite    Overwrite existing fields (default: only fill missing)"
+      "  --overwrite    Overwrite existing fields (default: only fill missing)",
+      "  --git-history  Also scan git history for lyric files (fallback when current working tree has none)"
     ].join("\n")
   );
   process.exit(exitCode);
@@ -84,6 +86,75 @@ async function readText(filePath) {
 
 async function readJson(filePath) {
   return JSON.parse(await fs.readFile(filePath, "utf8"));
+}
+
+function runGitLines(cwd, args) {
+  return new Promise((resolve, reject) => {
+    const child = spawn("git", ["-C", cwd, ...args], { stdio: ["ignore", "pipe", "pipe"] });
+    let stdout = "";
+    let stderr = "";
+    child.stdout.setEncoding("utf8");
+    child.stderr.setEncoding("utf8");
+    child.stdout.on("data", (chunk) => {
+      stdout += chunk;
+    });
+    child.stderr.on("data", (chunk) => {
+      stderr += chunk;
+    });
+    child.on("error", reject);
+    child.on("close", (code) => {
+      if (code === 0) return resolve(stdout.split(/\r?\n/g));
+      reject(new Error(stderr.trim() || `git exited with code ${code}`));
+    });
+  });
+}
+
+async function gitIsRepo(dir) {
+  try {
+    const lines = await runGitLines(dir, ["rev-parse", "--is-inside-work-tree"]);
+    return (lines.join("\n").trim() || "").toLowerCase() === "true";
+  } catch {
+    return false;
+  }
+}
+
+async function gitShowText(repoDir, commitHash, filePath) {
+  return new Promise((resolve, reject) => {
+    const child = spawn("git", ["-C", repoDir, "--no-pager", "show", `${commitHash}:${filePath}`], {
+      stdio: ["ignore", "pipe", "pipe"]
+    });
+    let stdout = "";
+    let stderr = "";
+    child.stdout.setEncoding("utf8");
+    child.stderr.setEncoding("utf8");
+    child.stdout.on("data", (chunk) => {
+      stdout += chunk;
+    });
+    child.stderr.on("data", (chunk) => {
+      stderr += chunk;
+    });
+    child.on("error", reject);
+    child.on("close", (code) => {
+      if (code === 0) return resolve(stdout);
+      reject(new Error(stderr.trim() || `git show exited with code ${code}`));
+    });
+  });
+}
+
+function parseGitLogHeadMap(lines) {
+  const byPath = new Map();
+  let current = "";
+  for (const raw of lines) {
+    const line = (raw ?? "").toString().trim();
+    if (!line) continue;
+    if (/^[0-9a-f]{40}$/i.test(line)) {
+      current = line;
+      continue;
+    }
+    if (!current) continue;
+    if (!byPath.has(line)) byPath.set(line, current);
+  }
+  return byPath;
 }
 
 async function walk(rootDir) {
@@ -202,10 +273,12 @@ async function main() {
 
   let apply = false;
   let overwrite = false;
+  let gitHistory = false;
   for (let i = 2; i < args.length; i += 1) {
     const a = args[i];
     if (a === "--apply") apply = true;
     else if (a === "--overwrite") overwrite = true;
+    else if (a === "--git-history") gitHistory = true;
   }
 
   const maps = {
@@ -285,6 +358,73 @@ async function main() {
     const tKey = normalizeTitle((it?.title || "").toString().trim());
     if (!tKey) continue;
     titleCounts.set(tKey, (titleCounts.get(tKey) || 0) + 1);
+  }
+
+  if (gitHistory && (await gitIsRepo(albumRoot))) {
+    const wantTitleKeys = new Set();
+    const wantCompositeKeys = new Set();
+    for (const it of items) {
+      if ((it?.type || "") !== "song") continue;
+      const title = (it?.title || "").toString().trim();
+      const key = normalizeTitle(title);
+      if (!key) continue;
+      const lyricsMissing = overwrite || (it?.lyrics ?? "").toString().trim() === "";
+      if (!lyricsMissing) continue;
+
+      const collectionTitle = collectionsById.get(it.collectionId || "") || "";
+      const albumKey = normalizeTitle(collectionTitle);
+      const compositeKey = albumKey ? makeCompositeKey(albumKey, key) : "";
+      const ambiguousTitle = (titleCounts.get(key) || 0) > 1;
+
+      const hasAlbumLyric = compositeKey ? maps.lyricByAlbumTitle.has(compositeKey) : false;
+      const hasTitleLyric = maps.lyricByTitle.has(key);
+
+      if (!hasTitleLyric) wantTitleKeys.add(key);
+      if (compositeKey && !hasAlbumLyric && (ambiguousTitle || !hasTitleLyric)) wantCompositeKeys.add(compositeKey);
+    }
+
+    if (wantTitleKeys.size || wantCompositeKeys.size) {
+      let lines = [];
+      try {
+        lines = await runGitLines(albumRoot, ["log", "--all", "--name-only", "--pretty=format:%H", "--diff-filter=AMCR"]);
+      } catch {
+        lines = [];
+      }
+      const headByPath = parseGitLogHeadMap(lines);
+
+      for (const [relPath, commitHash] of headByPath) {
+        const name = path.basename(relPath);
+        const ext = path.extname(name).toLowerCase();
+        const isLyrics =
+          ext === ".lrc" ||
+          (ext === ".txt" && name.includes("歌词")) ||
+          (ext === ".txt" && /_歌词\.txt$/i.test(name));
+        if (!isLyrics) continue;
+
+        const absLike = path.resolve(albumRoot, relPath);
+        const title = titleFromLyricFilename(relPath);
+        const key = normalizeTitle(title);
+        if (!key) continue;
+        const albumGuess = guessAlbumFromPath(absLike);
+        const albumKey = normalizeTitle(albumGuess);
+        const compositeKey = albumKey ? makeCompositeKey(albumKey, key) : "";
+
+        const wantsComposite = compositeKey && wantCompositeKeys.has(compositeKey) && !maps.lyricByAlbumTitle.has(compositeKey);
+        const wantsTitle = wantTitleKeys.has(key) && !maps.lyricByTitle.has(key);
+        if (!wantsComposite && !wantsTitle) continue;
+
+        let text = "";
+        try {
+          text = await gitShowText(albumRoot, commitHash, relPath);
+        } catch {
+          continue;
+        }
+        if (!text || isLyricsNoise(text)) continue;
+
+        if (wantsComposite && compositeKey) maps.lyricByAlbumTitle.set(compositeKey, { text, source: `${albumRoot}@${commitHash}:${relPath}` });
+        if (wantsTitle) maps.lyricByTitle.set(key, { text, source: `${albumRoot}@${commitHash}:${relPath}` });
+      }
+    }
   }
 
   let songUpdated = 0;

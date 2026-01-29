@@ -72,6 +72,21 @@ node scripts/music-board/import-distrokid-album-html.mjs "/Users/zon/Desktop/MIN
 node scripts/music-board/attach-netease-to-distrokid.mjs catalog.json --apply
 ```
 
+## 同步网易云歌词（优先，可选）
+
+如果 `catalog.json` 里的曲目能解析出网易云 `songId`（例如条目 id 是 `netease-song-<id>`，或 `refs/links/embeds` 里能找到），可以用脚本把歌词拉回写入：
+
+```bash
+# 默认 dry run；确认无误后加 --apply 写入
+node scripts/music-board/sync-netease-lyrics-api.mjs catalog.json --apply
+```
+
+如需强制覆盖已有歌词（以网易云为准）：
+
+```bash
+node scripts/music-board/sync-netease-lyrics-api.mjs catalog.json --apply --overwrite
+```
+
 ## 把本地歌词/风格标签合并进站点（可选）
 
 从你的工作目录（例如 `/Users/zon/Desktop/MINE/10_music/album`）里扫描：
@@ -83,6 +98,12 @@ node scripts/music-board/attach-netease-to-distrokid.mjs catalog.json --apply
 ```bash
 # 默认 dry run；确认无误后加 --apply 写入
 node scripts/music-board/import-local-album-metadata.mjs "/Users/zon/Desktop/MINE/10_music/album" catalog.json --apply
+```
+
+如果本地目录里当前没有歌词文件，但这是一个 git 仓库，你还可以加 `--git-history` 去历史里捞一捞（兜底）：
+
+```bash
+node scripts/music-board/import-local-album-metadata.mjs "/Users/zon/Desktop/MINE/10_music/album" catalog.json --apply --git-history
 ```
 
 ## 维护数据（catalog.json）
