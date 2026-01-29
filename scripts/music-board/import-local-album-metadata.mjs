@@ -186,6 +186,54 @@ function titleFromLyricFilename(filePath) {
   return base.replace(/(?:[_\-\s]*歌词)\s*$/g, "").trim();
 }
 
+function titleFromMvFilename(filePath) {
+  const base = path.basename(filePath, path.extname(filePath));
+  return base.replace(/(?:[_\-\s]*mv)\s*$/gi, "").trim();
+}
+
+function isProbablyLyricsText(text) {
+  const t = (text ?? "").toString().replace(/^\uFEFF/, "").trim();
+  if (!t) return false;
+  if (t.length > 40000) return false;
+  if (t.includes("```")) return false;
+  if (/<html|<body|<script/i.test(t)) return false;
+
+  const lines = t
+    .split(/\r?\n/g)
+    .map((l) => l.trim())
+    .filter(Boolean);
+  if (lines.length < 6) return false;
+
+  const headings = lines.filter((l) => /^#{1,6}\s+/.test(l)).length;
+  if (headings / lines.length > 0.1) return false;
+
+  const kv = lines.filter((l) => /^[^\s]{1,20}\s*[:：]\s*\S+/.test(l)).length;
+  if (kv / lines.length > 0.3) return false;
+
+  const longLines = lines.filter((l) => l.length > 140).length;
+  if (longLines / lines.length > 0.2) return false;
+
+  const hasSection = lines.some((l) => /^\[[^\]]{1,20}\]$/i.test(l));
+  if (hasSection) return true;
+
+  const avgLen = lines.reduce((s, l) => s + l.length, 0) / lines.length;
+  return avgLen < 80;
+}
+
+function extractMvLyrics(text) {
+  const raw = (text ?? "").toString();
+  const title =
+    (raw.match(/\btitle\s*:\s*'([^']+)'/) || [])[1] ||
+    (raw.match(/\btitle\s*:\s*"([^"]+)"/) || [])[1] ||
+    "";
+  const lyricsRaw =
+    (raw.match(/\blyricsRaw\s*:\s*`([\s\S]*?)`/) || [])[1] ||
+    (raw.match(/\blyricsRaw\s*:\s*'([\s\S]*?)'/) || [])[1] ||
+    (raw.match(/\blyricsRaw\s*:\s*"([\s\S]*?)"/) || [])[1] ||
+    "";
+  return { title, lyricsRaw };
+}
+
 function mergeSetArray(existing, incoming) {
   const set = new Set(ensureArray(existing).filter(Boolean));
   for (const t of ensureArray(incoming)) if (t) set.add(t);
@@ -203,6 +251,13 @@ function guessAlbumFromPath(filePath) {
     if (/^\d{8}\s+/.test(seg)) return seg.replace(/^\d{8}\s+/, "").trim();
   }
   return "";
+}
+
+function isDistrokidSong(item) {
+  if (!item || (item.type || "") !== "song") return false;
+  const id = (item.id || "").toString();
+  if (id.startsWith("isrc-")) return true;
+  return ensureArray(item.tags).includes("distrokid");
 }
 
 async function ingestTracklist(tracklistPath, maps) {
@@ -341,6 +396,60 @@ async function main() {
         const albumKey = normalizeTitle(albumGuess);
         if (albumKey) maps.lyricByAlbumTitle.set(makeCompositeKey(albumKey, key), { text, source: f });
       } catch {}
+      continue;
+    }
+
+    const isPlainLyricsText = ext === ".txt" || ext === ".md";
+    if (isPlainLyricsText) {
+      const base = path.basename(f, ext).trim();
+      if (!base) continue;
+      if (name.includes("歌词")) continue;
+      if (name.toLowerCase() === "readme.md") continue;
+
+      let text = "";
+      try {
+        text = await readText(f);
+      } catch {
+        continue;
+      }
+      if (isLyricsNoise(text)) continue;
+      if (!isProbablyLyricsText(text)) continue;
+
+      const key = normalizeTitle(base);
+      if (!key) continue;
+      const prev = maps.lyricByTitle.get(key);
+      if (!prev || text.trim().length > prev.text.trim().length) maps.lyricByTitle.set(key, { text, source: f });
+
+      const albumGuess = guessAlbumFromPath(f);
+      const albumKey = normalizeTitle(albumGuess);
+      if (albumKey) maps.lyricByAlbumTitle.set(makeCompositeKey(albumKey, key), { text, source: f });
+      continue;
+    }
+
+    if (ext === ".js") {
+      if (!name.endsWith("_mv.js")) {
+        continue;
+      }
+      let text = "";
+      try {
+        text = await readText(f);
+      } catch {
+        continue;
+      }
+      const { title, lyricsRaw } = extractMvLyrics(text);
+      const pickedTitle = (title || titleFromMvFilename(f) || "").toString().trim();
+      const pickedLyrics = (lyricsRaw ?? "").toString();
+      if (!pickedTitle || !pickedLyrics.trim()) continue;
+      if (isLyricsNoise(pickedLyrics)) continue;
+
+      const key = normalizeTitle(pickedTitle);
+      if (!key) continue;
+      const prev = maps.lyricByTitle.get(key);
+      if (!prev || pickedLyrics.trim().length > prev.text.trim().length) maps.lyricByTitle.set(key, { text: pickedLyrics, source: f });
+
+      const albumGuess = guessAlbumFromPath(f);
+      const albumKey = normalizeTitle(albumGuess);
+      if (albumKey) maps.lyricByAlbumTitle.set(makeCompositeKey(albumKey, key), { text: pickedLyrics, source: f });
     }
   }
 
@@ -353,11 +462,13 @@ async function main() {
   );
 
   const titleCounts = new Map();
+  const distrokidTitleCounts = new Map();
   for (const it of items) {
     if ((it?.type || "") !== "song") continue;
     const tKey = normalizeTitle((it?.title || "").toString().trim());
     if (!tKey) continue;
     titleCounts.set(tKey, (titleCounts.get(tKey) || 0) + 1);
+    if (isDistrokidSong(it)) distrokidTitleCounts.set(tKey, (distrokidTitleCounts.get(tKey) || 0) + 1);
   }
 
   if (gitHistory && (await gitIsRepo(albumRoot))) {
@@ -451,7 +562,12 @@ async function main() {
       const lyricIsFallback = !lyricAlbum && !!lyricTitle;
       if (lyric) {
         if (lyricIsFallback && ambiguousTitle) {
-          skippedAmbiguous += 1;
+          const dkCount = distrokidTitleCounts.get(key) || 0;
+          if (dkCount > 1) {
+            skippedAmbiguous += 1;
+          } else {
+            touched = maybeSet(it, "lyrics", lyric.text, overwrite) || touched;
+          }
         } else {
           touched = maybeSet(it, "lyrics", lyric.text, overwrite) || touched;
         }
