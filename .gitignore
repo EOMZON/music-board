@@ -8,3 +8,5 @@ dist
 !.env.sample
 !.env.template
 
+# generated reports
+tools/missing-lyrics.json

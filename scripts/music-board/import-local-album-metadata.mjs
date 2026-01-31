@@ -41,6 +41,8 @@ function normalizeText(s) {
     .toString()
     .trim()
     .toLowerCase()
+    .replaceAll("♭", " ")
+    .replaceAll("♯", " ")
     .replaceAll("（", "(")
     .replaceAll("）", ")")
     .replaceAll("【", "[")
@@ -59,7 +61,8 @@ function normalizeTitle(s) {
     .replace(/(?:[_\-\s]*lrc)\s*$/gi, "");
   const noBrackets = noLyricsSuffix.replace(/[\[\]【】()（）{}<>《》]/g, " ");
   const noPunct = noBrackets.replace(/[·•!！?？,:：;；"'“”‘’`~@#$%^&*+=|\\/]/g, " ");
-  return noPunct.replace(/\s+/g, " ").trim();
+  const noChords = noPunct.replace(/\b(?:maj|min|dim|aug)\d{0,2}\b/gi, " ");
+  return noChords.replace(/\s+/g, " ").trim();
 }
 
 function isLyricsNoise(text) {
@@ -181,9 +184,19 @@ async function walk(rootDir) {
   return out;
 }
 
+function stripLyricTitleSuffix(title) {
+  let t = (title ?? "").toString().trim();
+  if (!t) return "";
+  t = t.replace(/\s*\(\d+\)\s*$/g, "").trim();
+  t = t.replace(/-vocal(?:[._-].*)?$/i, "").trim();
+  t = t.replace(/-iphone(?:[._-].*)?$/i, "").trim();
+  return t.trim();
+}
+
 function titleFromLyricFilename(filePath) {
   const base = path.basename(filePath, path.extname(filePath));
-  return base.replace(/(?:[_\-\s]*歌词)\s*$/g, "").trim();
+  const noSuffix = base.replace(/(?:[_\-\s]*歌词)\s*$/g, "").trim();
+  return stripLyricTitleSuffix(noSuffix);
 }
 
 function titleFromMvFilename(filePath) {
@@ -191,18 +204,21 @@ function titleFromMvFilename(filePath) {
   return base.replace(/(?:[_\-\s]*mv)\s*$/gi, "").trim();
 }
 
-function isProbablyLyricsText(text) {
+function isProbablyLyricsText(text, options = {}) {
   const t = (text ?? "").toString().replace(/^\uFEFF/, "").trim();
   if (!t) return false;
   if (t.length > 40000) return false;
   if (t.includes("```")) return false;
   if (/<html|<body|<script/i.test(t)) return false;
 
+  const hint = (options?.filenameHint ?? "").toString().toLowerCase();
+  const relaxed = /\b(vocal|lyrics|pure|asr)\b/i.test(hint) || hint.includes("歌词");
+
   const lines = t
     .split(/\r?\n/g)
     .map((l) => l.trim())
     .filter(Boolean);
-  if (lines.length < 6) return false;
+  if (lines.length < (relaxed ? 2 : 6)) return false;
 
   const headings = lines.filter((l) => /^#{1,6}\s+/.test(l)).length;
   if (headings / lines.length > 0.1) return false;
@@ -413,9 +429,9 @@ async function main() {
         continue;
       }
       if (isLyricsNoise(text)) continue;
-      if (!isProbablyLyricsText(text)) continue;
+      if (!isProbablyLyricsText(text, { filenameHint: name })) continue;
 
-      const key = normalizeTitle(base);
+      const key = normalizeTitle(stripLyricTitleSuffix(base));
       if (!key) continue;
       const prev = maps.lyricByTitle.get(key);
       if (!prev || text.trim().length > prev.text.trim().length) maps.lyricByTitle.set(key, { text, source: f });
