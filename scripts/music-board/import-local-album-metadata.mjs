@@ -190,6 +190,9 @@ function stripLyricTitleSuffix(title) {
   t = t.replace(/\s*\(\d+\)\s*$/g, "").trim();
   t = t.replace(/-vocal(?:[._-].*)?$/i, "").trim();
   t = t.replace(/-iphone(?:[._-].*)?$/i, "").trim();
+  t = t.replace(/[._-]formatted(?:[._-].*)?$/i, "").trim();
+  t = t.replace(/[._-]pure(?:[._-].*)?$/i, "").trim();
+  t = t.replace(/[._-]asr(?:[._-].*)?$/i, "").trim();
   return t.trim();
 }
 
