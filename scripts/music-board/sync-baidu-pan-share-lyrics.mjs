@@ -11,7 +11,7 @@
  *
  * Usage:
  *   node scripts/music-board/sync-baidu-pan-share-lyrics.mjs <catalog.json> \
- *     --share <url-or-key> --pwd <code> [--sekey <sekey>] [--apply] [--overwrite] [--concurrency 4]
+ *     --share <url-or-key> --pwd <code> [--sekey <sekey>] [--apply] [--overwrite] [--dump-files <path>] [--concurrency 4]
  */
 
 import fs from "node:fs/promises";
@@ -21,7 +21,7 @@ function usage(exitCode = 1) {
   console.error(
     [
       "Usage:",
-      "  node scripts/music-board/sync-baidu-pan-share-lyrics.mjs <catalog.json> --share <url-or-key> --pwd <code> [--sekey <sekey>] [--apply] [--overwrite] [--concurrency 4]",
+      "  node scripts/music-board/sync-baidu-pan-share-lyrics.mjs <catalog.json> --share <url-or-key> --pwd <code> [--sekey <sekey>] [--apply] [--overwrite] [--dump-files <path>] [--concurrency 4]",
       "",
       "Options:",
       "  --share <url-or-key>   Baidu Pan share URL or share key (e.g. 1xxxx...)",
@@ -29,6 +29,7 @@ function usage(exitCode = 1) {
       "  --sekey <sekey>        Optional decoded BDCLND/randsk (skip /share/verify when provided)",
       "  --apply                Write catalog.json (default: dry run)",
       "  --overwrite            Overwrite existing lyrics (default: only fill missing)",
+      "  --dump-files <path>    Write a JSON index of discovered lyric files (for debugging/mapping)",
       "  --concurrency <n>       Concurrent fetches (default: 4)"
     ].join("\n")
   );
@@ -248,6 +249,8 @@ function extLower(filename) {
   return path.extname((filename ?? "").toString()).toLowerCase();
 }
 
+const LYRIC_DOC_EXTS = new Set([".txt", ".lrc", ".md", ".doc", ".docx", ".pdf"]);
+
 function isDistrokidTracksCsv(filename) {
   const f = trim(filename).toLowerCase();
   return f === "distrokid_tracks.csv";
@@ -310,6 +313,30 @@ function parseCsv(text) {
   return rows;
 }
 
+function getAnyRowValue(row, keys) {
+  if (!row || typeof row !== "object") return "";
+  const wanted = ensureArray(keys)
+    .map((k) => (k ?? "").toString().trim())
+    .filter(Boolean);
+  for (const k of wanted) {
+    if (k in row) return row[k];
+  }
+  const lowered = new Map(Object.keys(row).map((k) => [k.toLowerCase().replace(/\s+/g, ""), k]));
+  for (const k of wanted) {
+    const normalized = k.toLowerCase().replace(/\s+/g, "");
+    const real = lowered.get(normalized);
+    if (real) return row[real];
+  }
+  // fallback: fuzzy contains
+  const rowKeys = Object.keys(row);
+  for (const k of wanted) {
+    const needle = k.toLowerCase().replace(/\s+/g, "");
+    const hit = rowKeys.find((rk) => rk.toLowerCase().replace(/\s+/g, "").includes(needle));
+    if (hit) return row[hit];
+  }
+  return "";
+}
+
 function coerceDocviewUrlToText(url) {
   try {
     const u = new URL(url);
@@ -331,6 +358,7 @@ async function main() {
   let sekeyInput = "";
   let apply = false;
   let overwrite = false;
+  let dumpFilesPath = "";
   let concurrency = 4;
 
   for (let i = 1; i < args.length; i += 1) {
@@ -356,6 +384,11 @@ async function main() {
     }
     if (a === "--overwrite") {
       overwrite = true;
+      continue;
+    }
+    if (a === "--dump-files" && args[i + 1]) {
+      dumpFilesPath = args[i + 1];
+      i += 1;
       continue;
     }
     if (a === "--concurrency" && args[i + 1]) {
@@ -402,6 +435,11 @@ async function main() {
   };
 
   let sekey = trim(sekeyInput);
+  if (sekey) {
+    try {
+      sekey = decodeURIComponent(sekey);
+    } catch {}
+  }
   let verifyErrno = null;
   if (!sekey) {
     const verifyUrl = `https://pan.baidu.com/share/verify?surl=${encodeURIComponent(surl)}&t=${Date.now()}&channel=chunlei&web=1&app_id=250528&bdstoken=&logid=&clienttype=0`;
@@ -431,6 +469,7 @@ async function main() {
   if (!sekey) throw new Error("Missing sekey (decoded BDCLND/randsk)");
 
   const allTextFiles = [];
+  const allCandidateLyricDocs = [];
   const allDistrokidTracksCsv = [];
   const dirQueue = [];
 
@@ -446,6 +485,7 @@ async function main() {
   for (const it of ensureArray(root?.list)) {
     if (Number(it?.isdir) === 1 && trim(it?.path)) dirQueue.push(trim(it.path));
     if (Number(it?.isdir) === 0 && extLower(it?.server_filename) === ".txt") allTextFiles.push(it);
+    if (Number(it?.isdir) === 0 && LYRIC_DOC_EXTS.has(extLower(it?.server_filename))) allCandidateLyricDocs.push(it);
     if (Number(it?.isdir) === 0 && isDistrokidTracksCsv(it?.server_filename)) allDistrokidTracksCsv.push(it);
   }
 
@@ -464,6 +504,7 @@ async function main() {
     for (const it of ensureArray(listing?.list)) {
       if (Number(it?.isdir) === 1 && trim(it?.path)) dirQueue.push(trim(it.path));
       if (Number(it?.isdir) === 0 && extLower(it?.server_filename) === ".txt") allTextFiles.push(it);
+      if (Number(it?.isdir) === 0 && LYRIC_DOC_EXTS.has(extLower(it?.server_filename))) allCandidateLyricDocs.push(it);
       if (Number(it?.isdir) === 0 && isDistrokidTracksCsv(it?.server_filename)) allDistrokidTracksCsv.push(it);
     }
   }
@@ -515,7 +556,7 @@ async function main() {
 
         const source = trim(file?.path) || filename;
         for (const row of rows) {
-          const isrc = trim(row?.isrc || row?.ISRC || "").toUpperCase();
+          const isrc = trim(getAnyRowValue(row, ["isrc", "ISRC", "ISRC Code", "ISRCCode", "isrc_code"])).toUpperCase();
           if (!isrc) continue;
           if (!isrcRows.has(isrc)) isrcRows.set(isrc, []);
           isrcRows.get(isrc).push({ ...row, __source: source });
@@ -531,7 +572,7 @@ async function main() {
   let skipped = 0;
 
   await Promise.all(
-    allTextFiles.map((file) =>
+    allCandidateLyricDocs.map((file) =>
       limit(async () => {
         const fsId = trim(file?.fs_id);
         const filename = trim(file?.server_filename);
@@ -628,9 +669,9 @@ async function main() {
 
     let picked = null;
     for (const row of rows) {
-      const fileStem = trim(row?.file_stem || row?.fileStem || "");
-      const fileName = trim(row?.file_name || row?.fileName || "");
-      const rowTitle = trim(row?.title || "");
+      const fileStem = trim(getAnyRowValue(row, ["file_stem", "fileStem", "file stem", "File stem", "File Stem"]));
+      const fileName = trim(getAnyRowValue(row, ["file_name", "fileName", "file name", "File name", "File Name", "filename", "Filename"]));
+      const rowTitle = trim(getAnyRowValue(row, ["title", "Title", "track title", "Track Title", "Track title", "track"]));
       const candidatesKeys = [
         normalizeTitle(stripLyricTitleSuffix(fileStem)),
         normalizeTitle(stripLyricTitleSuffix(path.basename(fileName, path.extname(fileName)))),
@@ -661,6 +702,7 @@ async function main() {
     parsedDistrokidTracksCsvRows: parsedCsvRows,
     mappedIsrcCount: isrcRows.size,
     scannedTxtFiles: allTextFiles.length,
+    scannedCandidateLyricDocs: allCandidateLyricDocs.length,
     fetchedTxtLyrics: fetched,
     skippedTxtFiles: skipped,
     catalogSongs: items.filter((it) => trim(it?.type) === "song").length,
@@ -673,6 +715,32 @@ async function main() {
 
   if (apply && updated > 0) {
     await fs.writeFile(catalogPath, JSON.stringify(catalog, null, 2) + "\n", "utf8");
+  }
+
+  if (dumpFilesPath) {
+    const out = {
+      generatedAt: new Date().toISOString(),
+      shareKey: shortUrl,
+      shareId,
+      shareUk,
+      files: allCandidateLyricDocs
+        .map((f) => {
+          const filename = trim(f?.server_filename);
+          const baseTitle = stripLyricTitleSuffix(path.basename(filename, path.extname(filename)));
+          const key = normalizeTitle(stripKnownAlbumPrefix(baseTitle));
+          return {
+            filename,
+            path: trim(f?.path) || filename,
+            key,
+            ext: extLower(filename),
+            size: Number.isFinite(Number(f?.size)) ? Number(f.size) : undefined,
+            fs_id: trim(f?.fs_id) || undefined
+          };
+        })
+        .filter((f) => f.filename)
+    };
+    await fs.writeFile(dumpFilesPath, JSON.stringify(out, null, 2) + "\n", "utf8");
+    summary.dumpFilesOut = path.relative(process.cwd(), path.resolve(dumpFilesPath)) || dumpFilesPath;
   }
 
   console.log(JSON.stringify(summary, null, 2));
