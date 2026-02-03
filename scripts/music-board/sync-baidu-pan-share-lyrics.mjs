@@ -11,7 +11,9 @@
  *
  * Usage:
  *   node scripts/music-board/sync-baidu-pan-share-lyrics.mjs <catalog.json> \
- *     --share <url-or-key> --pwd <code> [--sekey <sekey>] [--apply] [--overwrite] [--dump-files <path>] [--concurrency 4]
+ *     --share <url-or-key> --pwd <code> [--sekey <sekey>] [--apply] [--overwrite]
+ *     [--strip-prefixes <csv>] [--title-alias <from>=<to>] [--title-alias-file <path>]
+ *     [--dump-files <path>] [--concurrency 4]
  */
 
 import fs from "node:fs/promises";
@@ -21,7 +23,7 @@ function usage(exitCode = 1) {
   console.error(
     [
       "Usage:",
-      "  node scripts/music-board/sync-baidu-pan-share-lyrics.mjs <catalog.json> --share <url-or-key> --pwd <code> [--sekey <sekey>] [--apply] [--overwrite] [--dump-files <path>] [--concurrency 4]",
+      "  node scripts/music-board/sync-baidu-pan-share-lyrics.mjs <catalog.json> --share <url-or-key> --pwd <code> [--sekey <sekey>] [--apply] [--overwrite] [--strip-prefixes <csv>] [--title-alias <from>=<to>] [--title-alias-file <path>] [--dump-files <path>] [--concurrency 4]",
       "",
       "Options:",
       "  --share <url-or-key>   Baidu Pan share URL or share key (e.g. 1xxxx...)",
@@ -29,6 +31,9 @@ function usage(exitCode = 1) {
       "  --sekey <sekey>        Optional decoded BDCLND/randsk (skip /share/verify when provided)",
       "  --apply                Write catalog.json (default: dry run)",
       "  --overwrite            Overwrite existing lyrics (default: only fill missing)",
+      "  --strip-prefixes <csv> Additional title prefixes to strip from lyric filenames (e.g. 韩流,圣诞)",
+      "  --title-alias <a=b>    Map a lyric filename title to a catalog title (repeatable)",
+      "  --title-alias-file     JSON mapping file: {\"from\":\"to\"} or [{\"from\":\"...\",\"to\":\"...\"}]",
       "  --dump-files <path>    Write a JSON index of discovered lyric files (for debugging/mapping)",
       "  --concurrency <n>       Concurrent fetches (default: 4)"
     ].join("\n")
@@ -92,6 +97,54 @@ function isLyricsNoise(text) {
   const hit = hints.filter((h) => t.includes(h)).length;
   if (hit >= 3) return true;
   return false;
+}
+
+function parseCsvList(text) {
+  const raw = (text ?? "").toString().trim();
+  if (!raw) return [];
+  return raw
+    .split(",")
+    .map((x) => x.trim())
+    .filter(Boolean);
+}
+
+function parseAliasPair(text) {
+  const raw = (text ?? "").toString().trim();
+  if (!raw) return null;
+  const idx = raw.indexOf("=");
+  if (idx <= 0) return null;
+  const from = raw.slice(0, idx).trim();
+  const to = raw.slice(idx + 1).trim();
+  if (!from || !to) return null;
+  return { from, to };
+}
+
+async function loadAliasFile(filePath) {
+  const raw = await fs.readFile(filePath, "utf8");
+  const json = JSON.parse(raw);
+  if (Array.isArray(json)) {
+    return json
+      .map((x) => ({ from: trim(x?.from), to: trim(x?.to) }))
+      .filter((x) => x.from && x.to);
+  }
+  if (json && typeof json === "object") {
+    return Object.entries(json)
+      .map(([from, to]) => ({ from: trim(from), to: trim(to) }))
+      .filter((x) => x.from && x.to);
+  }
+  return [];
+}
+
+function canonicalizeKey(key, aliasMap) {
+  let k = trim(key);
+  if (!k || !aliasMap || aliasMap.size === 0) return k;
+  // guard against accidental loops / multi-hop chains
+  for (let i = 0; i < 6; i += 1) {
+    const next = aliasMap.get(k);
+    if (!next || next === k) return k;
+    k = next;
+  }
+  return k;
 }
 
 function createLimiter(limit) {
@@ -251,6 +304,16 @@ function extLower(filename) {
 
 const LYRIC_DOC_EXTS = new Set([".txt", ".lrc", ".md", ".doc", ".docx", ".pdf"]);
 
+function isMappingDocFilename(filename) {
+  const f = trim(filename).toLowerCase();
+  if (!f) return false;
+  if (f.includes("名称映射")) return true;
+  if (f.includes("映射表")) return true;
+  if (f.includes("source_map") || f.includes("sourcemap")) return true;
+  if (f.includes("name_map") || f.includes("namemap")) return true;
+  return false;
+}
+
 function isDistrokidTracksCsv(filename) {
   const f = trim(filename).toLowerCase();
   return f === "distrokid_tracks.csv";
@@ -313,6 +376,123 @@ function parseCsv(text) {
   return rows;
 }
 
+function parseTsv(text) {
+  const raw = stripBom(text);
+  const lines = raw.split(/\r?\n/g).filter((l) => l.trim() !== "");
+  if (!lines.length) return [];
+  const header = lines[0].split("\t").map((h) => h.trim());
+  const rows = [];
+  for (const line of lines.slice(1)) {
+    const cols = line.split("\t");
+    const row = {};
+    for (let i = 0; i < header.length; i += 1) {
+      const k = header[i];
+      if (!k) continue;
+      row[k] = cols[i] ?? "";
+    }
+    rows.push(row);
+  }
+  return rows;
+}
+
+function parseMarkdownTable(text) {
+  const lines = (text ?? "").toString().split(/\r?\n/g);
+  const tableLines = lines.map((l) => l.trim()).filter((l) => l.startsWith("|") && l.includes("|"));
+  if (tableLines.length < 2) return null;
+
+  const parseRow = (line) =>
+    line
+      .split("|")
+      .slice(1, -1)
+      .map((c) => c.trim());
+
+  const header = parseRow(tableLines[0]);
+  const sep = parseRow(tableLines[1]);
+  const isSep = sep.length && sep.every((c) => /^:?-{2,}:?$/.test(c));
+  const dataLines = isSep ? tableLines.slice(2) : tableLines.slice(1);
+
+  const rows = dataLines
+    .map(parseRow)
+    .filter((cells) => cells.some((c) => c && !/^:?-{2,}:?$/.test(c)));
+
+  return { header, rows };
+}
+
+function isJsonLike(text) {
+  const t = (text ?? "").toString().trim();
+  if (!t) return false;
+  return (t.startsWith("{") && t.endsWith("}")) || (t.startsWith("[") && t.endsWith("]"));
+}
+
+function addAlias(aliasMap, fromTitle, toTitle, { overwrite = false } = {}) {
+  const fromKey = normalizeTitle(fromTitle);
+  const toKey = normalizeTitle(toTitle);
+  if (!fromKey || !toKey || fromKey === toKey) return false;
+  if (!overwrite && aliasMap.has(fromKey)) return false;
+  aliasMap.set(fromKey, toKey);
+  return true;
+}
+
+function ingestTitleAliasesFromMarkdown(mdText, aliasMap) {
+  const table = parseMarkdownTable(mdText);
+  if (!table) return 0;
+
+  const header = table.header.map((h) => (h ?? "").toString().trim());
+  const findIdx = (pred) => header.findIndex((h) => pred(h));
+
+  const idxOldTitle = findIdx((h) => h.includes("原歌名") || h.includes("原曲名") || h === "原名");
+  const idxNewTitle = findIdx((h) => h.includes("新歌名") || h.includes("发布用") || h.includes("发布"));
+  if (idxOldTitle < 0 || idxNewTitle < 0) return 0;
+
+  let added = 0;
+  for (const cells of table.rows) {
+    const oldTitle = (cells[idxOldTitle] ?? "").toString().trim();
+    const newTitle = (cells[idxNewTitle] ?? "").toString().trim();
+    if (!oldTitle || !newTitle) continue;
+    if (addAlias(aliasMap, oldTitle, newTitle)) added += 1;
+  }
+  return added;
+}
+
+function ingestTitleAliasesFromRows(rows, aliasMap) {
+  let added = 0;
+  for (const row of ensureArray(rows)) {
+    const oldTitle = trim(
+      getAnyRowValue(row, [
+        "原歌名",
+        "原曲名",
+        "old_title",
+        "oldTitle",
+        "old title",
+        "original_title",
+        "originalTitle",
+        "original title"
+      ])
+    );
+    const newTitle = trim(
+      getAnyRowValue(row, [
+        "新歌名",
+        "发布歌名",
+        "new_title",
+        "newTitle",
+        "new title",
+        "publish_title",
+        "publishTitle",
+        "publish title"
+      ])
+    );
+    if (oldTitle && newTitle && addAlias(aliasMap, oldTitle, newTitle)) added += 1;
+
+    const mapTitle = trim(getAnyRowValue(row, ["title", "Title", "歌名", "曲名"]));
+    const mapSource = trim(getAnyRowValue(row, ["source", "Source", "lyrics", "lyric", "歌词", "歌词文件", "文件"]));
+    if (mapTitle && mapSource) {
+      const stem = stripLyricTitleSuffix(path.basename(mapSource, path.extname(mapSource)));
+      if (stem && addAlias(aliasMap, stem, mapTitle)) added += 1;
+    }
+  }
+  return added;
+}
+
 function getAnyRowValue(row, keys) {
   if (!row || typeof row !== "object") return "";
   const wanted = ensureArray(keys)
@@ -360,6 +540,9 @@ async function main() {
   let overwrite = false;
   let dumpFilesPath = "";
   let concurrency = 4;
+  let stripPrefixes = [];
+  const aliasPairs = [];
+  let aliasFilePath = "";
 
   for (let i = 1; i < args.length; i += 1) {
     const a = args[i];
@@ -375,6 +558,22 @@ async function main() {
     }
     if (a === "--sekey" && args[i + 1]) {
       sekeyInput = args[i + 1];
+      i += 1;
+      continue;
+    }
+    if (a === "--strip-prefixes" && args[i + 1]) {
+      stripPrefixes = parseCsvList(args[i + 1]);
+      i += 1;
+      continue;
+    }
+    if (a === "--title-alias" && args[i + 1]) {
+      const pair = parseAliasPair(args[i + 1]);
+      if (pair) aliasPairs.push(pair);
+      i += 1;
+      continue;
+    }
+    if (a === "--title-alias-file" && args[i + 1]) {
+      aliasFilePath = args[i + 1];
       i += 1;
       continue;
     }
@@ -404,6 +603,21 @@ async function main() {
     usage(1);
   }
 
+  const aliasMap = new Map();
+  if (aliasFilePath) {
+    const loaded = await loadAliasFile(aliasFilePath);
+    for (const p of loaded) {
+      const fromKey = normalizeTitle(p.from);
+      const toKey = normalizeTitle(p.to);
+      if (fromKey && toKey) aliasMap.set(fromKey, toKey);
+    }
+  }
+  for (const p of aliasPairs) {
+    const fromKey = normalizeTitle(p.from);
+    const toKey = normalizeTitle(p.to);
+    if (fromKey && toKey) aliasMap.set(fromKey, toKey);
+  }
+
   const shortUrl = shareKey;
   const surl = shortUrl.startsWith("1") ? shortUrl.slice(1) : shortUrl;
 
@@ -421,10 +635,13 @@ async function main() {
     .filter(Boolean)
     .sort((a, b) => b.length - a.length);
 
+  const extraPrefixes = stripPrefixes.map((x) => trim(x)).filter(Boolean);
+  const prefixCandidates = Array.from(new Set(albumTitlePrefixes.concat(extraPrefixes))).sort((a, b) => b.length - a.length);
+
   const stripKnownAlbumPrefix = (title) => {
     const t = trim(title);
     if (!t) return "";
-    for (const albumTitle of albumTitlePrefixes) {
+    for (const albumTitle of prefixCandidates) {
       if (!albumTitle) continue;
       if (t === albumTitle) continue;
       if (!t.startsWith(albumTitle)) continue;
@@ -470,6 +687,7 @@ async function main() {
 
   const allTextFiles = [];
   const allCandidateLyricDocs = [];
+  const allMappingDocs = [];
   const allDistrokidTracksCsv = [];
   const dirQueue = [];
 
@@ -484,9 +702,17 @@ async function main() {
   }
   for (const it of ensureArray(root?.list)) {
     if (Number(it?.isdir) === 1 && trim(it?.path)) dirQueue.push(trim(it.path));
-    if (Number(it?.isdir) === 0 && extLower(it?.server_filename) === ".txt") allTextFiles.push(it);
-    if (Number(it?.isdir) === 0 && LYRIC_DOC_EXTS.has(extLower(it?.server_filename))) allCandidateLyricDocs.push(it);
-    if (Number(it?.isdir) === 0 && isDistrokidTracksCsv(it?.server_filename)) allDistrokidTracksCsv.push(it);
+    if (Number(it?.isdir) === 0) {
+      const filename = trim(it?.server_filename);
+      if (isDistrokidTracksCsv(filename)) allDistrokidTracksCsv.push(it);
+      if (isMappingDocFilename(filename)) {
+        allMappingDocs.push(it);
+        continue;
+      }
+      const ext = extLower(filename);
+      if (ext === ".txt") allTextFiles.push(it);
+      if (LYRIC_DOC_EXTS.has(ext)) allCandidateLyricDocs.push(it);
+    }
   }
 
   while (dirQueue.length) {
@@ -503,9 +729,17 @@ async function main() {
     }
     for (const it of ensureArray(listing?.list)) {
       if (Number(it?.isdir) === 1 && trim(it?.path)) dirQueue.push(trim(it.path));
-      if (Number(it?.isdir) === 0 && extLower(it?.server_filename) === ".txt") allTextFiles.push(it);
-      if (Number(it?.isdir) === 0 && LYRIC_DOC_EXTS.has(extLower(it?.server_filename))) allCandidateLyricDocs.push(it);
-      if (Number(it?.isdir) === 0 && isDistrokidTracksCsv(it?.server_filename)) allDistrokidTracksCsv.push(it);
+      if (Number(it?.isdir) === 0) {
+        const filename = trim(it?.server_filename);
+        if (isDistrokidTracksCsv(filename)) allDistrokidTracksCsv.push(it);
+        if (isMappingDocFilename(filename)) {
+          allMappingDocs.push(it);
+          continue;
+        }
+        const ext = extLower(filename);
+        if (ext === ".txt") allTextFiles.push(it);
+        if (LYRIC_DOC_EXTS.has(ext)) allCandidateLyricDocs.push(it);
+      }
     }
   }
 
@@ -514,6 +748,77 @@ async function main() {
   let parsedCsvRows = 0;
 
   const limit = createLimiter(concurrency);
+
+  let mappingDocsFetched = 0;
+  let titleAliasesAuto = 0;
+
+  await Promise.all(
+    allMappingDocs.map((file) =>
+      limit(async () => {
+        const fsId = trim(file?.fs_id);
+        const filename = trim(file?.server_filename);
+        if (!fsId || !filename) return;
+
+        const metaUrl = `https://pan.baidu.com/share/list?is_from_web=1&sekey=${encodeURIComponent(sekey)}&uk=${encodeURIComponent(
+          shareUk
+        )}&shareid=${encodeURIComponent(shareId)}&web=1&newdocpreview=1&fid=${encodeURIComponent(fsId)}`;
+
+        let meta;
+        try {
+          meta = await fetchJson(metaUrl, jar);
+        } catch (e) {
+          console.warn(`[warn] mapping preview meta failed for ${filename}: ${e?.message || e}`);
+          return;
+        }
+        if (Number(meta?.errno) !== 0) {
+          console.warn(`[warn] mapping preview meta errno=${meta?.errno} for ${filename}: ${meta?.show_msg || ""}`.trim());
+          return;
+        }
+
+        const item = ensureArray(meta?.list)[0] || {};
+        const picdocpreview = trim(item?.picdocpreview);
+        if (!picdocpreview) return;
+
+        let text = "";
+        try {
+          text = await fetchText(coerceDocviewUrlToText(picdocpreview), null, { method: "GET" });
+        } catch (e) {
+          console.warn(`[warn] mapping preview fetch failed for ${filename}: ${e?.message || e}`);
+          return;
+        }
+
+        text = stripBom(text).trim();
+        if (!text) return;
+
+        mappingDocsFetched += 1;
+
+        const lower = filename.toLowerCase();
+        if (lower.endsWith(".md")) {
+          titleAliasesAuto += ingestTitleAliasesFromMarkdown(text, aliasMap);
+          return;
+        }
+        if (lower.endsWith(".tsv")) {
+          const rows = parseTsv(text);
+          titleAliasesAuto += ingestTitleAliasesFromRows(rows, aliasMap);
+          return;
+        }
+        if (lower.endsWith(".csv")) {
+          const rows = parseCsv(text);
+          titleAliasesAuto += ingestTitleAliasesFromRows(rows, aliasMap);
+          return;
+        }
+        if (lower.endsWith(".json") && isJsonLike(text)) {
+          try {
+            const json = JSON.parse(text);
+            const pairs = Array.isArray(json)
+              ? json.map((x) => ({ from: trim(x?.from), to: trim(x?.to) })).filter((x) => x.from && x.to)
+              : Object.entries(json).map(([from, to]) => ({ from: trim(from), to: trim(to) })).filter((x) => x.from && x.to);
+            for (const p of pairs) if (addAlias(aliasMap, p.from, p.to)) titleAliasesAuto += 1;
+          } catch {}
+        }
+      })
+    )
+  );
 
   await Promise.all(
     allDistrokidTracksCsv.map((file) =>
@@ -582,7 +887,7 @@ async function main() {
         }
 
         const baseTitle = stripLyricTitleSuffix(path.basename(filename, path.extname(filename)));
-        const key = normalizeTitle(stripKnownAlbumPrefix(baseTitle));
+        const key = canonicalizeKey(normalizeTitle(stripKnownAlbumPrefix(baseTitle)), aliasMap);
         if (!key) {
           skipped += 1;
           return;
@@ -654,7 +959,7 @@ async function main() {
     const missing = trim(it?.lyrics) === "";
     if (!overwrite && !missing) continue;
     candidates += 1;
-    const key = normalizeTitle(title);
+    const key = canonicalizeKey(normalizeTitle(title), aliasMap);
     const lyr = lyricsByKey.get(key);
     if (lyr?.text) {
       it.lyrics = lyr.text;
@@ -673,9 +978,9 @@ async function main() {
       const fileName = trim(getAnyRowValue(row, ["file_name", "fileName", "file name", "File name", "File Name", "filename", "Filename"]));
       const rowTitle = trim(getAnyRowValue(row, ["title", "Title", "track title", "Track Title", "Track title", "track"]));
       const candidatesKeys = [
-        normalizeTitle(stripLyricTitleSuffix(fileStem)),
-        normalizeTitle(stripLyricTitleSuffix(path.basename(fileName, path.extname(fileName)))),
-        normalizeTitle(stripLyricTitleSuffix(rowTitle))
+        canonicalizeKey(normalizeTitle(stripLyricTitleSuffix(fileStem)), aliasMap),
+        canonicalizeKey(normalizeTitle(stripLyricTitleSuffix(path.basename(fileName, path.extname(fileName)))), aliasMap),
+        canonicalizeKey(normalizeTitle(stripLyricTitleSuffix(rowTitle)), aliasMap)
       ].filter(Boolean);
 
       for (const k of candidatesKeys) {
@@ -697,6 +1002,11 @@ async function main() {
     shareId,
     shareUk,
     verifyErrno,
+    stripPrefixes: extraPrefixes,
+    titleAliases: aliasMap.size,
+    titleAliasesAuto,
+    mappingDocs: allMappingDocs.length,
+    mappingDocsFetched,
     scannedDistrokidTracksCsv: allDistrokidTracksCsv.length,
     fetchedDistrokidTracksCsv: fetchedCsv,
     parsedDistrokidTracksCsvRows: parsedCsvRows,
@@ -727,7 +1037,7 @@ async function main() {
         .map((f) => {
           const filename = trim(f?.server_filename);
           const baseTitle = stripLyricTitleSuffix(path.basename(filename, path.extname(filename)));
-          const key = normalizeTitle(stripKnownAlbumPrefix(baseTitle));
+          const key = canonicalizeKey(normalizeTitle(stripKnownAlbumPrefix(baseTitle)), aliasMap);
           return {
             filename,
             path: trim(f?.path) || filename,

@@ -415,7 +415,7 @@ function matchQueryTrack(t, q) {
     t.title, t.artist, t.releaseDate,
     t.mood || "",
     Array.isArray(t.styleTags) ? t.styleTags.join(" ") : "",
-    t.inspiration && typeof t.inspiration === "object" ? Object.values(t.inspiration).join(" ") : "",
+    t.inspiration && typeof t.inspiration === "object" ? Object.entries(t.inspiration).map(([k, v]) => `${k} ${v}`).join(" ") : "",
     (t.tags || []).join(" "),
     (t.links || []).map(l => `${platformLabel(l.platform)} ${l.url}`).join(" ")
   ].join(" ");
@@ -472,12 +472,15 @@ function renderCollectionDetail(collection, tracks, q) {
   const list = filtered.map((t, idx) => {
     const meta = [t.artist || "", t.releaseDate || ""].filter(Boolean).join(" · ");
     const icons = renderPlatformIcons(t.links || [], 6);
+    const badges = trackBadgesForList(t, collection, 6);
+    const badgesHtml = badges.length ? `<div class="badges inline">${renderBadges(badges, 6)}</div>` : "";
     return `
       <li class="track">
         <div class="idx">${String(idx + 1).padStart(2, "0")}</div>
         <div class="tmeta">
           <div class="title">${escapeHtml(t.title)}</div>
           <div class="sub">${escapeHtml(meta)}</div>
+          ${badgesHtml}
         </div>
         <div class="dock">${icons}</div>
         <button class="btn primary" type="button" data-play="${escapeHtml(t.id)}">Play</button>
@@ -504,12 +507,15 @@ function renderTracksFlat(tracks, collectionsById, q) {
     const col = collectionsById.get(t.collectionId || "");
     const meta = [t.artist || "", col?.title ? `in ${col.title}` : "", t.releaseDate || ""].filter(Boolean).join(" · ");
     const icons = renderPlatformIcons(t.links || [], 6);
+    const badges = trackBadgesForList(t, col, 6);
+    const badgesHtml = badges.length ? `<div class="badges inline">${renderBadges(badges, 6)}</div>` : "";
     return `
       <li class="track">
         <div class="idx">${String(idx + 1).padStart(2, "0")}</div>
         <div class="tmeta">
           <div class="title">${escapeHtml(t.title)}</div>
           <div class="sub">${escapeHtml(meta)}</div>
+          ${badgesHtml}
         </div>
         <div class="dock">${icons}</div>
         <button class="btn primary" type="button" data-play="${escapeHtml(t.id)}">Play</button>
@@ -570,6 +576,87 @@ function renderBadges(tags, limit = 14) {
   return badges + `<span class="badge">+${hidden.length}</span>`;
 }
 
+function shortenBadgeValue(value, maxLen = 26) {
+  const s = (value ?? "").toString().replace(/\s+/g, " ").trim();
+  if (!s) return "";
+  const cleaned = s
+    .replace(/\*\*/g, "")
+    .replace(/__+/g, "")
+    .replace(/`+/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!cleaned) return "";
+  if (/^[\)\]】）]+$/.test(cleaned)) return "";
+  if (cleaned.length <= maxLen) return cleaned;
+  return cleaned.slice(0, Math.max(1, maxLen - 1)).trimEnd() + "…";
+}
+
+function inspirationToBadges(inspiration, limit = 8) {
+  if (!inspiration || typeof inspiration !== "object") return [];
+  const priority = [
+    "调性",
+    "key",
+    "速度",
+    "bpm",
+    "拍号",
+    "meter",
+    "节奏",
+    "groove",
+    "配器",
+    "instrument",
+    "演唱",
+    "vocal"
+  ];
+  const priorityIndex = new Map(priority.map((k, i) => [normalizeText(k), i]));
+
+  const entries = Object.entries(inspiration)
+    .map(([k, v]) => [String(k || "").trim(), String(v == null ? "" : v).trim()])
+    .map(([k, v]) => [k, shortenBadgeValue(v)])
+    .filter(([k, v]) => k && v)
+    .sort(([ka], [kb]) => {
+      const pa = priorityIndex.get(normalizeText(ka)) ?? 999;
+      const pb = priorityIndex.get(normalizeText(kb)) ?? 999;
+      if (pa !== pb) return pa - pb;
+      return ka.localeCompare(kb, "zh");
+    })
+    .map(([k, v]) => `${k}:${v}`);
+
+  return entries.slice(0, limit);
+}
+
+function trackBadgesForList(track, collection, limit = 6) {
+  const out = [];
+  const seen = new Set();
+  const push = (t) => {
+    const raw = (t ?? "").toString().trim();
+    if (!raw) return;
+    const key = normalizeText(raw);
+    if (!key || seen.has(key)) return;
+    seen.add(key);
+    out.push(raw);
+  };
+
+  for (const t of Array.isArray(track?.styleTags) ? track.styleTags : []) push(t);
+
+  const mood = (track?.mood ?? "").toString().trim();
+  if (mood) push(`Mood:${mood}`);
+
+  for (const t of inspirationToBadges(track?.inspiration, limit)) push(t);
+
+  const colTitle = (collection?.title ?? "").toString().trim();
+  const generic = new Set(["distrokid", "netease", "song", "album", "collection", "playlist"]);
+  for (const t of Array.isArray(track?.tags) ? track.tags : []) {
+    const raw = (t ?? "").toString().trim();
+    if (!raw) continue;
+    const k = normalizeText(raw);
+    if (generic.has(k)) continue;
+    if (colTitle && raw === colTitle) continue;
+    push(raw);
+  }
+
+  return out.slice(0, limit);
+}
+
 function renderKv(entries) {
   const rows = (Array.isArray(entries) ? entries : [])
     .map(([k, v]) => [String(k || "").trim(), v == null ? "" : String(v).trim()])
@@ -610,6 +697,7 @@ function renderTrackDetail(track, collection) {
   const styleTags = Array.isArray(track?.styleTags) ? track.styleTags.filter(Boolean) : [];
   const tags = Array.isArray(track?.tags) ? track.tags.filter(Boolean) : [];
   const inspiration = track?.inspiration && typeof track.inspiration === "object" ? track.inspiration : null;
+  const inspirationBadges = inspirationToBadges(inspiration, 18);
 
   const kv = [];
   if (collection?.title) kv.push(["Album", collection.title]);
@@ -627,6 +715,7 @@ function renderTrackDetail(track, collection) {
 
   const badgeBlocks = [
     styleTags.length ? `<div class="badges" style="margin-top:10px;">${renderBadges(styleTags, 18)}</div>` : "",
+    inspirationBadges.length ? `<div class="badges" style="margin-top:10px;">${renderBadges(inspirationBadges, 18)}</div>` : "",
     tags.length ? `<div class="badges" style="margin-top:10px;">${renderBadges(tags, 18)}</div>` : ""
   ].filter(Boolean).join("");
 

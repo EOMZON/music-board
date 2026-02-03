@@ -8,7 +8,7 @@
  * Matches by normalized song title (conservative, offline, no network).
  *
  * Usage:
- *   node scripts/music-board/import-local-album-metadata.mjs <albumRoot> <catalog.json> [--apply] [--overwrite] [--git-history]
+ *   node scripts/music-board/import-local-album-metadata.mjs <albumRoot> <catalog.json> [--apply] [--overwrite] [--git-history] [--treat-lyrics-placeholder-as-missing <text>]
  *
  * Default is DRY RUN (no writes). Add --apply to write catalog.json.
  */
@@ -21,12 +21,13 @@ function usage(exitCode = 1) {
   console.error(
     [
       "Usage:",
-      "  node scripts/music-board/import-local-album-metadata.mjs <albumRoot> <catalog.json> [--apply] [--overwrite] [--git-history]",
+      "  node scripts/music-board/import-local-album-metadata.mjs <albumRoot> <catalog.json> [--apply] [--overwrite] [--git-history] [--treat-lyrics-placeholder-as-missing <text>]",
       "",
       "Options:",
       "  --apply        Write changes (default: dry run)",
       "  --overwrite    Overwrite existing fields (default: only fill missing)",
-      "  --git-history  Also scan git history for lyric files (fallback when current working tree has none)"
+      "  --git-history  Also scan git history for lyric files (fallback when current working tree has none)",
+      "  --treat-lyrics-placeholder-as-missing <text>  Treat this lyrics string as missing (repeatable). Useful for replacing placeholders like 纯音乐（无歌词）"
     ].join("\n")
   );
   process.exit(exitCode);
@@ -338,6 +339,147 @@ async function ingestTracklist(tracklistPath, maps) {
   }
 }
 
+function parseTsv(text) {
+  const raw = (text ?? "").toString().replace(/^\uFEFF/, "");
+  const lines = raw.split(/\r?\n/g).filter((l) => l.trim() !== "");
+  if (lines.length === 0) return { header: [], rows: [] };
+  const header = lines[0].split("\t").map((x) => x.trim());
+  const rows = lines.slice(1).map((line) => line.split("\t"));
+  return { header, rows };
+}
+
+async function ingestSourceMapTsv(tsvPath, maps) {
+  const dir = path.dirname(tsvPath);
+  let text = "";
+  try {
+    text = await readText(tsvPath);
+  } catch {
+    return;
+  }
+  const { header, rows } = parseTsv(text);
+  const idxTitle = header.findIndex((h) => normalizeText(h) === "title");
+  const idxSource = header.findIndex((h) => normalizeText(h) === "source");
+  if (idxTitle < 0 || idxSource < 0) return;
+
+  const albumGuess = guessAlbumFromPath(tsvPath);
+  const albumKey = normalizeTitle(albumGuess);
+
+  for (const cols of rows) {
+    const title = (cols[idxTitle] ?? "").toString().trim();
+    const sourceRel = (cols[idxSource] ?? "").toString().trim();
+    if (!title || !sourceRel) continue;
+
+    const sourcePath = path.resolve(dir, sourceRel);
+    let lyricText = "";
+    try {
+      lyricText = await readText(sourcePath);
+    } catch {
+      continue;
+    }
+    if (isLyricsNoise(lyricText)) continue;
+
+    const key = normalizeTitle(title);
+    if (!key) continue;
+    const prev = maps.lyricByTitle.get(key);
+    if (!prev || lyricText.trim().length > prev.text.trim().length) maps.lyricByTitle.set(key, { text: lyricText, source: sourcePath });
+    if (albumKey) maps.lyricByAlbumTitle.set(makeCompositeKey(albumKey, key), { text: lyricText, source: sourcePath });
+  }
+}
+
+function parseMarkdownTable(text) {
+  const lines = (text ?? "").toString().split(/\r?\n/g);
+  const tableLines = lines.map((l) => l.trim()).filter((l) => l.startsWith("|") && l.includes("|"));
+  if (tableLines.length < 2) return null;
+
+  const parseRow = (line) =>
+    line
+      .split("|")
+      .slice(1, -1)
+      .map((c) => c.trim());
+
+  const header = parseRow(tableLines[0]);
+  const sep = parseRow(tableLines[1]);
+  const isSep = sep.length && sep.every((c) => /^:?-{2,}:?$/.test(c));
+  const dataLines = isSep ? tableLines.slice(2) : tableLines.slice(1);
+
+  const rows = dataLines
+    .map(parseRow)
+    .filter((cells) => cells.some((c) => c && !/^:?-{2,}:?$/.test(c)));
+
+  return { header, rows };
+}
+
+async function ingestNameMappingReadme(mdPath, maps) {
+  const dir = path.dirname(mdPath);
+  let text = "";
+  try {
+    text = await readText(mdPath);
+  } catch {
+    return;
+  }
+  const table = parseMarkdownTable(text);
+  if (!table) return;
+
+  const header = table.header.map((h) => h.toString().trim());
+  const findIdx = (pred) => header.findIndex((h) => pred((h ?? "").toString().trim()));
+
+  const idxOldTitle = findIdx((h) => h.includes("原歌名") || h.includes("原曲名") || h === "原名");
+  const idxNewTitle = findIdx((h) => h.includes("新歌名") || h.includes("发布用"));
+  const idxOldLyric = findIdx((h) => h.includes("原歌词"));
+  const idxNewLyric = findIdx((h) => h.includes("新歌词"));
+
+  if (idxNewTitle < 0 && idxOldTitle < 0) return;
+  if (idxOldLyric < 0 && idxNewLyric < 0) return;
+
+  const albumGuess = guessAlbumFromPath(mdPath);
+  const albumKey = normalizeTitle(albumGuess);
+
+  const allowedExts = new Set([".txt", ".lrc", ".md"]);
+
+  for (const cells of table.rows) {
+    const oldTitle = (cells[idxOldTitle] ?? "").toString().trim();
+    const newTitle = (cells[idxNewTitle] ?? "").toString().trim() || oldTitle;
+    const oldLyricRel = (cells[idxOldLyric] ?? "").toString().trim();
+    const newLyricRel = (cells[idxNewLyric] ?? "").toString().trim();
+    if (!newTitle) continue;
+
+    const candidates = [newLyricRel, oldLyricRel].filter(Boolean);
+    let sourcePath = "";
+    for (const rel of candidates) {
+      const ext = path.extname(rel).toLowerCase();
+      if (ext && !allowedExts.has(ext)) continue;
+      const abs = path.resolve(dir, rel);
+      try {
+        await fs.stat(abs);
+        sourcePath = abs;
+        break;
+      } catch {}
+    }
+    if (!sourcePath) continue;
+
+    let lyricText = "";
+    try {
+      lyricText = await readText(sourcePath);
+    } catch {
+      continue;
+    }
+    if (isLyricsNoise(lyricText)) continue;
+
+    const newKey = normalizeTitle(newTitle);
+    const oldKey = normalizeTitle(oldTitle);
+    if (newKey) {
+      const prev = maps.lyricByTitle.get(newKey);
+      if (!prev || lyricText.trim().length > prev.text.trim().length) maps.lyricByTitle.set(newKey, { text: lyricText, source: sourcePath });
+      if (albumKey) maps.lyricByAlbumTitle.set(makeCompositeKey(albumKey, newKey), { text: lyricText, source: sourcePath });
+    }
+    if (oldKey && oldKey !== newKey) {
+      const prev = maps.lyricByTitle.get(oldKey);
+      if (!prev || lyricText.trim().length > prev.text.trim().length) maps.lyricByTitle.set(oldKey, { text: lyricText, source: sourcePath });
+      if (albumKey) maps.lyricByAlbumTitle.set(makeCompositeKey(albumKey, oldKey), { text: lyricText, source: sourcePath });
+    }
+  }
+}
+
 async function main() {
   const args = process.argv.slice(2);
   if (args.length < 2 || args.includes("--help") || args.includes("-h")) usage(0);
@@ -348,11 +490,17 @@ async function main() {
   let apply = false;
   let overwrite = false;
   let gitHistory = false;
+  const lyricsPlaceholders = new Set();
   for (let i = 2; i < args.length; i += 1) {
     const a = args[i];
     if (a === "--apply") apply = true;
     else if (a === "--overwrite") overwrite = true;
     else if (a === "--git-history") gitHistory = true;
+    else if (a === "--treat-lyrics-placeholder-as-missing" && args[i + 1]) {
+      const v = (args[i + 1] ?? "").toString().trim();
+      if (v) lyricsPlaceholders.add(v);
+      i += 1;
+    }
   }
 
   const maps = {
@@ -369,6 +517,20 @@ async function main() {
   for (const f of files) {
     const name = path.basename(f);
     const ext = path.extname(name).toLowerCase();
+
+    if (name === "_source_map.tsv") {
+      try {
+        await ingestSourceMapTsv(f, maps);
+      } catch {}
+      continue;
+    }
+
+    if (ext === ".md" && name.includes("名称映射")) {
+      try {
+        await ingestNameMappingReadme(f, maps);
+      } catch {}
+      continue;
+    }
 
     if (name === "tracklist.json") {
       try {
@@ -498,7 +660,8 @@ async function main() {
       const title = (it?.title || "").toString().trim();
       const key = normalizeTitle(title);
       if (!key) continue;
-      const lyricsMissing = overwrite || (it?.lyrics ?? "").toString().trim() === "";
+      const existingLyrics = (it?.lyrics ?? "").toString().trim();
+      const lyricsMissing = overwrite || existingLyrics === "" || lyricsPlaceholders.has(existingLyrics);
       if (!lyricsMissing) continue;
 
       const collectionTitle = collectionsById.get(it.collectionId || "") || "";
@@ -516,7 +679,17 @@ async function main() {
     if (wantTitleKeys.size || wantCompositeKeys.size) {
       let lines = [];
       try {
-        lines = await runGitLines(albumRoot, ["log", "--all", "--name-only", "--pretty=format:%H", "--diff-filter=AMCR"]);
+        lines = await runGitLines(albumRoot, [
+          "-c",
+          "core.quotepath=false",
+          "log",
+          "--all",
+          "--name-only",
+          "--pretty=format:%H",
+          "--diff-filter=AMCR",
+          "--",
+          "."
+        ]);
       } catch {
         lines = [];
       }
@@ -525,11 +698,11 @@ async function main() {
       for (const [relPath, commitHash] of headByPath) {
         const name = path.basename(relPath);
         const ext = path.extname(name).toLowerCase();
-        const isLyrics =
-          ext === ".lrc" ||
-          (ext === ".txt" && name.includes("歌词")) ||
-          (ext === ".txt" && /_歌词\.txt$/i.test(name));
-        if (!isLyrics) continue;
+        const isLrc = ext === ".lrc";
+        const isTxt = ext === ".txt";
+        const isMd = ext === ".md";
+        if (!isLrc && !isTxt && !isMd) continue;
+        if (isMd && name.toLowerCase() === "readme.md") continue;
 
         const absLike = path.resolve(albumRoot, relPath);
         const title = titleFromLyricFilename(relPath);
@@ -550,6 +723,7 @@ async function main() {
           continue;
         }
         if (!text || isLyricsNoise(text)) continue;
+        if ((isTxt || isMd) && !isProbablyLyricsText(text, { filenameHint: name })) continue;
 
         if (wantsComposite && compositeKey) maps.lyricByAlbumTitle.set(compositeKey, { text, source: `${albumRoot}@${commitHash}:${relPath}` });
         if (wantsTitle) maps.lyricByTitle.set(key, { text, source: `${albumRoot}@${commitHash}:${relPath}` });
@@ -580,15 +754,16 @@ async function main() {
       const lyric = lyricAlbum || lyricTitle;
       const lyricIsFallback = !lyricAlbum && !!lyricTitle;
       if (lyric) {
+        const overwriteLyrics = overwrite || lyricsPlaceholders.has((it?.lyrics ?? "").toString().trim());
         if (lyricIsFallback && ambiguousTitle) {
           const dkCount = distrokidTitleCounts.get(key) || 0;
           if (dkCount > 1) {
             skippedAmbiguous += 1;
           } else {
-            touched = maybeSet(it, "lyrics", lyric.text, overwrite) || touched;
+            touched = maybeSet(it, "lyrics", lyric.text, overwriteLyrics) || touched;
           }
         } else {
-          touched = maybeSet(it, "lyrics", lyric.text, overwrite) || touched;
+          touched = maybeSet(it, "lyrics", lyric.text, overwriteLyrics) || touched;
         }
       }
 
@@ -623,7 +798,8 @@ async function main() {
 
           const lyricsFromMeta = (meta?.lyrics ?? "").toString();
           if (lyricsFromMeta && !isLyricsNoise(lyricsFromMeta)) {
-            touched = maybeSet(it, "lyrics", lyricsFromMeta, overwrite) || touched;
+            const overwriteLyrics = overwrite || lyricsPlaceholders.has((it?.lyrics ?? "").toString().trim());
+            touched = maybeSet(it, "lyrics", lyricsFromMeta, overwriteLyrics) || touched;
           }
         }
       }

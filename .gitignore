@@ -11,3 +11,4 @@ dist
 # generated reports
 tools/missing-lyrics.json
 tools/baidu-share-files.json
+tools/baidu-share-files-*.json

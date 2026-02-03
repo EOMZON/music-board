@@ -106,6 +106,24 @@ node scripts/music-board/import-local-album-metadata.mjs "/Users/zon/Desktop/MIN
 node scripts/music-board/import-local-album-metadata.mjs "/Users/zon/Desktop/MINE/10_music/album" catalog.json --apply --git-history
 ```
 
+如果你之前把缺失歌词填成了占位（例如 `纯音乐（无歌词）`），后续又找到了真实歌词，可以用下面的参数只把“占位歌词”当作缺失来覆盖：
+
+```bash
+node scripts/music-board/import-local-album-metadata.mjs "/Users/zon/Desktop/MINE/10_music/album" catalog.json --apply --git-history \
+  --treat-lyrics-placeholder-as-missing "纯音乐（无歌词）"
+```
+
+## 给缺失歌词填占位（可选）
+
+当某些曲目确实是“纯音乐/暂无歌词”，但你又不希望页面显示“暂无歌词”，可以批量把空歌词填成统一占位：
+
+```bash
+# 默认 dry run；确认无误后加 --apply 写入
+node scripts/music-board/fill-missing-lyrics-placeholder.mjs catalog.json \
+  --collection-id <albumId> \
+  --placeholder "纯音乐（无歌词）" --apply
+```
+
 ## 维护数据（catalog.json）
 
 目前页面读取 `items[]`（兼容旧格式），建议：
