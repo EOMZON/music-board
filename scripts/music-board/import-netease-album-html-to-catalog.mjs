@@ -75,18 +75,56 @@ function mergeEmbeds(existing, incoming) {
   return out;
 }
 
-function parseAlbum(html) {
+function parseDateFromBasename(base) {
+  const m = (base || "").match(/^(\d{4})(\d{2})(\d{2})/);
+  if (!m) return "";
+  return `${m[1]}-${m[2]}-${m[3]}`;
+}
+
+function parseTitleFromBasename(base) {
+  const raw = (base || "").toString();
+  if (!raw) return "";
+  // common naming: "20250203 旧梦" / "2025-02-03 旧梦"
+  const cleaned = raw
+    .replace(/^\d{8}[\s_-]*/g, "")
+    .replace(/^\d{4}-\d{2}-\d{2}[\s_-]*/g, "")
+    .trim();
+  return cleaned;
+}
+
+function parseAlbum(html, sourcePath = "") {
+  const base = sourcePath ? path.basename(sourcePath, path.extname(sourcePath)) : "";
   const albumId =
     pickFirstMatch(/data-rid="(\d+)"\s+data-type="19"/, html) ||
     pickFirstMatch(/href="\/album\?id=(\d+)"/, html) ||
+    pickFirstMatch(/data-key="track_album-(\d+)"/, html) ||
+    pickFirstMatch(/track_album-(\d+)/, html) ||
+    pickFirstMatch(/data-res-from="19"[^>]*data-res-data="(\d+)"/, html) ||
     "";
 
   if (!albumId) return null;
 
-  const title = stripTags(pickFirstMatch(/<h2 class="f-ff2">([\s\S]*?)<\/h2>/, html));
-  const artist = stripTags(pickFirstMatch(/<p class="intr"><b>歌手：<\/b>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/, html));
-  const releaseDate = stripTags(pickFirstMatch(/<p class="intr"><b>发行时间：<\/b>([\s\S]*?)<\/p>/, html));
-  const cover = pickFirstMatch(/<div class="cover[^"]*">[\s\S]*?<img[^>]*src="([^"]+)"/, html);
+  const title =
+    stripTags(pickFirstMatch(/<h2 class="f-ff2">([\s\S]*?)<\/h2>/, html)) ||
+    stripTags(pickFirstMatch(/<meta[^>]*property="og:title"[^>]*content="([^"]+)"/i, html)) ||
+    stripTags(pickFirstMatch(/<title>([\s\S]*?)<\/title>/i, html)) ||
+    parseTitleFromBasename(base) ||
+    "";
+
+  const artist =
+    stripTags(pickFirstMatch(/<p class="intr"><b>歌手：<\/b>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/, html)) ||
+    stripTags(pickFirstMatch(/data-res-author="([^"]+)"/, html)) ||
+    stripTags(pickFirstMatch(/<div class="text"[^>]*title="([^"]+)"/, html)) ||
+    "";
+
+  const releaseDate =
+    stripTags(pickFirstMatch(/<p class="intr"><b>发行时间：<\/b>([\s\S]*?)<\/p>/, html)) || parseDateFromBasename(base) || "";
+
+  const cover =
+    pickFirstMatch(/<div class="cover[^"]*">[\s\S]*?<img[^>]*src="([^"]+)"/, html) ||
+    pickFirstMatch(/data-res-pic="([^"]+)"/, html) ||
+    pickFirstMatch(/<meta[^>]*property="og:image"[^>]*content="([^"]+)"/i, html) ||
+    "";
 
   const albumUrl = `https://music.163.com/#/album?id=${albumId}`;
   const albumItem = {
@@ -199,7 +237,7 @@ async function main() {
 
   for (const htmlPath of htmlPaths) {
     const html = await fs.readFile(htmlPath, "utf8");
-    const parsed = parseAlbum(html);
+    const parsed = parseAlbum(html, htmlPath);
     if (!parsed) {
       skipped.push(path.resolve(htmlPath));
       continue;
@@ -236,4 +274,3 @@ main().catch((err) => {
   console.error(err);
   process.exit(1);
 });
-
