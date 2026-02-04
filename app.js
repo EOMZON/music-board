@@ -769,6 +769,22 @@ async function main() {
   if (profileTaglineEl) profileTaglineEl.textContent = profile?.tagline || "";
   document.title = profile?.name ? `${profile.name} · Music` : "Music";
 
+  const brandHome = document.getElementById("brand-home");
+  const brandHomeSr = document.getElementById("brand-home-sr");
+  const brandLabel = profile?.name ? `${profile.name} · Home` : "Music · Home";
+  if (brandHome) brandHome.setAttribute("aria-label", brandLabel);
+  if (brandHomeSr) brandHomeSr.textContent = brandLabel;
+
+  const buildInfoEl = document.getElementById("build-info");
+  if (buildInfoEl) {
+    const lastModified = res.headers.get("last-modified");
+    const etag = res.headers.get("etag");
+    const bits = [];
+    if (lastModified) bits.push(`Updated ${lastModified}`);
+    if (etag) bits.push(`ETag ${etag}`);
+    buildInfoEl.textContent = bits.join(" · ");
+  }
+
   const profileIcons = document.getElementById("profile-icons");
   const pLinks = Array.isArray(profile?.platforms) ? profile.platforms : [];
   profileIcons.innerHTML = pLinks.map(platformDockIcon).join("");
