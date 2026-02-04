@@ -12,7 +12,7 @@
  * - NetEase outchain embed URL in `embeds[]`
  *
  * Usage:
- *   node scripts/music-board/sync-netease-lyrics-api.mjs <catalog.json> [--apply] [--overwrite] [--limit N] [--concurrency N]
+ *   node scripts/music-board/sync-netease-lyrics-api.mjs <catalog.json> [--apply] [--overwrite] [--collection-id <id> ...] [--limit N] [--concurrency N]
  *
  * Notes:
  * - Default is DRY RUN (no writes). Add --apply to write catalog.json.
@@ -25,11 +25,12 @@ function usage(exitCode = 1) {
   console.error(
     [
       "Usage:",
-      "  node scripts/music-board/sync-netease-lyrics-api.mjs <catalog.json> [--apply] [--overwrite] [--limit N] [--concurrency N]",
+      "  node scripts/music-board/sync-netease-lyrics-api.mjs <catalog.json> [--apply] [--overwrite] [--collection-id <id> ...] [--limit N] [--concurrency N]",
       "",
       "Options:",
       "  --apply            Write changes (default: dry run)",
       "  --overwrite        Overwrite existing lyrics (default: only fill missing)",
+      "  --collection-id    Only process songs with collectionId=<id> (repeatable)",
       "  --limit N          Only process first N matched songs",
       "  --concurrency N    Parallel fetches (default: 3, max: 8)"
     ].join("\n")
@@ -159,11 +160,16 @@ async function main() {
   let overwrite = false;
   let limit = Infinity;
   let concurrency = 3;
+  const collectionIds = [];
 
   for (let i = 1; i < args.length; i += 1) {
     const a = args[i];
     if (a === "--apply") apply = true;
     else if (a === "--overwrite") overwrite = true;
+    else if (a === "--collection-id" && args[i + 1]) {
+      collectionIds.push(args[i + 1]);
+      i += 1;
+    }
     else if (a === "--limit" && args[i + 1]) {
       const n = Number(args[i + 1]);
       if (Number.isFinite(n) && n > 0) limit = Math.floor(n);
@@ -179,8 +185,14 @@ async function main() {
   const items = ensureArray(catalog?.items);
   const songs = items.filter((it) => (it?.type || "") === "song");
 
+  const collectionIdSet = new Set(collectionIds.map((x) => (x ?? "").toString()).filter(Boolean));
+
   const targets = [];
   for (const it of songs) {
+    if (collectionIdSet.size > 0) {
+      const cid = (it?.collectionId ?? "").toString();
+      if (!collectionIdSet.has(cid)) continue;
+    }
     const songId = parseNeteaseSongId(it);
     if (!songId) continue;
     const hasLyrics = (it?.lyrics ?? "").toString().trim() !== "";
@@ -232,6 +244,7 @@ async function main() {
         overwrite,
         limit: Number.isFinite(limit) ? limit : null,
         concurrency,
+        collectionIds: collectionIdSet.size ? Array.from(collectionIdSet) : undefined,
         matched: targets.length,
         fetched,
         updated,
@@ -249,4 +262,3 @@ main().catch((err) => {
   console.error(err);
   process.exit(1);
 });
-
