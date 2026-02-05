@@ -1,4 +1,5 @@
 const CATALOG_URL = "./catalog.json";
+const CATALOG_CACHE_KEY = "music-board:catalog:v1";
 let ICONS_CLICKABLE = false;
 let ACTIVE_PLATFORM = "";
 let EMBED_FALLBACK = true;
@@ -754,9 +755,137 @@ function setHero({ coverItem, title, sub, actionsHtml }) {
   document.getElementById("hero-actions").innerHTML = actionsHtml || "";
 }
 
-async function main() {
-  const res = await fetch(CATALOG_URL, { cache: "no-store" });
-  const catalog = await res.json();
+function nextFrame() {
+  return new Promise((r) => requestAnimationFrame(() => r()));
+}
+
+function renderLoadingTiles(count = 8) {
+  const tiles = Array.from({ length: count }).map((_, idx) => `
+    <article class="tile skeleton" aria-hidden="true">
+      <div class="tile-cover">
+        <div class="tile-idx">${String(idx + 1).padStart(2, "0")}</div>
+        <div class="tile-cover-inner"><div class="skel skel-cover"></div></div>
+      </div>
+      <div class="tile-body">
+        <div class="meta">
+          <div class="skel skel-line"></div>
+          <div class="skel skel-line short" style="margin-top:10px;"></div>
+        </div>
+        <div class="dock" aria-hidden="true">
+          <span class="skel skel-icon"></span>
+          <span class="skel skel-icon"></span>
+          <span class="skel skel-icon"></span>
+          <span class="skel skel-icon"></span>
+        </div>
+      </div>
+    </article>
+  `).join("");
+
+  return `<div class="collection-grid" aria-busy="true">${tiles}</div>`;
+}
+
+function setLoadingUI(stageText = "加载中…") {
+  const panel = document.getElementById("panel");
+  if (panel) panel.setAttribute("aria-busy", "true");
+  const qEl = document.getElementById("q");
+  if (qEl) qEl.setAttribute("disabled", "true");
+  const heroMedia = document.getElementById("hero-media");
+  if (heroMedia) heroMedia.innerHTML = `<div class="hero-cover"><div class="skel skel-cover"></div></div>`;
+  document.getElementById("hero-title").textContent = "Loading";
+  document.getElementById("hero-sub").textContent = stageText || "加载中…";
+  document.getElementById("hero-actions").innerHTML = "";
+  const content = document.getElementById("content");
+  if (content) content.innerHTML = renderLoadingTiles(8);
+}
+
+function clearLoadingUI() {
+  const panel = document.getElementById("panel");
+  if (panel) panel.removeAttribute("aria-busy");
+  const qEl = document.getElementById("q");
+  if (qEl) qEl.removeAttribute("disabled");
+}
+
+function formatBytes(bytes) {
+  const n = Number(bytes || 0);
+  if (!Number.isFinite(n) || n <= 0) return "0 B";
+  const units = ["B", "KB", "MB", "GB"];
+  let v = n;
+  let i = 0;
+  while (v >= 1024 && i < units.length - 1) {
+    v /= 1024;
+    i++;
+  }
+  const digits = i === 0 ? 0 : (v >= 10 ? 0 : 1);
+  return `${v.toFixed(digits)} ${units[i]}`;
+}
+
+function readCatalogCache() {
+  try {
+    const raw = localStorage.getItem(CATALOG_CACHE_KEY);
+    if (!raw) return null;
+    const data = JSON.parse(raw);
+    if (!data || typeof data.text !== "string") return null;
+    const headers = new Headers();
+    if (data.etag) headers.set("etag", String(data.etag));
+    if (data.lastModified) headers.set("last-modified", String(data.lastModified));
+    return { text: data.text, headers };
+  } catch {
+    return null;
+  }
+}
+
+function writeCatalogCache(text, headers) {
+  try {
+    const etag = headers?.get ? headers.get("etag") : "";
+    const lastModified = headers?.get ? headers.get("last-modified") : "";
+    localStorage.setItem(CATALOG_CACHE_KEY, JSON.stringify({
+      savedAt: Date.now(),
+      etag: etag || "",
+      lastModified: lastModified || "",
+      text
+    }));
+  } catch {
+    // ignore quota / private mode
+  }
+}
+
+async function fetchTextWithProgress(url, onProgress) {
+  const res = await fetch(url, { cache: "no-cache" });
+  if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+  const total = Number(res.headers.get("content-length") || "0");
+
+  if (!res.body || !res.body.getReader) {
+    const text = await res.text();
+    onProgress && onProgress({ received: text.length, total });
+    return { text, headers: res.headers };
+  }
+
+  const reader = res.body.getReader();
+  const chunks = [];
+  let received = 0;
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    chunks.push(value);
+    received += value.byteLength;
+    onProgress && onProgress({ received, total });
+  }
+  const buf = new Uint8Array(received);
+  let offset = 0;
+  for (const chunk of chunks) {
+    buf.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+  const text = new TextDecoder("utf-8").decode(buf);
+  return { text, headers: res.headers };
+}
+
+let APP_BOOTED = false;
+
+function bootApp({ catalog, headers }) {
+  if (APP_BOOTED) return;
+  APP_BOOTED = true;
+
   const profile = catalog?.profile || {};
   ICONS_CLICKABLE = profile?.settings?.iconLinks === true;
   EMBED_FALLBACK = profile?.settings?.embedFallback !== false;
@@ -777,8 +906,8 @@ async function main() {
 
   const buildInfoEl = document.getElementById("build-info");
   if (buildInfoEl) {
-    const lastModified = res.headers.get("last-modified");
-    const etag = res.headers.get("etag");
+    const lastModified = headers.get("last-modified");
+    const etag = headers.get("etag");
     const bits = [];
     if (lastModified) bits.push(`Updated ${lastModified}`);
     if (etag) bits.push(`ETag ${etag}`);
@@ -1000,6 +1129,55 @@ function rerender() {
   });
 
   rerender();
+  clearLoadingUI();
+}
+
+async function main() {
+  setLoadingUI("读取缓存…");
+  await nextFrame();
+
+  const cached = readCatalogCache();
+  if (cached?.text) {
+    document.getElementById("hero-sub").textContent = "使用缓存目录…";
+    await nextFrame();
+    const catalog = JSON.parse(cached.text);
+    document.getElementById("hero-sub").textContent = "准备渲染…";
+    await nextFrame();
+    bootApp({ catalog, headers: cached.headers });
+
+    // Refresh in the background. If updated, save and reload once.
+    void (async () => {
+      try {
+        const res = await fetch(CATALOG_URL, { cache: "no-cache" });
+        if (!res.ok) return;
+        const freshText = await res.text();
+        if (!freshText || freshText === cached.text) return;
+        writeCatalogCache(freshText, res.headers);
+        location.reload();
+      } catch {
+        // ignore
+      }
+    })();
+
+    return;
+  }
+
+  setLoadingUI("下载目录…");
+  await nextFrame();
+
+  const { text, headers } = await fetchTextWithProgress(CATALOG_URL, ({ received, total }) => {
+    const progress = total > 0 ? `${formatBytes(received)} / ${formatBytes(total)}` : `${formatBytes(received)}`;
+    document.getElementById("hero-sub").textContent = `下载目录… ${progress}`;
+  });
+
+  document.getElementById("hero-sub").textContent = "解析目录…";
+  await nextFrame();
+
+  writeCatalogCache(text, headers);
+  const catalog = JSON.parse(text);
+  document.getElementById("hero-sub").textContent = "准备渲染…";
+  await nextFrame();
+  bootApp({ catalog, headers });
 }
 
 main().catch((err) => {
