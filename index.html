@@ -779,6 +779,104 @@
         font-family: var(--mono);
       }
 
+      .modal{
+        position: fixed;
+        inset: 0;
+        z-index: 60;
+        display: none;
+      }
+      .modal[data-open="true"]{ display:block; }
+      .modal .backdrop{
+        position:absolute;
+        inset: 0;
+        background: rgba(0,0,0,.42);
+        backdrop-filter: blur(2px);
+      }
+      .modal .panel{
+        position: relative;
+        width: min(1080px, calc(100% - 18px));
+        margin: 7vh auto 0;
+        max-height: 86vh;
+        border-radius: var(--radius2);
+        border: 1px solid var(--hairline);
+        background: var(--paper);
+        box-shadow: 0 30px 90px rgba(0,0,0,.25);
+        overflow: hidden;
+        display:flex;
+        flex-direction: column;
+      }
+      .modal .head{
+        display:flex;
+        gap: 12px;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--hairline);
+        background: color-mix(in srgb, var(--paper) 92%, transparent);
+      }
+      .modal .head .title{
+        font-weight: 650;
+        letter-spacing: .01em;
+      }
+      .modal .head .sub{
+        color: var(--muted);
+        font: 12px/1.4 var(--mono);
+        margin-top: 4px;
+      }
+      .modal .body{
+        padding: 14px 16px 16px;
+        overflow:auto;
+        background: color-mix(in srgb, var(--paper2) 92%, transparent);
+        display:flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .embed-card{
+        border: 1px solid var(--hairline);
+        border-radius: var(--radius2);
+        background: var(--paper);
+        overflow: hidden;
+      }
+      .embed-card .chead{
+        padding: 10px 12px;
+        display:flex;
+        align-items:center;
+        justify-content: space-between;
+        gap: 10px;
+        border-bottom: 1px solid var(--hairline);
+        background: color-mix(in srgb, var(--paper) 92%, transparent);
+      }
+      .embed-card .chead .left{
+        display:flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+      }
+      .embed-card .chead .k{
+        font: 12px/1.2 var(--mono);
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .embed-card .chead .v{
+        font-weight: 650;
+        white-space: nowrap;
+        overflow:hidden;
+        text-overflow: ellipsis;
+      }
+      .embed-card iframe{
+        width: 100%;
+        border: 0;
+        background: var(--paper2);
+        display:block;
+      }
+      .embed-card[data-platform="youtube"] iframe{
+        height: min(60vh, 620px);
+      }
+      .embed-card:not([data-platform="youtube"]) iframe{
+        height: 110px;
+      }
+
       @media (min-width: 900px){
         .hero-grid{
           grid-template-columns: 148px 1fr;
@@ -863,9 +961,25 @@
       </div>
       <div class="player-frame" id="player-frame" data-open="false">
         <div class="wrap">
-          <iframe id="player-iframe" title="embed player" loading="lazy" allow="autoplay; encrypted-media" allowfullscreen referrerpolicy="no-referrer"></iframe>
+          <iframe id="player-iframe" title="embed player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
           <div class="note" id="player-note"></div>
         </div>
+      </div>
+    </section>
+
+    <section class="modal" id="player-modal" data-open="false" aria-hidden="true">
+      <div class="backdrop" data-modal-close="true"></div>
+      <div class="panel" role="dialog" aria-modal="true" aria-label="播放器弹窗">
+        <div class="head">
+          <div>
+            <div class="title" id="modal-title">…</div>
+            <div class="sub" id="modal-sub"></div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <button class="btn" type="button" data-modal-close="true">Close</button>
+          </div>
+        </div>
+        <div class="body" id="modal-body"></div>
       </div>
     </section>
 

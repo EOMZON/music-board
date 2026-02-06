@@ -4,6 +4,8 @@ let ICONS_CLICKABLE = false;
 let ACTIVE_PLATFORM = "";
 let EMBED_FALLBACK = true;
 let SHOW_EMPTY_LINKS = false;
+let PLAYER_UI = "modal";
+let YOUTUBE_AUTOPLAY = true;
 let collectionLimit = 48;
 let trackLimit = 200;
 
@@ -331,13 +333,36 @@ const player = {
   embedPlatform: ""
 };
 
+function setModalOpen(open) {
+  const modal = document.getElementById("player-modal");
+  if (!modal) return;
+  modal.dataset.open = open ? "true" : "false";
+  modal.setAttribute("aria-hidden", open ? "false" : "true");
+
+  document.documentElement.style.overflow = open ? "hidden" : "";
+  document.body.style.overflow = open ? "hidden" : "";
+
+  if (!open) {
+    const body = document.getElementById("modal-body");
+    if (body) body.innerHTML = "";
+  }
+}
+
 function setPlayerOpen(open) {
   player.open = !!open;
-  const frame = document.getElementById("player-frame");
   const btn = document.getElementById("btn-toggle");
-  frame.dataset.open = open ? "true" : "false";
   btn.setAttribute("aria-expanded", open ? "true" : "false");
   btn.textContent = open ? "Close" : "Open";
+
+  if (PLAYER_UI === "modal") {
+    const frame = document.getElementById("player-frame");
+    if (frame) frame.dataset.open = "false";
+    setModalOpen(open);
+    return;
+  }
+
+  const frame = document.getElementById("player-frame");
+  frame.dataset.open = open ? "true" : "false";
 }
 
 function clearPlayer() {
@@ -377,72 +402,142 @@ function pickEmbed(track, preferredPlatform = "") {
   return EMBED_FALLBACK ? (embeds.find(x => x?.url) || null) : null;
 }
 
-function playerEmbedIcon(embed, activePlatform) {
+function embedOpenUrl(track, platform) {
+  const key = platformKey(platform);
+  const links = Array.isArray(track?.links) ? track.links : [];
+  const link = links.find(l => l?.url && platformKey(l?.platform) === key) || null;
+  return link?.url || "";
+}
+
+function toYoutubeNocookie(embedUrl, autoplay) {
+  if (!embedUrl) return "";
+  try {
+    const u = new URL(embedUrl);
+    if (/youtube\.com$/i.test(u.hostname.replace(/^www\./i, ""))) {
+      u.hostname = "www.youtube-nocookie.com";
+    }
+    if (autoplay) {
+      u.searchParams.set("autoplay", "1");
+      u.searchParams.set("playsinline", "1");
+    }
+    // Improves compatibility with some embed contexts.
+    u.searchParams.set("origin", location.origin);
+    return u.toString();
+  } catch {
+    if (!autoplay) return embedUrl;
+    return embedUrl.includes("?") ? `${embedUrl}&autoplay=1` : `${embedUrl}?autoplay=1`;
+  }
+}
+
+function embedSrcForModal(embed, autoplay) {
   const platform = embed?.platform || "";
+  const url = (embed?.url || "").toString().trim();
+  if (!url) return "";
+  if (platformKey(platform) === "youtube") return toYoutubeNocookie(url, autoplay);
+  return url;
+}
+
+function embedCardHtml(embed, track, autoplay) {
+  const platform = embed?.platform || "";
+  const key = platformKey(platform) || "link";
   const label = embed?.label || platformLabel(platform);
-  const active = platformKey(activePlatform) && platformKey(platform) === platformKey(activePlatform);
+  const openUrl = embedOpenUrl(track, platform);
+  const src = embedSrcForModal(embed, autoplay);
+
+  const allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+  const openBtn = openUrl
+    ? `<a class="btn" href="${escapeHtml(openUrl)}" target="_blank" rel="noreferrer">Open</a>`
+    : "";
+
   return `
-    <button class="icon" type="button" data-player-platform="${escapeHtml(platform)}"${active ? ' aria-current="true"' : ""} title="${escapeHtml(label)}" aria-label="${escapeHtml(`播放：${platformLabel(platform)}`)}">
-      ${iconSvg(platform)}
-    </button>
+    <article class="embed-card" data-platform="${escapeHtml(key)}">
+      <div class="chead">
+        <div class="left">
+          <div class="k">${escapeHtml(platformLabel(platform))}</div>
+          <div class="v">${escapeHtml(label)}</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;flex:0 0 auto;">
+          ${openBtn}
+        </div>
+      </div>
+      <iframe
+        title="${escapeHtml(`${platformLabel(platform)} · ${track?.title || ""}`)}"
+        loading="lazy"
+        allow="${allow}"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"
+        src="${escapeHtml(src)}"></iframe>
+    </article>
   `;
 }
 
-function renderPlayerIcons(track, activePlatform, limit = 10) {
+function renderModal(track, { autoplay } = {}) {
+  const title = track?.title || "(未命名)";
+  const sub = [track?.artist || "", track?.releaseDate || ""].filter(Boolean).join(" · ");
+  const titleEl = document.getElementById("modal-title");
+  const subEl = document.getElementById("modal-sub");
+  const bodyEl = document.getElementById("modal-body");
+  if (titleEl) titleEl.textContent = title;
+  if (subEl) subEl.textContent = sub || " ";
+  if (!bodyEl) return;
+
   const embedsAll = Array.isArray(track?.embeds) ? track.embeds : [];
   const embeds = uniqByPlatform(embedsAll).filter((e) => ((e?.url ?? "").toString().trim() !== ""));
-  if (embeds.length === 0) return renderPlatformIcons(track?.links || [], limit);
+  if (embeds.length === 0) {
+    bodyEl.innerHTML = `<div class="empty">此曲目没有可用的外链播放器（embeds）。</div>`;
+    return;
+  }
 
-  const shown = embeds.slice(0, limit);
-  const hidden = embeds.slice(limit);
-  const icons = shown.map((e) => playerEmbedIcon(e, activePlatform)).join("");
-  if (hidden.length === 0) return icons;
-  const moreTitle = hidden.map(e => platformLabel(e?.platform)).filter(Boolean).join(" · ");
-  return icons + `
-    <span class="icon static more" title="${escapeHtml(moreTitle || `${hidden.length} more`)}" aria-label="${escapeHtml(`还有 ${hidden.length} 个播放源`)}" role="img">
-      <span>…</span>
-    </span>
-  `;
+  const preferredOrder = ["youtube", "netease"];
+  const sorted = embeds.slice().sort((a, b) => {
+    const ak = platformKey(a?.platform);
+    const bk = platformKey(b?.platform);
+    const ai = preferredOrder.includes(ak) ? preferredOrder.indexOf(ak) : 99;
+    const bi = preferredOrder.includes(bk) ? preferredOrder.indexOf(bk) : 99;
+    if (ai !== bi) return ai - bi;
+    return (ak || "").localeCompare(bk || "");
+  });
+
+  bodyEl.innerHTML = sorted.map(e => embedCardHtml(e, track, autoplay)).join("");
 }
 
-function playTrack(track, opts = {}) {
-  const preferredPlatform = opts?.platform || "";
-  const embed = pickEmbed(track, preferredPlatform);
-  const iframe = document.getElementById("player-iframe");
+function playTrack(track) {
   const icons = document.getElementById("player-icons");
   const title = track.title || "(未命名)";
   const sub = [track.artist || "", track.releaseDate || ""].filter(Boolean).join(" · ");
 
+  player.trackId = track.id || "";
+  player.embedUrl = "";
+  player.embedPlatform = "";
+
   document.getElementById("player-title").textContent = title;
   document.getElementById("player-sub").textContent = sub || " ";
+  icons.innerHTML = renderPlatformIcons(track.links || [], 10);
+  document.getElementById("player-iframe").src = "about:blank";
+  document.getElementById("player-note").textContent = PLAYER_UI === "modal"
+    ? "弹窗展示所有可用播放源（YouTube 将尝试自动播放）。"
+    : "";
 
-  if (embed?.url) {
-    player.trackId = track.id || "";
-    player.embedUrl = embed.url;
-    player.embedPlatform = embed.platform || "";
-    icons.innerHTML = renderPlayerIcons(track, player.embedPlatform, 10);
-    iframe.src = embed.url;
-    iframe.style.height = embed.height ? `${embed.height}px` : "96px";
-    const embedPlatform = embed.platform ? platformLabel(embed.platform) : "";
-    const noteBits = [];
-    if (embedPlatform) noteBits.push(`播放源：${embedPlatform}`);
-    if (ACTIVE_PLATFORM && embedPlatform && platformKey(embed.platform) !== platformKey(ACTIVE_PLATFORM)) {
-      noteBits.push(`当前筛选：${platformLabel(ACTIVE_PLATFORM)}（此曲用 ${embedPlatform} 播放）`);
+  if (PLAYER_UI !== "modal") {
+    const embed = pickEmbed(track, "");
+    const iframe = document.getElementById("player-iframe");
+    if (embed?.url) {
+      const isYoutube = platformKey(embed?.platform) === "youtube";
+      const src = isYoutube ? toYoutubeNocookie(embed.url, YOUTUBE_AUTOPLAY) : embed.url;
+      player.embedUrl = src;
+      player.embedPlatform = embed.platform || "";
+      iframe.src = src;
+      iframe.style.height = embed.height ? `${embed.height}px` : "96px";
+      setPlayerOpen(true);
+      return;
     }
-    if (embed.label) noteBits.push(`使用：${embed.label}`);
-    document.getElementById("player-note").textContent = noteBits.join(" · ");
-    setPlayerOpen(true);
-  } else {
-    player.trackId = track.id || "";
-    player.embedUrl = "";
-    player.embedPlatform = "";
-    icons.innerHTML = renderPlatformIcons(track.links || [], 10);
     iframe.src = "about:blank";
-    document.getElementById("player-note").textContent = ACTIVE_PLATFORM
-      ? `此曲在当前平台（${platformLabel(ACTIVE_PLATFORM)}）没有可用的外链播放器（embeds）。`
-      : "此曲目没有可用的外链播放器（embeds）。你可以只保留平台图标，或后续改为自托管音频。";
     setPlayerOpen(true);
+    return;
   }
+
+  renderModal(track, { autoplay: YOUTUBE_AUTOPLAY });
+  setPlayerOpen(true);
 }
 
 function matchQueryCollection(c, q) {
@@ -936,6 +1031,8 @@ function bootApp({ catalog, headers }) {
   ICONS_CLICKABLE = profile?.settings?.iconLinks === true;
   EMBED_FALLBACK = profile?.settings?.embedFallback !== false;
   SHOW_EMPTY_LINKS = profile?.settings?.showEmptyLinks === true;
+  PLAYER_UI = profile?.settings?.playerUi || "modal";
+  YOUTUBE_AUTOPLAY = profile?.settings?.youtubeAutoplay !== false;
   const notes = Array.isArray(catalog?.notes) ? catalog.notes : [];
 
   const profileNameEl = document.getElementById("profile-name");
@@ -1132,22 +1229,29 @@ function rerender() {
     if (id) location.hash = `#/c/${encodeURIComponent(id)}`;
   });
 
-  document.getElementById("btn-toggle").addEventListener("click", () => setPlayerOpen(!player.open));
+  document.getElementById("btn-toggle").addEventListener("click", () => {
+    const nextOpen = !player.open;
+    if (PLAYER_UI === "modal" && nextOpen && player.trackId) {
+      const t = tracksById.get(player.trackId) || collectionsById.get(player.trackId);
+      if (t) renderModal(t, { autoplay: YOUTUBE_AUTOPLAY });
+    }
+    setPlayerOpen(nextOpen);
+  });
   document.getElementById("btn-close").addEventListener("click", () => clearPlayer());
 
-  document.getElementById("player-icons").addEventListener("click", (e) => {
-    if (e.target.closest("a.icon")) return;
-    const btn = e.target.closest("[data-player-platform]");
-    if (!btn) return;
-    const platform = btn.getAttribute("data-player-platform") || "";
-    if (!platform || !player.trackId) return;
-    const t = tracksById.get(player.trackId);
-    if (t) {
-      playTrack(t, { platform });
-      return;
-    }
-    const c = collectionsById.get(player.trackId);
-    if (c) playTrack(c, { platform });
+  const modal = document.getElementById("player-modal");
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      const close = e.target.closest("[data-modal-close]");
+      if (!close) return;
+      setPlayerOpen(false);
+    });
+  }
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (!player.open) return;
+    setPlayerOpen(false);
   });
 
   document.getElementById("profile-icons").addEventListener("click", (e) => {
