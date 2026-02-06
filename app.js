@@ -327,7 +327,8 @@ function renderChips(defs, activeKey) {
 const player = {
   trackId: "",
   open: false,
-  embedUrl: ""
+  embedUrl: "",
+  embedPlatform: ""
 };
 
 function setPlayerOpen(open) {
@@ -342,6 +343,7 @@ function setPlayerOpen(open) {
 function clearPlayer() {
   player.trackId = "";
   player.embedUrl = "";
+  player.embedPlatform = "";
   document.getElementById("player-title").textContent = "选择一首歌";
   document.getElementById("player-sub").textContent = "点开合集 → 选曲 → 在此处播放（不跳转）";
   document.getElementById("player-icons").innerHTML = "";
@@ -365,17 +367,47 @@ function collectionHasPlatform(collection, tracksByCollectionId, platform) {
   return tracks.some(t => itemHasPlatform(t, platform));
 }
 
-function pickEmbed(track) {
+function pickEmbed(track, preferredPlatform = "") {
   const embeds = Array.isArray(track.embeds) ? track.embeds : [];
-  if (!ACTIVE_PLATFORM) return embeds.find(x => x?.url) || null;
-  const key = platformKey(ACTIVE_PLATFORM);
-  const preferred = embeds.find(x => x?.url && platformKey(x?.platform) === key) || null;
-  if (preferred) return preferred;
+  const preferredKeyRaw = preferredPlatform || ACTIVE_PLATFORM;
+  if (!preferredKeyRaw) return embeds.find(x => x?.url) || null;
+  const key = platformKey(preferredKeyRaw);
+  const preferredEmbed = embeds.find(x => x?.url && platformKey(x?.platform) === key) || null;
+  if (preferredEmbed) return preferredEmbed;
   return EMBED_FALLBACK ? (embeds.find(x => x?.url) || null) : null;
 }
 
-function playTrack(track) {
-  const embed = pickEmbed(track);
+function playerEmbedIcon(embed, activePlatform) {
+  const platform = embed?.platform || "";
+  const label = embed?.label || platformLabel(platform);
+  const active = platformKey(activePlatform) && platformKey(platform) === platformKey(activePlatform);
+  return `
+    <button class="icon" type="button" data-player-platform="${escapeHtml(platform)}"${active ? ' aria-current="true"' : ""} title="${escapeHtml(label)}" aria-label="${escapeHtml(`播放：${platformLabel(platform)}`)}">
+      ${iconSvg(platform)}
+    </button>
+  `;
+}
+
+function renderPlayerIcons(track, activePlatform, limit = 10) {
+  const embedsAll = Array.isArray(track?.embeds) ? track.embeds : [];
+  const embeds = uniqByPlatform(embedsAll).filter((e) => ((e?.url ?? "").toString().trim() !== ""));
+  if (embeds.length === 0) return renderPlatformIcons(track?.links || [], limit);
+
+  const shown = embeds.slice(0, limit);
+  const hidden = embeds.slice(limit);
+  const icons = shown.map((e) => playerEmbedIcon(e, activePlatform)).join("");
+  if (hidden.length === 0) return icons;
+  const moreTitle = hidden.map(e => platformLabel(e?.platform)).filter(Boolean).join(" · ");
+  return icons + `
+    <span class="icon static more" title="${escapeHtml(moreTitle || `${hidden.length} more`)}" aria-label="${escapeHtml(`还有 ${hidden.length} 个播放源`)}" role="img">
+      <span>…</span>
+    </span>
+  `;
+}
+
+function playTrack(track, opts = {}) {
+  const preferredPlatform = opts?.platform || "";
+  const embed = pickEmbed(track, preferredPlatform);
   const iframe = document.getElementById("player-iframe");
   const icons = document.getElementById("player-icons");
   const title = track.title || "(未命名)";
@@ -384,15 +416,16 @@ function playTrack(track) {
   document.getElementById("player-title").textContent = title;
   document.getElementById("player-sub").textContent = sub || " ";
 
-  icons.innerHTML = renderPlatformIcons(track.links || [], 10);
-
   if (embed?.url) {
     player.trackId = track.id || "";
     player.embedUrl = embed.url;
+    player.embedPlatform = embed.platform || "";
+    icons.innerHTML = renderPlayerIcons(track, player.embedPlatform, 10);
     iframe.src = embed.url;
     iframe.style.height = embed.height ? `${embed.height}px` : "96px";
     const embedPlatform = embed.platform ? platformLabel(embed.platform) : "";
     const noteBits = [];
+    if (embedPlatform) noteBits.push(`播放源：${embedPlatform}`);
     if (ACTIVE_PLATFORM && embedPlatform && platformKey(embed.platform) !== platformKey(ACTIVE_PLATFORM)) {
       noteBits.push(`当前筛选：${platformLabel(ACTIVE_PLATFORM)}（此曲用 ${embedPlatform} 播放）`);
     }
@@ -400,6 +433,10 @@ function playTrack(track) {
     document.getElementById("player-note").textContent = noteBits.join(" · ");
     setPlayerOpen(true);
   } else {
+    player.trackId = track.id || "";
+    player.embedUrl = "";
+    player.embedPlatform = "";
+    icons.innerHTML = renderPlatformIcons(track.links || [], 10);
     iframe.src = "about:blank";
     document.getElementById("player-note").textContent = ACTIVE_PLATFORM
       ? `此曲在当前平台（${platformLabel(ACTIVE_PLATFORM)}）没有可用的外链播放器（embeds）。`
@@ -1097,6 +1134,21 @@ function rerender() {
 
   document.getElementById("btn-toggle").addEventListener("click", () => setPlayerOpen(!player.open));
   document.getElementById("btn-close").addEventListener("click", () => clearPlayer());
+
+  document.getElementById("player-icons").addEventListener("click", (e) => {
+    if (e.target.closest("a.icon")) return;
+    const btn = e.target.closest("[data-player-platform]");
+    if (!btn) return;
+    const platform = btn.getAttribute("data-player-platform") || "";
+    if (!platform || !player.trackId) return;
+    const t = tracksById.get(player.trackId);
+    if (t) {
+      playTrack(t, { platform });
+      return;
+    }
+    const c = collectionsById.get(player.trackId);
+    if (c) playTrack(c, { platform });
+  });
 
   document.getElementById("profile-icons").addEventListener("click", (e) => {
     const a = e.target.closest('a[href^="#/p/"]');
