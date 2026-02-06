@@ -51,6 +51,92 @@ node scripts/music-board/import-netease-album-html-to-catalog.mjs 春节/发布�
 cat links.txt | node scripts/music-board/urls-to-items.mjs > items.json
 ```
 
+说明：
+- YouTube 的 `watch?v=...` / `playlist?list=...` 会生成可播放的 `embeds`
+- YouTube 的 `channel/UC...` 会生成该频道的 Uploads（上传）播放列表条目（可在站内播放），但不会自动拆出每首歌
+
+## 从 YouTube 播放列表“另存为 HTML”导入（专辑 + 曲目）
+
+如果你希望“每个专辑（合集）→ 每首曲目都对应到具体的 YouTube 歌曲/视频”，推荐做法是：
+
+1) 在 YouTube 创建/整理一个播放列表（playlist）作为“专辑”（每首歌一个视频，顺序就是曲序）
+2) 打开该播放列表页面，浏览器「另存为网页（HTML）」保存快照
+3) 用脚本离线解析出 `album + tracks`：
+
+```bash
+node scripts/music-board/import-youtube-playlist-html.mjs path/to/playlist.html > out.json
+```
+
+然后把 `out.json` 里对应的 `items[]` 复制进 `catalog.json` 的 `items[]` 即可（可手动补全 `releaseDate/cover/title/artist`）。
+
+## 从 YouTube 播放列表在线导入（r.jina.ai，免另存为）
+
+某些环境无法直连 `youtube.com`，但可以访问 `r.jina.ai`（文本代理）。此时可直接在线拉取公开 playlist 的曲目列表：
+
+```bash
+node scripts/music-board/import-youtube-playlist-jina.mjs 'https://www.youtube.com/playlist?list=OLAK5uy_...' > yt.json
+```
+
+说明：该方式依赖第三方代理服务；如不希望经过第三方，请用“另存为 HTML”或浏览器插件导出。
+
+## 把 YouTube “专辑播放”绑定到已存在的专辑（逐曲对应）
+
+如果你的站点里已经有一张专辑（例如网易云导入的 `netease-album-...`），只缺 YouTube 播放渠道：
+
+1) 先把 YouTube 播放列表导出为 items（任选其一）：
+
+```bash
+# A) 另存为 HTML → 导入
+node scripts/music-board/import-youtube-playlist-html.mjs path/to/playlist.html > yt.json
+
+# B) 在线导入（r.jina.ai）
+node scripts/music-board/import-youtube-playlist-jina.mjs 'https://www.youtube.com/playlist?list=OLAK5uy_...' > yt.json
+
+# C) 用 Tampermonkey 插件导出（见下方 “YouTube 导出插件”）
+```
+
+2) 把该 YouTube 播放列表的“专辑 + 每首曲目”贴到已有专辑的曲目上（会给每首歌追加 youtube links/embeds）：
+
+```bash
+# dry run（先看匹配情况）
+node scripts/music-board/attach-youtube-playlist-to-collection.mjs yt.json catalog.json \
+  --collection-id netease-album-359139954
+
+# 写入
+node scripts/music-board/attach-youtube-playlist-to-collection.mjs yt.json catalog.json \
+  --collection-id netease-album-359139954 --apply
+```
+
+如果 `yt.json` 里有多个 playlist，额外加 `--playlist-id OLAK5uy_...` 指定。
+如遇到标题不完全一致（例如带 `(Official Audio)`），脚本默认会做“安全的包含匹配”；如需关闭可加 `--no-fuzzy`。
+
+## 从 YouTube 频道链接自动拉“上传列表”（可选）
+
+如果你只提供频道链接（`channel/UC...`），不使用 API key 的情况下，能稳定自动拉取的是「Uploads（上传）」列表（通常只包含最新一批视频）。
+
+```bash
+node scripts/music-board/import-youtube-channel-rss.mjs https://www.youtube.com/channel/UCzJDxfLe42TOFdYGSrG-cyw --limit 15 > out.json
+```
+
+这会生成 1 个合集（Uploads）+ 多个曲目（每个视频 1 首，带可播放的 embed）。
+
+## YouTube 导出“插件”（Tampermonkey，可选）
+
+如果你希望“直接根据链接拉取更多视频/播放列表曲目”，而不想保存 HTML 快照或配置 API key，可以用一个浏览器 Userscript：
+
+- 文件：`tools/youtube-music-board-export.user.js`
+- 安装：Chrome/Edge 安装 Tampermonkey → 新建脚本 → 粘贴该文件内容 → 保存启用
+- 用法：打开 YouTube 的 playlist 页面或 channel 页面，右下角会出现 `Export → Music Board`，点击后会下载一个 JSON
+- 合并进站点：用 `scripts/music-board/merge-items-to-catalog.mjs` 合并到 `catalog.json`
+
+```bash
+# dry run（看统计）
+node scripts/music-board/merge-items-to-catalog.mjs out.json catalog.json
+
+# 写入 catalog.json
+node scripts/music-board/merge-items-to-catalog.mjs out.json catalog.json --apply
+```
+
 ## 从 DistroKid “另存为 HTML”导入（可选）
 
 你可以用离线解析的方式，把 DistroKid 的发行信息（平台分发 + UPC/ISRC）合并进 `catalog.json`：

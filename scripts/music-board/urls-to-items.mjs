@@ -101,6 +101,13 @@ function isLikelyYoutubeId(id) {
   return /^[a-zA-Z0-9_-]{6,}$/.test(raw);
 }
 
+function uploadsPlaylistIdFromChannelId(channelId) {
+  const raw = (channelId ?? "").toString().trim();
+  if (!raw.startsWith("UC")) return null;
+  if (!isLikelyYoutubeId(raw)) return null;
+  return `UU${raw.slice(2)}`;
+}
+
 function inferYoutube(urlString) {
   const url = tryParseUrl(urlString);
   if (!url) return null;
@@ -161,6 +168,34 @@ function inferYoutube(urlString) {
         }
       ]
     };
+  }
+
+  if (url.pathname.startsWith("/channel/")) {
+    const channelId = url.pathname.split("/")[2] || "";
+    const uploadsListId = uploadsPlaylistIdFromChannelId(channelId);
+    if (uploadsListId) {
+      const uploadsUrl = `https://www.youtube.com/playlist?list=${uploadsListId}`;
+      return {
+        id: `youtube-channel-${channelId}`,
+        type: "playlist",
+        title: "",
+        artist: "",
+        releaseDate: "",
+        tags: ["youtube", "channel", "uploads"],
+        links: [
+          { platform: "youtube", label: `${label} · Channel`, url: urlString },
+          { platform: "youtube", label: `${label} · Uploads`, url: uploadsUrl }
+        ],
+        embeds: [
+          {
+            platform: "youtube",
+            label: "YouTube uploads playlist embed",
+            url: `https://www.youtube.com/embed/videoseries?list=${uploadsListId}`,
+            height: 360
+          }
+        ]
+      };
+    }
   }
 
   return {

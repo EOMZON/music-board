@@ -11,6 +11,11 @@
         "platform": "netease",
         "label": "网易云 · 艺人主页",
         "url": "https://music.163.com/#/artist/album?id=30005081"
+      },
+      {
+        "platform": "youtube",
+        "label": "YouTube",
+        "url": "https://www.youtube.com/playlist?list=OLAK5uy_myIx0-3YvZK0urWVkfN4q8PN8BRYtl12w"
       }
     ]
   },
@@ -7499,16 +7504,29 @@
       "tags": [
         "netease",
         "album",
-        "归途"
+        "归途",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 专辑",
           "url": "https://music.163.com/#/album?id=359139954"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_myIx0-3YvZK0urWVkfN4q8PN8BRYtl12w"
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_myIx0-3YvZK0urWVkfN4q8PN8BRYtl12w",
+          "height": 360
+        }
+      ],
       "trackCount": 12
     },
     {
@@ -7522,13 +7540,19 @@
       "tags": [
         "netease",
         "song",
-        "归途"
+        "归途",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3341536654"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Video",
+          "url": "https://www.youtube.com/watch?v=sOoXpwz1LTI&list=OLAK5uy_myIx0-3YvZK0urWVkfN4q8PN8BRYtl12w"
         }
       ],
       "embeds": [
@@ -7537,6 +7561,12 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3341536654&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube embed",
+          "url": "https://www.youtube.com/embed/sOoXpwz1LTI",
+          "height": 220
         }
       ],
       "lyrics": "雨季总来得突然\n站牌的字被水打湿\n像一句没说完\n卡在喉咙边上\n\n我等的不是那一班\n是一个“我可以”的信号\n耳机里节拍一下一下\n像心脏在打拍子\n\n雨把路洗干净\n也把人洗得更孤单\n可孤单不是惩罚\n是成长的另一面\n\n我撑伞站在原地\n终于学会\n把等待当成准备\n把出发当成答案\n\n积水倒映红绿灯\n每一格都像选择题\n我习惯看别人先走\n再偷偷把步子对齐\n\n原来信号一直亮着\n只是我不敢抬头看\n滴答滴答 手心在冒汗\n脚尖却开始跟着晃 \n\n雨把路洗干净\n也把人洗得更孤单\n可孤单不是惩罚\n是成长的另一面"
@@ -7552,13 +7582,19 @@
       "tags": [
         "netease",
         "song",
-        "归途"
+        "归途",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3341539093"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Video",
+          "url": "https://www.youtube.com/watch?v=B81JjYhAync&list=OLAK5uy_myIx0-3YvZK0urWVkfN4q8PN8BRYtl12w"
         }
       ],
       "embeds": [
@@ -7567,6 +7603,12 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3341539093&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube embed",
+          "url": "https://www.youtube.com/embed/B81JjYhAync",
+          "height": 220
         }
       ],
       "lyrics": "主歌 1\n广播说“到站请下车”\n像是在替我做决定\n车窗上映出旧日子\n一格一格往后倒退\n\n我曾经紧抓着票根\n当成还会再见的证明\n连难过都小心折好\n怕一松手就真的结束\n\n预副歌\n可这些反复播放的画面\n像车厢里闪烁的广告片\n看太多次\n也会厌倦\n\n副歌\n到站请下车 把旧我留在车上\n把不合适的爱 和不合适的慌\n都交给路去处理\n我只带走\n一颗愿意重新开始的心\n和一点点不再逃的勇气\n\n主歌 2\n你发来的最后一条讯息\n还躺在角落没被清理\n像遗失物品的名单\n没人认领就静静躺在心里\n\n我总在“下一站再说”\n一站一站推迟告别\n连眼泪都排成队\n却迟迟不肯上前\n\n预副歌\n窗外的风景一格格变浅\n连阴影都被阳光削减\n忽然发现\n我也能习惯\n\n副歌\n到站请下车 把旧我留在车上\n把不合适的爱 和不合适的慌\n都交给路去处理\n我只带走\n一颗愿意重新开始的心\n和一点点不再逃的勇气\n\n桥段\nDi di da di di da\n拍手配合心跳节拍 (Hey)\n一步一步走出车站\n人海把你的名字冲淡\n\nDi di da di di da\n脚步跟着秒针踮起来\n原来放手\n也是一种到达\n\n副歌\n到站请下车 把旧我留在车上\n把不合适的爱 和不合适的慌\n都交给路去处理\n我只带走\n一颗愿意重新开始的心\n和一点点不再逃的勇气"
@@ -7582,13 +7624,19 @@
       "tags": [
         "netease",
         "song",
-        "归途"
+        "归途",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3341566198"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Video",
+          "url": "https://www.youtube.com/watch?v=e6WFJrmNt6k&list=OLAK5uy_myIx0-3YvZK0urWVkfN4q8PN8BRYtl12w"
         }
       ],
       "embeds": [
@@ -7597,6 +7645,12 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3341566198&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube embed",
+          "url": "https://www.youtube.com/embed/e6WFJrmNt6k",
+          "height": 220
         }
       ],
       "lyrics": "[Verse 1]\n翻到去年的日历\n三月十五画了个圈\n那是你说要回来的日子\n我把那一页翻得起了边\n\n冰箱上贴着你的便签\n等我回来吃火锅\n字迹被油烟熏黄\n像被时间慢慢抹掉的承诺\n\n你说以后带我去看海\n说以后教我骑自行车\n你说以后 以后 以后\n以后成了一个回不去的地方\n\n[Chorus]\n你说过的以后\n都没有以后\n你画的圈\n我一个人转\n\n「天涯地角有穷时，只有相思无尽处」\n像一根线 把我拴在原路\n\n以后 以后\n说得那么轻松\n可日历翻到头\n也等不到以后\n\n[Verse 2]\n窗台上那盆小仙人掌\n还长出一圈新刺\n像我学会保护自己\n却还是在原地想你\n\n衣柜里你落下的那件衬衫\n洗了好多遍还有味道\n每次路过都假装看不到\n其实心里反复拥抱\n\n有人问我还在等什么\n我笑说天气 也笑说结果\n只是楼下那条回家的路\n怎么走 都走回从前的生活\n\n[Chorus]\n\n[Bridge]\n[低声][几乎清唱]\n我现在学会了\n不说以后\n因为以后太远\n远到可能装不下我们\n\n[渐进和声加入]\n我把所有的以后\n拆成一个个现在\n能陪你走一点算一点\n也比空着未来实在\n\n[Outro]\n如果时间能倒回\n我想把你说的每个以后\n都换成现在\n现在 就现在\n\n如果还能重来\n我只问你一句\n此刻的你想不想牵我的手\n别等到以后\n才学会说 留下就好"
@@ -7612,13 +7666,19 @@
       "tags": [
         "netease",
         "song",
-        "归途"
+        "归途",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3341590906"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Video",
+          "url": "https://www.youtube.com/watch?v=_qo7Lm9q-UU&list=OLAK5uy_myIx0-3YvZK0urWVkfN4q8PN8BRYtl12w"
         }
       ],
       "embeds": [
@@ -7627,6 +7687,12 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3341590906&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube embed",
+          "url": "https://www.youtube.com/embed/_qo7Lm9q-UU",
+          "height": 220
         }
       ],
       "lyrics": "[Verse 1]\n除夕的车站像一口巨大的钟\n每个人都被时间催着回同一个梦\n你把旧伤写在我行李箱的贴纸上\n说别再把它藏起来 它也需要被安放\n\n检票口的闸机像命运的牙\n咬住我们曾经的犹豫与怕\n我把车票递过去\n像把一段人生递给新的章节\n\n[Chorus]\n这是一张除夕的车票\n不回家 也不是不孝\n只是我终于明白\n所谓团圆不该以我破碎为代价\n\n山重水复疑无路\n你说 跟我走 路会自己长出来\n此情可待成追忆\n那就把追忆放下 今晚别惘然\n\n[Verse 2]\n候车室的灯光把影子拉长\n小孩在地上画着一座远方的房\n广播一次次念着别人的终点站\n我在掌心写下你的姓和我新起的航线\n\n背包太轻 只剩必要的倔强\n你替我整理肩带 像以前出门上课的模样\n你说别再为谁 把自己拆一半\n路那么长 总会有人走在同一班\n\n[Chorus]"
@@ -7642,13 +7708,19 @@
       "tags": [
         "netease",
         "song",
-        "归途"
+        "归途",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3341588369"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Video",
+          "url": "https://www.youtube.com/watch?v=6ZiruZsncy0&list=OLAK5uy_myIx0-3YvZK0urWVkfN4q8PN8BRYtl12w"
         }
       ],
       "embeds": [
@@ -7657,6 +7729,12 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3341588369&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube embed",
+          "url": "https://www.youtube.com/embed/6ZiruZsncy0",
+          "height": 220
         }
       ],
       "lyrics": "[Verse 1]\n我把门口的灯留着\n留到楼道都睡了\n留到猫都不想叫\n留到我也困了\n\n你说“很快就回”\n我把“很快”当作一种信仰\n可信仰太脆\n一敲就碎\n碎得像一声没发出的\n“你在哪”\n\n「人面不知何处去」\n我不敢问“何处”\n怕答案是\n“再也不”\n\n[Chorus]\n你说过回来\n我就一直留灯\n灯不亮的时候\n我就把自己点亮\n\n我不再催你\n我只是在等\n等我终于能把\n“回来”这两个字\n从心里\n放下"
@@ -7672,13 +7750,19 @@
       "tags": [
         "netease",
         "song",
-        "归途"
+        "归途",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3341592707"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Video",
+          "url": "https://www.youtube.com/watch?v=FQ287t2E4T0&list=OLAK5uy_myIx0-3YvZK0urWVkfN4q8PN8BRYtl12w"
         }
       ],
       "embeds": [
@@ -7687,6 +7771,12 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3341592707&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube embed",
+          "url": "https://www.youtube.com/embed/FQ287t2E4T0",
+          "height": 220
         }
       ],
       "lyrics": "[Verse 1]\n车厢里 有人轻轻叹气\n窗外的楼 层层退进雨里\n有人抱着行李睡去\n像抱着一段 逝去又还在的日子\n\n我们互不认识\n却靠得比想象里更近\n同一排吊环 摇出节奏\n脚尖跟着 轻点 轻点前进\n\n[Pre-Chorus]\n谁在刷着屏 谁在删讯息\n谁把委屈 咽回嘴里\n像秒针 把心事 切成一格一格的平静\n\n[Chorus]\n陌生人也会在同一站 给我一点点光\n一个让座 一个眼神 就够我把心放稳\n我也想成为那样的人 在别人最难的时候\n不说大道理 只递一盏灯\n\n[Verse 2]\n广播里 的字句有点沙哑\n报错一站 又急忙道歉笑挂\n你低头帮小朋友系鞋\n他说他害怕 你说等下就到家\n\n我看见对面 镜子里的自己\n原来眉头 也紧得像难题\n如果有天 轮到你崩溃\n愿我坐在 你抬头就能看到的哪里\n\n[Pre-Chorus]\n谁在练习勇敢 谁在练习离开\n谁把明天 折好放进口袋\n像秒针 追着脚步 跟着希望一起走快\n\n[Chorus]\n陌生人也会在同一站 给我一点点光\n一个让座 一个眼神 就够我把心放稳\n我也想成为那样的人 在别人最难的时候\n不说大道理 只递一盏灯\n\n[Bridge]\n也许这一面一辈子 只看见一次\n但那一次 就够心里 多留一点位置\n当你觉得自己渺小得像尘\n请相信 渺小的人 也能照亮别人\n\n[Chorus]"
@@ -7702,13 +7792,19 @@
       "tags": [
         "netease",
         "song",
-        "归途"
+        "归途",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3341591915"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Video",
+          "url": "https://www.youtube.com/watch?v=idgo-XcXDas&list=OLAK5uy_myIx0-3YvZK0urWVkfN4q8PN8BRYtl12w"
         }
       ],
       "embeds": [
@@ -7717,6 +7813,12 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3341591915&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube embed",
+          "url": "https://www.youtube.com/embed/idgo-XcXDas",
+          "height": 220
         }
       ],
       "lyrics": "[Verse 1]\n电视里的倒计时还在响\n我已经提着箱子站门廊\n妈妈问我明天去不去拜年\n我说我要去一个很远的地方\n解释太多不如沉默离场\n眼泪太咸不如笑着收场\n这顿年夜饭我吃得太勉强\n你在路口等我 车已发动\n\n[Chorus]\n人生得意须尽欢\n今夜就是我的得意夜晚\n金樽空对月太孤单\n不如与你共饮这夜的璀璨\n除夕出逃 不算叛逆\n只是终于听从了自己\n和你在一起 哪里都是团圆\n管它是异乡还是天边\n\n[Verse 2]\n手机还在不停震着口袋\n亲戚的问候一条条排队进来\n“在干嘛”“在哪儿”“早点回来”\n我就让未读堆成一片大海\n车窗外烟花一簇簇炸开\n像谁的期待 被风吹散在天台\n后座的外套还留着你的香味\n我靠着窗睡去 又被心事吵醒\n\n[Bridge]\n[低声呢喃]\n如果明天被追问这一整晚去哪\n就说跨了一座桥 看了几场烟花\n其实是跨过了 想讨好的自己啊\n在你肩膀这块小小天下\n把一整年的委屈全都放下\n\n[Chorus]"
@@ -7732,13 +7834,19 @@
       "tags": [
         "netease",
         "song",
-        "归途"
+        "归途",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3341825082"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Video",
+          "url": "https://www.youtube.com/watch?v=w8xZ6EYbkpM&list=OLAK5uy_myIx0-3YvZK0urWVkfN4q8PN8BRYtl12w"
         }
       ],
       "embeds": [
@@ -7747,6 +7855,12 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3341825082&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube embed",
+          "url": "https://www.youtube.com/embed/w8xZ6EYbkpM",
+          "height": 220
         }
       ],
       "lyrics": "主歌 1\n爆竹在城里开花\n风把红纸吹到关外\n我在雪里数脚印\n像数一封封没寄出的爱\n你说“明年一定回”\n我把这句捂在袖口\n袖口越捂越冷\n冷得像一条走不完的驿道\n「一年将尽夜，万里未归人」\n我把“未归”读轻一点\n怕惊动远处的门\n\n副歌\n爆竹响给别人听\n我把归途咽下去\n万家灯火一齐亮\n我的窗只亮回忆\n你等我一盏灯\n我欠你一场雪\n等到天明 等到新岁\n等到回声都停歇\n\n主歌 2\n廊下的梅影斜长\n像你写一半就停下的信\n炭火里一声爆响\n吓落了檐头最后一片冰\n邮差认得我的姓\n却认不得要寄向哪条路\n我把地址写成叹息\n一笔一画都在原处\n\n副歌\n爆竹响给别人听\n我把归途咽下去\n万家灯火一齐亮\n我的窗只亮回忆\n你等我一盏灯\n我欠你一场雪\n等到天明 等到新岁\n等到回声都停歇\n\n桥段\n若我真能回去\n先把你的名字\n贴在门上最亮的地方\n抬眼就能看到\n一回家 心就放下\n\n若我回不去\n就让春风替我\n替我敲一敲你窗\n你若听见一声轻响\n当作我在门外说声\n“我还在想”"
@@ -7762,13 +7876,19 @@
       "tags": [
         "netease",
         "song",
-        "归途"
+        "归途",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3341614359"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Video",
+          "url": "https://www.youtube.com/watch?v=JOLI2uFTZCQ&list=OLAK5uy_myIx0-3YvZK0urWVkfN4q8PN8BRYtl12w"
         }
       ],
       "embeds": [
@@ -7777,6 +7897,12 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3341614359&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube embed",
+          "url": "https://www.youtube.com/embed/JOLI2uFTZCQ",
+          "height": 220
         }
       ],
       "lyrics": "一屋子香烟味和糖果纸的响\n“来来来，吃一点”\n话说得比筷子还忙\n我在每句寒暄里点头\n像在一条看不见的队伍里\n排着长长的礼貌\n你在厨房添菜\n装作没看见\n我眼神里那点累\n你说亲戚是亲戚\n可日子是自己的\n别把自己赔\n「人情似纸张张薄」\n你怕我把真心\n拿去换几句客套的热\n\n笑得越周到\n心越像没靠岸的船\n我把尴尬咽下去\n把沉默也端上桌面\n你一转身递给我一杯温水\n像在喧闹里说\n别急\n先把自己稳一点\n\n鞋在门口排得整齐\n脸上的话却都穿不整齐\n谁家工作顺不顺\n谁家孩子上了几级\n问到感情\n有人替我回得太积极\n我把故事缩成一句\n“还行吧 最近忙自己”\n手机在口袋里震了又停\n像提醒我别被这一屋子眼神定义\n你在我身后轻轻扯了下衣角\n用眼神说\n不想聊的就笑笑\n碗筷碰撞像背景伴奏\n我在中间\n学着把委屈\n夹小口嚼\n\n笑得越周到\n心越像没靠岸的船\n我把尴尬咽下去\n把沉默也端上桌面\n你一转身递给我一杯温水\n像在喧闹里说\n别急\n先把自己稳一点\n\n回家路上你忽然问\n“今天有几次想掉头不来？”\n我说大概\n跟桌上酒杯数量差不多吧\n你笑着叹气\n说人活得久了\n总会练成一张应酬的脸\n可回到家\n要记得把它摘下来\n你说\n别谁喊一声就赶着答应\n先想想\n那声“我”\n还在不在\n\n笑得越周到\n心越像没靠岸的船\n我把尴尬咽下去\n把沉默也端上桌面\n你一转身递给我一杯温水\n像在喧闹里说\n别急\n先把自己稳一点",
@@ -7802,13 +7928,19 @@
       "tags": [
         "netease",
         "song",
-        "归途"
+        "归途",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3341824667"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Video",
+          "url": "https://www.youtube.com/watch?v=hy217UQofT8&list=OLAK5uy_myIx0-3YvZK0urWVkfN4q8PN8BRYtl12w"
         }
       ],
       "embeds": [
@@ -7817,6 +7949,12 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3341824667&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube embed",
+          "url": "https://www.youtube.com/embed/hy217UQofT8",
+          "height": 220
         }
       ],
       "lyrics": "主歌 1\n手机里有个歌单 没删\n建于二零一八年 春天\n那时候你负责挑歌\n我负责一首首 重播一遍\n\n你最爱那首晴天\n说这首歌 像我们的故事\n后来我再也不听晴天\n因为一听 心里就开始下雨\n\n副歌\n我怀念那时 怀念那时的我们\n那时候的天多蓝 笑多真\n「无可奈何花落去 似曾相识燕归来」\n歌单还在 歌还在\n唯独听歌的人 不在一起\n\n主歌 2\n你说副歌那句和弦 最暖\n配上你走路的小习惯\n耳机分你一边的瞬间\n好像整个世界 都变慢\n\n现在点开同一个界面\n封面照片 还是那张云天\n标题是你乱取的笑点\n我手指滑上去 却停在播放键前面\n\n副歌\n我怀念那时 怀念那时的我们\n那时候的天多蓝 笑多真\n「无可奈何花落去 似曾相识燕归来」\n歌单还在 歌还在\n唯独听歌的人 不在一起\n\n桥段\n怀念不是因为 那时候多好\n是因为那时候 有你\n我把那个歌单 设成了私密\n不是不想听 是怕听一次 就想一次\n想一次 就疼一次\n想一次 就疼一次"
@@ -7832,13 +7970,19 @@
       "tags": [
         "netease",
         "song",
-        "归途"
+        "归途",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3341614301"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Video",
+          "url": "https://www.youtube.com/watch?v=wAyanAoBhI0&list=OLAK5uy_myIx0-3YvZK0urWVkfN4q8PN8BRYtl12w"
         }
       ],
       "embeds": [
@@ -7847,6 +7991,12 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3341614301&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube embed",
+          "url": "https://www.youtube.com/embed/wAyanAoBhI0",
+          "height": 220
         }
       ],
       "lyrics": "[Verse 1]\n名纸一张张堆满桌面\n像堆满“已读不回”的整年\n我学会对着笑声机械点头\n却学不会把心拆开一点\n\n他们说“新年新气象”\n说“以后多多照应”\n我听见的是门外脚步声\n走得比承诺还要轻\n\n「不求见面惟通谒\n名纸朝来满敝庐」\n敝庐很小\n小到装不下一句不敷衍的问候\n\n[Chorus]\n把祝福都送出去\n没人把我接回去\n我在繁华里站成一粒尘\n被灯火反复确认又否认\n\n你递来的那一碗热\n剩着雾气 也剩着体温\n是我这一年里不敢放凉的恩\n端得久了 手都不舍得生疼\n\n[Verse 2]\n红封一只只压在抽屉\n像压住自问自答的声音\n屏幕上春晚在热闹翻滚\n我却对着倒影练习镇定\n\n门铃偶尔被风吹响\n心绪跟着一起失灵\n开门还是那堆客套口信\n转身只剩空盘与散席的安静\n\n[Chorus]\n\n[Bridge]\n若这世道只认名帖与寒暄\n把谁排在抬头的右边\n那我就悄悄把你写进歌里\n藏在最不显眼那一句边缘\n\n歌也算不上一条门路\n却能让我走回你的清晨\n当人情如纸 纷纷落地时\n还有这一行字 把我们拾稳"
@@ -7862,13 +8012,19 @@
       "tags": [
         "netease",
         "song",
-        "归途"
+        "归途",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3341839813"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Video",
+          "url": "https://www.youtube.com/watch?v=1JdKulteDcE&list=OLAK5uy_myIx0-3YvZK0urWVkfN4q8PN8BRYtl12w"
         }
       ],
       "embeds": [
@@ -7877,6 +8033,12 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3341839813&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube embed",
+          "url": "https://www.youtube.com/embed/1JdKulteDcE",
+          "height": 220
         }
       ],
       "lyrics": "[Verse 1]\n翻抽屉找红包袋\n翻出一沓泛黄信\n你的字迹像雪落进眼里\n化成一片模糊\n邮戳是零八年的冬\n你说等开春就回来\n春天来了一年又一年\n信封边角被雪粒沁透\n\n[Chorus]\n旧信封里装着你的雪\n我怎么捂都捂不热\n「此情可待成追忆，只是当时已惘然」\n你写的字 我读了一万遍\n每一遍都像在下雪\n\n[Verse 2]\n那时候你爱穿那件灰呢大衣\n口袋里塞着热气腾腾的栗子\n你说要带我去看一整场飞雪\n再给我一个不冷的拥抱\n后来只剩路口那家老书报亭\n替我们收着彼此的消息\n老板换了三次姓 也没等到你\n只剩下这些年份挤在纸缝里\n\n[Chorus]\n\n[Outro]\n如果思念能寄出\n我想把这些年的雪\n一片一片装进信封\n[低声] 贴上当年你亲手写的地址\n寄到你说的那个\n开春"

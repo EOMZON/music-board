@@ -212,6 +212,7 @@ function collectionFromItem(item) {
     cover: item.cover || "",
     trackCount: Number.isFinite(item.trackCount) ? item.trackCount : undefined,
     links: Array.isArray(item.links) ? item.links : [],
+    embeds: Array.isArray(item.embeds) ? item.embeds : [],
     tags: Array.isArray(item.tags) ? item.tags : [],
     styleTags: Array.isArray(item.styleTags) ? item.styleTags : []
   };
@@ -226,6 +227,7 @@ function trackFromItem(item) {
     releaseDate: item.releaseDate || "",
     cover: item.cover || "",
     collectionId: item.collectionId || "",
+    trackNo: Number.isFinite(item.trackNo) ? item.trackNo : (Number.isFinite(item.trackNumber) ? item.trackNumber : undefined),
     links: Array.isArray(item.links) ? item.links : [],
     embeds: Array.isArray(item.embeds) ? item.embeds : [],
     tags: Array.isArray(item.tags) ? item.tags : [],
@@ -273,7 +275,14 @@ function groupTracksByCollectionId(tracks) {
     map.get(key).push(t);
   }
   for (const [k, list] of map.entries()) {
-    list.sort((a, b) => (a.title || "").localeCompare(b.title || "", "zh-CN"));
+    list.sort((a, b) => {
+      const aNo = Number.isFinite(a.trackNo) ? a.trackNo : null;
+      const bNo = Number.isFinite(b.trackNo) ? b.trackNo : null;
+      if (aNo != null && bNo != null && aNo !== bNo) return aNo - bNo;
+      if (aNo != null && bNo == null) return -1;
+      if (aNo == null && bNo != null) return 1;
+      return (a.title || "").localeCompare(b.title || "", "zh-CN");
+    });
     map.set(k, list);
   }
   return map;
@@ -957,8 +966,10 @@ function rerender() {
       const list = tracksByCollectionId.get(c.id) || [];
       const tags = Array.isArray(c.tags) ? c.tags.filter(Boolean) : [];
       const styleTags = Array.isArray(c.styleTags) ? c.styleTags.filter(Boolean) : [];
+      const collectionEmbed = pickEmbed(c);
       const actions = [
         `<div class="dock">${renderPlatformIcons(c.links || [], 12)}</div>`,
+        collectionEmbed?.url ? `<button class="btn primary" type="button" data-play="${escapeHtml(c.id)}">Play</button>` : "",
         styleTags.length ? `<div class="badges" style="margin-top:10px;">${renderBadges(styleTags, 18)}</div>` : "",
         tags.length ? `<div class="badges" style="margin-top:10px;">${renderBadges(tags, 18)}</div>` : ""
       ].filter(Boolean).join("");
@@ -1118,6 +1129,28 @@ function rerender() {
   });
 
   document.getElementById("hero-actions").addEventListener("click", (e) => {
+    if (e.target.closest("a.icon")) return;
+
+    const open = e.target.closest("[data-open]");
+    if (open) {
+      const id = open.getAttribute("data-open");
+      if (id) location.hash = `#/c/${encodeURIComponent(id)}`;
+      return;
+    }
+
+    const playBtn = e.target.closest("[data-play]");
+    if (playBtn) {
+      const id = playBtn.getAttribute("data-play");
+      const t = tracksById.get(id);
+      if (t) {
+        playTrack(t);
+        return;
+      }
+      const c = collectionsById.get(id);
+      if (c) playTrack(c);
+      return;
+    }
+
     const btn = e.target.closest("[data-clear-platform]");
     if (!btn) return;
     ACTIVE_PLATFORM = "";
