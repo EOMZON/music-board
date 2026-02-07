@@ -341,18 +341,15 @@ function setModalOpen(open) {
 
   document.documentElement.style.overflow = open ? "hidden" : "";
   document.body.style.overflow = open ? "hidden" : "";
-
-  if (!open) {
-    const body = document.getElementById("modal-body");
-    if (body) body.innerHTML = "";
-  }
 }
 
 function setPlayerOpen(open) {
   player.open = !!open;
   const btn = document.getElementById("btn-toggle");
   btn.setAttribute("aria-expanded", open ? "true" : "false");
-  btn.textContent = open ? "Close" : "Open";
+  btn.textContent = PLAYER_UI === "modal"
+    ? (open ? "Hide" : "Open")
+    : (open ? "Close" : "Open");
 
   if (PLAYER_UI === "modal") {
     const frame = document.getElementById("player-frame");
@@ -374,6 +371,8 @@ function clearPlayer() {
   document.getElementById("player-icons").innerHTML = "";
   document.getElementById("player-iframe").src = "about:blank";
   document.getElementById("player-note").textContent = "";
+  const body = document.getElementById("modal-body");
+  if (body) body.innerHTML = "";
   setPlayerOpen(false);
 }
 
@@ -606,6 +605,20 @@ function renderCollections(collections, tracksByCollectionId, q, tagKey) {
   `;
 }
 
+function renderSection(title, sub, bodyHtml) {
+  return `
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="section-title">${escapeHtml(title || "")}</div>
+          ${sub ? `<div class="section-sub">${escapeHtml(sub)}</div>` : ""}
+        </div>
+      </div>
+      ${bodyHtml || ""}
+    </section>
+  `;
+}
+
 function renderCollectionDetail(collection, tracks, q) {
   const filteredAll = tracks
     .filter(t => matchQueryTrack(t, q))
@@ -617,7 +630,7 @@ function renderCollectionDetail(collection, tracks, q) {
     const badges = trackBadgesForList(t, collection, 6);
     const badgesHtml = badges.length ? `<div class="badges inline">${renderBadges(badges, 6)}</div>` : "";
     return `
-      <li class="track">
+      <li class="track" role="button" tabindex="0" data-play-row="${escapeHtml(t.id)}" aria-label="播放：${escapeHtml(t.title || '')}">
         <div class="idx">${String(idx + 1).padStart(2, "0")}</div>
         <div class="tmeta">
           <div class="title">${escapeHtml(t.title)}</div>
@@ -638,9 +651,14 @@ function renderCollectionDetail(collection, tracks, q) {
   `;
 }
 
-function renderTracksFlat(tracks, collectionsById, q) {
+function renderTracksFlat(tracks, collectionsById, q, tagKey = "") {
+  const tag = tagKey && tagKey.startsWith("tag:") ? tagKey.slice(4) : "";
   const filteredAll = tracks
     .filter(t => matchQueryTrack(t, q))
+    .filter(t => {
+      if (!tag) return true;
+      return Array.isArray(t.tags) && t.tags.includes(tag);
+    })
     .filter(t => itemHasPlatform(t, ACTIVE_PLATFORM))
     .sort((a, b) => (a.title || "").localeCompare(b.title || "", "zh-CN"));
 
@@ -652,7 +670,7 @@ function renderTracksFlat(tracks, collectionsById, q) {
     const badges = trackBadgesForList(t, col, 6);
     const badgesHtml = badges.length ? `<div class="badges inline">${renderBadges(badges, 6)}</div>` : "";
     return `
-      <li class="track">
+      <li class="track" role="button" tabindex="0" data-play-row="${escapeHtml(t.id)}" aria-label="播放：${escapeHtml(t.title || '')}">
         <div class="idx">${String(idx + 1).padStart(2, "0")}</div>
         <div class="tmeta">
           <div class="title">${escapeHtml(t.title)}</div>
@@ -1138,7 +1156,7 @@ function rerender() {
 
     if (route === "tracks") {
       setHero({ coverItem: null, title: "Tracks", sub: "按歌名浏览（可直接播放）", actionsHtml: "" });
-      content.innerHTML = renderTracksFlat(tracks, collectionsById, q);
+      content.innerHTML = renderTracksFlat(tracks, collectionsById, q, chipKey);
       return;
     }
 
@@ -1165,13 +1183,36 @@ function rerender() {
       return;
     }
 
+    const wantsTracksOnly = chipKey === "tracks";
+    const wantsCollectionsOnly = chipKey === "collections";
+
     setHero({
       coverItem: null,
-      title: profile?.headline || "Latest collections",
-      sub: ACTIVE_PLATFORM ? `当前筛选：${platformLabel(ACTIVE_PLATFORM)} · 点击平台图标可切换/清除` : "点击一个合集 → 选曲 → 底部播放器播放（不跳转）",
+      title: q
+        ? "Search"
+        : (wantsTracksOnly ? "Tracks" : (profile?.headline || "Latest collections")),
+      sub: q
+        ? "匹配歌曲 + 合集（点击歌曲整行播放）"
+        : (wantsTracksOnly ? "按歌名搜索（点击整行播放）" : (ACTIVE_PLATFORM ? `当前筛选：${platformLabel(ACTIVE_PLATFORM)} · 点击平台图标可切换/清除` : "点击一个合集 → 选曲 → 底部播放器播放（不跳转）")),
       actionsHtml: ""
     });
-    content.innerHTML = renderCollections(collections, tracksByCollectionId, q, chipKey);
+
+    const sections = [];
+    if (wantsTracksOnly || (!wantsCollectionsOnly && q)) {
+      sections.push(renderSection(
+        "Tracks",
+        q ? "匹配歌曲（支持 YouTube 自动播放）" : "全部歌曲（点击整行播放）",
+        renderTracksFlat(tracks, collectionsById, q, chipKey)
+      ));
+    }
+    if (!wantsTracksOnly) {
+      sections.push(renderSection(
+        "Collections",
+        q ? "匹配合集" : "最新合集",
+        renderCollections(collections, tracksByCollectionId, q, chipKey)
+      ));
+    }
+    content.innerHTML = sections.join("");
   }
 
   window.addEventListener("hashchange", rerender);
@@ -1217,12 +1258,32 @@ function rerender() {
     if (playBtn) {
       const id = playBtn.getAttribute("data-play");
       const t = tracksById.get(id);
+      if (t) {
+        playTrack(t);
+        return;
+      }
+    }
+
+    const playRow = e.target.closest("[data-play-row]");
+    if (playRow) {
+      const id = playRow.getAttribute("data-play-row");
+      const t = tracksById.get(id);
       if (t) playTrack(t);
     }
   });
 
   document.getElementById("content").addEventListener("keydown", (e) => {
     if (e.key !== "Enter") return;
+    if (!(e.target instanceof Element)) return;
+
+    const playRow = e.target.closest("[data-play-row]");
+    if (playRow) {
+      const id = playRow.getAttribute("data-play-row");
+      const t = tracksById.get(id);
+      if (t) playTrack(t);
+      return;
+    }
+
     const open = e.target.closest("[data-open]");
     if (!open) return;
     const id = open.getAttribute("data-open");

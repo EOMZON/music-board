@@ -14,8 +14,8 @@
       },
       {
         "platform": "youtube",
-        "label": "YouTube",
-        "url": "https://www.youtube.com/playlist?list=OLAK5uy_myIx0-3YvZK0urWVkfN4q8PN8BRYtl12w"
+        "label": "YouTube · Channel",
+        "url": "https://www.youtube.com/channel/UCzJDxfLe42TOFdYGSrG-cyw"
       }
     ]
   },
@@ -30,16 +30,29 @@
       "tags": [
         "netease",
         "album",
-        "灯火向晚"
+        "灯火向晚",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 专辑",
           "url": "https://music.163.com/#/album?id=358551174"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_moqvNrqkPwDP1N387vnxahvwF5UyNoUzM"
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_moqvNrqkPwDP1N387vnxahvwF5UyNoUzM",
+          "height": 360
+        }
+      ],
       "trackCount": 8
     },
     {
@@ -53,13 +66,19 @@
       "tags": [
         "netease",
         "song",
-        "灯火向晚"
+        "灯火向晚",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3339848354"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_moqvNrqkPwDP1N387vnxahvwF5UyNoUzM&index=1"
         }
       ],
       "embeds": [
@@ -68,9 +87,16 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3339848354&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_moqvNrqkPwDP1N387vnxahvwF5UyNoUzM&index=1",
+          "height": 220
         }
       ],
-      "lyrics": "人日清晨窗微开\n红纸贴在玻璃边\n你伸手理好围巾\n指尖绕着细细彩线\n笑说要把好运打成结\n系在新的一年\n\n教室走廊人声淡淡\n日历翻到全新一页\n黑板粉尘在阳光里打转\n你忽然回头看我一眼\n\n青春须早为 岂能常少年\n这句旧诗在耳边\n风里你身影轻轻晃一遍\n像我鼓起勇气的预演\n我要把纯真告白送你\n写进这人日的晴天\n紧紧记住\n春节的每一瞬间\n\n操场边的旧长椅\n外套口袋藏着誓言\n你说还不懂未来多远\n只知道现在多么简单\n小卖部门口排着长长一线\n笑声连到天边\n\n你把围巾分我一半\n呼吸在白雾里交叠\n鞭炮声在远处轻轻炸开\n像心事一点一点被听见\n\n青春须早为 岂能常少年\n这句旧诗在耳边\n风里你身影轻轻晃一遍\n像我鼓起勇气的预演\n我要把纯真告白送你\n写进这人日的晴天\n紧紧记住\n春节的每一瞬间\n\n也许多年后各自天南海北\n翻开相册才忽然想起\n这一日阳光刚刚好\n这一刻我们还相信自己\n\n青春须早为 岂能常少年\n这句旧诗在耳边\n风里你身影轻轻晃一遍\n像我鼓起勇气的预演\n我要把纯真告白送你\n写进这人日的晴天\n紧紧记住\n春节的每一瞬间"
+      "lyrics": "人日清晨窗微开\n红纸贴在玻璃边\n你伸手理好围巾\n指尖绕着细细彩线\n笑说要把好运打成结\n系在新的一年\n\n教室走廊人声淡淡\n日历翻到全新一页\n黑板粉尘在阳光里打转\n你忽然回头看我一眼\n\n青春须早为 岂能常少年\n这句旧诗在耳边\n风里你身影轻轻晃一遍\n像我鼓起勇气的预演\n我要把纯真告白送你\n写进这人日的晴天\n紧紧记住\n春节的每一瞬间\n\n操场边的旧长椅\n外套口袋藏着誓言\n你说还不懂未来多远\n只知道现在多么简单\n小卖部门口排着长长一线\n笑声连到天边\n\n你把围巾分我一半\n呼吸在白雾里交叠\n鞭炮声在远处轻轻炸开\n像心事一点一点被听见\n\n青春须早为 岂能常少年\n这句旧诗在耳边\n风里你身影轻轻晃一遍\n像我鼓起勇气的预演\n我要把纯真告白送你\n写进这人日的晴天\n紧紧记住\n春节的每一瞬间\n\n也许多年后各自天南海北\n翻开相册才忽然想起\n这一日阳光刚刚好\n这一刻我们还相信自己\n\n青春须早为 岂能常少年\n这句旧诗在耳边\n风里你身影轻轻晃一遍\n像我鼓起勇气的预演\n我要把纯真告白送你\n写进这人日的晴天\n紧紧记住\n春节的每一瞬间",
+      "trackNo": 1
     },
     {
       "id": "netease-song-3339841365",
@@ -83,13 +109,19 @@
       "tags": [
         "netease",
         "song",
-        "灯火向晚"
+        "灯火向晚",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3339841365"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_moqvNrqkPwDP1N387vnxahvwF5UyNoUzM&index=2"
         }
       ],
       "embeds": [
@@ -98,9 +130,16 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3339841365&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_moqvNrqkPwDP1N387vnxahvwF5UyNoUzM&index=2",
+          "height": 220
         }
       ],
-      "lyrics": "窗纸还留着\n那年写错的字\n抬手又放下\n笔筒里只剩尘\n\n门口新红挂起\n对联压着旧痕\n“岁岁平安”四个字\n看着却更心闷\n\n青山遮不住\n毕竟东流去\n我们拦不住\n回不去的自己\n如今笔停墨已干\n春联贴了 心却空了一地\n\n青山遮不住\n任它东流去\n还能留得住\n谁当时的一句\n如果再写一个你\n也换不回 那些没说清的语气\n\n厨房里还有\n你爱喝的茶叶\n翻出来闻一闻\n只记得你侧脸\n\n楼下鞭炮响远\n笑声隔着楼间\n有人在门外喊\n而我不知回谁一遍\n\n青山遮不住\n毕竟东流去\n我们拦不住\n回不去的自己\n如今笔停墨已干\n春联贴了 心却空了一地\n\n灯关一半\n影子靠在墙边\n我把去年的旧联\n一笔一划读一遍\n“合家欢乐”\n读完只剩下自己一人\n\n青山遮不住\n毕竟东流去\n我们拦不住\n回不去的自己\n如今笔停墨已干\n春联贴了 心却空了一地"
+      "lyrics": "窗纸还留着\n那年写错的字\n抬手又放下\n笔筒里只剩尘\n\n门口新红挂起\n对联压着旧痕\n“岁岁平安”四个字\n看着却更心闷\n\n青山遮不住\n毕竟东流去\n我们拦不住\n回不去的自己\n如今笔停墨已干\n春联贴了 心却空了一地\n\n青山遮不住\n任它东流去\n还能留得住\n谁当时的一句\n如果再写一个你\n也换不回 那些没说清的语气\n\n厨房里还有\n你爱喝的茶叶\n翻出来闻一闻\n只记得你侧脸\n\n楼下鞭炮响远\n笑声隔着楼间\n有人在门外喊\n而我不知回谁一遍\n\n青山遮不住\n毕竟东流去\n我们拦不住\n回不去的自己\n如今笔停墨已干\n春联贴了 心却空了一地\n\n灯关一半\n影子靠在墙边\n我把去年的旧联\n一笔一划读一遍\n“合家欢乐”\n读完只剩下自己一人\n\n青山遮不住\n毕竟东流去\n我们拦不住\n回不去的自己\n如今笔停墨已干\n春联贴了 心却空了一地",
+      "trackNo": 2
     },
     {
       "id": "netease-song-3339854993",
@@ -113,13 +152,19 @@
       "tags": [
         "netease",
         "song",
-        "灯火向晚"
+        "灯火向晚",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3339854993"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_moqvNrqkPwDP1N387vnxahvwF5UyNoUzM&index=3"
         }
       ],
       "embeds": [
@@ -128,9 +173,16 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3339854993&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_moqvNrqkPwDP1N387vnxahvwF5UyNoUzM&index=3",
+          "height": 220
         }
       ],
-      "lyrics": "窗外白得刺眼\n枝桠瘦成一行线\n操场空着 风呼喊\n脚印一路被冲淡\n\n你问未来多远\n像看不见的终点\n可心脏一次次敲门\n在胸口里点火焰\n\n寒冬最深处\n才知谁在生长\n土里黑暗翻涌\n悄悄把绿意酝酿\n风雪不言苦\n挺立本身就是答案\n抬头呼一口气\n你已比昨天勇敢一点\n\n走廊灯光偏暗\n考卷摊成一片海\n有人先到 先离开\n你还在原地改改改\n\n以为只剩自己\n其实身旁有回音\n那一声“别放弃”\n是你对自己说明\n\n寒冬最深处\n才知谁在生长\n土里黑暗翻涌\n悄悄把绿意点亮\n风雪不言苦\n挺立本身就是答案\n抬头呼一口气\n你已比昨天勇敢一点\n\n一二三\n再走一步向前\n倒数的夜\n也是出发那天\n把怕冷的眼泪\n藏进微笑里面\n等第一缕晨光\n替你读出考卷\n\n寒冬最深处\n才知谁在生长\n土里黑暗翻涌\n悄悄把绿意点亮\n风雪不言苦\n挺立本身就是答案\n抬头呼一口气\n你已比昨天勇敢一点"
+      "lyrics": "窗外白得刺眼\n枝桠瘦成一行线\n操场空着 风呼喊\n脚印一路被冲淡\n\n你问未来多远\n像看不见的终点\n可心脏一次次敲门\n在胸口里点火焰\n\n寒冬最深处\n才知谁在生长\n土里黑暗翻涌\n悄悄把绿意酝酿\n风雪不言苦\n挺立本身就是答案\n抬头呼一口气\n你已比昨天勇敢一点\n\n走廊灯光偏暗\n考卷摊成一片海\n有人先到 先离开\n你还在原地改改改\n\n以为只剩自己\n其实身旁有回音\n那一声“别放弃”\n是你对自己说明\n\n寒冬最深处\n才知谁在生长\n土里黑暗翻涌\n悄悄把绿意点亮\n风雪不言苦\n挺立本身就是答案\n抬头呼一口气\n你已比昨天勇敢一点\n\n一二三\n再走一步向前\n倒数的夜\n也是出发那天\n把怕冷的眼泪\n藏进微笑里面\n等第一缕晨光\n替你读出考卷\n\n寒冬最深处\n才知谁在生长\n土里黑暗翻涌\n悄悄把绿意点亮\n风雪不言苦\n挺立本身就是答案\n抬头呼一口气\n你已比昨天勇敢一点",
+      "trackNo": 3
     },
     {
       "id": "netease-song-3339864925",
@@ -143,13 +195,19 @@
       "tags": [
         "netease",
         "song",
-        "灯火向晚"
+        "灯火向晚",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3339864925"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_moqvNrqkPwDP1N387vnxahvwF5UyNoUzM&index=4"
         }
       ],
       "embeds": [
@@ -158,9 +216,16 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3339864925&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_moqvNrqkPwDP1N387vnxahvwF5UyNoUzM&index=4",
+          "height": 220
         }
       ],
-      "lyrics": "哗啦水声进门\n白雾挂在纸门上\n竹篮放好　发梢还在滴\n心里先喊一声\n“要红要旺　要亮堂”\n\n除夕的月亮　挂得刚刚好\n鞋子排成队　像在等口号\n新买的发簪　躺在小布包\n偷偷望镜子里　那个人在笑\n\n旧去新来　搓走一身灰\n泡一池热气　把烦恼都退\n干干净净　从头到脚飞\n一身喜气过新年　转个圈儿再回\n旧去新来　往门外都推\n福字贴得歪　也算一种美\n干干净净　心里亮一倍\n一身喜气过新年　来来来再陪\n\n蒸汽把窗花　熏成软软光\n指尖划水面　写个小愿望\n红绳绕手腕　系得有点忙\n耳边远远鞭炮　抢先来登场\n\n旧去新来　搓走一身灰\n泡一池热气　把烦恼都退\n干干净净　从头到脚飞\n一身喜气过新年　转个圈儿再回\n旧去新来　往门外都推\n福字贴得歪　也算一种美\n干干净净　心里亮一倍\n一身喜气过新年　来来来再陪"
+      "lyrics": "哗啦水声进门\n白雾挂在纸门上\n竹篮放好　发梢还在滴\n心里先喊一声\n“要红要旺　要亮堂”\n\n除夕的月亮　挂得刚刚好\n鞋子排成队　像在等口号\n新买的发簪　躺在小布包\n偷偷望镜子里　那个人在笑\n\n旧去新来　搓走一身灰\n泡一池热气　把烦恼都退\n干干净净　从头到脚飞\n一身喜气过新年　转个圈儿再回\n旧去新来　往门外都推\n福字贴得歪　也算一种美\n干干净净　心里亮一倍\n一身喜气过新年　来来来再陪\n\n蒸汽把窗花　熏成软软光\n指尖划水面　写个小愿望\n红绳绕手腕　系得有点忙\n耳边远远鞭炮　抢先来登场\n\n旧去新来　搓走一身灰\n泡一池热气　把烦恼都退\n干干净净　从头到脚飞\n一身喜气过新年　转个圈儿再回\n旧去新来　往门外都推\n福字贴得歪　也算一种美\n干干净净　心里亮一倍\n一身喜气过新年　来来来再陪",
+      "trackNo": 4
     },
     {
       "id": "netease-song-3339862353",
@@ -173,13 +238,19 @@
       "tags": [
         "netease",
         "song",
-        "灯火向晚"
+        "灯火向晚",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3339862353"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_moqvNrqkPwDP1N387vnxahvwF5UyNoUzM&index=5"
         }
       ],
       "embeds": [
@@ -188,9 +259,16 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3339862353&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_moqvNrqkPwDP1N387vnxahvwF5UyNoUzM&index=5",
+          "height": 220
         }
       ],
-      "lyrics": "香车宝马逐灯游\n元宵灯火照街头\n人潮里你忽然回头\n一笑点亮\n我整个冬\n\n纸灯晃着\n像你眼睛躲不休\n热汤甜到\n连指尖都发烫发红\n一句“走吗？”\n我假装听不懂\n心跳却跟着\n鼓点一起冲\n\n就叫灯火回头\n那一秒宇宙停在你眉头\n糖水还在冒烟\n却比不上你嘴角的温柔\n绕着广场转圈\n脚步乱成一串节奏\n如果可以\n就让今夜\n卡在这格画面不往后\n\n你说路滑小心走\n顺手牵过我的外袖\n摊位叫卖声当背景音游走\n我只记得\n你侧脸的轮廓\n\n烟花炸开\n我却看你睫毛抖\n小灯笼下\n影子贴得有点过头\n你忽然靠近\n问我冷不冷\n我嘴里说还好\n心里早失控\n\n就叫灯火回头\n那一秒宇宙停在你眉头\n糖水还在冒烟\n却比不上你嘴角的温柔\n绕着广场转圈\n脚步乱成一串节奏\n如果可以\n就让今夜\n卡在这格画面不往后\n\n过了今天\n还会这样并肩走吗\n人散之后\n你会记得谁在笑吗\n若是明年灯会再盛大\n还能不能\n在同一个路口\n把我认出啊\n\n就叫灯火回头\n那一秒宇宙停在你眉头\n糖水还在冒烟\n却比不上你嘴角的温柔\n绕着广场转圈\n脚步乱成一串节奏\n如果可以\n就让今夜\n卡在这格画面不往后"
+      "lyrics": "香车宝马逐灯游\n元宵灯火照街头\n人潮里你忽然回头\n一笑点亮\n我整个冬\n\n纸灯晃着\n像你眼睛躲不休\n热汤甜到\n连指尖都发烫发红\n一句“走吗？”\n我假装听不懂\n心跳却跟着\n鼓点一起冲\n\n就叫灯火回头\n那一秒宇宙停在你眉头\n糖水还在冒烟\n却比不上你嘴角的温柔\n绕着广场转圈\n脚步乱成一串节奏\n如果可以\n就让今夜\n卡在这格画面不往后\n\n你说路滑小心走\n顺手牵过我的外袖\n摊位叫卖声当背景音游走\n我只记得\n你侧脸的轮廓\n\n烟花炸开\n我却看你睫毛抖\n小灯笼下\n影子贴得有点过头\n你忽然靠近\n问我冷不冷\n我嘴里说还好\n心里早失控\n\n就叫灯火回头\n那一秒宇宙停在你眉头\n糖水还在冒烟\n却比不上你嘴角的温柔\n绕着广场转圈\n脚步乱成一串节奏\n如果可以\n就让今夜\n卡在这格画面不往后\n\n过了今天\n还会这样并肩走吗\n人散之后\n你会记得谁在笑吗\n若是明年灯会再盛大\n还能不能\n在同一个路口\n把我认出啊\n\n就叫灯火回头\n那一秒宇宙停在你眉头\n糖水还在冒烟\n却比不上你嘴角的温柔\n绕着广场转圈\n脚步乱成一串节奏\n如果可以\n就让今夜\n卡在这格画面不往后",
+      "trackNo": 5
     },
     {
       "id": "netease-song-3339862355",
@@ -203,13 +281,19 @@
       "tags": [
         "netease",
         "song",
-        "灯火向晚"
+        "灯火向晚",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3339862355"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_moqvNrqkPwDP1N387vnxahvwF5UyNoUzM&index=6"
         }
       ],
       "embeds": [
@@ -218,9 +302,16 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3339862355&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_moqvNrqkPwDP1N387vnxahvwF5UyNoUzM&index=6",
+          "height": 220
         }
       ],
-      "lyrics": "缘结一爆就照长街\n人影动动像旧戏\n你停步朝我看一眼\n灯火在瞳中盛开不熄\n喧闹里突然变安静\n这一秒比烟花还长\n糖葫芦手心渐渐化开\n心却被你晃得发烫\n\n纸灯晃啊晃\n影子靠很近\n你笑说好挤\n我却更靠近\n耳边吵闹全都淡去\n只听见自己的心\n\n灯火在你眼里开\n一圈一圈把我围起来\n像被人群推着往前\n却只朝你一个方向踩\n灯火在你眼里开\n甜得让我脚步发飘起来\n你说“走吧 再逛一会”\n我点头 整条街都在摇摆\n\n汤圆一碗捧太满\n白雾起在你睫毛上\n你低头吹得很认真\n像在怕我被烫到一样\n对联被风吹起一角\n你顺手替它扶好\n我突然学它微微起跳\n试着贴进你的怀抱\n\n扭蛋机旁边\n小贩吆喝声\n你问要哪种\n我说随你选\n抽到一只迷你纸鸢\n说是替我把愿望牵\n\n灯火在你眼里开\n一圈一圈把我围起来\n像被人群推着往前\n却只朝你一个方向踩\n灯火在你眼里开\n甜得让我脚步发飘起来\n你说“走吧 再逛一会”\n我点头 整条街都在摇摆\n\n原来世界可以这么亮\n原来转身就能遇见你\n灯笼一串串排成银河\n我只在意 谁牵着我衣角\n\n一二三步 跟着你的节拍\n左右摇晃 心乱成小孩\n\n灯火在你眼里开\n一圈一圈把我围起来\n像被人群推着往前\n却只朝你一个方向踩\n灯火在你眼里开\n甜得让我脚步发飘起来\n你说“走吧 再逛一会”\n我点头 整条街都在摇摆"
+      "lyrics": "缘结一爆就照长街\n人影动动像旧戏\n你停步朝我看一眼\n灯火在瞳中盛开不熄\n喧闹里突然变安静\n这一秒比烟花还长\n糖葫芦手心渐渐化开\n心却被你晃得发烫\n\n纸灯晃啊晃\n影子靠很近\n你笑说好挤\n我却更靠近\n耳边吵闹全都淡去\n只听见自己的心\n\n灯火在你眼里开\n一圈一圈把我围起来\n像被人群推着往前\n却只朝你一个方向踩\n灯火在你眼里开\n甜得让我脚步发飘起来\n你说“走吧 再逛一会”\n我点头 整条街都在摇摆\n\n汤圆一碗捧太满\n白雾起在你睫毛上\n你低头吹得很认真\n像在怕我被烫到一样\n对联被风吹起一角\n你顺手替它扶好\n我突然学它微微起跳\n试着贴进你的怀抱\n\n扭蛋机旁边\n小贩吆喝声\n你问要哪种\n我说随你选\n抽到一只迷你纸鸢\n说是替我把愿望牵\n\n灯火在你眼里开\n一圈一圈把我围起来\n像被人群推着往前\n却只朝你一个方向踩\n灯火在你眼里开\n甜得让我脚步发飘起来\n你说“走吧 再逛一会”\n我点头 整条街都在摇摆\n\n原来世界可以这么亮\n原来转身就能遇见你\n灯笼一串串排成银河\n我只在意 谁牵着我衣角\n\n一二三步 跟着你的节拍\n左右摇晃 心乱成小孩\n\n灯火在你眼里开\n一圈一圈把我围起来\n像被人群推着往前\n却只朝你一个方向踩\n灯火在你眼里开\n甜得让我脚步发飘起来\n你说“走吧 再逛一会”\n我点头 整条街都在摇摆",
+      "trackNo": 6
     },
     {
       "id": "netease-song-3339856883",
@@ -233,13 +324,19 @@
       "tags": [
         "netease",
         "song",
-        "灯火向晚"
+        "灯火向晚",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3339856883"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_moqvNrqkPwDP1N387vnxahvwF5UyNoUzM&index=7"
         }
       ],
       "embeds": [
@@ -248,9 +345,16 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3339856883&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_moqvNrqkPwDP1N387vnxahvwF5UyNoUzM&index=7",
+          "height": 220
         }
       ],
-      "lyrics": "福字倒贴在门楣上\n你站在小凳旁边看\n她笑说这样福会到\n说完就把你抱得很紧\n\n春联的纸味混着浆糊\n电视里旧戏吵成一团\n她随口念着古人的句子\n说人来人去都是平常\n\n人事有代谢\n往来成古今\n她说得轻\n像在说明天气\n那时你信了\n以为转个身\n福就会到\n旧人也还在这里\n\n多年后门漆剥成碎屑\n钉孔边纸边卷成灰\n那一个倒着挂的红字\n被雨打得再也看不清\n\n谁把它揭下来的\n你也记不真\n只记得有一年过节很安静\n桌上多了空椅子一整夜\n\n人事有代谢\n往来成古今\n她说得轻\n像在说明天气\n那时你信了\n以为转个身\n福就会到\n旧人也还在这里"
+      "lyrics": "福字倒贴在门楣上\n你站在小凳旁边看\n她笑说这样福会到\n说完就把你抱得很紧\n\n春联的纸味混着浆糊\n电视里旧戏吵成一团\n她随口念着古人的句子\n说人来人去都是平常\n\n人事有代谢\n往来成古今\n她说得轻\n像在说明天气\n那时你信了\n以为转个身\n福就会到\n旧人也还在这里\n\n多年后门漆剥成碎屑\n钉孔边纸边卷成灰\n那一个倒着挂的红字\n被雨打得再也看不清\n\n谁把它揭下来的\n你也记不真\n只记得有一年过节很安静\n桌上多了空椅子一整夜\n\n人事有代谢\n往来成古今\n她说得轻\n像在说明天气\n那时你信了\n以为转个身\n福就会到\n旧人也还在这里",
+      "trackNo": 7
     },
     {
       "id": "netease-song-3339862354",
@@ -263,13 +367,19 @@
       "tags": [
         "netease",
         "song",
-        "灯火向晚"
+        "灯火向晚",
+        "youtube"
       ],
       "links": [
         {
           "platform": "netease",
           "label": "网易云 · 单曲",
           "url": "https://music.163.com/#/song?id=3339862354"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_moqvNrqkPwDP1N387vnxahvwF5UyNoUzM&index=8"
         }
       ],
       "embeds": [
@@ -278,9 +388,16 @@
           "label": "网易云外链播放器（如不可用可删）",
           "url": "https://music.163.com/outchain/player?type=2&id=3339862354&auto=0&height=66",
           "height": 86
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_moqvNrqkPwDP1N387vnxahvwF5UyNoUzM&index=8",
+          "height": 220
         }
       ],
-      "lyrics": "元宵一碗\n白瓷浅口\n汤勺沿着边转一圈\n挑一颗最大的走\n\n灯笼挂得很低\n影子压到门口\n你趴在桌边数汤圆\n数着数着就笑抖\n\n甜味还在\n愁已满腹\n一口咽下去\n喉咙却更酸楚\n那年只记得\n嘴里滚烫的糖雾\n如今只剩下\n心里翻腾的苦\n\n有人嫌馅太黏\n有人嫌皮太厚\n你总把最后一颗\n留给碗底的小朋友\n\n一句“少年不识愁”\n被大人当笑话说\n你抢着往高处爬\n看烟花落成星河\n\n甜味还在\n愁已满腹\n一口咽下去\n喉咙却更酸楚\n那年只记得\n嘴里滚烫的糖雾\n如今只剩下\n心里翻腾的苦\n\n现在超市灯很亮\n速冻柜排成路\n塑料袋轻轻一撕\n圆圆的掉一桌\n\n水开就下\n三分钟就熟\n再也不用守在灶前\n看一盏灯慢慢糊\n\n甜味还在\n愁已满腹\n一口咽下去\n喉咙却更酸楚\n那年只记得\n嘴里滚烫的糖雾\n如今只剩下\n心里翻腾的苦"
+      "lyrics": "元宵一碗\n白瓷浅口\n汤勺沿着边转一圈\n挑一颗最大的走\n\n灯笼挂得很低\n影子压到门口\n你趴在桌边数汤圆\n数着数着就笑抖\n\n甜味还在\n愁已满腹\n一口咽下去\n喉咙却更酸楚\n那年只记得\n嘴里滚烫的糖雾\n如今只剩下\n心里翻腾的苦\n\n有人嫌馅太黏\n有人嫌皮太厚\n你总把最后一颗\n留给碗底的小朋友\n\n一句“少年不识愁”\n被大人当笑话说\n你抢着往高处爬\n看烟花落成星河\n\n甜味还在\n愁已满腹\n一口咽下去\n喉咙却更酸楚\n那年只记得\n嘴里滚烫的糖雾\n如今只剩下\n心里翻腾的苦\n\n现在超市灯很亮\n速冻柜排成路\n塑料袋轻轻一撕\n圆圆的掉一桌\n\n水开就下\n三分钟就熟\n再也不用守在灶前\n看一盏灯慢慢糊\n\n甜味还在\n愁已满腹\n一口咽下去\n喉咙却更酸楚\n那年只记得\n嘴里滚烫的糖雾\n如今只剩下\n心里翻腾的苦",
+      "trackNo": 8
     },
     {
       "id": "netease-album-357021744",
@@ -8483,7 +8600,8 @@
       "tags": [
         "distrokid",
         "album",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -8533,8 +8651,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y"
         },
         {
           "platform": "iheart",
@@ -8607,7 +8725,14 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y",
+          "height": 360
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
@@ -9198,7 +9323,8 @@
       "tags": [
         "distrokid",
         "album",
-        "Her"
+        "Her",
+        "youtube"
       ],
       "links": [
         {
@@ -9248,8 +9374,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M"
         },
         {
           "platform": "iheart",
@@ -9322,7 +9448,14 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M",
+          "height": 360
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "CEBE7D10-4A89-456E-A1F5E5F1149F6F65"
@@ -9341,7 +9474,8 @@
       "tags": [
         "distrokid",
         "album",
-        "圣诞冬旋"
+        "圣诞冬旋",
+        "youtube"
       ],
       "links": [
         {
@@ -9391,8 +9525,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_mrPMATdwZvVCEa1MDxs39wuMIoT0_O-Co"
         },
         {
           "platform": "iheart",
@@ -9460,7 +9594,14 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_mrPMATdwZvVCEa1MDxs39wuMIoT0_O-Co",
+          "height": 360
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "45A62A74-5BA4-47AB-852101A15900870D"
@@ -11057,7 +11198,8 @@
       "tags": [
         "distrokid",
         "song",
-        "圣诞冬旋"
+        "圣诞冬旋",
+        "youtube"
       ],
       "links": [
         {
@@ -11077,8 +11219,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_mrPMATdwZvVCEa1MDxs39wuMIoT0_O-Co&index=1"
         },
         {
           "platform": "qq",
@@ -11086,13 +11228,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_mrPMATdwZvVCEa1MDxs39wuMIoT0_O-Co&index=1",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "45A62A74-5BA4-47AB-852101A15900870D"
         }
       },
-      "lyrics": "Upload \nMy Music\nStats\nSplits\nUpgrade\nBank\n\n圣诞冬旋\nROYAZON EOM\nRecord Label: 11079952 Records DK\nUpload date: December 19, 2025\nRelease date: December 19, 2025\nDistroKid UPC: 199941273236\nThis album was successfully processed and delivered to stores.\nTrack list\n1\n圣诞冬旋\n Plain lyrics\n Synced lyrics\n Credits\n Vizy\n Audio Swap\n Download\nISRC\nQT6G32558147\n2\n圣诞圆舞曲\n Plain lyrics\n Synced lyrics\n Credits\n Vizy\n Audio Swap\n Download\nISRC\nQT6G32558148\n3\n圣诞夜曲\n Plain lyrics\n Synced lyrics\n Credits\n Vizy\n Audio Swap\n Download\nISRC\nQT6G32558149\n4\n圣诞的碎钻橱窗\n Plain lyrics\n Synced lyrics\n Credits\n Vizy\n Audio Swap\n Download\nISRC\nQT6G32558150\n5\n星道流雪\n Plain lyrics\n Synced lyrics\n Credits\n Vizy\n Audio Swap\n Download\nISRC\nQT6G32558151\n6\n铃光闪烁\n Plain lyrics\n Synced lyrics\n Credits\n Vizy\n Audio Swap\n Download\nISRC\nQT6G32558152\n7\n雪橇铃舞\n Plain lyrics\n Synced lyrics\n Credits\n Vizy\n Audio Swap\n Download\nISRC\nQT6G32558153\nNot all stores provide us with links. To find your album in a particular store, just head to that store and search for your album.\nSubmitted to Spotify\nSubmitted to Apple Music\nSubmitted to iTunes\nSubmitted to Instagram/Facebook\nSubmitted to TikTok & other ByteDance stores\nSubmitted to YouTube Music\nSubmitted to Amazon\nSubmitted to Pandora\nSubmitted to Deezer\nSubmitted to Tidal\nSubmitted to iHeartRadio\nSubmitted to Claro Música\nSubmitted to Saavn\nSubmitted to Boomplay\nSubmitted to Anghami\nSubmitted to Tencent\nSubmitted to Qobuz\nSubmitted to Joox\nSubmitted to Kuack Media\nSubmitted to Adaptr\nSubmitted to Flo\nSubmitted to MediaNet\n iTunes/Apple Music isn't currently accepting Chinese content. Other stores & services do.\nDelivered to 22 streaming platforms and stores\nHyperFollow\nWe made a HyperFollow landing page so you can easily share your release, including pre-save and streaming links! \nShare this release on:\nSplits\nYou get 100%\nAutomatically split earnings with collaborators\nAdd extras\n\t\nSocial Media Pack ($14.95/yr + 20% of platform ad revenue)\nGet notified & paid when your music is used in content on YouTube, TikTok, Instagram, and Facebook. We automatically detect matches and pay you ad revenue from videos that use your music.\nYour music will be added to:\nYouTube's Content ID, Creator Music, and Shorts music libraries.\nTikTok's music ID recognition service.\nInstagram monetization with Meta Rights Manager.\nFacebook's recognition service using Meta Rights Manager.\nLearn more about monetizing your music on social media.\n\t\nDiscovery Pack ($6.93/yr)\nAdd this album to the global databases that people use to match music and artist information. Only 99-cents per track. Includes:\nSong recognition in millions of automobiles (via Gracenote)\nRegistration with SoundScan (used for Billboard charts)\nArtist, track and album credits officially listed and linked in Jaxsta\nAudio fingerprinting for rights protection with ACRCloud\n\t\nStore Maximizer ($7.95/yr)\nDistroKid will automatically deliver this album to new online stores and streaming services as we add them. Which is often. We'll give you notice each time we add the album to a new service.\n\t\nLeave a Legacy ($49 one-time fee, nonrecurring)\nDistroKid will never delete this album, even if you cancel your account or your credit card is declined. You can always choose to delete it any time—or not. You will continue to accrue all royalties, as normal. Protect your music and leave a legacy for future generations.\nTotal: $0.00\n\n billed to card ending with 0637 (update card)\n© DistroKid 2026\nHelp\nSupport Center\nCompany\nDistroKid News\nNail Clippers & More\nArtists For Change\nCareers\nProduct\nPlans\nBandzoogle\nInstant Share\nMixea\nDistroVid\nHyperFollow\nDirect\nMobile App\nDistroKid for iPhone\nDistroKid for Android\nPrivacy policy\nCookie policy\nCookie settings\nTerms of use\nSitemap\nDistribution agreement"
+      "lyrics": "Upload \nMy Music\nStats\nSplits\nUpgrade\nBank\n\n圣诞冬旋\nROYAZON EOM\nRecord Label: 11079952 Records DK\nUpload date: December 19, 2025\nRelease date: December 19, 2025\nDistroKid UPC: 199941273236\nThis album was successfully processed and delivered to stores.\nTrack list\n1\n圣诞冬旋\n Plain lyrics\n Synced lyrics\n Credits\n Vizy\n Audio Swap\n Download\nISRC\nQT6G32558147\n2\n圣诞圆舞曲\n Plain lyrics\n Synced lyrics\n Credits\n Vizy\n Audio Swap\n Download\nISRC\nQT6G32558148\n3\n圣诞夜曲\n Plain lyrics\n Synced lyrics\n Credits\n Vizy\n Audio Swap\n Download\nISRC\nQT6G32558149\n4\n圣诞的碎钻橱窗\n Plain lyrics\n Synced lyrics\n Credits\n Vizy\n Audio Swap\n Download\nISRC\nQT6G32558150\n5\n星道流雪\n Plain lyrics\n Synced lyrics\n Credits\n Vizy\n Audio Swap\n Download\nISRC\nQT6G32558151\n6\n铃光闪烁\n Plain lyrics\n Synced lyrics\n Credits\n Vizy\n Audio Swap\n Download\nISRC\nQT6G32558152\n7\n雪橇铃舞\n Plain lyrics\n Synced lyrics\n Credits\n Vizy\n Audio Swap\n Download\nISRC\nQT6G32558153\nNot all stores provide us with links. To find your album in a particular store, just head to that store and search for your album.\nSubmitted to Spotify\nSubmitted to Apple Music\nSubmitted to iTunes\nSubmitted to Instagram/Facebook\nSubmitted to TikTok & other ByteDance stores\nSubmitted to YouTube Music\nSubmitted to Amazon\nSubmitted to Pandora\nSubmitted to Deezer\nSubmitted to Tidal\nSubmitted to iHeartRadio\nSubmitted to Claro Música\nSubmitted to Saavn\nSubmitted to Boomplay\nSubmitted to Anghami\nSubmitted to Tencent\nSubmitted to Qobuz\nSubmitted to Joox\nSubmitted to Kuack Media\nSubmitted to Adaptr\nSubmitted to Flo\nSubmitted to MediaNet\n iTunes/Apple Music isn't currently accepting Chinese content. Other stores & services do.\nDelivered to 22 streaming platforms and stores\nHyperFollow\nWe made a HyperFollow landing page so you can easily share your release, including pre-save and streaming links! \nShare this release on:\nSplits\nYou get 100%\nAutomatically split earnings with collaborators\nAdd extras\n\t\nSocial Media Pack ($14.95/yr + 20% of platform ad revenue)\nGet notified & paid when your music is used in content on YouTube, TikTok, Instagram, and Facebook. We automatically detect matches and pay you ad revenue from videos that use your music.\nYour music will be added to:\nYouTube's Content ID, Creator Music, and Shorts music libraries.\nTikTok's music ID recognition service.\nInstagram monetization with Meta Rights Manager.\nFacebook's recognition service using Meta Rights Manager.\nLearn more about monetizing your music on social media.\n\t\nDiscovery Pack ($6.93/yr)\nAdd this album to the global databases that people use to match music and artist information. Only 99-cents per track. Includes:\nSong recognition in millions of automobiles (via Gracenote)\nRegistration with SoundScan (used for Billboard charts)\nArtist, track and album credits officially listed and linked in Jaxsta\nAudio fingerprinting for rights protection with ACRCloud\n\t\nStore Maximizer ($7.95/yr)\nDistroKid will automatically deliver this album to new online stores and streaming services as we add them. Which is often. We'll give you notice each time we add the album to a new service.\n\t\nLeave a Legacy ($49 one-time fee, nonrecurring)\nDistroKid will never delete this album, even if you cancel your account or your credit card is declined. You can always choose to delete it any time—or not. You will continue to accrue all royalties, as normal. Protect your music and leave a legacy for future generations.\nTotal: $0.00\n\n billed to card ending with 0637 (update card)\n© DistroKid 2026\nHelp\nSupport Center\nCompany\nDistroKid News\nNail Clippers & More\nArtists For Change\nCareers\nProduct\nPlans\nBandzoogle\nInstant Share\nMixea\nDistroVid\nHyperFollow\nDirect\nMobile App\nDistroKid for iPhone\nDistroKid for Android\nPrivacy policy\nCookie policy\nCookie settings\nTerms of use\nSitemap\nDistribution agreement",
+      "trackNo": 1
     },
     {
       "id": "distrokid-album-6450DDE8-F0B7-410A-B0B37631C54A740B",
@@ -11106,7 +11256,8 @@
       "tags": [
         "distrokid",
         "album",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -11131,8 +11282,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw"
         },
         {
           "platform": "amazon",
@@ -11220,7 +11371,14 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw",
+          "height": 360
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
@@ -11239,7 +11397,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -11259,8 +11418,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=1"
         },
         {
           "platform": "netease",
@@ -11273,13 +11432,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=1",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "[Verse 1]\n守岁炉火渐成灰\n儿时总抢着添炭不怕累\n火星窜上眉梢那会儿\n哪懂得余烬也会冷却\n\n屋檐挂着旧对联\n笑声挤满了狭窄的天\n以为醒来就还是童年\n一睁眼霜已盖上台阶\n\n[Chorus]\n一无所成\n命如灰\n吹一吹就散在天井的水\n灯一盏一盏都暗下去\n只剩下影子比我还疲惫\n\n光阴荏苒\n催白发\n我这无能之辈何处可归\n走半生回身再看自己\n只拾到几句说不出的后悔\n\n[Verse 2]\n老街拐角面摊关\n门板上褪色的旧字还在\n当年常坐的那张小凳\n如今只留一圈落尘发白\n\n母亲叮咛在耳边\n像远处时断时续的鞭\n让我出人头地那几句话\n被我丢在风里好多年\n\n[Chorus]\n一无所成\n命如灰\n吹一吹就散在天井的水\n灯一盏一盏都暗下去\n只剩下影子比我还疲惫\n\n光阴荏苒\n催白发\n我这无能之辈何处可归\n走半生回身再看自己\n只拾到几句说不出的后悔\n\n[Bridge]\n要是那一年我少任性一点\n会不会此刻不再走回原点\n要是这十年我多咬牙几回\n会不会换来一丝微小的光辉\n\n[轻声和声渐入]\n可人生哪有重考一回\n错过就散落在旧瓦的缝沿\n我把所有不甘咽回心间\n像咽下一口\n冰冷的残年\n\n[Chorus]\n一无所成\n命如灰\n吹一吹就散在天井的水\n灯一盏一盏都暗下去\n只剩下影子比我还疲惫\n\n光阴荏苒\n催白发\n我这无能之辈何处可归\n若有来生还能守在炉边\n愿做个\n不再辜负自己的小孩"
+      "lyrics": "[Verse 1]\n守岁炉火渐成灰\n儿时总抢着添炭不怕累\n火星窜上眉梢那会儿\n哪懂得余烬也会冷却\n\n屋檐挂着旧对联\n笑声挤满了狭窄的天\n以为醒来就还是童年\n一睁眼霜已盖上台阶\n\n[Chorus]\n一无所成\n命如灰\n吹一吹就散在天井的水\n灯一盏一盏都暗下去\n只剩下影子比我还疲惫\n\n光阴荏苒\n催白发\n我这无能之辈何处可归\n走半生回身再看自己\n只拾到几句说不出的后悔\n\n[Verse 2]\n老街拐角面摊关\n门板上褪色的旧字还在\n当年常坐的那张小凳\n如今只留一圈落尘发白\n\n母亲叮咛在耳边\n像远处时断时续的鞭\n让我出人头地那几句话\n被我丢在风里好多年\n\n[Chorus]\n一无所成\n命如灰\n吹一吹就散在天井的水\n灯一盏一盏都暗下去\n只剩下影子比我还疲惫\n\n光阴荏苒\n催白发\n我这无能之辈何处可归\n走半生回身再看自己\n只拾到几句说不出的后悔\n\n[Bridge]\n要是那一年我少任性一点\n会不会此刻不再走回原点\n要是这十年我多咬牙几回\n会不会换来一丝微小的光辉\n\n[轻声和声渐入]\n可人生哪有重考一回\n错过就散落在旧瓦的缝沿\n我把所有不甘咽回心间\n像咽下一口\n冰冷的残年\n\n[Chorus]\n一无所成\n命如灰\n吹一吹就散在天井的水\n灯一盏一盏都暗下去\n只剩下影子比我还疲惫\n\n光阴荏苒\n催白发\n我这无能之辈何处可归\n若有来生还能守在炉边\n愿做个\n不再辜负自己的小孩",
+      "trackNo": 1
     },
     {
       "id": "isrc-QZES92646442",
@@ -11293,7 +11460,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -11313,8 +11481,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=2"
         },
         {
           "platform": "netease",
@@ -11327,13 +11495,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=2",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "灯亮的时候\n我们都学会微笑\n排好队说没事\n把酸楚折成一只纸船\n\n灯灭以后\n心事才慢慢靠岸\n脱了外套的倔强\n挂在椅背上偷偷打晃\n\n热闹不是谎言\n只是说得太快\n谁敢在掌声里\n承认自己还在害怕\n\n人散场以后\n才敢承认会难过\n把一句还好\n放回喉咙深处沉默\n人散场以后\n才看清谁在等候\n那些没说完的话\n原来都在眼里颤抖\n\n白天的我们\n说起理想多勇敢\n举着杯碰来碰去\n却躲开太认真的眼睛\n\n夜深的我们\n卸下体面有点乱\n手机屏一再亮起\n也不知要跟谁坦白\n\n热闹不是欺骗\n只是来得太快\n谁愿意在人群中\n讲孤单有多实在\n\n人散场以后\n才敢承认会难过\n把一句还好\n放回喉咙深处沉默\n人散场以后\n才看清谁在等候\n那些没说完的话\n原来都在眼里颤抖\n\n你有多久\n没好好哭一场\n连叹气都学会\n压成一句我很忙\n\n来吧坐一会\n灯关上更坦荡\n不用逞强\n就安静把自己原谅\n\n人散场以后\n才敢承认会难过\n把一句还好\n放回喉咙深处沉默\n人散场以后\n才看清谁在等候\n那些没说完的话\n原来都在眼里颤抖"
+      "lyrics": "灯亮的时候\n我们都学会微笑\n排好队说没事\n把酸楚折成一只纸船\n\n灯灭以后\n心事才慢慢靠岸\n脱了外套的倔强\n挂在椅背上偷偷打晃\n\n热闹不是谎言\n只是说得太快\n谁敢在掌声里\n承认自己还在害怕\n\n人散场以后\n才敢承认会难过\n把一句还好\n放回喉咙深处沉默\n人散场以后\n才看清谁在等候\n那些没说完的话\n原来都在眼里颤抖\n\n白天的我们\n说起理想多勇敢\n举着杯碰来碰去\n却躲开太认真的眼睛\n\n夜深的我们\n卸下体面有点乱\n手机屏一再亮起\n也不知要跟谁坦白\n\n热闹不是欺骗\n只是来得太快\n谁愿意在人群中\n讲孤单有多实在\n\n人散场以后\n才敢承认会难过\n把一句还好\n放回喉咙深处沉默\n人散场以后\n才看清谁在等候\n那些没说完的话\n原来都在眼里颤抖\n\n你有多久\n没好好哭一场\n连叹气都学会\n压成一句我很忙\n\n来吧坐一会\n灯关上更坦荡\n不用逞强\n就安静把自己原谅\n\n人散场以后\n才敢承认会难过\n把一句还好\n放回喉咙深处沉默\n人散场以后\n才看清谁在等候\n那些没说完的话\n原来都在眼里颤抖",
+      "trackNo": 2
     },
     {
       "id": "isrc-QZES92646443",
@@ -11347,7 +11523,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -11367,8 +11544,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=3"
         },
         {
           "platform": "netease",
@@ -11381,13 +11558,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=3",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "五更钟漏催天晓\n院子里还飘着炊烟味道\n红灯笼晃啊晃\n贴歪的春联被北风吹笑\n欢笑声里拜新年\n糖果纸踩在脚底咔嚓在跳\n你在门外叩门声\n一下比一下还要紧要\n\n我装作还在系鞋带\n偷瞄门缝那一小块\n你指尖轻轻敲节拍\n像在敲我的小意外\n\n你一声“新年好”\n心就跟着蹦蹦乱跑\n心跳比爆竹还响\n好像要从胸口飞掉\n转个身装作忙\n耳根却烧得通红发烫\n这一年才刚刚\n就被你闹得甜得不想睡早\n\n桌上桔子堆成山\n你剥一瓣递过来沾着糖\n说我今年要顺顺当当\n眼睛却偷偷看我脸上\n楼下小孩追着烟花\n笑声一串串往天上晃\n你忽然站得离我好近\n连呼吸都黏在一块儿晃\n\n你袖口蹭到我手背\n轻得像雪落在窗檐\n一句话卡在喉咙边\n被远处鞭炮炸成碎片\n\n你一声“新年好”\n心就跟着蹦蹦乱跑\n心跳比爆竹还响\n好像要从胸口飞掉\n转个身装作忙\n耳根却烧得通红发烫\n这一年才刚刚\n就被你闹得甜得不想睡早\n\n是不是鞭炮太吵\n才听见你心跳乱敲\n还是灯笼太亮\n才看见你脸红得刚刚好\n要不要趁着今朝\n把那些话一次说好\n趁门神还在微笑\n把我的小小心事\n通通写进你今年的红包\n\n你一声“新年好”\n心就跟着蹦蹦乱跑\n心跳比爆竹还响\n好像要从胸口飞掉\n转个身装作忙\n耳根却烧得通红发烫\n这一年才刚刚\n就被你闹得甜得不想睡早"
+      "lyrics": "五更钟漏催天晓\n院子里还飘着炊烟味道\n红灯笼晃啊晃\n贴歪的春联被北风吹笑\n欢笑声里拜新年\n糖果纸踩在脚底咔嚓在跳\n你在门外叩门声\n一下比一下还要紧要\n\n我装作还在系鞋带\n偷瞄门缝那一小块\n你指尖轻轻敲节拍\n像在敲我的小意外\n\n你一声“新年好”\n心就跟着蹦蹦乱跑\n心跳比爆竹还响\n好像要从胸口飞掉\n转个身装作忙\n耳根却烧得通红发烫\n这一年才刚刚\n就被你闹得甜得不想睡早\n\n桌上桔子堆成山\n你剥一瓣递过来沾着糖\n说我今年要顺顺当当\n眼睛却偷偷看我脸上\n楼下小孩追着烟花\n笑声一串串往天上晃\n你忽然站得离我好近\n连呼吸都黏在一块儿晃\n\n你袖口蹭到我手背\n轻得像雪落在窗檐\n一句话卡在喉咙边\n被远处鞭炮炸成碎片\n\n你一声“新年好”\n心就跟着蹦蹦乱跑\n心跳比爆竹还响\n好像要从胸口飞掉\n转个身装作忙\n耳根却烧得通红发烫\n这一年才刚刚\n就被你闹得甜得不想睡早\n\n是不是鞭炮太吵\n才听见你心跳乱敲\n还是灯笼太亮\n才看见你脸红得刚刚好\n要不要趁着今朝\n把那些话一次说好\n趁门神还在微笑\n把我的小小心事\n通通写进你今年的红包\n\n你一声“新年好”\n心就跟着蹦蹦乱跑\n心跳比爆竹还响\n好像要从胸口飞掉\n转个身装作忙\n耳根却烧得通红发烫\n这一年才刚刚\n就被你闹得甜得不想睡早",
+      "trackNo": 3
     },
     {
       "id": "isrc-QZES92646444",
@@ -11401,7 +11586,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -11421,8 +11607,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=4"
         },
         {
           "platform": "netease",
@@ -11435,13 +11621,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=4",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "先祖佑\n脚步踏在青苔上\n风铃晃一晃\n好像在数心跳\n\n石灯一盏一盏\n排成家里的姓名\n木鱼咚咚回应\n像在点头说明\n纸鹤挂满门檐\n写着小时候的愿\n抬手理理流苏\n指尖都沾着香烟\n\n先祖佑！子孙孝！阖家平安报恩情\n\n米香绕过屋梁\n笑声贴着窗棂转\n小狗追着影子\n也来守在你身边\n你在牌位之后\n我们坐在团圆前\n合掌一句轻念\n心口同一个和弦\n\n先祖佑！子孙孝！阖家平安报恩情\n\n左三步（嘿）右三步（嘿）\n围着旧树绕一圈\n敲三声（咚）再三声（咚）\n好事就落在眼前\n\n你护我们平安\n我们记得你姓名\n\n每一饭 每一笑\n都是回响的回音"
+      "lyrics": "先祖佑\n脚步踏在青苔上\n风铃晃一晃\n好像在数心跳\n\n石灯一盏一盏\n排成家里的姓名\n木鱼咚咚回应\n像在点头说明\n纸鹤挂满门檐\n写着小时候的愿\n抬手理理流苏\n指尖都沾着香烟\n\n先祖佑！子孙孝！阖家平安报恩情\n\n米香绕过屋梁\n笑声贴着窗棂转\n小狗追着影子\n也来守在你身边\n你在牌位之后\n我们坐在团圆前\n合掌一句轻念\n心口同一个和弦\n\n先祖佑！子孙孝！阖家平安报恩情\n\n左三步（嘿）右三步（嘿）\n围着旧树绕一圈\n敲三声（咚）再三声（咚）\n好事就落在眼前\n\n你护我们平安\n我们记得你姓名\n\n每一饭 每一笑\n都是回响的回音",
+      "trackNo": 4
     },
     {
       "id": "isrc-QZES92646445",
@@ -11455,7 +11649,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -11475,8 +11670,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=5"
         },
         {
           "platform": "netease",
@@ -11489,13 +11684,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=5",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "[Verse]\n凌晨四点 玻璃门外\n一个影子 长长拉开\n货架上 只剩几排\n收银机 叮了一声 还没睡醒\n\n[Prechorus]\n便利店的灯\n像月亮在眨眼\n我在夜里沉默盘点\n\n[Chorus]\n还有多少热饭可卖\n我就还剩几口忍耐\n天亮之前 清空期待\n库存里的孤单谁买\n\n[Verse 2]\n收银台下 饮料发呆\n冰柜嗡嗡 像梦在徘徊\n玻璃门开 谁进来\n陌生人 点了咖啡 没有对白\n\n[Prechorus]\n便利店的灯\n像星星在流汗\n我在夜里数着答案\n\n[Chorus]\n还有多少热饭可卖\n我就还剩几口忍耐\n天亮之前 清空期待\n库存里的孤单谁买"
+      "lyrics": "[Verse]\n凌晨四点 玻璃门外\n一个影子 长长拉开\n货架上 只剩几排\n收银机 叮了一声 还没睡醒\n\n[Prechorus]\n便利店的灯\n像月亮在眨眼\n我在夜里沉默盘点\n\n[Chorus]\n还有多少热饭可卖\n我就还剩几口忍耐\n天亮之前 清空期待\n库存里的孤单谁买\n\n[Verse 2]\n收银台下 饮料发呆\n冰柜嗡嗡 像梦在徘徊\n玻璃门开 谁进来\n陌生人 点了咖啡 没有对白\n\n[Prechorus]\n便利店的灯\n像星星在流汗\n我在夜里数着答案\n\n[Chorus]\n还有多少热饭可卖\n我就还剩几口忍耐\n天亮之前 清空期待\n库存里的孤单谁买",
+      "trackNo": 5
     },
     {
       "id": "isrc-QZES92646447",
@@ -11509,7 +11712,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -11529,8 +11733,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=6"
         },
         {
           "platform": "netease",
@@ -11543,14 +11747,22 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=6",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
       "lyrics": "春未到\n清晨的路还有点冷\n你背着包\n借路灯当一盏小太阳\n人潮后\n默默走在最安静那一端\n笑一笑\n对自己说再多走一站\n\n勤不是急 只是悄悄生根\n埋在泥土里 握紧了清晨\n等花开时 世界会记得\n那段没人看的黄昏\n你低头 撒下的认真\n\n风吹过\n日历换了好几层颜色\n你抬起头\n窗外还是同一片云朵\n别回头\n那些怀疑就让它路过\n一步步\n在看不见处长出轮廓\n\n勤不是急 只是悄悄生根\n埋在泥土里 握紧了清晨\n等花开时 世界会记得\n那段没人看的黄昏\n你低头 撒下的认真\n\n谁会懂你走了多远\n鞋底灰尘在替你纪念\n你只要 把今天走完\n把心安放在下一站\n\n勤不是急 只是悄悄生根\n埋在泥土里 握紧了清晨\n等花开时 世界会记得\n那段没人看的黄昏\n你低头 撒下的认真",
-      "mood": "释怀"
+      "mood": "释怀",
+      "trackNo": 6
     },
     {
       "id": "isrc-QZES92646448",
@@ -11564,7 +11776,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -11584,8 +11797,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=7"
         },
         {
           "platform": "netease",
@@ -11598,13 +11811,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=7",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "萧瑟莫测烛泪丝\n柏叶浮杯香渐醺\n你替我把杯轻轻转一圈\n笑说要把好运都唤醒\n\n围坐长幼话家常\n电视里旧片放不停\n你靠窗位置光刚好照进\n我装作听话 眼神却黏你\n\n指尖碰到杯沿\n一阵酥麻窜上来\n你侧头问我脸怎么这么红\n我说是屋里太暖太暖\n\n椒香一晃 心跳四拍在跳动\n灯影乱晃 像为我们打节奏\n你笑着靠近 我的世界跟着摇晃\n这一刻起 我只想和你跳到天亮\n\n门外烟火炸成花\n屋里老人说着旧年景\n你忽然把我拉离餐桌旁\n说年味太吵 换点轻松情景\n\n走廊尽头昏黄灯\n照出我们并排的剪影\n你用手机放起那首旧情歌\n跟着节拍 脚尖偷偷回应\n\n心事全部乱了线\n被你一眼牵着走\n杯里残酒微微在打圈\n像我此刻转个不停的念头\n\n椒香一晃 心跳四拍在跳动\n灯影乱晃 像为我们打节奏\n你笑着靠近 我的世界跟着摇晃\n这一刻起 我只想和你跳到天亮\n\n你问 新年心愿 写给谁\n我装作随口 说给“未来的谁”\n你偏偏追问 是不是写你名字\n我躲在杯后 却把答案写在眼里\n\n椒香一晃 心跳四拍在跳动\n灯影乱晃 像为我们打节奏\n你笑着靠近 我的世界跟着摇晃\n这一刻起 我只想和你跳到天亮"
+      "lyrics": "萧瑟莫测烛泪丝\n柏叶浮杯香渐醺\n你替我把杯轻轻转一圈\n笑说要把好运都唤醒\n\n围坐长幼话家常\n电视里旧片放不停\n你靠窗位置光刚好照进\n我装作听话 眼神却黏你\n\n指尖碰到杯沿\n一阵酥麻窜上来\n你侧头问我脸怎么这么红\n我说是屋里太暖太暖\n\n椒香一晃 心跳四拍在跳动\n灯影乱晃 像为我们打节奏\n你笑着靠近 我的世界跟着摇晃\n这一刻起 我只想和你跳到天亮\n\n门外烟火炸成花\n屋里老人说着旧年景\n你忽然把我拉离餐桌旁\n说年味太吵 换点轻松情景\n\n走廊尽头昏黄灯\n照出我们并排的剪影\n你用手机放起那首旧情歌\n跟着节拍 脚尖偷偷回应\n\n心事全部乱了线\n被你一眼牵着走\n杯里残酒微微在打圈\n像我此刻转个不停的念头\n\n椒香一晃 心跳四拍在跳动\n灯影乱晃 像为我们打节奏\n你笑着靠近 我的世界跟着摇晃\n这一刻起 我只想和你跳到天亮\n\n你问 新年心愿 写给谁\n我装作随口 说给“未来的谁”\n你偏偏追问 是不是写你名字\n我躲在杯后 却把答案写在眼里\n\n椒香一晃 心跳四拍在跳动\n灯影乱晃 像为我们打节奏\n你笑着靠近 我的世界跟着摇晃\n这一刻起 我只想和你跳到天亮",
+      "trackNo": 7
     },
     {
       "id": "isrc-QZES92646449",
@@ -11618,7 +11839,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -11638,8 +11860,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=8"
         },
         {
           "platform": "netease",
@@ -11652,13 +11874,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=8",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "夜深人静\n窗台只剩一盏光\n指纹在玻璃上\n像白天留下的回响\n\n手机翻了又放\n心还是跟着在转圈\n退了最后一行字\n忽然觉得房间很宽\n\n夜深人静以后\n世界慢下来等我\n不再被谁的消息\n牵着情绪来回走\n\n夜深人静以后\n我听见自己呼吸节奏\n原来真正的开始\n是在安静里 把心摸透\n\n白天习惯 快速回答\n连难过都要端庄\n笑脸贴得太紧\n连镜子都看不出伤\n\n现在只剩 心跳声当背景\n影子靠在我身旁\n一句一句 对自己讲\n明天可以换个方向\n\n夜深人静以后\n世界慢下来等我\n不再被谁的消息\n牵着情绪来回走\n\n原来孤单\n不是被谁遗忘\n而是给勇气\n多一点生长的地方\n\n关上那些 灯光\n留一颗小小愿望在胸口\n当人群散去之后\n我才学会 温柔对我\n\n夜深人静以后\n世界慢下来等我\n不再被谁的消息\n牵着情绪来回走"
+      "lyrics": "夜深人静\n窗台只剩一盏光\n指纹在玻璃上\n像白天留下的回响\n\n手机翻了又放\n心还是跟着在转圈\n退了最后一行字\n忽然觉得房间很宽\n\n夜深人静以后\n世界慢下来等我\n不再被谁的消息\n牵着情绪来回走\n\n夜深人静以后\n我听见自己呼吸节奏\n原来真正的开始\n是在安静里 把心摸透\n\n白天习惯 快速回答\n连难过都要端庄\n笑脸贴得太紧\n连镜子都看不出伤\n\n现在只剩 心跳声当背景\n影子靠在我身旁\n一句一句 对自己讲\n明天可以换个方向\n\n夜深人静以后\n世界慢下来等我\n不再被谁的消息\n牵着情绪来回走\n\n原来孤单\n不是被谁遗忘\n而是给勇气\n多一点生长的地方\n\n关上那些 灯光\n留一颗小小愿望在胸口\n当人群散去之后\n我才学会 温柔对我\n\n夜深人静以后\n世界慢下来等我\n不再被谁的消息\n牵着情绪来回走",
+      "trackNo": 8
     },
     {
       "id": "isrc-QZES92646450",
@@ -11672,7 +11902,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -11692,8 +11923,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=9"
         },
         {
           "platform": "netease",
@@ -11706,13 +11937,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=9",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "[Verse 1]\n那年听雨 阁楼上\n木窗渗进 潮湿香\n你把外套 搁椅上\n说等天晴 再去闯\n\n那年烟火 窗外晃\n影子晃到 旧书墙\n烛泪流过 你的掌\n一句很久 没讲完\n\n[Chorus]\n如今雨停 灯已灭\n只剩鞭炮声 回荡空巷间\n回声一声声 推我往从前\n推回你伸手 却没握住那一夜\n如今雨停 灯已灭\n是谁没说出口的 暗暗心愿\n散在这一阵 烟火后的烟\n绕过破门扇 再也等不见\n\n[Verse 2]\n后来各走 各方向\n朋友圈里 点过赞\n新年照片 挤满光\n没了当时 那张床\n\n今年屋里 人声响\n桌上多了 几双筷\n有人问起 旧时光\n我笑说忘 却没忘\n\n[Chorus]"
+      "lyrics": "[Verse 1]\n那年听雨 阁楼上\n木窗渗进 潮湿香\n你把外套 搁椅上\n说等天晴 再去闯\n\n那年烟火 窗外晃\n影子晃到 旧书墙\n烛泪流过 你的掌\n一句很久 没讲完\n\n[Chorus]\n如今雨停 灯已灭\n只剩鞭炮声 回荡空巷间\n回声一声声 推我往从前\n推回你伸手 却没握住那一夜\n如今雨停 灯已灭\n是谁没说出口的 暗暗心愿\n散在这一阵 烟火后的烟\n绕过破门扇 再也等不见\n\n[Verse 2]\n后来各走 各方向\n朋友圈里 点过赞\n新年照片 挤满光\n没了当时 那张床\n\n今年屋里 人声响\n桌上多了 几双筷\n有人问起 旧时光\n我笑说忘 却没忘\n\n[Chorus]",
+      "trackNo": 9
     },
     {
       "id": "isrc-QZES92646451",
@@ -11726,7 +11965,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -11746,8 +11986,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=10"
         },
         {
           "platform": "netease",
@@ -11760,13 +12000,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=10",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "山未绿\n水未暖\n指尖还有一点冬天的凉\n走很慢\n路很长\n心里却偷偷亮了一盏光\n\n谁说要等花都开完\n才算拥有一寸灿烂\n抬起头\n你看见吗\n这小小心跳在回响\n\n山未绿 水未暖\n心里先开出的春已很简单\n不必证明给全世界看\n只要你敢 想象一万遍明天\n真正的希望\n先在心里发芽一圈又一圈\n\n云未散\n风还寒\n口袋只有遥远的答案\n不声张\n不抱怨\n默数着每一秒的勇敢\n\n也许脚下还是泥湾\n鞋底沾着昨日灰尘斑斑\n可眼眶里一小块晴天\n正一点点把乌云推远\n\n山未绿 水未暖\n心里先开出的春已很简单\n不必证明给全世界看\n只要你敢 想象一万遍明天\n真正的希望\n先在心里发芽一圈又一圈\n\n让害怕 留在昨天\n让回答 慢一点出现\n先对自己 轻轻说一声\n我值得这一场新生\n在人群 最安静一边\n也能长出耀眼花园\n\n山未绿 水未暖\n心里先开出的春已很简单\n不必证明给全世界看\n只要你敢 想象一万遍明天\n真正的希望\n先在心里发芽一圈又一圈"
+      "lyrics": "山未绿\n水未暖\n指尖还有一点冬天的凉\n走很慢\n路很长\n心里却偷偷亮了一盏光\n\n谁说要等花都开完\n才算拥有一寸灿烂\n抬起头\n你看见吗\n这小小心跳在回响\n\n山未绿 水未暖\n心里先开出的春已很简单\n不必证明给全世界看\n只要你敢 想象一万遍明天\n真正的希望\n先在心里发芽一圈又一圈\n\n云未散\n风还寒\n口袋只有遥远的答案\n不声张\n不抱怨\n默数着每一秒的勇敢\n\n也许脚下还是泥湾\n鞋底沾着昨日灰尘斑斑\n可眼眶里一小块晴天\n正一点点把乌云推远\n\n山未绿 水未暖\n心里先开出的春已很简单\n不必证明给全世界看\n只要你敢 想象一万遍明天\n真正的希望\n先在心里发芽一圈又一圈\n\n让害怕 留在昨天\n让回答 慢一点出现\n先对自己 轻轻说一声\n我值得这一场新生\n在人群 最安静一边\n也能长出耀眼花园\n\n山未绿 水未暖\n心里先开出的春已很简单\n不必证明给全世界看\n只要你敢 想象一万遍明天\n真正的希望\n先在心里发芽一圈又一圈",
+      "trackNo": 10
     },
     {
       "id": "isrc-QZES92646452",
@@ -11780,7 +12028,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -11800,8 +12049,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=11"
         },
         {
           "platform": "netease",
@@ -11814,13 +12063,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=11",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "院子里那棵树\n一年一年只开苦花\n你说香得太烈\n不适合插在家\n\n檐下旧风铃\n绣着你挑的红线\n风吹一次晃两下\n像你回头又作罢\n\n如今椒香无人争\n风一来只绕着门\n岁岁年年只剩我一人\n守一院 辣味的黄昏\n如今椒香无人争\n连蜜蜂也学会转身\n岁岁年年只剩我一人\n在门口 等一个可能\n\n当初你怕辛辣\n挑菜总把籽都剖开\n笑我舌头不灵\n什么苦辣都往心里塞\n\n后来你学做菜\n手上也染上一点辛味\n桌上那盘红油\n凉了几遍无人理会\n\n如今椒香无人争\n风一来只绕着门\n岁岁年年只剩我一人\n守一院 辣味的黄昏\n如今椒香无人争\n连蜜蜂也学会转身\n岁岁年年只剩我一人\n在门口 等一个可能\n\n今年花开得早\n像赶着和谁赴约\n我站在树下\n想起你皱眉的侧脸\n\n手伸进花丛里\n竟找不到那年指尖\n一瓣一瓣落下来\n砸在空盘和旧照片\n\n如今椒香无人争\n风一来只绕着门\n岁岁年年只剩我一人\n守一院 辣味的黄昏\n如今椒香无人争\n连蜜蜂也学会转身\n岁岁年年只剩我一人\n在门口 等一个可能"
+      "lyrics": "院子里那棵树\n一年一年只开苦花\n你说香得太烈\n不适合插在家\n\n檐下旧风铃\n绣着你挑的红线\n风吹一次晃两下\n像你回头又作罢\n\n如今椒香无人争\n风一来只绕着门\n岁岁年年只剩我一人\n守一院 辣味的黄昏\n如今椒香无人争\n连蜜蜂也学会转身\n岁岁年年只剩我一人\n在门口 等一个可能\n\n当初你怕辛辣\n挑菜总把籽都剖开\n笑我舌头不灵\n什么苦辣都往心里塞\n\n后来你学做菜\n手上也染上一点辛味\n桌上那盘红油\n凉了几遍无人理会\n\n如今椒香无人争\n风一来只绕着门\n岁岁年年只剩我一人\n守一院 辣味的黄昏\n如今椒香无人争\n连蜜蜂也学会转身\n岁岁年年只剩我一人\n在门口 等一个可能\n\n今年花开得早\n像赶着和谁赴约\n我站在树下\n想起你皱眉的侧脸\n\n手伸进花丛里\n竟找不到那年指尖\n一瓣一瓣落下来\n砸在空盘和旧照片\n\n如今椒香无人争\n风一来只绕着门\n岁岁年年只剩我一人\n守一院 辣味的黄昏\n如今椒香无人争\n连蜜蜂也学会转身\n岁岁年年只剩我一人\n在门口 等一个可能",
+      "trackNo": 11
     },
     {
       "id": "isrc-QZES92646453",
@@ -11834,7 +12091,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -11854,8 +12112,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=12"
         },
         {
           "platform": "netease",
@@ -11868,13 +12126,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=12",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "如今灰里埋了多少梦\n扫地时不小心又翻动\n窗台旧信发黄卷了角\n字还清楚 心早成空\n\n一事无成 空对残灯叹\n半杯凉茶拖着长长影子\n邻居门响 又关上\n像谁曾来过 却不认识\n\n岁月如梭不回头\n我站在原地 看不懂尽头\n我这无用之人啊\n如何面对苍天问我走到哪儿\n\n楼下小店换了新的牌\n老板却还是那句老招呼\n笑着问我 最近好吗\n我点点头 说不出辛苦\n\n手机相册翻了一整圈\n多是别人闪光的时分\n我的日子一键略过\n像被剪掉的多余几秒钟\n\n岁月如梭不回头\n我站在原地 看不懂尽头\n我这无用之人啊\n如何面对苍天问我走到哪儿\n\n是不是认真活着\n也算一种微小的担当\n就算没人记得名字\n也曾在某刻照亮过自己一场\n\n如果苍天真有眼\n可否容我这样慢一拍的人\n不再逃 不再问值不值\n只把剩下的路 走得稳一点\n\n岁月如梭不回头\n我站在原地 看不懂尽头\n我这无用之人啊\n如何面对苍天问我走到哪儿"
+      "lyrics": "如今灰里埋了多少梦\n扫地时不小心又翻动\n窗台旧信发黄卷了角\n字还清楚 心早成空\n\n一事无成 空对残灯叹\n半杯凉茶拖着长长影子\n邻居门响 又关上\n像谁曾来过 却不认识\n\n岁月如梭不回头\n我站在原地 看不懂尽头\n我这无用之人啊\n如何面对苍天问我走到哪儿\n\n楼下小店换了新的牌\n老板却还是那句老招呼\n笑着问我 最近好吗\n我点点头 说不出辛苦\n\n手机相册翻了一整圈\n多是别人闪光的时分\n我的日子一键略过\n像被剪掉的多余几秒钟\n\n岁月如梭不回头\n我站在原地 看不懂尽头\n我这无用之人啊\n如何面对苍天问我走到哪儿\n\n是不是认真活着\n也算一种微小的担当\n就算没人记得名字\n也曾在某刻照亮过自己一场\n\n如果苍天真有眼\n可否容我这样慢一拍的人\n不再逃 不再问值不值\n只把剩下的路 走得稳一点\n\n岁月如梭不回头\n我站在原地 看不懂尽头\n我这无用之人啊\n如何面对苍天问我走到哪儿",
+      "trackNo": 12
     },
     {
       "id": "isrc-QZES92646454",
@@ -11888,7 +12154,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -11908,8 +12175,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=13"
         },
         {
           "platform": "netease",
@@ -11922,13 +12189,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=13",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "那年院里桂子香\n你说天下 其实不大\n一盏清茶 熬到微凉\n晚风翻过 旧书一两行\n\n后来各自忙于远方\n电话久了 只能寒暄\n你在照片学会微笑\n我在梦里 才敢多讲\n\n如今酒里再无柏叶香\n只剩喉间一点凉\n岁月已成空杯影在晃\n映出当年 少年的模样\n白驹过隙 忽然而已\n来不及说 的话都沉底\n\n街角那家小馆还在\n换了老板 不认得我\n窗边座位 贴着新海报\n遮住我们 写过的日落\n\n如今酒里再无柏叶香\n只剩喉间一点凉\n岁月已成空杯影在晃\n映出当年 少年的模样\n白驹过隙 忽然而已\n来不及说 的话都沉底\n\n原来不是谁先走散\n只是路口 太多岔弯\n你把往事 收进抽屉\n我把名字 藏进歌里轻轻喊\n\n如今酒里再无柏叶香\n只剩喉间一点凉\n岁月已成空杯影在晃\n映出当年 少年的模样\n白驹过隙 忽然而已\n来不及说 的话都沉底"
+      "lyrics": "那年院里桂子香\n你说天下 其实不大\n一盏清茶 熬到微凉\n晚风翻过 旧书一两行\n\n后来各自忙于远方\n电话久了 只能寒暄\n你在照片学会微笑\n我在梦里 才敢多讲\n\n如今酒里再无柏叶香\n只剩喉间一点凉\n岁月已成空杯影在晃\n映出当年 少年的模样\n白驹过隙 忽然而已\n来不及说 的话都沉底\n\n街角那家小馆还在\n换了老板 不认得我\n窗边座位 贴着新海报\n遮住我们 写过的日落\n\n如今酒里再无柏叶香\n只剩喉间一点凉\n岁月已成空杯影在晃\n映出当年 少年的模样\n白驹过隙 忽然而已\n来不及说 的话都沉底\n\n原来不是谁先走散\n只是路口 太多岔弯\n你把往事 收进抽屉\n我把名字 藏进歌里轻轻喊\n\n如今酒里再无柏叶香\n只剩喉间一点凉\n岁月已成空杯影在晃\n映出当年 少年的模样\n白驹过隙 忽然而已\n来不及说 的话都沉底",
+      "trackNo": 13
     },
     {
       "id": "isrc-QZES92646455",
@@ -11942,7 +12217,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -11962,8 +12238,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=14"
         },
         {
           "platform": "netease",
@@ -11976,13 +12252,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=14",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "清早六点半\n闹钟在耳边说晚安\n窗台那杯水\n还留着昨天的温暖\n\n公交挤一整段\n耳机里是熟悉的杂谈\n不谈远方多灿烂\n只想今天别太难\n\n把待办写在便签上\n一件一件慢慢放\n把心事折成小纸船\n放进午后的阳光\n\n愿我早点睡\n不和疲惫对抗到深夜\n愿我好好吃饭\n为自己多添一层防线\n愿在普通的日子里\n也能抬头看见光\n哪怕只是\n桌角下一小块安静的亮\n\n下班路好长\n超市打折牌还在晃\n买包喜欢的面包\n当作给自己的奖赏\n\n朋友圈一整排\n他人的高光和远方\n关掉屏幕的那一刻\n房间也没那么荒凉\n\n把委屈写进备忘录\n留给明天再翻阅\n把期待藏在晚风里\n让它吹散一点疲倦\n\n愿我早点睡\n不和疲惫对抗到深夜\n愿我好好吃饭\n为自己多添一层防线\n愿在普通的日子里\n也能抬头看见光\n哪怕只是\n桌角下一小块安静的亮\n\n有人奔向山海\n有人停在灯下换鞋带\n谁说平凡不值得被热爱\n慢一点走\n也算一种勇敢\n\n愿我早点睡\n不和疲惫对抗到深夜\n愿我好好吃饭\n为自己多添一层防线\n愿在普通的日子里\n也能抬头看见光\n哪怕只是\n桌角下一小块安静的亮"
+      "lyrics": "清早六点半\n闹钟在耳边说晚安\n窗台那杯水\n还留着昨天的温暖\n\n公交挤一整段\n耳机里是熟悉的杂谈\n不谈远方多灿烂\n只想今天别太难\n\n把待办写在便签上\n一件一件慢慢放\n把心事折成小纸船\n放进午后的阳光\n\n愿我早点睡\n不和疲惫对抗到深夜\n愿我好好吃饭\n为自己多添一层防线\n愿在普通的日子里\n也能抬头看见光\n哪怕只是\n桌角下一小块安静的亮\n\n下班路好长\n超市打折牌还在晃\n买包喜欢的面包\n当作给自己的奖赏\n\n朋友圈一整排\n他人的高光和远方\n关掉屏幕的那一刻\n房间也没那么荒凉\n\n把委屈写进备忘录\n留给明天再翻阅\n把期待藏在晚风里\n让它吹散一点疲倦\n\n愿我早点睡\n不和疲惫对抗到深夜\n愿我好好吃饭\n为自己多添一层防线\n愿在普通的日子里\n也能抬头看见光\n哪怕只是\n桌角下一小块安静的亮\n\n有人奔向山海\n有人停在灯下换鞋带\n谁说平凡不值得被热爱\n慢一点走\n也算一种勇敢\n\n愿我早点睡\n不和疲惫对抗到深夜\n愿我好好吃饭\n为自己多添一层防线\n愿在普通的日子里\n也能抬头看见光\n哪怕只是\n桌角下一小块安静的亮",
+      "trackNo": 14
     },
     {
       "id": "isrc-QZES92646456",
@@ -11996,7 +12280,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -12016,8 +12301,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=15"
         },
         {
           "platform": "netease",
@@ -12030,13 +12315,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=15",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "人日街里花正鲜\n纸风车转过你肩\n你低头系好鞋带\n笑说今年要跑得更远\n\n缕缕彩线缠我圈\n从指尖滑到心弦\n装作只是看热闹\n耳尖却悄悄烫得很明显\n\n缕线一绕心已乱\n明明只是擦身一半\n你说的新年心愿\n我听成“以后都在我身边”\n缕线一绕心已乱\n节拍跟着你的步伐转\n若你刚好也喜欢\n不如趁现在 把答案说短\n\n斜阳落在你侧脸\n糖葫芦亮得刺眼\n你递给我最甜一串\n说我看起来需要勇敢一点\n\n人海晃成彩带圈\n你笑声晃动空气感\n我装酷玩手机画圈\n其实全是你的名字在转\n\n缕线一绕心已乱\n明明只是擦身一半\n你说的新年心愿\n我听成“以后都在我身边”\n缕线一绕心已乱\n节拍跟着你的步伐转\n若你刚好也喜欢\n不如趁现在 把答案说短\n\n如果这条线\n系在你手腕\n会不会明年今天\n我们还并肩\n\n一步一步靠近\n一寸一寸沦陷\n听见自己心跳\n抢在鼓点前\n\n缕线一绕心已乱\n明明只是擦身一半\n你说的新年心愿\n我听成“以后都在我身边”\n缕线一绕心已乱\n节拍跟着你的步伐转\n若你刚好也喜欢\n不如趁现在 把答案说短"
+      "lyrics": "人日街里花正鲜\n纸风车转过你肩\n你低头系好鞋带\n笑说今年要跑得更远\n\n缕缕彩线缠我圈\n从指尖滑到心弦\n装作只是看热闹\n耳尖却悄悄烫得很明显\n\n缕线一绕心已乱\n明明只是擦身一半\n你说的新年心愿\n我听成“以后都在我身边”\n缕线一绕心已乱\n节拍跟着你的步伐转\n若你刚好也喜欢\n不如趁现在 把答案说短\n\n斜阳落在你侧脸\n糖葫芦亮得刺眼\n你递给我最甜一串\n说我看起来需要勇敢一点\n\n人海晃成彩带圈\n你笑声晃动空气感\n我装酷玩手机画圈\n其实全是你的名字在转\n\n缕线一绕心已乱\n明明只是擦身一半\n你说的新年心愿\n我听成“以后都在我身边”\n缕线一绕心已乱\n节拍跟着你的步伐转\n若你刚好也喜欢\n不如趁现在 把答案说短\n\n如果这条线\n系在你手腕\n会不会明年今天\n我们还并肩\n\n一步一步靠近\n一寸一寸沦陷\n听见自己心跳\n抢在鼓点前\n\n缕线一绕心已乱\n明明只是擦身一半\n你说的新年心愿\n我听成“以后都在我身边”\n缕线一绕心已乱\n节拍跟着你的步伐转\n若你刚好也喜欢\n不如趁现在 把答案说短",
+      "trackNo": 15
     },
     {
       "id": "isrc-QZES92646457",
@@ -12050,7 +12343,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -12070,8 +12364,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=16"
         },
         {
           "platform": "netease",
@@ -12084,13 +12378,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=16",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "衣彩缕金胜迎春光\n街角花档笑声在回荡\n风里你身影一晃\n像彩纸贴上我心房\n\n人海刚好为你静场\n耳机换上最甜的一首歌\n不敢多看又偷看\n连影子都在脸红发烫\n\n你一靠近　心跳就乱了拍\n像灯球转呀转　把理性甩开\n彩纸在天上打圈　落进我胸怀\n贴在我心房　写着你的可爱\n\n你一抬头　眼睛就晃了彩\n平凡这条老街　忽然变舞台\n让风把碎碎心事　吹到你裙摆\n贴在你心上　偷偷被你拆开\n\n斑驳路面跳着光点\n鞋尖踢飞昨天的小遗憾\n你笑说天气太暖\n我却怪你呼吸太灿烂\n\n售货机前排队太慢\n刚好让我多听你讲几句\n你说“随便”却偏偏\n在选择里把我留得最远又最近\n\n要不要　和我一起乱闯\n沿着这条路　绕一圈再回航\n\n如果你　愿意多看一眼\n我会把所有怦然　都收进口袋\n\n你一靠近　心跳就乱了拍\n像灯球转呀转　把理性甩开\n彩纸在天上打圈　落进我胸怀\n贴在我心房　写着你的可爱\n\n你一抬头　眼睛就晃了彩\n平凡这条老街　忽然变舞台\n让风把碎碎心事　吹到你裙摆\n贴在你心上　偷偷被你拆开"
+      "lyrics": "衣彩缕金胜迎春光\n街角花档笑声在回荡\n风里你身影一晃\n像彩纸贴上我心房\n\n人海刚好为你静场\n耳机换上最甜的一首歌\n不敢多看又偷看\n连影子都在脸红发烫\n\n你一靠近　心跳就乱了拍\n像灯球转呀转　把理性甩开\n彩纸在天上打圈　落进我胸怀\n贴在我心房　写着你的可爱\n\n你一抬头　眼睛就晃了彩\n平凡这条老街　忽然变舞台\n让风把碎碎心事　吹到你裙摆\n贴在你心上　偷偷被你拆开\n\n斑驳路面跳着光点\n鞋尖踢飞昨天的小遗憾\n你笑说天气太暖\n我却怪你呼吸太灿烂\n\n售货机前排队太慢\n刚好让我多听你讲几句\n你说“随便”却偏偏\n在选择里把我留得最远又最近\n\n要不要　和我一起乱闯\n沿着这条路　绕一圈再回航\n\n如果你　愿意多看一眼\n我会把所有怦然　都收进口袋\n\n你一靠近　心跳就乱了拍\n像灯球转呀转　把理性甩开\n彩纸在天上打圈　落进我胸怀\n贴在我心房　写着你的可爱\n\n你一抬头　眼睛就晃了彩\n平凡这条老街　忽然变舞台\n让风把碎碎心事　吹到你裙摆\n贴在你心上　偷偷被你拆开",
+      "trackNo": 16
     },
     {
       "id": "isrc-QZES92646458",
@@ -12104,7 +12406,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -12124,8 +12427,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=17"
         },
         {
           "platform": "netease",
@@ -12138,13 +12441,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=17",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "清晨的风\n推开了一点点窗\n闹钟在响\n心却还在迷惘\n地图摊开\n格子里写着理想\n脚下这一步\n总觉得还差一点勇敢\n\n别人飞奔在前方\n照片里笑得闪亮\n我还在原地盘算\n下一小格该怎样填上\n\n不求一跃千里\n只愿步步为营\n哪怕只是今天\n多走前面一厘米\n路长啊 路长且远\n抬头望也看不清\n但方向若是对的\n就不怕慢一点前行\n\n午后的光\n落在课本和工牌上\n重复的事\n练出了默默的坚强\n偶尔也会\n羡慕那些轻松模样\n转头看自己\n脚印排成一行发着光\n\n曾经跌倒在拐弯\n以为世界只剩黑暗\n原来抬脚再向前\n下一扇门就会打开一半\n\n不求一跃千里\n只愿步步为营\n哪怕只是今天\n多走前面一厘米\n路长啊 路长且远\n抬头望也看不清\n但方向若是对的\n就不怕慢一点前行\n\n谁说一定要精彩得轰轰烈烈\n小小的好 也值得被纪念\n今天比昨天多一点点\n就是种胜利  也是种冒险\n\n不求一跃千里\n只愿步步为营\n哪怕只是今天\n多走前面一厘米\n路长啊 路长且远\n抬头望也看不清\n但方向若是对的\n就不怕慢一点前行"
+      "lyrics": "清晨的风\n推开了一点点窗\n闹钟在响\n心却还在迷惘\n地图摊开\n格子里写着理想\n脚下这一步\n总觉得还差一点勇敢\n\n别人飞奔在前方\n照片里笑得闪亮\n我还在原地盘算\n下一小格该怎样填上\n\n不求一跃千里\n只愿步步为营\n哪怕只是今天\n多走前面一厘米\n路长啊 路长且远\n抬头望也看不清\n但方向若是对的\n就不怕慢一点前行\n\n午后的光\n落在课本和工牌上\n重复的事\n练出了默默的坚强\n偶尔也会\n羡慕那些轻松模样\n转头看自己\n脚印排成一行发着光\n\n曾经跌倒在拐弯\n以为世界只剩黑暗\n原来抬脚再向前\n下一扇门就会打开一半\n\n不求一跃千里\n只愿步步为营\n哪怕只是今天\n多走前面一厘米\n路长啊 路长且远\n抬头望也看不清\n但方向若是对的\n就不怕慢一点前行\n\n谁说一定要精彩得轰轰烈烈\n小小的好 也值得被纪念\n今天比昨天多一点点\n就是种胜利  也是种冒险\n\n不求一跃千里\n只愿步步为营\n哪怕只是今天\n多走前面一厘米\n路长啊 路长且远\n抬头望也看不清\n但方向若是对的\n就不怕慢一点前行",
+      "trackNo": 17
     },
     {
       "id": "isrc-QZES92646459",
@@ -12158,7 +12469,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -12178,8 +12490,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=18"
         },
         {
           "platform": "netease",
@@ -12192,13 +12504,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=18",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "[Verse]\n操场水洼映着天空\n倒影里断了的彩虹\n你的影子轻轻滑过\n像风吹皱的梦\n\n[Prechorus]\n雨停了 却留着冷\n我伸手却触不到温\n\n[Chorus]\n折断的彩虹 没人捡走\n颜色滴落 化作自由\n一瞬间像永恒\n一转眼都消融\n你会记得吗 那个午后\n\n[Verse 2]\n水滴滑落像慢动作\n记忆停在一个窗口\n你没回头 我没开口\n谁都躲在沉默中\n\n[Prechorus]\n心跳着 却像静止\n遗憾是最深的句子\n\n[Chorus]\n折断的彩虹 没人捡走\n颜色滴落 化作自由\n一瞬间像永恒\n一转眼都消融\n你会记得吗 那个午后"
+      "lyrics": "[Verse]\n操场水洼映着天空\n倒影里断了的彩虹\n你的影子轻轻滑过\n像风吹皱的梦\n\n[Prechorus]\n雨停了 却留着冷\n我伸手却触不到温\n\n[Chorus]\n折断的彩虹 没人捡走\n颜色滴落 化作自由\n一瞬间像永恒\n一转眼都消融\n你会记得吗 那个午后\n\n[Verse 2]\n水滴滑落像慢动作\n记忆停在一个窗口\n你没回头 我没开口\n谁都躲在沉默中\n\n[Prechorus]\n心跳着 却像静止\n遗憾是最深的句子\n\n[Chorus]\n折断的彩虹 没人捡走\n颜色滴落 化作自由\n一瞬间像永恒\n一转眼都消融\n你会记得吗 那个午后",
+      "trackNo": 18
     },
     {
       "id": "isrc-QZES92646460",
@@ -12212,7 +12532,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -12232,8 +12553,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=19"
         },
         {
           "platform": "netease",
@@ -12246,13 +12567,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=19",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "铃一响\n风一晃\n小小红绸\n系在心上\n\n街口灯笼一串一串\n糖葫芦甜到脸颊发烫\n纸门一推福字放光\n门槛上鞋排成长龙长龙\n来坐一堂\n\n鲤鱼跃！岁寒友！金玉满堂福满堂\n一声喝彩一片霞光\n浓墨重彩年画新\n家家墙上喜气洋洋\n鲤鱼跃！岁寒友！金玉满堂福满堂\n锣鼓一碰好运登场\n贴上红红那一张\n新年一到心都发亮！(嘿！)\n\n窗花剪出山水吉祥\n汤圆翻滚像小小月亮\n围炉讲着去岁的忙\n笑声一浪一浪推着炊烟上\n再添一盏香\n\n你挂桃符\n我端茶汤\n他举酒盏\n一起敲门窗\n一句恭喜\n回声绕屋梁\n把旧霉气\n全赶出巷"
+      "lyrics": "铃一响\n风一晃\n小小红绸\n系在心上\n\n街口灯笼一串一串\n糖葫芦甜到脸颊发烫\n纸门一推福字放光\n门槛上鞋排成长龙长龙\n来坐一堂\n\n鲤鱼跃！岁寒友！金玉满堂福满堂\n一声喝彩一片霞光\n浓墨重彩年画新\n家家墙上喜气洋洋\n鲤鱼跃！岁寒友！金玉满堂福满堂\n锣鼓一碰好运登场\n贴上红红那一张\n新年一到心都发亮！(嘿！)\n\n窗花剪出山水吉祥\n汤圆翻滚像小小月亮\n围炉讲着去岁的忙\n笑声一浪一浪推着炊烟上\n再添一盏香\n\n你挂桃符\n我端茶汤\n他举酒盏\n一起敲门窗\n一句恭喜\n回声绕屋梁\n把旧霉气\n全赶出巷",
+      "trackNo": 19
     },
     {
       "id": "isrc-QZES92646461",
@@ -12266,7 +12595,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -12286,8 +12616,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=20"
         },
         {
           "platform": "netease",
@@ -12300,13 +12630,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=20",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "[Verse 1]\n拜年空巷\n纸门褪了红\n小时候敲门喊叔伯\n一声比一声冲\n院里挂着\n冻得硬邦邦的风\n糖果分在搪瓷碗里\n亮得像彩虹\n\n[Chorus]\n如今我成了客人\n门后无人问归处\n鞋上带着半城灰土\n说不出口的辛苦\n提着礼盒站在原地\n只剩自己问自己\n这一身走来走去\n到底要回到哪里\n\n[Verse 2]\n熟门熟路\n拐角还是那棵树\n树皮被刻过的名字\n已经被年份磨平了触目\n隔壁那家\n窗台少了盆老花\n以前总有粗嗓子大笑\n招呼我进家\n\n[Chorus]"
+      "lyrics": "[Verse 1]\n拜年空巷\n纸门褪了红\n小时候敲门喊叔伯\n一声比一声冲\n院里挂着\n冻得硬邦邦的风\n糖果分在搪瓷碗里\n亮得像彩虹\n\n[Chorus]\n如今我成了客人\n门后无人问归处\n鞋上带着半城灰土\n说不出口的辛苦\n提着礼盒站在原地\n只剩自己问自己\n这一身走来走去\n到底要回到哪里\n\n[Verse 2]\n熟门熟路\n拐角还是那棵树\n树皮被刻过的名字\n已经被年份磨平了触目\n隔壁那家\n窗台少了盆老花\n以前总有粗嗓子大笑\n招呼我进家\n\n[Chorus]",
+      "trackNo": 20
     },
     {
       "id": "isrc-QZES92646462",
@@ -12320,7 +12658,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -12340,8 +12679,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=21"
         },
         {
           "platform": "netease",
@@ -12354,7 +12693,14 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=21",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
@@ -12371,7 +12717,8 @@
         "节奏": "稳健、干净",
         "主旋律": "极简、朗朗上口",
         "演唱": "女声"
-      }
+      },
+      "trackNo": 21
     },
     {
       "id": "isrc-QZES92646463",
@@ -12385,7 +12732,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -12405,8 +12753,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=22"
         },
         {
           "platform": "netease",
@@ -12419,13 +12767,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=22",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "主歌\n旧铁轨沉默 诉说着年轮\n缝隙中紫花微微探身\n风吹过 像轻声问候\n谁的脚步曾走过这里\n\n预副歌\n锈迹斑驳 难掩的光辉\n花瓣摇曳 在无声中飞\n\n副歌\n紫花开成信号旗\n在时间里舞动着秘密\n每一瓣都带着痕迹\n是谁的梦遗落在这里\n\n主歌 2\n日光斜照下 闪烁的碎影\n岁月如铁轨漫长而平静\n火车远去 留下的空鸣\n仿佛在述说一段曾经\n\n预副歌\n微风低吟 遥远的记忆\n信号旗摇动 不愿停息\n\n副歌\n紫花开成信号旗\n在时间里舞动着秘密\n每一瓣都带着痕迹\n是谁的梦遗落在这里"
+      "lyrics": "主歌\n旧铁轨沉默 诉说着年轮\n缝隙中紫花微微探身\n风吹过 像轻声问候\n谁的脚步曾走过这里\n\n预副歌\n锈迹斑驳 难掩的光辉\n花瓣摇曳 在无声中飞\n\n副歌\n紫花开成信号旗\n在时间里舞动着秘密\n每一瓣都带着痕迹\n是谁的梦遗落在这里\n\n主歌 2\n日光斜照下 闪烁的碎影\n岁月如铁轨漫长而平静\n火车远去 留下的空鸣\n仿佛在述说一段曾经\n\n预副歌\n微风低吟 遥远的记忆\n信号旗摇动 不愿停息\n\n副歌\n紫花开成信号旗\n在时间里舞动着秘密\n每一瓣都带着痕迹\n是谁的梦遗落在这里",
+      "trackNo": 22
     },
     {
       "id": "isrc-QZES92646464",
@@ -12439,7 +12795,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -12459,8 +12816,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=23"
         },
         {
           "platform": "netease",
@@ -12473,13 +12830,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=23",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "那时院子小小\n月光刚好落在台阶\n你说以后常回来\n钥匙放在花盆边\n\n后来信箱空了\n门口鞋印慢慢被雨淹\n我把门锁擦得发亮\n等风吹来一点你的脸\n\n如今明月照空街\n影子拉长没人说再见\n曾经彩云绕你肩\n一回头 天已经换了季节\n明月照空街\n脚步声只剩我和落叶\n你走得那么轻\n连叹息都没来得及告别\n\n那晚钟声很远\n路灯下你低着头说累\n台阶上那杯凉茶\n还留着你手心的余温味\n\n后来消息零碎\n像掉在地上的纸片\n我一张一张去捡\n拼不出一句完整你现在的谁\n\n如今明月照空街\n影子拉长没人说再见\n曾经彩云绕你肩\n一回头 天已经换了季节\n明月照空街\n脚步声只剩我和落叶\n你走得那么轻\n连叹息都没来得及告别\n\n原来承诺这东西\n放久了会褪色 会走失\n我站在当时那棵树下\n抬头看 只记得你的侧脸\n\n如今明月照空街\n影子拉长没人说再见\n曾经彩云绕你肩\n一回头 天已经换了季节\n明月照空街\n脚步声只剩我和落叶\n你走得那么轻\n连叹息都没来得及告别"
+      "lyrics": "那时院子小小\n月光刚好落在台阶\n你说以后常回来\n钥匙放在花盆边\n\n后来信箱空了\n门口鞋印慢慢被雨淹\n我把门锁擦得发亮\n等风吹来一点你的脸\n\n如今明月照空街\n影子拉长没人说再见\n曾经彩云绕你肩\n一回头 天已经换了季节\n明月照空街\n脚步声只剩我和落叶\n你走得那么轻\n连叹息都没来得及告别\n\n那晚钟声很远\n路灯下你低着头说累\n台阶上那杯凉茶\n还留着你手心的余温味\n\n后来消息零碎\n像掉在地上的纸片\n我一张一张去捡\n拼不出一句完整你现在的谁\n\n如今明月照空街\n影子拉长没人说再见\n曾经彩云绕你肩\n一回头 天已经换了季节\n明月照空街\n脚步声只剩我和落叶\n你走得那么轻\n连叹息都没来得及告别\n\n原来承诺这东西\n放久了会褪色 会走失\n我站在当时那棵树下\n抬头看 只记得你的侧脸\n\n如今明月照空街\n影子拉长没人说再见\n曾经彩云绕你肩\n一回头 天已经换了季节\n明月照空街\n脚步声只剩我和落叶\n你走得那么轻\n连叹息都没来得及告别",
+      "trackNo": 23
     },
     {
       "id": "isrc-QZES92646465",
@@ -12493,7 +12858,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -12513,8 +12879,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=24"
         },
         {
           "platform": "netease",
@@ -12527,13 +12893,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=24",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "左三步 右三步\n小尾巴 摇一摇\n铃一一一摇\n前面是不是 有人偷偷 看我走\n\n太鼓咚 咚一声就出发\n小手拍 在耳边 打节拍\n木鱼点 点到心里 好痒啊\n像被谁 悄悄用尾巴 划过脸颊\n\n小狐步 轻轻的 小小悸\n一二三 转圈圈 别跌进梦里\n尾巴藏 起你说的 心事和秘密\n跟着我 跟着我\n一起坏一点 也可以\n\n纸灯笼 排成路标 指着家\n风一吹 把颜色 搅成花\n铃叮当 在上拍 偷偷笑啊\n你踮脚 我跳开 像在追又 不想抓\n\n轻轻的 小小悸\n一二三 转圈圈 别跌进梦里\n尾巴藏 起你说的 心事和秘密\n跟着我 跟着我\n一起坏一点 也可以\n\n谁在林子边 数着拍子\n脚印排成 一行一行 心事的格子\n你要不要 跟上来\n一步差一点 也刚好 可爱\n\n轻轻的 小小悸\n一二三 转圈圈 别跌进梦里\n尾巴藏 起你说的 心事和秘密\n跟着我 跟着我\n一起坏一点 也可以"
+      "lyrics": "左三步 右三步\n小尾巴 摇一摇\n铃一一一摇\n前面是不是 有人偷偷 看我走\n\n太鼓咚 咚一声就出发\n小手拍 在耳边 打节拍\n木鱼点 点到心里 好痒啊\n像被谁 悄悄用尾巴 划过脸颊\n\n小狐步 轻轻的 小小悸\n一二三 转圈圈 别跌进梦里\n尾巴藏 起你说的 心事和秘密\n跟着我 跟着我\n一起坏一点 也可以\n\n纸灯笼 排成路标 指着家\n风一吹 把颜色 搅成花\n铃叮当 在上拍 偷偷笑啊\n你踮脚 我跳开 像在追又 不想抓\n\n轻轻的 小小悸\n一二三 转圈圈 别跌进梦里\n尾巴藏 起你说的 心事和秘密\n跟着我 跟着我\n一起坏一点 也可以\n\n谁在林子边 数着拍子\n脚印排成 一行一行 心事的格子\n你要不要 跟上来\n一步差一点 也刚好 可爱\n\n轻轻的 小小悸\n一二三 转圈圈 别跌进梦里\n尾巴藏 起你说的 心事和秘密\n跟着我 跟着我\n一起坏一点 也可以",
+      "trackNo": 24
     },
     {
       "id": "isrc-QZES92646466",
@@ -12547,7 +12921,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -12567,8 +12942,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=25"
         },
         {
           "platform": "netease",
@@ -12581,13 +12956,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=25",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "[Verse 1]\n广播的女声很平静\n平静得像一把剪刀\n剪断我拖着走的旧影\n一路拖痕，像鞋底的泥\n\n我曾把遗憾抱得太紧\n紧到连呼吸都在回音里\n以为不松手就不算失去\n指节发白，还说这样才算用力\n\n可越不松手\n越把自己困在原地\n困成一场\n看不见尽头的雪\n\n「为学日益，为道日损」\n车窗上的雾写了又抹去\n少一点执念\n才更像真的在这里\n\n[Chorus]\n到站请下车 把旧我留在雪里\n把不合适的爱 和不合适的慌\n都交给时间去处理\n我只带走——\n一颗愿意重新开始的心\n和一点点不再逃的勇气\n(轻轻的 不回头)\n\n[Verse 2]\n下一班车还会来吗\n我把问题叠成小纸团揣进口袋\n站牌上的灯一闪一闪\n像在说「你已经够明白」\n\n曾经怕空手\n害怕两袖清风的自己\n现在学着轻一点\n让沉甸甸的名字留在原地\n\n[Chorus]"
+      "lyrics": "[Verse 1]\n广播的女声很平静\n平静得像一把剪刀\n剪断我拖着走的旧影\n一路拖痕，像鞋底的泥\n\n我曾把遗憾抱得太紧\n紧到连呼吸都在回音里\n以为不松手就不算失去\n指节发白，还说这样才算用力\n\n可越不松手\n越把自己困在原地\n困成一场\n看不见尽头的雪\n\n「为学日益，为道日损」\n车窗上的雾写了又抹去\n少一点执念\n才更像真的在这里\n\n[Chorus]\n到站请下车 把旧我留在雪里\n把不合适的爱 和不合适的慌\n都交给时间去处理\n我只带走——\n一颗愿意重新开始的心\n和一点点不再逃的勇气\n(轻轻的 不回头)\n\n[Verse 2]\n下一班车还会来吗\n我把问题叠成小纸团揣进口袋\n站牌上的灯一闪一闪\n像在说「你已经够明白」\n\n曾经怕空手\n害怕两袖清风的自己\n现在学着轻一点\n让沉甸甸的名字留在原地\n\n[Chorus]",
+      "trackNo": 25
     },
     {
       "id": "isrc-QZES92646467",
@@ -12601,7 +12984,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -12621,8 +13005,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=26"
         },
         {
           "platform": "netease",
@@ -12635,13 +13019,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=26",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "[Verse 1]\n碌碌半生\n算来不过几行字\n街角那家茶馆\n换了三任掌柜\n\n旧同事聚会\n谁还提起从前梦\n照片里那个我\n笑得有点生硬\n\n[Chorus]\n碌碌半生\n悔恨到天明\n对着天花板\n数自己曾逞强的决定\n\n岁月无情催人老\n皱纹一条一条生\n我却只剩空叹在风中\n问一声 还来得及没\n\n[Verse 2]\n深夜的灯\n照得影子好疲惫\n书架上那些计划\n封面都落了灰\n\n爱过的人\n走散时谁也没错\n只是那句“以后”\n再也追不上列车\n\n[Chorus]\n\n[Bridge]\n如果那年\n我肯慢一步转身\n拥抱再久一点\n是不是结局能变更\n\n如果此刻\n我肯放过自己的心\n至少这一夜\n能睡得像二十岁那么沉\n\n[Chorus]"
+      "lyrics": "[Verse 1]\n碌碌半生\n算来不过几行字\n街角那家茶馆\n换了三任掌柜\n\n旧同事聚会\n谁还提起从前梦\n照片里那个我\n笑得有点生硬\n\n[Chorus]\n碌碌半生\n悔恨到天明\n对着天花板\n数自己曾逞强的决定\n\n岁月无情催人老\n皱纹一条一条生\n我却只剩空叹在风中\n问一声 还来得及没\n\n[Verse 2]\n深夜的灯\n照得影子好疲惫\n书架上那些计划\n封面都落了灰\n\n爱过的人\n走散时谁也没错\n只是那句“以后”\n再也追不上列车\n\n[Chorus]\n\n[Bridge]\n如果那年\n我肯慢一步转身\n拥抱再久一点\n是不是结局能变更\n\n如果此刻\n我肯放过自己的心\n至少这一夜\n能睡得像二十岁那么沉\n\n[Chorus]",
+      "trackNo": 26
     },
     {
       "id": "isrc-QZES92646468",
@@ -12655,7 +13047,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -12675,8 +13068,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=27"
         },
         {
           "platform": "netease",
@@ -12689,13 +13082,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=27",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "腊月二十四\n掸尘扫房忙\n小铃儿一晃\n福气来敲门\n\n门前贴着旧春帖\n角落藏着一层霜\n卷起袖子一声喊\n今天把晦气全赶上\n\n桌下翻出去年糖\n窗台落了半指黄\n一把笤帚打着节拍\n拍掉心里小惆怅\n\n尘埃飞！晦气跑！(嘿！)\n除陈布新迎吉祥\n一屋亮 一心亮\n笑声晃得窗纸光\n\n尘埃飞！晦气跑！(嗨！)\n旧影子全都往外放\n门一开 风一扬\n福字贴得直晃荡\n\n锅里咕嘟冒着香\n院里衣裳排成行\n猫咪趴在门槛看\n扫帚跳舞像在逛庙场\n\n奶奶边指边念叨\n梁上角落别放忘\n我在椅子上踮着脚\n擦到最后一粒慌\n\n尘埃飞！晦气跑！(嘿！)\n除陈布新迎吉祥\n一屋亮 一心亮\n笑声晃得窗纸光\n\n一把灰 一声笑\n一抹汗 顺着下巴淌\n你说累吗 我说刚好\n把心也擦得亮堂堂\n\n尘埃飞！晦气跑！(嘿！)\n除陈布新迎吉祥\n一屋亮 一心亮\n笑声晃得窗纸光"
+      "lyrics": "腊月二十四\n掸尘扫房忙\n小铃儿一晃\n福气来敲门\n\n门前贴着旧春帖\n角落藏着一层霜\n卷起袖子一声喊\n今天把晦气全赶上\n\n桌下翻出去年糖\n窗台落了半指黄\n一把笤帚打着节拍\n拍掉心里小惆怅\n\n尘埃飞！晦气跑！(嘿！)\n除陈布新迎吉祥\n一屋亮 一心亮\n笑声晃得窗纸光\n\n尘埃飞！晦气跑！(嗨！)\n旧影子全都往外放\n门一开 风一扬\n福字贴得直晃荡\n\n锅里咕嘟冒着香\n院里衣裳排成行\n猫咪趴在门槛看\n扫帚跳舞像在逛庙场\n\n奶奶边指边念叨\n梁上角落别放忘\n我在椅子上踮着脚\n擦到最后一粒慌\n\n尘埃飞！晦气跑！(嘿！)\n除陈布新迎吉祥\n一屋亮 一心亮\n笑声晃得窗纸光\n\n一把灰 一声笑\n一抹汗 顺着下巴淌\n你说累吗 我说刚好\n把心也擦得亮堂堂\n\n尘埃飞！晦气跑！(嘿！)\n除陈布新迎吉祥\n一屋亮 一心亮\n笑声晃得窗纸光",
+      "trackNo": 27
     },
     {
       "id": "isrc-QZES92646469",
@@ -12709,7 +13110,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -12729,8 +13131,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=28"
         },
         {
           "platform": "netease",
@@ -12743,13 +13145,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=28",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "花灯转\n小巷灯影亮又暖\n竹笛一吹\n人群像浪翻\n\n摊旗猎猎排成线\n纸签摇进夏夜愿\n面具后面偷看你\n笑到眼睛都弯弯\n\n花灯转！龙灯舞！烟花冲天不夜天\n围成圈！踏着步！一步一声叫春天\n花灯转！龙灯舞！你我肩贴肩向前\n手拉手！跟上鼓！今晚时间停在这边\n\n金鱼袋子晃呀晃\n糖果融化指尖香\n你说走丢就抓紧\n人海之中心不慌\n\n花灯转！龙灯舞！烟花冲天不夜天\n围成圈！踏着步！一步一声叫春天\n花灯转！龙灯舞！你我肩贴肩向前\n手拉手！跟上鼓！今晚时间停在这边\n\n[呼喊应答] 左边喊——哟\n右边回——嗨\n抬头一看星河开\n脚下鼓点踩成海\n转一圈 再一圈\n把烦恼甩出城外\n\n花灯转！龙灯舞！烟花冲天不夜天\n围成圈！踏着步！一步一声叫春天\n花灯转！龙灯舞！你我肩贴肩向前\n手拉手！跟上鼓！今晚时间停在这边"
+      "lyrics": "花灯转\n小巷灯影亮又暖\n竹笛一吹\n人群像浪翻\n\n摊旗猎猎排成线\n纸签摇进夏夜愿\n面具后面偷看你\n笑到眼睛都弯弯\n\n花灯转！龙灯舞！烟花冲天不夜天\n围成圈！踏着步！一步一声叫春天\n花灯转！龙灯舞！你我肩贴肩向前\n手拉手！跟上鼓！今晚时间停在这边\n\n金鱼袋子晃呀晃\n糖果融化指尖香\n你说走丢就抓紧\n人海之中心不慌\n\n花灯转！龙灯舞！烟花冲天不夜天\n围成圈！踏着步！一步一声叫春天\n花灯转！龙灯舞！你我肩贴肩向前\n手拉手！跟上鼓！今晚时间停在这边\n\n[呼喊应答] 左边喊——哟\n右边回——嗨\n抬头一看星河开\n脚下鼓点踩成海\n转一圈 再一圈\n把烦恼甩出城外\n\n花灯转！龙灯舞！烟花冲天不夜天\n围成圈！踏着步！一步一声叫春天\n花灯转！龙灯舞！你我肩贴肩向前\n手拉手！跟上鼓！今晚时间停在这边",
+      "trackNo": 28
     },
     {
       "id": "isrc-QZES92646470",
@@ -12763,7 +13173,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -12783,8 +13194,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=29"
         },
         {
           "platform": "netease",
@@ -12797,13 +13208,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=29",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "这是最后一封信\n写在今年除夕的雪地上\n用树枝当笔\n雪当纸\n写完 等雪化\n我把这些年的话\n都写在雪里\n那些没说的 来不及的\n都交给这场雪\n\n雪地旧信 寄不出去的信\n我把你放回时间 放回那年冬天\n此情可待成追忆 只是当时已惘然\n雪会化 字会消\n可你在我心里 落成了永远的雪\n\n街口烟花炸开\n光照亮你当年离开的背影\n我站在同一个位置\n脚下是新的雪\n手心还是那句\n没敢说出口的\n“要不你别走”\n冻在空气里颤抖\n\n雪地旧信 寄不出去的信\n我把你放回时间 放回那年冬天\n此情可待成追忆 只是当时已惘然\n雪会化 字会消\n可你在我心里 落成了永远的雪\n\n折痕里的字迹模糊了\n就像我们的故事\n不是看不清 是刻得太深\n反而混成一片\n原来忘记不是放下\n只是记得 不再打扰\n我把最后一个关于你的梦\n也折进这封信里\n\n雪地旧信 寄不出去的信\n我把你放回时间 放回那年冬天\n此情可待成追忆 只是当时已惘然\n雪会化 字会消\n可你在我心里 落成了永远的雪"
+      "lyrics": "这是最后一封信\n写在今年除夕的雪地上\n用树枝当笔\n雪当纸\n写完 等雪化\n我把这些年的话\n都写在雪里\n那些没说的 来不及的\n都交给这场雪\n\n雪地旧信 寄不出去的信\n我把你放回时间 放回那年冬天\n此情可待成追忆 只是当时已惘然\n雪会化 字会消\n可你在我心里 落成了永远的雪\n\n街口烟花炸开\n光照亮你当年离开的背影\n我站在同一个位置\n脚下是新的雪\n手心还是那句\n没敢说出口的\n“要不你别走”\n冻在空气里颤抖\n\n雪地旧信 寄不出去的信\n我把你放回时间 放回那年冬天\n此情可待成追忆 只是当时已惘然\n雪会化 字会消\n可你在我心里 落成了永远的雪\n\n折痕里的字迹模糊了\n就像我们的故事\n不是看不清 是刻得太深\n反而混成一片\n原来忘记不是放下\n只是记得 不再打扰\n我把最后一个关于你的梦\n也折进这封信里\n\n雪地旧信 寄不出去的信\n我把你放回时间 放回那年冬天\n此情可待成追忆 只是当时已惘然\n雪会化 字会消\n可你在我心里 落成了永远的雪",
+      "trackNo": 29
     },
     {
       "id": "isrc-QZES92646471",
@@ -12817,7 +13236,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -12837,8 +13257,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=30"
         },
         {
           "platform": "netease",
@@ -12851,13 +13271,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=30",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "[Verse]\n雨滴碎落像谁的叹息\n蜡烛微光摇曳着孤寂\n水沟里流淌着秘密\n纸船漂啊漂 谁在寻觅\n\n[Prechorus]\n一瞬间 闪烁的星点\n一眨眼 消失的誓言\n\n[Chorus]\n纸船载着半支蜡烛\n顺着水沟追寻星河\n远方是否有答案在等候\n在破晓前梦一场漂泊\n\n[Verse 2]\n风吹过 谁的名字没落\n夜空下 影子也沉默\n脚步声轻轻被淹没\n星光洒满路却不敢看透\n\n[Prechorus]\n一瞬间 模糊的界限\n一眨眼 流走的时间\n\n[Chorus]\n纸船载着半支蜡烛\n顺着水沟追寻星河\n远方是否有答案在等候\n在破晓前梦一场漂泊"
+      "lyrics": "[Verse]\n雨滴碎落像谁的叹息\n蜡烛微光摇曳着孤寂\n水沟里流淌着秘密\n纸船漂啊漂 谁在寻觅\n\n[Prechorus]\n一瞬间 闪烁的星点\n一眨眼 消失的誓言\n\n[Chorus]\n纸船载着半支蜡烛\n顺着水沟追寻星河\n远方是否有答案在等候\n在破晓前梦一场漂泊\n\n[Verse 2]\n风吹过 谁的名字没落\n夜空下 影子也沉默\n脚步声轻轻被淹没\n星光洒满路却不敢看透\n\n[Prechorus]\n一瞬间 模糊的界限\n一眨眼 流走的时间\n\n[Chorus]\n纸船载着半支蜡烛\n顺着水沟追寻星河\n远方是否有答案在等候\n在破晓前梦一场漂泊",
+      "trackNo": 30
     },
     {
       "id": "isrc-QZES92646472",
@@ -12871,7 +13299,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -12891,8 +13320,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=31"
         },
         {
           "platform": "netease",
@@ -12905,7 +13334,14 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=31",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
@@ -12922,7 +13358,8 @@
         "节奏": "活泼跳跃的祭典groove：四 on the floor底鼓 + 强backbeat（2、4拍snare）",
         "演唱": "女声",
         "配器": "合成铃铛/风铃、+ 太鼓/和鼓（祭囃子重击）+ 笛子/尺八合成、拍手/木鱼敲击"
-      }
+      },
+      "trackNo": 31
     },
     {
       "id": "isrc-QZES92646473",
@@ -12936,7 +13373,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -12956,8 +13394,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=32"
         },
         {
           "platform": "netease",
@@ -12970,13 +13408,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=32",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "镜中人笑镜中人\n笑纹压着旧年轮\n梳子一齿一寸晕\n拨开几段夏天闷\n\n如今镜里人已老\n童年笑声成百万年前\n像走丢在走廊的回声\n拍着墙\n却回不到那一间\n\n牙杯旁边小铁勺\n磕得像从前上课早\n窗外有人催着走\n心里却被操场拽牢\n\n如今镜里人已老\n童年笑声成百万年前\n像走丢在走廊的回声\n拍着墙\n却回不到那一间\n\n那时光赤脚踩泥\n雨一停裤脚全是泥点\n那时说长大很久\n一转身就站在今天\n\n如今镜里人已老\n童年笑声成百万年前\n像走丢在走廊的回声\n拍着墙\n却回不到那一间"
+      "lyrics": "镜中人笑镜中人\n笑纹压着旧年轮\n梳子一齿一寸晕\n拨开几段夏天闷\n\n如今镜里人已老\n童年笑声成百万年前\n像走丢在走廊的回声\n拍着墙\n却回不到那一间\n\n牙杯旁边小铁勺\n磕得像从前上课早\n窗外有人催着走\n心里却被操场拽牢\n\n如今镜里人已老\n童年笑声成百万年前\n像走丢在走廊的回声\n拍着墙\n却回不到那一间\n\n那时光赤脚踩泥\n雨一停裤脚全是泥点\n那时说长大很久\n一转身就站在今天\n\n如今镜里人已老\n童年笑声成百万年前\n像走丢在走廊的回声\n拍着墙\n却回不到那一间",
+      "trackNo": 32
     },
     {
       "id": "isrc-QZES92646474",
@@ -12990,7 +13436,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -13010,8 +13457,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=33"
         },
         {
           "platform": "netease",
@@ -13024,13 +13471,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=33",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "[Verse 1]\n雪停了\n我沿着你走过的路\n踩在你的脚印上\n假装我们还在并肩\n\n那个路口\n你往左 我往右\n说好十分钟见\n十分钟变成十年\n\n你往左\n再没回来\n记忆像雪夜的路灯\n越想看清 越晃眼睛\n\n你的脸\n你的声音\n都被雪反光照得模糊\n只剩下一点点温度\n\n[Chorus]\n雪夜回放 回放不了你\n路灯亮着 你的影子却不在\n「故乡今夜思千里，霜鬓明朝又一年」\n我站在原地\n等到雪化 等到路灯灭 等到天亮\n你还是没出现在路口\n\n[Verse 2]\n口袋里\n那年冬天的车票\n字都被手心的汗\n一点一点磨掉\n\n路边的便利店\n还放着旧日的广播\n收银台的小姑娘\n已经不记得你来过\n\n我反复走\n你当时走过的那一段\n连呼出来的白气\n都学着你的习惯\n\n雪踩碎了\n却拼不回从前的路线\n每一步\n都踩疼那一年的心愿\n\n[Chorus]\n雪夜回放 回放不了你\n路灯亮着 你的影子却不在\n「故乡今夜思千里，霜鬓明朝又一年」\n我站在原地\n等到雪化 等到路灯灭 等到天亮\n你还是没出现在路口\n\n[Bridge]\n我想按下暂停\n停在你还在的那一帧\n你回头笑得那么认真\n连呼吸都变得安静\n\n可时间不是录像机\n回放了 也倒不回去\n就算一秒一秒拖着看\n也抓不住你离开的背影\n\n[Chorus]\n雪夜回放 回放不了你\n路灯亮着 你的影子却不在\n「故乡今夜思千里，霜鬓明朝又一年」\n我站在原地\n等到雪化 等到路灯灭 等到天亮\n你还是没出现在路口"
+      "lyrics": "[Verse 1]\n雪停了\n我沿着你走过的路\n踩在你的脚印上\n假装我们还在并肩\n\n那个路口\n你往左 我往右\n说好十分钟见\n十分钟变成十年\n\n你往左\n再没回来\n记忆像雪夜的路灯\n越想看清 越晃眼睛\n\n你的脸\n你的声音\n都被雪反光照得模糊\n只剩下一点点温度\n\n[Chorus]\n雪夜回放 回放不了你\n路灯亮着 你的影子却不在\n「故乡今夜思千里，霜鬓明朝又一年」\n我站在原地\n等到雪化 等到路灯灭 等到天亮\n你还是没出现在路口\n\n[Verse 2]\n口袋里\n那年冬天的车票\n字都被手心的汗\n一点一点磨掉\n\n路边的便利店\n还放着旧日的广播\n收银台的小姑娘\n已经不记得你来过\n\n我反复走\n你当时走过的那一段\n连呼出来的白气\n都学着你的习惯\n\n雪踩碎了\n却拼不回从前的路线\n每一步\n都踩疼那一年的心愿\n\n[Chorus]\n雪夜回放 回放不了你\n路灯亮着 你的影子却不在\n「故乡今夜思千里，霜鬓明朝又一年」\n我站在原地\n等到雪化 等到路灯灭 等到天亮\n你还是没出现在路口\n\n[Bridge]\n我想按下暂停\n停在你还在的那一帧\n你回头笑得那么认真\n连呼吸都变得安静\n\n可时间不是录像机\n回放了 也倒不回去\n就算一秒一秒拖着看\n也抓不住你离开的背影\n\n[Chorus]\n雪夜回放 回放不了你\n路灯亮着 你的影子却不在\n「故乡今夜思千里，霜鬓明朝又一年」\n我站在原地\n等到雪化 等到路灯灭 等到天亮\n你还是没出现在路口",
+      "trackNo": 33
     },
     {
       "id": "isrc-QZES92646475",
@@ -13044,7 +13499,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -13064,8 +13520,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=34"
         },
         {
           "platform": "netease",
@@ -13078,13 +13534,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=34",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "[Verse 1]\n雪落无声\n覆盖我离开的脚印\n车站灯暗了一半\n连告示牌都在装聋\n\n你站在窗口看着这场雪\n手上茶还在冒热气\n不知道我已站在你楼下\n把行李藏在树影里\n\n等了半个黄昏\n街角的小店都熄了灯\n不敢按门铃\n怕惊动你客厅里的气氛\n\n不想发消息\n怕你看到又反复斟酌\n只是站着\n让雪落满肩膀 把心都压沉了\n\n等你自己推开门\n披着家里的那件旧毛衣\n没带一件行李\n却把全部目光给了我\n\n[Chorus]\n雪落无声\n你走出来无声\n两个人就这样对视\n什么都不用问\n\n你的眼睛告诉我\n今夜你属于我\n伤疤不必解释\n爱不需要证\n\n雪落无声\n我们离开无声\n不要告别 不要眼泪 不要沉重\n只带一颗心 两双手 和共同的伤痕\n走进这场雪 走进新的人生\n\n[Verse 2]\n你说你房间\n墙上还挂着那年摔碎的照片\n每一道裂缝\n都记得当时谁先沉默\n\n我笑着说算了\n反正那些碎片也拼不回从前\n不如让它们在原地\n见证我们空了的从前\n\n出租车玻璃模糊\n雨刷来回像催促的节拍\n你忽然握紧我手\n像怕我下一秒改变主意\n\n[低声呢喃]\n“如果明天他们发现我不在”\n我靠在你肩膀\n“就让雪帮我们隐身 好吗”\n\n[Chorus]"
+      "lyrics": "[Verse 1]\n雪落无声\n覆盖我离开的脚印\n车站灯暗了一半\n连告示牌都在装聋\n\n你站在窗口看着这场雪\n手上茶还在冒热气\n不知道我已站在你楼下\n把行李藏在树影里\n\n等了半个黄昏\n街角的小店都熄了灯\n不敢按门铃\n怕惊动你客厅里的气氛\n\n不想发消息\n怕你看到又反复斟酌\n只是站着\n让雪落满肩膀 把心都压沉了\n\n等你自己推开门\n披着家里的那件旧毛衣\n没带一件行李\n却把全部目光给了我\n\n[Chorus]\n雪落无声\n你走出来无声\n两个人就这样对视\n什么都不用问\n\n你的眼睛告诉我\n今夜你属于我\n伤疤不必解释\n爱不需要证\n\n雪落无声\n我们离开无声\n不要告别 不要眼泪 不要沉重\n只带一颗心 两双手 和共同的伤痕\n走进这场雪 走进新的人生\n\n[Verse 2]\n你说你房间\n墙上还挂着那年摔碎的照片\n每一道裂缝\n都记得当时谁先沉默\n\n我笑着说算了\n反正那些碎片也拼不回从前\n不如让它们在原地\n见证我们空了的从前\n\n出租车玻璃模糊\n雨刷来回像催促的节拍\n你忽然握紧我手\n像怕我下一秒改变主意\n\n[低声呢喃]\n“如果明天他们发现我不在”\n我靠在你肩膀\n“就让雪帮我们隐身 好吗”\n\n[Chorus]",
+      "trackNo": 34
     },
     {
       "id": "isrc-QZES92646476",
@@ -13098,7 +13562,8 @@
       "tags": [
         "distrokid",
         "song",
-        "新年好"
+        "新年好",
+        "youtube"
       ],
       "links": [
         {
@@ -13118,8 +13583,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=35"
         },
         {
           "platform": "netease",
@@ -13132,13 +13597,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kJf7eHH6nDDw2PaTvMp_7yrD6br60W2Bw&index=35",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "6450DDE8-F0B7-410A-B0B37631C54A740B"
         }
       },
-      "lyrics": "向南的风带着潮\n把思念吹得更黏 更难甩掉\n我把手插进口袋\n像把家乡的温度也一并塞好\n冷的时候拿出来摸一摸 就不至于倒\n\n车窗外一排排树\n像朋友挥着手说 别忘了写信来\n我把犹豫折成纸鹤\n塞进行李箱角落里乖乖待着\n怕它半路飞出来 把勇气吓跑\n\n风往南吹 我也往南走\n走到能把自己养好的地方停留\n如果你问我 为什么出发\n我会说——\n因为我想成为一个 敢选择 也敢负责的人\n\n也许会丢几次笑容 在陌生街角\n也许会跟自己冷战 好几站地铁那么长\n可要是我从不离开原地\n怎么证明软软的心 也能长出骨头\n\n风往南吹 我也往南走\n走到能把自己养好的地方停留\n如果你问我 为什么出发\n我会说——\n因为我想成为一个 敢选择 也敢负责的人"
+      "lyrics": "向南的风带着潮\n把思念吹得更黏 更难甩掉\n我把手插进口袋\n像把家乡的温度也一并塞好\n冷的时候拿出来摸一摸 就不至于倒\n\n车窗外一排排树\n像朋友挥着手说 别忘了写信来\n我把犹豫折成纸鹤\n塞进行李箱角落里乖乖待着\n怕它半路飞出来 把勇气吓跑\n\n风往南吹 我也往南走\n走到能把自己养好的地方停留\n如果你问我 为什么出发\n我会说——\n因为我想成为一个 敢选择 也敢负责的人\n\n也许会丢几次笑容 在陌生街角\n也许会跟自己冷战 好几站地铁那么长\n可要是我从不离开原地\n怎么证明软软的心 也能长出骨头\n\n风往南吹 我也往南走\n走到能把自己养好的地方停留\n如果你问我 为什么出发\n我会说——\n因为我想成为一个 敢选择 也敢负责的人",
+      "trackNo": 35
     },
     {
       "id": "isrc-QZES82689598",
@@ -17062,7 +17535,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -17082,8 +17556,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=1"
         },
         {
           "platform": "netease",
@@ -17096,13 +17570,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=1",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "肩像被卡住的翅膀\n像风筝线缠住了希望\n揉不出答案 只剩迷茫\n痛的音符在身体里回荡\n\n拉伸像一种古老的仪式\n肩胛开合在时光里启示\n弹力带的手在描绘历史\n一点点撑开 不急着解释\n\n肩峰撞击 撞出方向\n痛的尽头就是释放\n重建平衡 重建力量\n唱两三个月后的松弛光芒\n\n每一次拉伸像微风推帆\n每一次痛感是破茧的瞬间\n肩胛在努力找回它的空间\n像迷路的鸟找回蓝天\n\n疼痛是成长的伴奏\n节奏在身体里慢慢走\n用坚持谱出复苏的章奏\n肩膀终将拥抱自由\n\n肩峰撞击 撞出方向\n痛的尽头就是释放\n重建平衡 重建力量\n唱两三个月后的松弛光芒"
+      "lyrics": "肩像被卡住的翅膀\n像风筝线缠住了希望\n揉不出答案 只剩迷茫\n痛的音符在身体里回荡\n\n拉伸像一种古老的仪式\n肩胛开合在时光里启示\n弹力带的手在描绘历史\n一点点撑开 不急着解释\n\n肩峰撞击 撞出方向\n痛的尽头就是释放\n重建平衡 重建力量\n唱两三个月后的松弛光芒\n\n每一次拉伸像微风推帆\n每一次痛感是破茧的瞬间\n肩胛在努力找回它的空间\n像迷路的鸟找回蓝天\n\n疼痛是成长的伴奏\n节奏在身体里慢慢走\n用坚持谱出复苏的章奏\n肩膀终将拥抱自由\n\n肩峰撞击 撞出方向\n痛的尽头就是释放\n重建平衡 重建力量\n唱两三个月后的松弛光芒",
+      "trackNo": 1
     },
     {
       "id": "isrc-QZFYX2657883",
@@ -17116,7 +17598,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -17136,8 +17619,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=2"
         },
         {
           "platform": "netease",
@@ -17150,13 +17633,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=2",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "鸽群把365号钢丝当栖木\n喙尖啄食着天花板的缺口\n每片飘落的羽毛标着利息\n蛋壳在巢里堆成债务山丘\n\n当振翅声卷成复利公式\n盘旋的阴影勒进石膏缝\n\n羽毛是利息 蛋壳是本\n飞走的是撕碎的日历本\n钢丝颤动的365夜\n新债在旧巢里破壳生根\n\n幼雏啄破蛋膜那秒\n本息裂成尖锐的钙片\n当羽翼扫过吊灯残影\n利息正繁殖新的鸽链\n\n盘旋的债务越收越紧\n钢丝嵌进梁骨的裂缝\n\n羽毛是利息 蛋壳是本\n飞走的是撕碎的日历本\n钢丝颤动的365夜\n新债在旧巢里破壳生根"
+      "lyrics": "鸽群把365号钢丝当栖木\n喙尖啄食着天花板的缺口\n每片飘落的羽毛标着利息\n蛋壳在巢里堆成债务山丘\n\n当振翅声卷成复利公式\n盘旋的阴影勒进石膏缝\n\n羽毛是利息 蛋壳是本\n飞走的是撕碎的日历本\n钢丝颤动的365夜\n新债在旧巢里破壳生根\n\n幼雏啄破蛋膜那秒\n本息裂成尖锐的钙片\n当羽翼扫过吊灯残影\n利息正繁殖新的鸽链\n\n盘旋的债务越收越紧\n钢丝嵌进梁骨的裂缝\n\n羽毛是利息 蛋壳是本\n飞走的是撕碎的日历本\n钢丝颤动的365夜\n新债在旧巢里破壳生根",
+      "trackNo": 2
     },
     {
       "id": "isrc-QZFYX2657884",
@@ -17170,7 +17661,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -17190,8 +17682,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=3"
         },
         {
           "platform": "netease",
@@ -17204,13 +17696,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=3",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "电流像习惯 默默在身边\n悄悄耗掉安全 不知不觉危险\n插头未拔 就像心事乱麻\n过载的负荷 谁能抵挡啊\n\n充电器别插着 别让它拖着\n焦虑像电流 会偷偷拉扯\n学会拔掉多余 学会轻轻放下\n充电器别插着 我不想再挣扎\n\n情绪像灯泡 一闪一灭掉\n亮着的时候 心里也在叫\n拔掉执念啊 就像切断电压\n那一刻清醒 我看到了家\n\n电线缠绕 像生活的圈套\n每个转角 是自己画的牢\n一拔开 开始呼吸自由\n心里那片光 开始逐渐涌流\n\n充电器别插着 别让它拖着\n焦虑像电流 会偷偷拉扯\n学会拔掉多余 学会轻轻放下\n充电器别插着 我不想再挣扎"
+      "lyrics": "电流像习惯 默默在身边\n悄悄耗掉安全 不知不觉危险\n插头未拔 就像心事乱麻\n过载的负荷 谁能抵挡啊\n\n充电器别插着 别让它拖着\n焦虑像电流 会偷偷拉扯\n学会拔掉多余 学会轻轻放下\n充电器别插着 我不想再挣扎\n\n情绪像灯泡 一闪一灭掉\n亮着的时候 心里也在叫\n拔掉执念啊 就像切断电压\n那一刻清醒 我看到了家\n\n电线缠绕 像生活的圈套\n每个转角 是自己画的牢\n一拔开 开始呼吸自由\n心里那片光 开始逐渐涌流\n\n充电器别插着 别让它拖着\n焦虑像电流 会偷偷拉扯\n学会拔掉多余 学会轻轻放下\n充电器别插着 我不想再挣扎",
+      "trackNo": 3
     },
     {
       "id": "isrc-QZFYX2657885",
@@ -17224,7 +17724,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -17244,8 +17745,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=4"
         },
         {
           "platform": "netease",
@@ -17258,13 +17759,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=4",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "眼皮像铅 压得我喘不过气\n梦被加班挤碎 谁还谈诗意\n时间像小偷 偷走了晨曦\n我追赶着天光 却只剩影子无力\n\n黑眼圈是勋章 还是笑话\n无梦的夜晚像黑洞 把我吞下\n\n我只求一晚安稳 胜过万句鸡汤\n这疲惫像洪水 把我冲向绝望\n闭上眼却像演习 梦都被关上\n缺觉八拍的心跳 是我唯一乐章\n\n咖啡是救命药 苦涩里藏着倔强\n闹钟响起的瞬间 我又被现实绑\n像陀螺旋转 不问方向\n这一场疲惫 是无解的战场\n\n窗外的月光 嘲笑我的惆怅\n夜的深处 是否有人同样\n在这城市的迷宫 找一个肩膀\n却只找到寂寞伴着旧时光\n\n我只求一晚安稳 胜过万句鸡汤\n这疲惫像洪水 把我冲向绝望\n闭上眼却像演习 梦都被关上\n缺觉八拍的心跳 是我唯一乐章"
+      "lyrics": "眼皮像铅 压得我喘不过气\n梦被加班挤碎 谁还谈诗意\n时间像小偷 偷走了晨曦\n我追赶着天光 却只剩影子无力\n\n黑眼圈是勋章 还是笑话\n无梦的夜晚像黑洞 把我吞下\n\n我只求一晚安稳 胜过万句鸡汤\n这疲惫像洪水 把我冲向绝望\n闭上眼却像演习 梦都被关上\n缺觉八拍的心跳 是我唯一乐章\n\n咖啡是救命药 苦涩里藏着倔强\n闹钟响起的瞬间 我又被现实绑\n像陀螺旋转 不问方向\n这一场疲惫 是无解的战场\n\n窗外的月光 嘲笑我的惆怅\n夜的深处 是否有人同样\n在这城市的迷宫 找一个肩膀\n却只找到寂寞伴着旧时光\n\n我只求一晚安稳 胜过万句鸡汤\n这疲惫像洪水 把我冲向绝望\n闭上眼却像演习 梦都被关上\n缺觉八拍的心跳 是我唯一乐章",
+      "trackNo": 4
     },
     {
       "id": "isrc-QZFYX2657886",
@@ -17278,7 +17787,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -17298,8 +17808,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=5"
         },
         {
           "platform": "netease",
@@ -17312,13 +17822,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=5",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "电梯门合到只剩一线光缝\n楼层灯闪 像回忆在抖动\n外面广告刚好停在笑脸中央\n像有人按了暂停 把我困在现场\n口袋里忙着数着节拍不是钞票\n这栋楼的安保熟到都记我外号\n我看那笑脸 像在问还在等谁\n可我连要去哪都还没想到一半\n\n电梯门缝合 只剩一线光\n光缝宽度 就是最后几秒在晃\n笑脸定格 成了人生封面帧\n我要在关门以前 再看自己一眼\n电梯门缝合 心跳当背景声\n光缝宽度=剩余秒数的行程\n笑脸就是封面帧 写不进简历\n这一格光 夹住我还没说完的自己\n\n手机屏黑着 像下一站的空白\n叮一声提示音 却没人来对白\n我把暗语记在心里像把暗门\n每一毫米缩短 都在提醒我转身\n有人冲过来伸手挡住那条缝\n像把今天又多拖了一秒钟\n我在角落里偷看那张笑脸\n想起我们合照也只留一半的缘\n\n门终于合上 世界被切两段\n这边是空气 那边是橱窗灿烂\n光缝宽度消失 剩余秒数清零\n封面帧熄掉 我却还站在剧情外停"
+      "lyrics": "电梯门合到只剩一线光缝\n楼层灯闪 像回忆在抖动\n外面广告刚好停在笑脸中央\n像有人按了暂停 把我困在现场\n口袋里忙着数着节拍不是钞票\n这栋楼的安保熟到都记我外号\n我看那笑脸 像在问还在等谁\n可我连要去哪都还没想到一半\n\n电梯门缝合 只剩一线光\n光缝宽度 就是最后几秒在晃\n笑脸定格 成了人生封面帧\n我要在关门以前 再看自己一眼\n电梯门缝合 心跳当背景声\n光缝宽度=剩余秒数的行程\n笑脸就是封面帧 写不进简历\n这一格光 夹住我还没说完的自己\n\n手机屏黑着 像下一站的空白\n叮一声提示音 却没人来对白\n我把暗语记在心里像把暗门\n每一毫米缩短 都在提醒我转身\n有人冲过来伸手挡住那条缝\n像把今天又多拖了一秒钟\n我在角落里偷看那张笑脸\n想起我们合照也只留一半的缘\n\n门终于合上 世界被切两段\n这边是空气 那边是橱窗灿烂\n光缝宽度消失 剩余秒数清零\n封面帧熄掉 我却还站在剧情外停",
+      "trackNo": 5
     },
     {
       "id": "isrc-QZFYX2657887",
@@ -17332,7 +17850,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -17352,8 +17871,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=6"
         },
         {
           "platform": "netease",
@@ -17366,13 +17885,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=6",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "人群围观像潮水涌\n眼神空洞冷漠如冰冻\n我站在中央 像孤独英雄\n他们的沉默 是最尖锐的痛\n\n虚伪的掌声 像嘲笑的风\n真相被埋在虚假的笑容\n别装作看不见 不动声色\n沉默的你们 是罪恶的同谋\n\n围观不等于正义 沉默也是选择\n冷漠退场 让真相揭破\n重低音敲醒 那冷漠的壳\n别让沉默 成为永恒的错\n\n冷光划破夜空的裂缝\n一声呐喊刺穿无声的梦\n多少次愤怒压抑在喉咙\n今天我用词句点燃火种\n\n钢琴敲出不屈的旋律\n每个音符像子弹般犀利\n人心如城墙 是冷酷的监狱\n我用节奏砸开 那虚伪的棋局\n\n镜头对准我 不对准真相\n你们的视线 是冷漠的墙\n我用言辞做武器 砸碎伪装\n要你们睁眼 看清这战场"
+      "lyrics": "人群围观像潮水涌\n眼神空洞冷漠如冰冻\n我站在中央 像孤独英雄\n他们的沉默 是最尖锐的痛\n\n虚伪的掌声 像嘲笑的风\n真相被埋在虚假的笑容\n别装作看不见 不动声色\n沉默的你们 是罪恶的同谋\n\n围观不等于正义 沉默也是选择\n冷漠退场 让真相揭破\n重低音敲醒 那冷漠的壳\n别让沉默 成为永恒的错\n\n冷光划破夜空的裂缝\n一声呐喊刺穿无声的梦\n多少次愤怒压抑在喉咙\n今天我用词句点燃火种\n\n钢琴敲出不屈的旋律\n每个音符像子弹般犀利\n人心如城墙 是冷酷的监狱\n我用节奏砸开 那虚伪的棋局\n\n镜头对准我 不对准真相\n你们的视线 是冷漠的墙\n我用言辞做武器 砸碎伪装\n要你们睁眼 看清这战场",
+      "trackNo": 6
     },
     {
       "id": "isrc-QZFYX2657888",
@@ -17386,7 +17913,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -17406,8 +17934,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=7"
         },
         {
           "platform": "netease",
@@ -17420,13 +17948,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=7",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "关闭按钮落下 不留余地\n页面一抖 像谁在暗地\n上方突然长出塑料绿植\n永不枯萎 像代班的影子\n\n塑料根扎进代码的土壤\n代班群众静默 也不张扬\n键盘敲击 声音像风吹过\n绿意盎然 但从不喝水过\n\n评论区的盆栽 你看得见吗\n塑料的叶片 摸不到真假\n永远不枯萎 代班的神话\n页面绿植上 不落一滴水花\n\n一条条回复 像剪影的枝丫\n谁在留言 谁又在装傻\n塑料叶片下 隐藏了密码\n代班的群众 静候着回答\n\n每句话都轻 像没落地的风\n不吵也不闹 只给算法点灯\n盆栽的影子 越长越密集\n真假难分 像藏在雾里的棋\n\n评论区的盆栽 你看得见吗\n塑料的叶片 摸不到真假\n永远不枯萎 代班的神话\n页面绿植上 不落一滴水花"
+      "lyrics": "关闭按钮落下 不留余地\n页面一抖 像谁在暗地\n上方突然长出塑料绿植\n永不枯萎 像代班的影子\n\n塑料根扎进代码的土壤\n代班群众静默 也不张扬\n键盘敲击 声音像风吹过\n绿意盎然 但从不喝水过\n\n评论区的盆栽 你看得见吗\n塑料的叶片 摸不到真假\n永远不枯萎 代班的神话\n页面绿植上 不落一滴水花\n\n一条条回复 像剪影的枝丫\n谁在留言 谁又在装傻\n塑料叶片下 隐藏了密码\n代班的群众 静候着回答\n\n每句话都轻 像没落地的风\n不吵也不闹 只给算法点灯\n盆栽的影子 越长越密集\n真假难分 像藏在雾里的棋\n\n评论区的盆栽 你看得见吗\n塑料的叶片 摸不到真假\n永远不枯萎 代班的神话\n页面绿植上 不落一滴水花",
+      "trackNo": 7
     },
     {
       "id": "isrc-QZFYX2657889",
@@ -17440,7 +17976,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -17460,8 +17997,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=8"
         },
         {
           "platform": "netease",
@@ -17474,13 +18011,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=8",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "纸屑在窗台积成雪堆\n数字从三位瘦成两位\n风油精涂满太阳穴国境线\n咖啡罐见底像干涸的盐碱\n\n嗡嗡 头顶灯管抖落惨白的光\n粉笔灰在光柱里跳伞降\n模拟考卷摞成防洪堤岸\n红笔圈出的漏洞比答案还满\n\n日历越撕越薄 薄成蝉翼\n未来却越压越厚 厚过习题\n倒计时钟摆 啃食着勇气\n笔尖在纸面 刻下墓志铭\n\n同桌眼镜片裂成蛛网\n镜框缠着胶布像伤员绷带\n课桌肚藏着撕碎的志愿表\n985墨迹被汗渍晕成问号\n\n后墙黑板报褪成旧地图\n大学校徽在裂缝里模糊\n家长会签名凝成铅块\n每次月考排名都重新洗牌\n\n撕纸声 沙沙书写声"
+      "lyrics": "纸屑在窗台积成雪堆\n数字从三位瘦成两位\n风油精涂满太阳穴国境线\n咖啡罐见底像干涸的盐碱\n\n嗡嗡 头顶灯管抖落惨白的光\n粉笔灰在光柱里跳伞降\n模拟考卷摞成防洪堤岸\n红笔圈出的漏洞比答案还满\n\n日历越撕越薄 薄成蝉翼\n未来却越压越厚 厚过习题\n倒计时钟摆 啃食着勇气\n笔尖在纸面 刻下墓志铭\n\n同桌眼镜片裂成蛛网\n镜框缠着胶布像伤员绷带\n课桌肚藏着撕碎的志愿表\n985墨迹被汗渍晕成问号\n\n后墙黑板报褪成旧地图\n大学校徽在裂缝里模糊\n家长会签名凝成铅块\n每次月考排名都重新洗牌\n\n撕纸声 沙沙书写声",
+      "trackNo": 8
     },
     {
       "id": "isrc-QZFYX2657890",
@@ -17494,7 +18039,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -17514,8 +18060,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=9"
         },
         {
           "platform": "netease",
@@ -17528,13 +18074,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=9",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "改革风声穿过工位\n像风筝线扯动我的滋味\n房租涨得比工资飞\n还敢谈理想 谁不怕崩溃\n\n账单像拍子敲醒我\n一拍二拍 生活拉扯多\n饭碗呢 是金还是铁锁\n努力不该只换来沉默\n\n早九晚五像锁链拉紧\n梦想在杯底 咖啡泡影\n疲惫像影子 无法脱离\n但脚步不能停 不能被命运定义\n\n分配与饭碗 谁掌秤杆\n公平像镜花水月 看不见答案\n但我还要闯 哪怕路漫漫\n心中一把火 燃烧所有不甘\n\n账单像拍子敲醒我\n一拍二拍 生活拉扯多\n饭碗呢 是金还是铁锁\n努力不该只换来沉默\n\n改革风声还在耳边吹\n我手中饭碗却越来越碎\n可我知道 我的梦 不会被夺回\n在这节奏里 我活得更有滋味"
+      "lyrics": "改革风声穿过工位\n像风筝线扯动我的滋味\n房租涨得比工资飞\n还敢谈理想 谁不怕崩溃\n\n账单像拍子敲醒我\n一拍二拍 生活拉扯多\n饭碗呢 是金还是铁锁\n努力不该只换来沉默\n\n早九晚五像锁链拉紧\n梦想在杯底 咖啡泡影\n疲惫像影子 无法脱离\n但脚步不能停 不能被命运定义\n\n分配与饭碗 谁掌秤杆\n公平像镜花水月 看不见答案\n但我还要闯 哪怕路漫漫\n心中一把火 燃烧所有不甘\n\n账单像拍子敲醒我\n一拍二拍 生活拉扯多\n饭碗呢 是金还是铁锁\n努力不该只换来沉默\n\n改革风声还在耳边吹\n我手中饭碗却越来越碎\n可我知道 我的梦 不会被夺回\n在这节奏里 我活得更有滋味",
+      "trackNo": 9
     },
     {
       "id": "isrc-QZFYX2657891",
@@ -17548,7 +18102,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -17568,8 +18123,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=10"
         },
         {
           "platform": "netease",
@@ -17582,13 +18137,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=10",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "滤镜太厚 像画一层墙\n每个像素拼凑虚假的光\n点赞堆积成了虚荣的殿堂\n但谁在屏幕后心慌\n\n卸掉妆面\n镜子才敢看见\n灵魂的弧线\n\n妆面是人设 真相是破绽\n素颜写进韵脚 灵魂先上镜\n不用包装 不怕被拆穿\n真实才是我的背景\n\n自拍角度藏起了裂痕\n修图手指像刀 刻假身份\n粉底厚过心墙 遮住伤痕\n可屏幕外谁又是真人\n\n卸掉妆面\n镜子才敢看见\n灵魂的弧线\n\n妆面是人设 真相是破绽\n素颜写进韵脚 灵魂先上镜\n不用包装 不怕被拆穿\n真实才是我的背景"
+      "lyrics": "滤镜太厚 像画一层墙\n每个像素拼凑虚假的光\n点赞堆积成了虚荣的殿堂\n但谁在屏幕后心慌\n\n卸掉妆面\n镜子才敢看见\n灵魂的弧线\n\n妆面是人设 真相是破绽\n素颜写进韵脚 灵魂先上镜\n不用包装 不怕被拆穿\n真实才是我的背景\n\n自拍角度藏起了裂痕\n修图手指像刀 刻假身份\n粉底厚过心墙 遮住伤痕\n可屏幕外谁又是真人\n\n卸掉妆面\n镜子才敢看见\n灵魂的弧线\n\n妆面是人设 真相是破绽\n素颜写进韵脚 灵魂先上镜\n不用包装 不怕被拆穿\n真实才是我的背景",
+      "trackNo": 10
     },
     {
       "id": "isrc-QZFYX2657892",
@@ -17602,7 +18165,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -17622,8 +18186,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=11"
         },
         {
           "platform": "netease",
@@ -17636,13 +18200,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=11",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "群聊列表里安静的街\n一只灰鸽头像静止不飞\n昨天之前 停在时间的背\n注销的瞬间 是谁忘了谁\n\n消息闪烁 假装热闹喧嚣\n谁的冷却周期拉长成寂寥\n停飞的候鸟 没有目的地\n风吹过屏幕 是无声的谜\n\n灰鸽停在昨天之前\n冷却的梦 不再蔓延\n注销的心 已无眷恋\n候鸟飞不回那片天\n\n像个暗语 像个谜题\n灰色头像锁住了秘密\n群聊热潮 早已远去\n候鸟的翅膀沉入回忆\n\n停飞时间拉长了孤单\n谁会记得那个瞬间\n注销不是逃避 只是转弯\n而灰鸽早已不再盘旋\n\n灰鸽停在昨天之前\n冷却的梦 不再蔓延\n注销的心 已无眷恋\n候鸟飞不回那片天"
+      "lyrics": "群聊列表里安静的街\n一只灰鸽头像静止不飞\n昨天之前 停在时间的背\n注销的瞬间 是谁忘了谁\n\n消息闪烁 假装热闹喧嚣\n谁的冷却周期拉长成寂寥\n停飞的候鸟 没有目的地\n风吹过屏幕 是无声的谜\n\n灰鸽停在昨天之前\n冷却的梦 不再蔓延\n注销的心 已无眷恋\n候鸟飞不回那片天\n\n像个暗语 像个谜题\n灰色头像锁住了秘密\n群聊热潮 早已远去\n候鸟的翅膀沉入回忆\n\n停飞时间拉长了孤单\n谁会记得那个瞬间\n注销不是逃避 只是转弯\n而灰鸽早已不再盘旋\n\n灰鸽停在昨天之前\n冷却的梦 不再蔓延\n注销的心 已无眷恋\n候鸟飞不回那片天",
+      "trackNo": 11
     },
     {
       "id": "isrc-QZFYX2657893",
@@ -17656,7 +18228,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -17676,8 +18249,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=12"
         },
         {
           "platform": "netease",
@@ -17690,13 +18263,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=12",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "防护网烂成筛子眼\n阳光漏下分期付款单\n每束光烫着还款日期\n半块砖的暖意刚够还利钱\n\n当网洞睁成灼热窟窿\n光柱捆住脚踝像锁链\n春分那日利息涨了潮\n砖缝里钻出数字藤蔓\n\n网洞是还款日\n越亮越烫手的光斑\n每束光都标着价码\n半块砖的暖意要赊账\n\n铁网筛下光针十二根\n扎进脊背勾出本金线\n当脚尖够到半块亮砖\n新债已在暗处结蛛网\n\n网眼每扩圈半毫米\n光斑就烙上新价签\n春分裁出的等长昼夜\n半截还旧债半截生新欠\n\n锈网突然崩开豁口\n千万个太阳倾倒下来\n烫穿脚背那束最亮\n正是今日到期的账单"
+      "lyrics": "防护网烂成筛子眼\n阳光漏下分期付款单\n每束光烫着还款日期\n半块砖的暖意刚够还利钱\n\n当网洞睁成灼热窟窿\n光柱捆住脚踝像锁链\n春分那日利息涨了潮\n砖缝里钻出数字藤蔓\n\n网洞是还款日\n越亮越烫手的光斑\n每束光都标着价码\n半块砖的暖意要赊账\n\n铁网筛下光针十二根\n扎进脊背勾出本金线\n当脚尖够到半块亮砖\n新债已在暗处结蛛网\n\n网眼每扩圈半毫米\n光斑就烙上新价签\n春分裁出的等长昼夜\n半截还旧债半截生新欠\n\n锈网突然崩开豁口\n千万个太阳倾倒下来\n烫穿脚背那束最亮\n正是今日到期的账单",
+      "trackNo": 12
     },
     {
       "id": "isrc-QZFYX2657894",
@@ -17710,7 +18291,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -17730,8 +18312,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=13"
         },
         {
           "platform": "netease",
@@ -17744,13 +18326,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=13",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "塑料盒堆成小山在脚边打转\n油渍在地板画出抽象图案\n手机屏光刺亮浮肿的眼袋\n未发送的字句在对话框里搁浅\n\n秒针把寂静剁成碎片\n天花板裂缝爬进凌晨四点\n冰箱嗡鸣是唯一的和弦\n昨夜的咖啡渣在胃里暴旋\n\n时间偷走睡眠 偷走我发线\n偷走莽撞勇敢 偷走胶原蛋白\n时间当铺柜台 从不给答案\n只塞给我账单 和眼下的灰蓝\n\n二十三条未读像催债通告\n置顶群聊闪烁育儿经报告\n收藏夹里冰岛极光冻成像素点\n十年前旅行计划在云盘里发霉\n健身环沦为最贵晾衣架\n体检单红灯比霓虹还刺眼\n备忘录提醒阿姨明天要来\n可脏衣篓正喷发火山岩浆\n\n充电线缠住昨日的残骸\n外卖单记录着昼夜的溃败\n阳台多肉枯成标本姿态\n像理想被晒干在三十七平租界\n\n窗框切割出灰蓝的黎明\n鸽群掠过电线奏响电子琴\n突然想给十八岁寄张明信片\n却找不到邮票和未生锈的笔尖\n当晨光给烟头烫穿的乌云镶金边\n才惊觉秒针早偷渡完这场夜袭战\n\n时间偷走睡眠 偷走我发线\n偷走莽撞勇敢 偷走胶原蛋白\n时间当铺柜台 从不给答案\n只塞给我账单 和眼下的灰蓝"
+      "lyrics": "塑料盒堆成小山在脚边打转\n油渍在地板画出抽象图案\n手机屏光刺亮浮肿的眼袋\n未发送的字句在对话框里搁浅\n\n秒针把寂静剁成碎片\n天花板裂缝爬进凌晨四点\n冰箱嗡鸣是唯一的和弦\n昨夜的咖啡渣在胃里暴旋\n\n时间偷走睡眠 偷走我发线\n偷走莽撞勇敢 偷走胶原蛋白\n时间当铺柜台 从不给答案\n只塞给我账单 和眼下的灰蓝\n\n二十三条未读像催债通告\n置顶群聊闪烁育儿经报告\n收藏夹里冰岛极光冻成像素点\n十年前旅行计划在云盘里发霉\n健身环沦为最贵晾衣架\n体检单红灯比霓虹还刺眼\n备忘录提醒阿姨明天要来\n可脏衣篓正喷发火山岩浆\n\n充电线缠住昨日的残骸\n外卖单记录着昼夜的溃败\n阳台多肉枯成标本姿态\n像理想被晒干在三十七平租界\n\n窗框切割出灰蓝的黎明\n鸽群掠过电线奏响电子琴\n突然想给十八岁寄张明信片\n却找不到邮票和未生锈的笔尖\n当晨光给烟头烫穿的乌云镶金边\n才惊觉秒针早偷渡完这场夜袭战\n\n时间偷走睡眠 偷走我发线\n偷走莽撞勇敢 偷走胶原蛋白\n时间当铺柜台 从不给答案\n只塞给我账单 和眼下的灰蓝",
+      "trackNo": 13
     },
     {
       "id": "isrc-QZFYX2657895",
@@ -17764,7 +18354,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -17784,8 +18375,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=14"
         },
         {
           "platform": "netease",
@@ -17798,13 +18389,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=14",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "凌晨两点我还醒着\n后台沉默评论像影子潜伏着\n“❤️”送出去无声无息\n像雨点落下 没人注意\n\n湿度攀升 是歉意的极限\n系统补偿 也难以把心填满\n\n无人点赞的雨 悄无声息地下\n湿润了孤单 也润滑了假话\n谁能听见 谁能察觉\n这场雨背后沉默的心结\n\n屏幕闪烁 是无人回应的脉搏\n点点雨滴 是算法安排的结果\n冷漠的湿度 模拟温柔的触摸\n可谁会真的在意这些流落\n\n雨点落下 是算法的补偿\n湿度满溢 是抱歉的伪装\n但再多的雨 也不能洗去\n无声孤独里的那片空虚\n\n无人点赞的雨 悄无声息地下\n湿润了孤单 也润滑了假话\n谁能听见 谁能察觉\n这场雨背后沉默的心结"
+      "lyrics": "凌晨两点我还醒着\n后台沉默评论像影子潜伏着\n“❤️”送出去无声无息\n像雨点落下 没人注意\n\n湿度攀升 是歉意的极限\n系统补偿 也难以把心填满\n\n无人点赞的雨 悄无声息地下\n湿润了孤单 也润滑了假话\n谁能听见 谁能察觉\n这场雨背后沉默的心结\n\n屏幕闪烁 是无人回应的脉搏\n点点雨滴 是算法安排的结果\n冷漠的湿度 模拟温柔的触摸\n可谁会真的在意这些流落\n\n雨点落下 是算法的补偿\n湿度满溢 是抱歉的伪装\n但再多的雨 也不能洗去\n无声孤独里的那片空虚\n\n无人点赞的雨 悄无声息地下\n湿润了孤单 也润滑了假话\n谁能听见 谁能察觉\n这场雨背后沉默的心结",
+      "trackNo": 14
     },
     {
       "id": "isrc-QZFYX2657896",
@@ -17818,7 +18417,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -17838,8 +18438,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=15"
         },
         {
           "platform": "netease",
@@ -17852,13 +18452,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=15",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "签字栏指纹在游移\n钢笔吸饱消毒水腥气\n家长栏横线变裂谷\n坠着未开封的乳名\n\n当护士晃匀陈年液\n玻璃管浮起絮状月\n相册里孩子突然眨眼\n奶渍洇开周岁笑脸\n\n时间不是解药是帮凶\n把承诺冻进冷藏柜中\n时间不是解药是帮凶\n针尖挑破解冻的脓\n\n橡胶塞顶出冰锥\n批号在管壁爬满霉\n解冻的承诺膨胀时\n刺穿所有防护服纸\n\n药液漫过登记簿\n淹灭钢印红戳温度\n手机相册开始泛潮\n奶牙陷进像素礁\n\n当冰晶刺破密封圈\n三年前泪滴正回填\n针管突然爆裂那刻\n冻龄的疤重新渗血"
+      "lyrics": "签字栏指纹在游移\n钢笔吸饱消毒水腥气\n家长栏横线变裂谷\n坠着未开封的乳名\n\n当护士晃匀陈年液\n玻璃管浮起絮状月\n相册里孩子突然眨眼\n奶渍洇开周岁笑脸\n\n时间不是解药是帮凶\n把承诺冻进冷藏柜中\n时间不是解药是帮凶\n针尖挑破解冻的脓\n\n橡胶塞顶出冰锥\n批号在管壁爬满霉\n解冻的承诺膨胀时\n刺穿所有防护服纸\n\n药液漫过登记簿\n淹灭钢印红戳温度\n手机相册开始泛潮\n奶牙陷进像素礁\n\n当冰晶刺破密封圈\n三年前泪滴正回填\n针管突然爆裂那刻\n冻龄的疤重新渗血",
+      "trackNo": 15
     },
     {
       "id": "isrc-QZFYX2657897",
@@ -17872,7 +18480,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -17892,8 +18501,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=16"
         },
         {
           "platform": "netease",
@@ -17906,13 +18515,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=16",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "灯光像海 掌声像浪\n涌到我脚下 一阵一阵在晃\n我在喧嚣里 守住自我\n红毯不走心的路 我不走那条过场\n灯光像海 掌声像浪\n人群像雾 把名字吹得太狂\n我在喧嚣里 对自己唱\n红毯不走心的路 不如回录音棚躲藏\n\n镜头在追 我却慢半拍\n让闪光退潮 先听心里谁在对白\n有人问我 下一步要飞多快\n我看着鞋带 想到当初练到麻木的手腕\n合约像网 话筒像门\n开口之前先想 还能不能算本真\n他们要滤镜 要剧本\n我只想一支笔 一盏灯 一张旧桌子稳\n后台烟雾里 笑声太油\n社交像游戏 快捷键全是应酬\n不如把耳机 戴到最深\n让鼓点替我挡住 多余的寒暄问候\n我记得没人看的开放麦\n破音也敢吼 怕什么摔\n现在只多了几块灯牌\n要我改成安全版本 我说算了吧兄弟别来\n\n灯光像海 掌声像浪\n涌到我脚下 一阵一阵在晃\n我在喧嚣里 守住自我\n红毯不走心的路 我不走那条过场\n灯光像海 掌声像浪\n人群像雾 把名字吹得太狂\n我在喧嚣里 对自己唱\n红毯不走心的路 不如回录音棚躲藏\n\n有人托词说 这就是长大\n要学会计算 把每一句押成价码\n我点点头 却在心里骂\n如果连不爽都不能写 这笔墨还有啥花法\n我看见前辈站在角落\n眼里有疲惫 却仍然给后辈鼓掌叫做\n他说别被热点反锁\n把一首一首写好 才不怕时间抽走脉搏\n钢琴在敲 像老朋友\n简单的和弦 比排场更能抚平喉咙\n录音灯红着 像个小宇宙\n我关上门 世界安静得 只剩下节奏\n名利像糖 水里一溶\n甜一下下 之后只剩口干舌痛\n我不想被谁包装成梦\n宁愿半醒半醉 把真话写在每句裂缝\n\n灯光像海 掌声像浪\n涌到我脚下 一阵一阵在晃\n我在喧嚣里 守住自我\n红毯不走心的路 我不走那条过场\n灯光像海 掌声像浪\n人群像雾 把名字吹得太狂\n我在喧嚣里 对自己唱\n红毯不走心的路 走不进我的心房"
+      "lyrics": "灯光像海 掌声像浪\n涌到我脚下 一阵一阵在晃\n我在喧嚣里 守住自我\n红毯不走心的路 我不走那条过场\n灯光像海 掌声像浪\n人群像雾 把名字吹得太狂\n我在喧嚣里 对自己唱\n红毯不走心的路 不如回录音棚躲藏\n\n镜头在追 我却慢半拍\n让闪光退潮 先听心里谁在对白\n有人问我 下一步要飞多快\n我看着鞋带 想到当初练到麻木的手腕\n合约像网 话筒像门\n开口之前先想 还能不能算本真\n他们要滤镜 要剧本\n我只想一支笔 一盏灯 一张旧桌子稳\n后台烟雾里 笑声太油\n社交像游戏 快捷键全是应酬\n不如把耳机 戴到最深\n让鼓点替我挡住 多余的寒暄问候\n我记得没人看的开放麦\n破音也敢吼 怕什么摔\n现在只多了几块灯牌\n要我改成安全版本 我说算了吧兄弟别来\n\n灯光像海 掌声像浪\n涌到我脚下 一阵一阵在晃\n我在喧嚣里 守住自我\n红毯不走心的路 我不走那条过场\n灯光像海 掌声像浪\n人群像雾 把名字吹得太狂\n我在喧嚣里 对自己唱\n红毯不走心的路 不如回录音棚躲藏\n\n有人托词说 这就是长大\n要学会计算 把每一句押成价码\n我点点头 却在心里骂\n如果连不爽都不能写 这笔墨还有啥花法\n我看见前辈站在角落\n眼里有疲惫 却仍然给后辈鼓掌叫做\n他说别被热点反锁\n把一首一首写好 才不怕时间抽走脉搏\n钢琴在敲 像老朋友\n简单的和弦 比排场更能抚平喉咙\n录音灯红着 像个小宇宙\n我关上门 世界安静得 只剩下节奏\n名利像糖 水里一溶\n甜一下下 之后只剩口干舌痛\n我不想被谁包装成梦\n宁愿半醒半醉 把真话写在每句裂缝\n\n灯光像海 掌声像浪\n涌到我脚下 一阵一阵在晃\n我在喧嚣里 守住自我\n红毯不走心的路 我不走那条过场\n灯光像海 掌声像浪\n人群像雾 把名字吹得太狂\n我在喧嚣里 对自己唱\n红毯不走心的路 走不进我的心房",
+      "trackNo": 16
     },
     {
       "id": "isrc-QZFYX2657898",
@@ -17926,7 +18543,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -17946,8 +18564,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=17"
         },
         {
           "platform": "netease",
@@ -17960,13 +18578,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=17",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "一句玩梗背后是失业的疼\n纸醉金迷转眼只剩空城\n我数着日落 又盼着黎明\n谁能为我撑住这场风\n\n键盘的敲击像心跳的鼓动\n我让笑点停一秒 给现实留尊重\n\n裁到大动脉 谁能不痛\n生活的刀锋 我握在手中\n裁到大动脉 依旧往前冲\n眼里有火 不认输的梦\n\n街角的灯泡它亮着朦胧\n每个人脚步都像急促的钟\n他说生活像一场滑稽的剧\n但我只想写真实的诗和曲\n\n音符在跳跃 像心跳的节奏\n钢琴低语中藏着多少失落\n每个音都诉说 每个音都诉说\n这条路虽然窄 但我选择走\n\n裁到大动脉 谁能不痛\n生活的刀锋 我握在手中\n裁到大动脉 依旧往前冲\n眼里有火 不认输的梦"
+      "lyrics": "一句玩梗背后是失业的疼\n纸醉金迷转眼只剩空城\n我数着日落 又盼着黎明\n谁能为我撑住这场风\n\n键盘的敲击像心跳的鼓动\n我让笑点停一秒 给现实留尊重\n\n裁到大动脉 谁能不痛\n生活的刀锋 我握在手中\n裁到大动脉 依旧往前冲\n眼里有火 不认输的梦\n\n街角的灯泡它亮着朦胧\n每个人脚步都像急促的钟\n他说生活像一场滑稽的剧\n但我只想写真实的诗和曲\n\n音符在跳跃 像心跳的节奏\n钢琴低语中藏着多少失落\n每个音都诉说 每个音都诉说\n这条路虽然窄 但我选择走\n\n裁到大动脉 谁能不痛\n生活的刀锋 我握在手中\n裁到大动脉 依旧往前冲\n眼里有火 不认输的梦",
+      "trackNo": 17
     },
     {
       "id": "isrc-QZFYX2657899",
@@ -17980,7 +18606,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -18000,8 +18627,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=18"
         },
         {
           "platform": "netease",
@@ -18014,13 +18641,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=18",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "灯光亮起 画面定格\n我在屏幕外成了旁观者\n台词如刀 戳破日子的壳\n一杯茶冷了 一夜未眠的歌\n\n一条回复 是谁的救赎\n屏幕那头 是心跳的音符\n\n被看见 是温柔的火焰\n燃烧孤单的时间\n被看见 是一瞬间的闪电\n劈开黑暗的云间\n\n你的字句像桥 连通心的河\n我读着你 也读着我\n那些未曾说出口的梦\n在键盘上流淌成了诗和歌\n\n一条回复 是夜的救命稻草\n屏幕这头 是故事的预兆\n\n被看见 是温柔的火焰\n燃烧孤单的时间\n被看见 是一瞬间的闪电\n劈开黑暗的云间"
+      "lyrics": "灯光亮起 画面定格\n我在屏幕外成了旁观者\n台词如刀 戳破日子的壳\n一杯茶冷了 一夜未眠的歌\n\n一条回复 是谁的救赎\n屏幕那头 是心跳的音符\n\n被看见 是温柔的火焰\n燃烧孤单的时间\n被看见 是一瞬间的闪电\n劈开黑暗的云间\n\n你的字句像桥 连通心的河\n我读着你 也读着我\n那些未曾说出口的梦\n在键盘上流淌成了诗和歌\n\n一条回复 是夜的救命稻草\n屏幕这头 是故事的预兆\n\n被看见 是温柔的火焰\n燃烧孤单的时间\n被看见 是一瞬间的闪电\n劈开黑暗的云间",
+      "trackNo": 18
     },
     {
       "id": "isrc-QZFYX2657900",
@@ -18034,7 +18669,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -18054,8 +18690,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=19"
         },
         {
           "platform": "netease",
@@ -18068,13 +18704,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=19",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "[Verse]\n第七次齿痕停在果肉上\n嘴巴突然撤场像变卦的月光\n氧化的褐斑在空气里疯长\n一场未完成的戏 谁的开场白太长\n\n[Chorus]\n无人咀嚼的苹果 还在桌角发光\n进度刻凹在果皮上 是谁的遗忘\n第七次咬痕后 剩下的空荡\n氧化的褐色诉说着一段无声的流浪\n\n[Verse 2]\n咬了一半的真相 像未写完的诗\n每一颗齿痕都是进度的标尺\n时间的刀锋在果肉上划痕\n跳出率的褐斑 是沉默的证人\n\n[Bridge]\n苹果在等待 谁来继续这场赌注\n嘴巴却离席 留下空气的拥护\n褐色的梦境 躺在桌上不服输\n是谁放弃了答案 谁成了自己的囚徒\n\n[Chorus]\n无人咀嚼的苹果 还在桌角发光\n进度刻凹在果皮上 是谁的遗忘\n第七次咬痕后 剩下的空荡\n氧化的褐色诉说着一段无声的流浪"
+      "lyrics": "[Verse]\n第七次齿痕停在果肉上\n嘴巴突然撤场像变卦的月光\n氧化的褐斑在空气里疯长\n一场未完成的戏 谁的开场白太长\n\n[Chorus]\n无人咀嚼的苹果 还在桌角发光\n进度刻凹在果皮上 是谁的遗忘\n第七次咬痕后 剩下的空荡\n氧化的褐色诉说着一段无声的流浪\n\n[Verse 2]\n咬了一半的真相 像未写完的诗\n每一颗齿痕都是进度的标尺\n时间的刀锋在果肉上划痕\n跳出率的褐斑 是沉默的证人\n\n[Bridge]\n苹果在等待 谁来继续这场赌注\n嘴巴却离席 留下空气的拥护\n褐色的梦境 躺在桌上不服输\n是谁放弃了答案 谁成了自己的囚徒\n\n[Chorus]\n无人咀嚼的苹果 还在桌角发光\n进度刻凹在果皮上 是谁的遗忘\n第七次咬痕后 剩下的空荡\n氧化的褐色诉说着一段无声的流浪",
+      "trackNo": 19
     },
     {
       "id": "isrc-QZFYX2657901",
@@ -18088,7 +18732,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -18108,8 +18753,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=20"
         },
         {
           "platform": "netease",
@@ -18122,13 +18767,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=20",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "塔吊臂举起生锈太阳\n光缆缠着年份往上绑\n每道焊缝都淌出红印\n铁汁滴进瞳孔刻印章\n\n当锈色漫过预售日期\n罚息率在光里结晶\n吊钩勾破云层那秒\n钢印烙进脊椎第三行\n\n锈是印花税\n滴答是罚息\n塔吊举着债务太阳\n每滴锈蚀穿三页日历\n光缆捆着年轮生长\n\n仰头接住坠落的锈\n喉结结出税单果实\n罚息率在睫毛上涨潮\n眼白被染成担保书\n\n当夕阳卡在塔吊齿缝\n铁锈顺着光柱输液\n刻度在水泥地爬行\n踩出带利息的脚印\n\n突然塔吊折断脊椎\n太阳滚进未封顶的窗\n三十层楼板同时生锈\n红章淹过消防通道"
+      "lyrics": "塔吊臂举起生锈太阳\n光缆缠着年份往上绑\n每道焊缝都淌出红印\n铁汁滴进瞳孔刻印章\n\n当锈色漫过预售日期\n罚息率在光里结晶\n吊钩勾破云层那秒\n钢印烙进脊椎第三行\n\n锈是印花税\n滴答是罚息\n塔吊举着债务太阳\n每滴锈蚀穿三页日历\n光缆捆着年轮生长\n\n仰头接住坠落的锈\n喉结结出税单果实\n罚息率在睫毛上涨潮\n眼白被染成担保书\n\n当夕阳卡在塔吊齿缝\n铁锈顺着光柱输液\n刻度在水泥地爬行\n踩出带利息的脚印\n\n突然塔吊折断脊椎\n太阳滚进未封顶的窗\n三十层楼板同时生锈\n红章淹过消防通道",
+      "trackNo": 20
     },
     {
       "id": "isrc-QZFYX2657902",
@@ -18142,7 +18795,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -18162,8 +18816,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=21"
         },
         {
           "platform": "netease",
@@ -18176,13 +18830,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=21",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "雨水把巷口刷成灰白\n我踩过井盖 听楼上吵架还在重播对白\n脚边一阵水花 漂来一只纸船\n翻卷的船舷写着口红色号像是密码序列\n那不是色彩 是事件编号\n有人用它代替案卷 避开监控镜头\n船底贴着二维码被水泡得起皱\n我举起来一照 屏幕却一瞬间黑透\n谁在巷尾抽烟 谁在窗口偷窥\n谁把证词折成折纸丢进这条废水\n我听见排水沟里堵着几句脏话\n顺着暗渠流向没人问的那个地下\n\n排水沟漂过一只纸船\n口红色号一行一行排成档案\n二维码压住那点良心不翻\n扫不开的真相躺在水面缓慢\n排水沟漂过一只纸船\n谁记得昨晚雨有多大多烦\n手机亮过 却什么都不敢\n只剩水声把故事压成杂音回弹\n\n楼角那位阿姨说又有人搬走\n说起半夜警笛像狗叫没人想应声回头\n我想起新闻播到一半就被切走\n他们说系统故障 我只听见广告在抖\n你的口红掉色 还是编号过期\n每个色号后面都挂着一串日期\n纸船绕过烟屁股和泡烂的收据\n像避开证据 又像游行的孤立群体\n二维码残破 像被人故意刮花\n镜头前笑得体面的人背后谁怕\n我把纸船放回水沟让它自己选路\n想看它流到哪条河 哪个湖 哪扇大门围住\n\n等雨停了 沟里空得发亮\n只剩一抹红在铁锈旁边慢慢被冲淡\n如果真相只能印在唇边的色号上\n那就让每一滴排水都记住这些编号的重量"
+      "lyrics": "雨水把巷口刷成灰白\n我踩过井盖 听楼上吵架还在重播对白\n脚边一阵水花 漂来一只纸船\n翻卷的船舷写着口红色号像是密码序列\n那不是色彩 是事件编号\n有人用它代替案卷 避开监控镜头\n船底贴着二维码被水泡得起皱\n我举起来一照 屏幕却一瞬间黑透\n谁在巷尾抽烟 谁在窗口偷窥\n谁把证词折成折纸丢进这条废水\n我听见排水沟里堵着几句脏话\n顺着暗渠流向没人问的那个地下\n\n排水沟漂过一只纸船\n口红色号一行一行排成档案\n二维码压住那点良心不翻\n扫不开的真相躺在水面缓慢\n排水沟漂过一只纸船\n谁记得昨晚雨有多大多烦\n手机亮过 却什么都不敢\n只剩水声把故事压成杂音回弹\n\n楼角那位阿姨说又有人搬走\n说起半夜警笛像狗叫没人想应声回头\n我想起新闻播到一半就被切走\n他们说系统故障 我只听见广告在抖\n你的口红掉色 还是编号过期\n每个色号后面都挂着一串日期\n纸船绕过烟屁股和泡烂的收据\n像避开证据 又像游行的孤立群体\n二维码残破 像被人故意刮花\n镜头前笑得体面的人背后谁怕\n我把纸船放回水沟让它自己选路\n想看它流到哪条河 哪个湖 哪扇大门围住\n\n等雨停了 沟里空得发亮\n只剩一抹红在铁锈旁边慢慢被冲淡\n如果真相只能印在唇边的色号上\n那就让每一滴排水都记住这些编号的重量",
+      "trackNo": 21
     },
     {
       "id": "isrc-QZFYX2657903",
@@ -18196,7 +18858,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -18216,8 +18879,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=22"
         },
         {
           "platform": "netease",
@@ -18230,13 +18893,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=22",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "嗡——机头醒来\n针脚打拍\n手套拉紧\n灯光落在皮肤海\n呼吸变慢\n鼓点进来\n心跳当底鼓\n记忆排成队等待\n\n蓝砂在针尖下倒流成河\n皮肤隆起时间的山脉轮廓\n每粒玻璃都在钻探记忆矿脉\n血珠裹着未兑现的对白\n嗡嗡 针尖推着秒针向前走\n丘陵在肘弯刻下等高线图\n当止血棉擦去多余血浆\n才看见沙粒在真皮层流浪\n\n纹身是凝固的伤口\n时间却从针眼漏走\n纹身是凝固的伤口\n蓝砂在血管里漂游\n纹身是凝固的伤口\n你听见它暗处节奏\n纹身是凝固的伤口\n蓝砂在血管里漂游\n\n消毒水味混着旧日气息\n那年雨巷的伞沿在渗色\n你说要把此刻钉进皮肉\n如今图案比誓言更长寿\n恢复期结痂成褐色堤坝\n痒意是沙粒在底下喧哗\n我抓挠着变形的玻璃壁\n放走更多彩色的记忆\n\n棉签擦拭声\n沙沙一层又一层\n酒精划过纹理\n小小河道翻身\n\n对镜用指腹摩挲丘陵\n凸起的年轮藏着潮汛\n当汗珠滚过蓝色流域\n带出那年未落的泪滴\n\n七年后的梅雨季返潮\n图案晕成模糊的句号\n边缘绽出青色的根系\n像时间在皮下举义\n洗衣时搓着褪色沙漏\n泡沫吞掉半截刻度\n防晒霜抹平丘陵地貌\n唯有针孔在午夜闪耀\n\n纹身是凝固的伤口\n时间却从针眼漏走\n纹身是凝固的伤口\n蓝砂在血管里漂游\n纹身是凝固的伤口\n旧话在针眼停留\n纹身是凝固的伤口\n蓝砂在血管里漂游"
+      "lyrics": "嗡——机头醒来\n针脚打拍\n手套拉紧\n灯光落在皮肤海\n呼吸变慢\n鼓点进来\n心跳当底鼓\n记忆排成队等待\n\n蓝砂在针尖下倒流成河\n皮肤隆起时间的山脉轮廓\n每粒玻璃都在钻探记忆矿脉\n血珠裹着未兑现的对白\n嗡嗡 针尖推着秒针向前走\n丘陵在肘弯刻下等高线图\n当止血棉擦去多余血浆\n才看见沙粒在真皮层流浪\n\n纹身是凝固的伤口\n时间却从针眼漏走\n纹身是凝固的伤口\n蓝砂在血管里漂游\n纹身是凝固的伤口\n你听见它暗处节奏\n纹身是凝固的伤口\n蓝砂在血管里漂游\n\n消毒水味混着旧日气息\n那年雨巷的伞沿在渗色\n你说要把此刻钉进皮肉\n如今图案比誓言更长寿\n恢复期结痂成褐色堤坝\n痒意是沙粒在底下喧哗\n我抓挠着变形的玻璃壁\n放走更多彩色的记忆\n\n棉签擦拭声\n沙沙一层又一层\n酒精划过纹理\n小小河道翻身\n\n对镜用指腹摩挲丘陵\n凸起的年轮藏着潮汛\n当汗珠滚过蓝色流域\n带出那年未落的泪滴\n\n七年后的梅雨季返潮\n图案晕成模糊的句号\n边缘绽出青色的根系\n像时间在皮下举义\n洗衣时搓着褪色沙漏\n泡沫吞掉半截刻度\n防晒霜抹平丘陵地貌\n唯有针孔在午夜闪耀\n\n纹身是凝固的伤口\n时间却从针眼漏走\n纹身是凝固的伤口\n蓝砂在血管里漂游\n纹身是凝固的伤口\n旧话在针眼停留\n纹身是凝固的伤口\n蓝砂在血管里漂游",
+      "trackNo": 22
     },
     {
       "id": "isrc-QZFYX2657904",
@@ -18250,7 +18921,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -18270,8 +18942,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=23"
         },
         {
           "platform": "netease",
@@ -18284,13 +18956,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=23",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "Intro]\n天空把风筝线剪断\n第七个风圈里\n纸鸢垂直落地\n无声\n\n[Verse 1]\n一圈两圈三圈\n手心汗在打转\n风圈其实是缓冲\n给自己多一点晚点崩\n街角的店灯灭了一盏\n像暂停键被人偷按\n我数到七才肯松手\n假装所有告别都有回程以后\n玻璃窗外的云在倒放\n楼下人影像旧录像\n耳机里的鼓点抖成碎响\n每一拍都是心跳的备忘\n你说别太紧\n线拉断就什么也听不见\n可我怕太松\n风一来你连我的名字都不念\n\n[Chorus]\n天空把风筝线剪断\n第七个风圈里我不吭一声\n纸鸢垂直落地\n风筝坠声却被静音\n播放计数停在那一秒\n画面继续我却听不到\n风圈绕啊绕当成缓冲\n坠地缺声就是结束的行程\n\n[Verse 2]\n五楼阳台旧椅子吱嘎\n像卡顿的节拍在自杀\n我把过往摊平在桌面\n一张一张像播放清单被删减\n谁还记得第一圈的轻狂\n风小得像你笑里的善良\n第二圈开始学着逞强\n不哭不闹只把情绪押韵装箱\n第三圈的夜太冷\n手机亮着却只剩系统铃声\n第四圈以后我学会对空气说话\n对着空气点头说算了吧\n第七个风圈里我突然静了\n像彻底掉线的聊天室不再回声\n屏幕上的数字不再往上\n时间往前走 我停在原样\n\n[Chorus]\n天空把风筝线剪断\n第七个风圈里我不吭一声\n纸鸢垂直落地\n风筝坠声却被静音\n播放计数停在那一秒\n画面继续我却听不到\n风圈绕啊绕当成缓冲\n坠地缺声就是结束的行程\n\n[Outro]\n如果还有第八圈会怎样\n是不是连重播键都不亮\n你说风会记得所有曾经\n可风筝坠声\n只剩下我心里在回响"
+      "lyrics": "Intro]\n天空把风筝线剪断\n第七个风圈里\n纸鸢垂直落地\n无声\n\n[Verse 1]\n一圈两圈三圈\n手心汗在打转\n风圈其实是缓冲\n给自己多一点晚点崩\n街角的店灯灭了一盏\n像暂停键被人偷按\n我数到七才肯松手\n假装所有告别都有回程以后\n玻璃窗外的云在倒放\n楼下人影像旧录像\n耳机里的鼓点抖成碎响\n每一拍都是心跳的备忘\n你说别太紧\n线拉断就什么也听不见\n可我怕太松\n风一来你连我的名字都不念\n\n[Chorus]\n天空把风筝线剪断\n第七个风圈里我不吭一声\n纸鸢垂直落地\n风筝坠声却被静音\n播放计数停在那一秒\n画面继续我却听不到\n风圈绕啊绕当成缓冲\n坠地缺声就是结束的行程\n\n[Verse 2]\n五楼阳台旧椅子吱嘎\n像卡顿的节拍在自杀\n我把过往摊平在桌面\n一张一张像播放清单被删减\n谁还记得第一圈的轻狂\n风小得像你笑里的善良\n第二圈开始学着逞强\n不哭不闹只把情绪押韵装箱\n第三圈的夜太冷\n手机亮着却只剩系统铃声\n第四圈以后我学会对空气说话\n对着空气点头说算了吧\n第七个风圈里我突然静了\n像彻底掉线的聊天室不再回声\n屏幕上的数字不再往上\n时间往前走 我停在原样\n\n[Chorus]\n天空把风筝线剪断\n第七个风圈里我不吭一声\n纸鸢垂直落地\n风筝坠声却被静音\n播放计数停在那一秒\n画面继续我却听不到\n风圈绕啊绕当成缓冲\n坠地缺声就是结束的行程\n\n[Outro]\n如果还有第八圈会怎样\n是不是连重播键都不亮\n你说风会记得所有曾经\n可风筝坠声\n只剩下我心里在回响",
+      "trackNo": 23
     },
     {
       "id": "isrc-QZFYX2657905",
@@ -18304,7 +18984,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -18324,8 +19005,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=24"
         },
         {
           "platform": "netease",
@@ -18338,13 +19019,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=24",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "消息提示音滴滴作响\n加载转圈声绕耳不放\n\n加载圈转成电子墓志铭\n精修图葬着未修的曾经\n点赞数堆砌成水晶棺椁\n定位失效在虚拟的王国\n嗡嗡 黑头像浮在通讯录坟场\n三天可见锁着半生跌宕\n那年樱花定位早就泛黄\n配文里理想还发着高光\n\n数据替我活着 活成标本\n真实的我却在缓存里沉沦\n数据替我活着 活成标本\n十年朋友圈爬满数字苔纹\n\n下拉刷新着记忆断层\n那年烟火视频加载到凌晨\n婚纱照弹窗 该内容已删除\n甜蜜留言成乱码的碑文\n十年挑战弹出对比图\n磨皮的笑比旧照更模糊\n收藏夹里躺满失效链接\n像未兑现的誓约生了铁屑\n\n删除提示音 嘟——\n\n凌晨三点翻自己主页\n陌生得像是盗号者作弊\n那年醉酒发的月亮照片\n如今需要好友验证权限"
+      "lyrics": "消息提示音滴滴作响\n加载转圈声绕耳不放\n\n加载圈转成电子墓志铭\n精修图葬着未修的曾经\n点赞数堆砌成水晶棺椁\n定位失效在虚拟的王国\n嗡嗡 黑头像浮在通讯录坟场\n三天可见锁着半生跌宕\n那年樱花定位早就泛黄\n配文里理想还发着高光\n\n数据替我活着 活成标本\n真实的我却在缓存里沉沦\n数据替我活着 活成标本\n十年朋友圈爬满数字苔纹\n\n下拉刷新着记忆断层\n那年烟火视频加载到凌晨\n婚纱照弹窗 该内容已删除\n甜蜜留言成乱码的碑文\n十年挑战弹出对比图\n磨皮的笑比旧照更模糊\n收藏夹里躺满失效链接\n像未兑现的誓约生了铁屑\n\n删除提示音 嘟——\n\n凌晨三点翻自己主页\n陌生得像是盗号者作弊\n那年醉酒发的月亮照片\n如今需要好友验证权限",
+      "trackNo": 24
     },
     {
       "id": "isrc-QZFYX2657906",
@@ -18358,7 +19047,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -18378,8 +19068,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=25"
         },
         {
           "platform": "netease",
@@ -18392,13 +19082,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=25",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "水面像镜子 倒影藏秘密\n脚尖试探着 是冷是暖的记忆\n风轻轻吹过 像耳边的呢喃\n一步又一步 进退全看心愿\n\n呼吸 呼吸 节奏带我回去\n下水之前 想想何时能离\n自由 自由 可安全是前提\n别急 别急 一切循序渐进\n\n泡沫在破裂 仿佛在提醒我\n规则如岸线 不越界才洒脱\n坚持如涟漪 一圈圈的扩散\n平衡在掌握 不浮不沉的浪\n\n呼吸 呼吸 节奏带我回去\n下水之前 想想何时能离\n自由 自由 可安全是前提\n别急 别急 一切循序渐进\n\n一片水域 一段心绪\n每次入水都像是新旅\n有轻盈的梦 也有深邃的影\n岸边的界线 是自由的指引\n\n呼吸 呼吸 节奏带我回去\n下水之前 想想何时能离\n自由 自由 可安全是前提\n别急 别急 一切循序渐进"
+      "lyrics": "水面像镜子 倒影藏秘密\n脚尖试探着 是冷是暖的记忆\n风轻轻吹过 像耳边的呢喃\n一步又一步 进退全看心愿\n\n呼吸 呼吸 节奏带我回去\n下水之前 想想何时能离\n自由 自由 可安全是前提\n别急 别急 一切循序渐进\n\n泡沫在破裂 仿佛在提醒我\n规则如岸线 不越界才洒脱\n坚持如涟漪 一圈圈的扩散\n平衡在掌握 不浮不沉的浪\n\n呼吸 呼吸 节奏带我回去\n下水之前 想想何时能离\n自由 自由 可安全是前提\n别急 别急 一切循序渐进\n\n一片水域 一段心绪\n每次入水都像是新旅\n有轻盈的梦 也有深邃的影\n岸边的界线 是自由的指引\n\n呼吸 呼吸 节奏带我回去\n下水之前 想想何时能离\n自由 自由 可安全是前提\n别急 别急 一切循序渐进",
+      "trackNo": 25
     },
     {
       "id": "isrc-QZFYX2657907",
@@ -18412,7 +19110,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -18432,8 +19131,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=26"
         },
         {
           "platform": "netease",
@@ -18446,13 +19145,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=26",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "一句“无病”像回旋镖\n砸碎玻璃 砸进我心跳\n夜色里孤独像个荒岛\n点燃一支烟 却找不到出口\n\n我写下恐惧与秩序的缝隙\n像在黑暗里种下一片雨滴\n问正义多重 谁能回应\n还是风里 只有回音\n\n世界沉默像一块旧布\n拉扯着现实 把谎言缝住\n一双眼睛 看透荒芜\n却看不透人心深处的迷雾\n\n我写下恐惧与秩序的缝隙\n像在黑暗里种下一片雨滴\n问正义多重 谁能回应\n还是风里 只有回音\n\n钢琴敲响 是谁的呐喊\n回旋镖飞远 又回到指间\n你说“无病” 我笑得心寒\n无病的灵魂 怎么会孤单\n\n我写下恐惧与秩序的缝隙\n像在黑暗里种下一片雨滴\n问正义多重 谁能回应\n还是风里 只有回音"
+      "lyrics": "一句“无病”像回旋镖\n砸碎玻璃 砸进我心跳\n夜色里孤独像个荒岛\n点燃一支烟 却找不到出口\n\n我写下恐惧与秩序的缝隙\n像在黑暗里种下一片雨滴\n问正义多重 谁能回应\n还是风里 只有回音\n\n世界沉默像一块旧布\n拉扯着现实 把谎言缝住\n一双眼睛 看透荒芜\n却看不透人心深处的迷雾\n\n我写下恐惧与秩序的缝隙\n像在黑暗里种下一片雨滴\n问正义多重 谁能回应\n还是风里 只有回音\n\n钢琴敲响 是谁的呐喊\n回旋镖飞远 又回到指间\n你说“无病” 我笑得心寒\n无病的灵魂 怎么会孤单\n\n我写下恐惧与秩序的缝隙\n像在黑暗里种下一片雨滴\n问正义多重 谁能回应\n还是风里 只有回音",
+      "trackNo": 26
     },
     {
       "id": "isrc-QZFYX2657908",
@@ -18466,7 +19173,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -18486,8 +19194,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=27"
         },
         {
           "platform": "netease",
@@ -18500,13 +19208,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=27",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "幅海报被风撕开一半\n上半截是“理想生活” 一片灿烂\n下半截是银行账号 冷冷直白\n风声里藏着 催收电话的安排\n\n撕口的条款 像刀子划破夜晚\n风声在追赶 现实逃不出指环\n理想被吹散 只剩下数字作伴\n风翻借据 谁还记得最初的期盼\n\n借来的春天 秋天却要偿还\n口袋的空白 是生活的签单\n撕口的暗语 写满违约的遗憾\n风声催着人 跑不出时间的弯\n\n梦像纸飞机 被风一吹就散\n理想的地址 如今全是空栏\n借据的重量 比月亮更难还\n风翻的故事 没人愿再去看\n\n撕口的条款 像刀子划破夜晚\n风声在追赶 现实逃不出指环\n理想被吹散 只剩下数字作伴\n风翻借据 谁还记得最初的期盼"
+      "lyrics": "幅海报被风撕开一半\n上半截是“理想生活” 一片灿烂\n下半截是银行账号 冷冷直白\n风声里藏着 催收电话的安排\n\n撕口的条款 像刀子划破夜晚\n风声在追赶 现实逃不出指环\n理想被吹散 只剩下数字作伴\n风翻借据 谁还记得最初的期盼\n\n借来的春天 秋天却要偿还\n口袋的空白 是生活的签单\n撕口的暗语 写满违约的遗憾\n风声催着人 跑不出时间的弯\n\n梦像纸飞机 被风一吹就散\n理想的地址 如今全是空栏\n借据的重量 比月亮更难还\n风翻的故事 没人愿再去看\n\n撕口的条款 像刀子划破夜晚\n风声在追赶 现实逃不出指环\n理想被吹散 只剩下数字作伴\n风翻借据 谁还记得最初的期盼",
+      "trackNo": 27
     },
     {
       "id": "isrc-QZFYX2657909",
@@ -18520,7 +19236,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -18540,8 +19257,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=28"
         },
         {
           "platform": "netease",
@@ -18554,13 +19271,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=28",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "封顶典礼那天工地挂着笑\n工人手里攥着钥匙像抓住了预兆\n一片片塑料钥匙从天际撒飘\n像一场冰雹永远不会融掉\n\n没人抬头没人呼叫\n债务像个影子暗暗咬\n塑料的光在风中笑\n它们不落地只在半空摇\n\n钥匙雨 钥匙雨\n飞舞着没有归宿的旅\n钥匙雨 钥匙雨\n冻结时间冻结命运\n\n楼顶上的人像导演在剧场\n他们喊着戏词底下是空荡\n塑料钥匙承兑着希望\n却被风吹散 谁来买账\n\n债务像条河绕过心房\n塑料钥匙不会沉没不会退场\n冰雹不化像个谎言发光\n在阳光下也假装坚强\n\n他们说一切都会好\n只是时间的推敲\n可钥匙雨却没落掉"
+      "lyrics": "封顶典礼那天工地挂着笑\n工人手里攥着钥匙像抓住了预兆\n一片片塑料钥匙从天际撒飘\n像一场冰雹永远不会融掉\n\n没人抬头没人呼叫\n债务像个影子暗暗咬\n塑料的光在风中笑\n它们不落地只在半空摇\n\n钥匙雨 钥匙雨\n飞舞着没有归宿的旅\n钥匙雨 钥匙雨\n冻结时间冻结命运\n\n楼顶上的人像导演在剧场\n他们喊着戏词底下是空荡\n塑料钥匙承兑着希望\n却被风吹散 谁来买账\n\n债务像条河绕过心房\n塑料钥匙不会沉没不会退场\n冰雹不化像个谎言发光\n在阳光下也假装坚强\n\n他们说一切都会好\n只是时间的推敲\n可钥匙雨却没落掉",
+      "trackNo": 28
     },
     {
       "id": "isrc-QZFYX2657910",
@@ -18574,7 +19299,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -18594,8 +19320,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=29"
         },
         {
           "platform": "netease",
@@ -18608,13 +19334,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=29",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "旧钨丝灯闪到第七次\n墙角阴影偷偷在试探彼此\n房间的空气 像烟圈沉积\n时间是老唱针 磨出一丝刺\n\n灯泡闪白 是转场的信号\n瞬盲之后 是记忆的空巢\n\n灯泡闪白 一切暂停\n像底片被抽出一格的场景\n瞬盲之后 谁在梦里\n像光影在诉说 不曾放弃\n\n脚步声慢踩过地板的纹理\n旧时光的碎片藏在墙纸里\n耳边是低吟 仿佛来自过去\n闪白的灯光撕开了平静的序曲\n\n瞬盲 眼前一片漆黑\n像心跳突然停滞的空位\n闪白 转场无声又无味\n每一次都像命运在排练戏轨\n\n灯泡闪白 一切暂停\n像底片被抽出一格的场景\n瞬盲之后 谁在梦里\n像光影在诉说 不曾放弃"
+      "lyrics": "旧钨丝灯闪到第七次\n墙角阴影偷偷在试探彼此\n房间的空气 像烟圈沉积\n时间是老唱针 磨出一丝刺\n\n灯泡闪白 是转场的信号\n瞬盲之后 是记忆的空巢\n\n灯泡闪白 一切暂停\n像底片被抽出一格的场景\n瞬盲之后 谁在梦里\n像光影在诉说 不曾放弃\n\n脚步声慢踩过地板的纹理\n旧时光的碎片藏在墙纸里\n耳边是低吟 仿佛来自过去\n闪白的灯光撕开了平静的序曲\n\n瞬盲 眼前一片漆黑\n像心跳突然停滞的空位\n闪白 转场无声又无味\n每一次都像命运在排练戏轨\n\n灯泡闪白 一切暂停\n像底片被抽出一格的场景\n瞬盲之后 谁在梦里\n像光影在诉说 不曾放弃",
+      "trackNo": 29
     },
     {
       "id": "isrc-QZFYX2657911",
@@ -18628,7 +19362,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -18648,8 +19383,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=30"
         },
         {
           "platform": "netease",
@@ -18662,13 +19397,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=30",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "合约像铁链 锁住梦想的路\n条款写得花俏 却埋伏着毒\n我签了名 却丢了主\n说是合作 实则是束缚\n\n限消名单 限消名单\n我唱自由的税 别让条款吞掉\n限消名单 限消名单\n挣脱牢笼 我们必须自救\n\n解约像赎罪 代价重如山\n时间和青春 被合同榨干\n看似繁华 背后是荒凉的滩\n醒醒吧 别再上当受骗\n\n限消名单 限消名单\n我唱自由的税 别让条款吞掉\n限消名单 限消名单\n挣脱牢笼 我们必须自救\n\n合同里的字句像蛇 缠绕你的脚\n小心每个承诺 别被虚假围绕\n自由是宝贵的灯 别让它熄掉\n走出阴影 把真理燃烧\n\n限消名单 限消名单\n我唱自由的税 别让条款吞掉\n限消名单 限消名单\n挣脱牢笼 我们必须自救"
+      "lyrics": "合约像铁链 锁住梦想的路\n条款写得花俏 却埋伏着毒\n我签了名 却丢了主\n说是合作 实则是束缚\n\n限消名单 限消名单\n我唱自由的税 别让条款吞掉\n限消名单 限消名单\n挣脱牢笼 我们必须自救\n\n解约像赎罪 代价重如山\n时间和青春 被合同榨干\n看似繁华 背后是荒凉的滩\n醒醒吧 别再上当受骗\n\n限消名单 限消名单\n我唱自由的税 别让条款吞掉\n限消名单 限消名单\n挣脱牢笼 我们必须自救\n\n合同里的字句像蛇 缠绕你的脚\n小心每个承诺 别被虚假围绕\n自由是宝贵的灯 别让它熄掉\n走出阴影 把真理燃烧\n\n限消名单 限消名单\n我唱自由的税 别让条款吞掉\n限消名单 限消名单\n挣脱牢笼 我们必须自救",
+      "trackNo": 30
     },
     {
       "id": "isrc-QZFYX2657912",
@@ -18682,7 +19425,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -18702,8 +19446,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=31"
         },
         {
           "platform": "netease",
@@ -18716,13 +19460,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=31",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "直播熄灭 光点退场\n雪花屏覆盖了所有声响\n留言未读 像影子游荡\n均匀的呼吸 随时间流淌\n\n雪花飘飘 消失无踪\n一切都被忘记在虚空\n呼吸平稳 律动如钟\n集体失忆是大众的梦\n\n屏幕模糊 记忆重置\n昨日的故事化作静谧\n谁在呼喊 谁又消弭\n雪花屏前 无人自省的谜\n\n雪花飘飘 消失无踪\n一切都被忘记在虚空\n呼吸平稳 律动如钟\n集体失忆是大众的梦\n\n每一片雪花 都是碎片\n拼凑成记忆 却破碎之间\n呼吸频率 像个隐线\n连结着人群 却也疏远\n\n雪花飘飘 消失无踪\n一切都被忘记在虚空\n呼吸平稳 律动如钟\n集体失忆是大众的梦"
+      "lyrics": "直播熄灭 光点退场\n雪花屏覆盖了所有声响\n留言未读 像影子游荡\n均匀的呼吸 随时间流淌\n\n雪花飘飘 消失无踪\n一切都被忘记在虚空\n呼吸平稳 律动如钟\n集体失忆是大众的梦\n\n屏幕模糊 记忆重置\n昨日的故事化作静谧\n谁在呼喊 谁又消弭\n雪花屏前 无人自省的谜\n\n雪花飘飘 消失无踪\n一切都被忘记在虚空\n呼吸平稳 律动如钟\n集体失忆是大众的梦\n\n每一片雪花 都是碎片\n拼凑成记忆 却破碎之间\n呼吸频率 像个隐线\n连结着人群 却也疏远\n\n雪花飘飘 消失无踪\n一切都被忘记在虚空\n呼吸平稳 律动如钟\n集体失忆是大众的梦",
+      "trackNo": 31
     },
     {
       "id": "isrc-QZFYX2657913",
@@ -18736,7 +19488,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -18756,8 +19509,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=32"
         },
         {
           "platform": "netease",
@@ -18770,13 +19523,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=32",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "[Verse]\n直播结束画面碎裂\n雪花屏铺满寂静的夜\n未读留言像迷路的蝴蝶\n飞进屏幕背后空荡的街\n\n[Chorus]\n雪花 雪花 谁在看\n集体失忆又轮转\n呼吸 呼吸 慢慢缓\n记忆周期全装满\n\n[Verse 2]\n键盘的敲击声停下了\n屏幕的光影像海水退下\n弹幕像流星划过 刹那\n留下空白 比言语复杂\n\n[Bridge]\n均匀呼吸 是无声节拍\n大众记忆 是规则安排\n雪花屏前 谁还在徘徊\n过去未来 都被抹去重来\n\n[Chorus]\n雪花 雪花 谁在看\n集体失忆又轮转\n呼吸 呼吸 慢慢缓\n记忆周期全装满\n\n[Outro]\n雪花屏吞掉了所有痕迹\n像一场梦醒后全都忘记\n我们是谁 是什么关系\n答案埋在白噪音的呼吸里"
+      "lyrics": "[Verse]\n直播结束画面碎裂\n雪花屏铺满寂静的夜\n未读留言像迷路的蝴蝶\n飞进屏幕背后空荡的街\n\n[Chorus]\n雪花 雪花 谁在看\n集体失忆又轮转\n呼吸 呼吸 慢慢缓\n记忆周期全装满\n\n[Verse 2]\n键盘的敲击声停下了\n屏幕的光影像海水退下\n弹幕像流星划过 刹那\n留下空白 比言语复杂\n\n[Bridge]\n均匀呼吸 是无声节拍\n大众记忆 是规则安排\n雪花屏前 谁还在徘徊\n过去未来 都被抹去重来\n\n[Chorus]\n雪花 雪花 谁在看\n集体失忆又轮转\n呼吸 呼吸 慢慢缓\n记忆周期全装满\n\n[Outro]\n雪花屏吞掉了所有痕迹\n像一场梦醒后全都忘记\n我们是谁 是什么关系\n答案埋在白噪音的呼吸里",
+      "trackNo": 32
     },
     {
       "id": "isrc-QZFYX2657914",
@@ -18790,7 +19551,8 @@
       "tags": [
         "distrokid",
         "song",
-        "TIME"
+        "TIME",
+        "youtube"
       ],
       "links": [
         {
@@ -18810,8 +19572,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=33"
         },
         {
           "platform": "netease",
@@ -18824,13 +19586,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kQn0WQ-IvU7E-Ji6d_f-CVWwPRT0n6n_Y&index=33",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "C9AB78C5-20CB-490C-856C53958FF8CFA3"
         }
       },
-      "lyrics": "水面像镜子 它映出天的蓝\n也映出我的影子 像个孤单的帆\n呼吸的节奏 像拍打着心弦\n一步一步靠近 就像走进梦间\n\n下水之前 我闭上眼\n感受自由的风 在耳边盘旋\n下水之前 我慢慢伸展\n每个动作都是信念的延展\n\n自由 泳的轻盈 就像风的歌\n可别忘了水深 它也有它的规则\n边界是安全 但不是枷锁\n循序渐进 是我前行的承诺\n\n水流轻轻推 拉扯着我往前\n节奏和呼吸 像心跳的语言\n坚持不放手 让身体去冒险\n一步步下潜 触碰梦的边缘\n\n下水之前 我闭上眼\n感受自由的风 在耳边盘旋\n下水之前 我慢慢伸展\n每个动作都是信念的延展\n\n水面是镜子 也是另一个世界\n呼吸带我回当下 每次都不妥协\n一步一步去靠近 去感受 去超越\n下水之前的瞬间 就是最美的一切"
+      "lyrics": "水面像镜子 它映出天的蓝\n也映出我的影子 像个孤单的帆\n呼吸的节奏 像拍打着心弦\n一步一步靠近 就像走进梦间\n\n下水之前 我闭上眼\n感受自由的风 在耳边盘旋\n下水之前 我慢慢伸展\n每个动作都是信念的延展\n\n自由 泳的轻盈 就像风的歌\n可别忘了水深 它也有它的规则\n边界是安全 但不是枷锁\n循序渐进 是我前行的承诺\n\n水流轻轻推 拉扯着我往前\n节奏和呼吸 像心跳的语言\n坚持不放手 让身体去冒险\n一步步下潜 触碰梦的边缘\n\n下水之前 我闭上眼\n感受自由的风 在耳边盘旋\n下水之前 我慢慢伸展\n每个动作都是信念的延展\n\n水面是镜子 也是另一个世界\n呼吸带我回当下 每次都不妥协\n一步一步去靠近 去感受 去超越\n下水之前的瞬间 就是最美的一切",
+      "trackNo": 33
     },
     {
       "id": "isrc-QZFZ22654610",
@@ -19384,7 +20154,8 @@
       "tags": [
         "distrokid",
         "song",
-        "Her"
+        "Her",
+        "youtube"
       ],
       "links": [
         {
@@ -19404,8 +20175,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M&index=1"
         },
         {
           "platform": "netease",
@@ -19418,13 +20189,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M&index=1",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "CEBE7D10-4A89-456E-A1F5E5F1149F6F65"
         }
       },
-      "lyrics": "打印回执 薄如蝉翼\n数字跳跃 冷光无情\n离搬出家 还需几月\n手写空白 像自嘲的诗篇\n\n风口的纸片飘 飘向新人怀抱\n玫瑰簇拥 笑声喧闹\n而我只是站在 原地发呆的符号\n\n第一份工资 两千八百\n离自由 还差几步还差几月\n纸薄如梦 梦薄如雪\n风吹散了 只剩空白世界\n\n空调的风 吹走一份祝福\n玫瑰的香 交错刺痛的路\n人群里 她的笑像阳光\n而我攥着回执纸 却怕它碎成光\n\n两千八百 撑不起房租\n手写未来 却写不出出路\n时间像ATM的冷光\n吞掉希望 剩数字的荒唐\n\n第一份工资 两千八百\n离自由 还差几步还差几月\n纸薄如梦 梦薄如雪\n风吹散了 只剩空白世界"
+      "lyrics": "打印回执 薄如蝉翼\n数字跳跃 冷光无情\n离搬出家 还需几月\n手写空白 像自嘲的诗篇\n\n风口的纸片飘 飘向新人怀抱\n玫瑰簇拥 笑声喧闹\n而我只是站在 原地发呆的符号\n\n第一份工资 两千八百\n离自由 还差几步还差几月\n纸薄如梦 梦薄如雪\n风吹散了 只剩空白世界\n\n空调的风 吹走一份祝福\n玫瑰的香 交错刺痛的路\n人群里 她的笑像阳光\n而我攥着回执纸 却怕它碎成光\n\n两千八百 撑不起房租\n手写未来 却写不出出路\n时间像ATM的冷光\n吞掉希望 剩数字的荒唐\n\n第一份工资 两千八百\n离自由 还差几步还差几月\n纸薄如梦 梦薄如雪\n风吹散了 只剩空白世界",
+      "trackNo": 1
     },
     {
       "id": "isrc-QT6G72594840",
@@ -19438,7 +20217,8 @@
       "tags": [
         "distrokid",
         "song",
-        "Her"
+        "Her",
+        "youtube"
       ],
       "links": [
         {
@@ -19458,8 +20238,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M&index=2"
         },
         {
           "platform": "netease",
@@ -19472,13 +20252,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M&index=2",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "CEBE7D10-4A89-456E-A1F5E5F1149F6F65"
         }
       },
-      "lyrics": "滴答 滴答 时间在滑\n点滴袋里装满了话\n她手按腹部 像是按暂停\n子宫悬空 空瓶收集她的命\n\n她的眼神慢慢模糊\n3 A.m. 急诊的走廊无助\n隔壁床的老妇叹着气\n\"快娶个媳妇替你照顾我身体\"\n\nDrip by drip 时间偷走命\n滴答滴答 生命像沙漏倾\nDrip by drip 她的痛无声\n一滴一滴 把孤独挂上瓶\n\n冷白灯光 照不暖她的床\n胃在燃烧 心却早已凉\n年轻的她 静静闭眼\n耳边听到老妇的话像咒念\n\n“嫁不嫁人 谁来管你的病”\n点滴倒数 命运无情的拼\n她轻轻叹气 没回答\n时间却答应 滴滴哒哒\n\nDrip by drip 时间偷走命\n滴答滴答 生命像沙漏倾\nDrip by drip 她的痛无声\n一滴一滴 把孤独挂上瓶"
+      "lyrics": "滴答 滴答 时间在滑\n点滴袋里装满了话\n她手按腹部 像是按暂停\n子宫悬空 空瓶收集她的命\n\n她的眼神慢慢模糊\n3 A.m. 急诊的走廊无助\n隔壁床的老妇叹着气\n\"快娶个媳妇替你照顾我身体\"\n\nDrip by drip 时间偷走命\n滴答滴答 生命像沙漏倾\nDrip by drip 她的痛无声\n一滴一滴 把孤独挂上瓶\n\n冷白灯光 照不暖她的床\n胃在燃烧 心却早已凉\n年轻的她 静静闭眼\n耳边听到老妇的话像咒念\n\n“嫁不嫁人 谁来管你的病”\n点滴倒数 命运无情的拼\n她轻轻叹气 没回答\n时间却答应 滴滴哒哒\n\nDrip by drip 时间偷走命\n滴答滴答 生命像沙漏倾\nDrip by drip 她的痛无声\n一滴一滴 把孤独挂上瓶",
+      "trackNo": 2
     },
     {
       "id": "isrc-QT6G72594841",
@@ -19492,7 +20280,8 @@
       "tags": [
         "distrokid",
         "song",
-        "Her"
+        "Her",
+        "youtube"
       ],
       "links": [
         {
@@ -19512,8 +20301,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M&index=3"
         },
         {
           "platform": "netease",
@@ -19526,13 +20315,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M&index=3",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "CEBE7D10-4A89-456E-A1F5E5F1149F6F65"
         }
       },
-      "lyrics": "铃声刚下课\n人群往家里撤\n校门口那家奶茶店\nStill playing “Marry U” on repeat\nYeah\n\n初一下午 灰白天色\n作业像砖 压在书包侧\n你站在队里 鞋带有点脏\n校服袖口 卷了一半藏\nShe pokes the straw\n像把问题戳进心脏\n黑珍珠堵在喉咙\nNot ready for a vow\nBut it’s holding on\n塑料杯壁的水汽\n慢慢糊住她眼影\n那一圈雾\n是她第一个不想嫁的风景\n“Marry U” 在店里绕圈跑\n歌词像别人给的人生草稿\nShe’s thinking\n为什么连快乐都要签个名讨好\n\nAnti-wedding mist\n随呼吸上升 下落\n黑珍珠卡在喉咙口\n说不出的 No\n“Marry U” on loop\n但她心跳在掉线中游\n这杯奶茶太甜\n她的未来 想要没那么温柔\nAnti-wedding mist\n就站在店门口\n\nShe’s like\n如果有天我真穿上白纱\n会不会像现在\n只想把吸管压弯 再插回纸盖下\n同桌在旁边 起哄说 You’ll marry rich\n她笑着翻白眼\n心里默默 Delete that glitch\n作业本上画圈\n不是戒指 是出口\nEvery “happily ever after”\n听起来像催促的门口\n她不想做谁家故事的段落\n只想慢一点 活成自己的节奏\nSlow tempo like this beat\n六十到八十 Bpm\n心跳偶尔漏一拍"
+      "lyrics": "铃声刚下课\n人群往家里撤\n校门口那家奶茶店\nStill playing “Marry U” on repeat\nYeah\n\n初一下午 灰白天色\n作业像砖 压在书包侧\n你站在队里 鞋带有点脏\n校服袖口 卷了一半藏\nShe pokes the straw\n像把问题戳进心脏\n黑珍珠堵在喉咙\nNot ready for a vow\nBut it’s holding on\n塑料杯壁的水汽\n慢慢糊住她眼影\n那一圈雾\n是她第一个不想嫁的风景\n“Marry U” 在店里绕圈跑\n歌词像别人给的人生草稿\nShe’s thinking\n为什么连快乐都要签个名讨好\n\nAnti-wedding mist\n随呼吸上升 下落\n黑珍珠卡在喉咙口\n说不出的 No\n“Marry U” on loop\n但她心跳在掉线中游\n这杯奶茶太甜\n她的未来 想要没那么温柔\nAnti-wedding mist\n就站在店门口\n\nShe’s like\n如果有天我真穿上白纱\n会不会像现在\n只想把吸管压弯 再插回纸盖下\n同桌在旁边 起哄说 You’ll marry rich\n她笑着翻白眼\n心里默默 Delete that glitch\n作业本上画圈\n不是戒指 是出口\nEvery “happily ever after”\n听起来像催促的门口\n她不想做谁家故事的段落\n只想慢一点 活成自己的节奏\nSlow tempo like this beat\n六十到八十 Bpm\n心跳偶尔漏一拍",
+      "trackNo": 3
     },
     {
       "id": "isrc-QT6G72594842",
@@ -19546,7 +20343,8 @@
       "tags": [
         "distrokid",
         "song",
-        "Her"
+        "Her",
+        "youtube"
       ],
       "links": [
         {
@@ -19566,8 +20364,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M&index=4"
         },
         {
           "platform": "netease",
@@ -19580,13 +20378,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M&index=4",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "CEBE7D10-4A89-456E-A1F5E5F1149F6F65"
         }
       },
-      "lyrics": "满月宴 灯太白\n塑料杯 叠成海\nThey all smile\n我被端在空中 像菜\n\n红塑料绳 绕一圈\n勒进嫩肉 不算深\nBut it stays there\nBudget fate-line 贴着皮肤偏\n染色素发 有点假\n像他们预言的家\nCheap promise\n系在我头皮发麻\nLaughter 太响 像炸裂\n他们说宝宝别怕 别哭 别\n解释什么？我才几斤几两\n先学会闭嘴 再学会成长\n\nI cry on mute\nNo sound just proof\n眼泪退回眼眶里 Reboot\n终于不必再解释\nJust let the heartbeat\n掉线 掉到最底\n满月只是满而已\n我练习静音\nI cry on mute\n\n相机闪光 像审问灯\n问号扎进眼睛 Sting\n“像妈还是像爸？”\n我被抱在亲戚怀里 当答案\n谁在乎 我疼不疼\n发绳勒出一小圈粉\nAn early discount fate-line\n写着“乖一点 就有人爱”\n你说 “Smile for the pic”\n我学会 Freeze 不学 resist\n中文里没有选择题\n只有听话和更听话的自己\nSo I swallow each no\n当作副歌的背后音符\n\n满月过后 月亮照旧\n只有我 头皮记得那扣\nNo anger left\n只有“终于不必再解释”的缺口\nBPM 像心跳 慢慢 掉线\n我安静到 像被静音的电\nIf you press"
+      "lyrics": "满月宴 灯太白\n塑料杯 叠成海\nThey all smile\n我被端在空中 像菜\n\n红塑料绳 绕一圈\n勒进嫩肉 不算深\nBut it stays there\nBudget fate-line 贴着皮肤偏\n染色素发 有点假\n像他们预言的家\nCheap promise\n系在我头皮发麻\nLaughter 太响 像炸裂\n他们说宝宝别怕 别哭 别\n解释什么？我才几斤几两\n先学会闭嘴 再学会成长\n\nI cry on mute\nNo sound just proof\n眼泪退回眼眶里 Reboot\n终于不必再解释\nJust let the heartbeat\n掉线 掉到最底\n满月只是满而已\n我练习静音\nI cry on mute\n\n相机闪光 像审问灯\n问号扎进眼睛 Sting\n“像妈还是像爸？”\n我被抱在亲戚怀里 当答案\n谁在乎 我疼不疼\n发绳勒出一小圈粉\nAn early discount fate-line\n写着“乖一点 就有人爱”\n你说 “Smile for the pic”\n我学会 Freeze 不学 resist\n中文里没有选择题\n只有听话和更听话的自己\nSo I swallow each no\n当作副歌的背后音符\n\n满月过后 月亮照旧\n只有我 头皮记得那扣\nNo anger left\n只有“终于不必再解释”的缺口\nBPM 像心跳 慢慢 掉线\n我安静到 像被静音的电\nIf you press",
+      "trackNo": 4
     },
     {
       "id": "isrc-QT6G72594843",
@@ -19600,7 +20406,8 @@
       "tags": [
         "distrokid",
         "song",
-        "Her"
+        "Her",
+        "youtube"
       ],
       "links": [
         {
@@ -19620,8 +20427,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M&index=5"
         },
         {
           "platform": "netease",
@@ -19634,13 +20441,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M&index=5",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "CEBE7D10-4A89-456E-A1F5E5F1149F6F65"
         }
       },
-      "lyrics": "Night-bus three three two\n末班车 晚自习后\nShe leans on the window\n心跳掉线 60 到 Slow\nBack-seat ad light blue\n“婚纱摄影 立减两千” 在闪烁\n她笑着说 So cheap\n可谁会娶我呢\n\n笔迹还在指尖\n练习卷塞进Old school背包里面\n黑眼圈像Smoky eyeliner\n同桌都睡了 她还在跟未来扯皮Fight ya\n校服拉链 半掩着锁骨\n化学没背完 心事全背熟\nBus stop 风吹卷子一页一页\n她心里默念 I don’t really care… yeah I care\n\nCount it up 灯一盏两盏\n她数到 Two thousand 心空一半\nNight-bus 332 running off-beat\n像心跳 掉线 In a minor key\n“-2000 On wedding photos” back-seat ad scream\n“婚纱立减两千” 像在喊她的Name\n未来谁的Last name print next to her\n她只听见 节拍 And the engine purr\n\nShe go one two 三四五六\n窗外楼层像试卷题目 One more drill\n她说 “Pass 不pass 算了吧”\n及格线之后 还有谁在等她\nWhite dove in the lampshade 翅膀扑扑\n像被关在标准答案里的小错误\n第两千盏路灯 忽然炸成光\n冲出一只白鸽 撞玻璃成印章\n\nBlood-ink stain 像印好的喜帖\n中文名字 空着一条线\n“Miss so-and-so & Mr. 问号”\n她在雾气上写 “Don"
+      "lyrics": "Night-bus three three two\n末班车 晚自习后\nShe leans on the window\n心跳掉线 60 到 Slow\nBack-seat ad light blue\n“婚纱摄影 立减两千” 在闪烁\n她笑着说 So cheap\n可谁会娶我呢\n\n笔迹还在指尖\n练习卷塞进Old school背包里面\n黑眼圈像Smoky eyeliner\n同桌都睡了 她还在跟未来扯皮Fight ya\n校服拉链 半掩着锁骨\n化学没背完 心事全背熟\nBus stop 风吹卷子一页一页\n她心里默念 I don’t really care… yeah I care\n\nCount it up 灯一盏两盏\n她数到 Two thousand 心空一半\nNight-bus 332 running off-beat\n像心跳 掉线 In a minor key\n“-2000 On wedding photos” back-seat ad scream\n“婚纱立减两千” 像在喊她的Name\n未来谁的Last name print next to her\n她只听见 节拍 And the engine purr\n\nShe go one two 三四五六\n窗外楼层像试卷题目 One more drill\n她说 “Pass 不pass 算了吧”\n及格线之后 还有谁在等她\nWhite dove in the lampshade 翅膀扑扑\n像被关在标准答案里的小错误\n第两千盏路灯 忽然炸成光\n冲出一只白鸽 撞玻璃成印章\n\nBlood-ink stain 像印好的喜帖\n中文名字 空着一条线\n“Miss so-and-so & Mr. 问号”\n她在雾气上写 “Don",
+      "trackNo": 5
     },
     {
       "id": "isrc-QT6G72594844",
@@ -19654,7 +20469,8 @@
       "tags": [
         "distrokid",
         "song",
-        "Her"
+        "Her",
+        "youtube"
       ],
       "links": [
         {
@@ -19674,8 +20490,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M&index=6"
         },
         {
           "platform": "netease",
@@ -19688,13 +20504,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M&index=6",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "CEBE7D10-4A89-456E-A1F5E5F1149F6F65"
         }
       },
-      "lyrics": "前台灯光冷得像冰霜\nHR笑得温柔却无方向\n粉色绳带绕脖子一圈\n像廉价项链 没人看见\n\nSwipe卡打卡 “谢谢”声敲响\n像婚礼钟声 提前在练习\n“我愿意”说得熟练又僵\n这不是梦 是现实的谎\n\nPink noose around my neck\nCorporate love song plays on deck\n“谢谢”在唱 我在听\n公司项链 限制梦境\n\n办公桌边倒影模糊了脸\n实习工牌挂得低调疲倦\n镜子问我你是谁你在哪\n回答是 Silence 没有回答\n\n粉绳的重量藏在肩膀\n不痛不痒只是慢慢抓狂\n人影飘过没人关心\n空调吹来冷风侵袭\n\n粉绳是戒指 还是锁链\n我抬头看 天花板悬念\n打卡机说 “再见 明天见”\n我回答 “我愿意” 但心却远"
+      "lyrics": "前台灯光冷得像冰霜\nHR笑得温柔却无方向\n粉色绳带绕脖子一圈\n像廉价项链 没人看见\n\nSwipe卡打卡 “谢谢”声敲响\n像婚礼钟声 提前在练习\n“我愿意”说得熟练又僵\n这不是梦 是现实的谎\n\nPink noose around my neck\nCorporate love song plays on deck\n“谢谢”在唱 我在听\n公司项链 限制梦境\n\n办公桌边倒影模糊了脸\n实习工牌挂得低调疲倦\n镜子问我你是谁你在哪\n回答是 Silence 没有回答\n\n粉绳的重量藏在肩膀\n不痛不痒只是慢慢抓狂\n人影飘过没人关心\n空调吹来冷风侵袭\n\n粉绳是戒指 还是锁链\n我抬头看 天花板悬念\n打卡机说 “再见 明天见”\n我回答 “我愿意” 但心却远",
+      "trackNo": 6
     },
     {
       "id": "isrc-QT6G72594845",
@@ -19708,7 +20532,8 @@
       "tags": [
         "distrokid",
         "song",
-        "Her"
+        "Her",
+        "youtube"
       ],
       "links": [
         {
@@ -19728,8 +20553,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M&index=7"
         },
         {
           "platform": "netease",
@@ -19742,13 +20567,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M&index=7",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "CEBE7D10-4A89-456E-A1F5E5F1149F6F65"
         }
       },
-      "lyrics": "五岁那年针尖破了指\n奶奶说 别怕 就是这样开始\n血珠滚到红布上 沉默刺了一朵花\n第二朵囍 字旁带伤疤\n\nRed silk bleeding prophecies\nI tasted rust\nA future teased\nThe air smelled like threads and tears\nA stitched-up life\nNo repair\n\n指尖疼痛轻如羽毛\n奶奶的叹息重如山腰\n\nFinally no need to explain\nNo need to fight\nNo need to remain\n铁锈味道早就尝过\n囍字边缘再没轮廓\n\n她的手指颤抖却很稳\n一针一线织进命运纹\n婚礼的钟声早在指尖回响\n可没人教我 怎么缝补心脏\n\nThe needle knows\nIt never lies\nIt sews through silence\nThrough goodbyes\nEach stitch a story\nA quiet scream\nA double-happiness turned to dream"
+      "lyrics": "五岁那年针尖破了指\n奶奶说 别怕 就是这样开始\n血珠滚到红布上 沉默刺了一朵花\n第二朵囍 字旁带伤疤\n\nRed silk bleeding prophecies\nI tasted rust\nA future teased\nThe air smelled like threads and tears\nA stitched-up life\nNo repair\n\n指尖疼痛轻如羽毛\n奶奶的叹息重如山腰\n\nFinally no need to explain\nNo need to fight\nNo need to remain\n铁锈味道早就尝过\n囍字边缘再没轮廓\n\n她的手指颤抖却很稳\n一针一线织进命运纹\n婚礼的钟声早在指尖回响\n可没人教我 怎么缝补心脏\n\nThe needle knows\nIt never lies\nIt sews through silence\nThrough goodbyes\nEach stitch a story\nA quiet scream\nA double-happiness turned to dream",
+      "trackNo": 7
     },
     {
       "id": "isrc-QT6G72594846",
@@ -19762,7 +20595,8 @@
       "tags": [
         "distrokid",
         "song",
-        "Her"
+        "Her",
+        "youtube"
       ],
       "links": [
         {
@@ -19782,8 +20616,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M&index=8"
         },
         {
           "platform": "netease",
@@ -19796,13 +20630,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M&index=8",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "CEBE7D10-4A89-456E-A1F5E5F1149F6F65"
         }
       },
-      "lyrics": "白床单 飘在风里\n像秘密 无人提起\n隔壁的红 四件套挂起\n鼓成帆船 向梦里启航\n\n风吹过 凉得刺骨\n她低头 把夹子扣住\n心里话 从未有出路\n像白旗 一直孤独\n\n红帆 红帆 你要去哪\n带着希望 还是谎话\n白旗 白旗 我就不挣扎\n投降了 只剩空牵挂\n\nRooftop cold where stories blend\nHer linen waves but won’t pretend\nRed sails rise\nA wedding’s breath\nHer sheet whispers tales of death\n\nNeighbors laugh through walls so thin\nShe’s outside yet locked within\nHanging threads like battles lost\nEvery clip a line she’s crossed\n\n婚船远航 我没跟上\n白旗飘着 像梦灭光"
+      "lyrics": "白床单 飘在风里\n像秘密 无人提起\n隔壁的红 四件套挂起\n鼓成帆船 向梦里启航\n\n风吹过 凉得刺骨\n她低头 把夹子扣住\n心里话 从未有出路\n像白旗 一直孤独\n\n红帆 红帆 你要去哪\n带着希望 还是谎话\n白旗 白旗 我就不挣扎\n投降了 只剩空牵挂\n\nRooftop cold where stories blend\nHer linen waves but won’t pretend\nRed sails rise\nA wedding’s breath\nHer sheet whispers tales of death\n\nNeighbors laugh through walls so thin\nShe’s outside yet locked within\nHanging threads like battles lost\nEvery clip a line she’s crossed\n\n婚船远航 我没跟上\n白旗飘着 像梦灭光",
+      "trackNo": 8
     },
     {
       "id": "isrc-QT6G72594847",
@@ -19816,7 +20658,8 @@
       "tags": [
         "distrokid",
         "song",
-        "Her"
+        "Her",
+        "youtube"
       ],
       "links": [
         {
@@ -19836,8 +20679,8 @@
         },
         {
           "platform": "youtube",
-          "label": "YouTube Music",
-          "url": ""
+          "label": "YouTube · Playlist",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M&index=9"
         },
         {
           "platform": "netease",
@@ -19850,13 +20693,21 @@
           "url": ""
         }
       ],
-      "embeds": [],
+      "embeds": [
+        {
+          "platform": "youtube",
+          "label": "YouTube playlist embed",
+          "url": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_lMK1XHcnG-riTl7ZLwVZkg2VScZcRLz4M&index=9",
+          "height": 220
+        }
+      ],
       "refs": {
         "distrokid": {
           "albumuuid": "CEBE7D10-4A89-456E-A1F5E5F1149F6F65"
         }
       },
-      "lyrics": "白粉笔 在水泥地划线\n一笔长过永恒 像婚纱拖尾无边\nNo no no 她写着 No no no\n球台网像铁栅栏 第一扇牢门关\n\n她心跳掉拍\n手指画未来\n水泥地很冷 白粉笔很快\n\nNo no no\n我不要走\nNo no no\n拖出去以后\nNo no no\n自由太远的梦\n\nGrade eight sports day 阳光很尖\n她躲在球台下 偷写着抗议宣言\n老师的手 像铁钳 拽住了她\n白粉笔滑开 留下冷色的伤疤\n\nChalk dust in the air\nCaught in her hair\nPing-pong nets weave fences\nWho said life’s fair\n她的 No 是种种可能被掐灭\nShe wrote it anyway 那是她的拒绝\n\nNo no no\n我不要走\nNo no no\n拖出去以后\nNo no no\n自由太远的梦"
+      "lyrics": "白粉笔 在水泥地划线\n一笔长过永恒 像婚纱拖尾无边\nNo no no 她写着 No no no\n球台网像铁栅栏 第一扇牢门关\n\n她心跳掉拍\n手指画未来\n水泥地很冷 白粉笔很快\n\nNo no no\n我不要走\nNo no no\n拖出去以后\nNo no no\n自由太远的梦\n\nGrade eight sports day 阳光很尖\n她躲在球台下 偷写着抗议宣言\n老师的手 像铁钳 拽住了她\n白粉笔滑开 留下冷色的伤疤\n\nChalk dust in the air\nCaught in her hair\nPing-pong nets weave fences\nWho said life’s fair\n她的 No 是种种可能被掐灭\nShe wrote it anyway 那是她的拒绝\n\nNo no no\n我不要走\nNo no no\n拖出去以后\nNo no no\n自由太远的梦",
+      "trackNo": 9
     },
     {
       "id": "isrc-QT6HK2507635",
